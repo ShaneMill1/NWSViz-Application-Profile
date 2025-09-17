@@ -1,0 +1,12 @@
+[[req_nwsviz-application-data_data-query-instances]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/vertical-extent-demo-data/data-query-instances
+statement:: Verify that the Vertical extent demo Collection Instances query is correctly defined
+part::  Vertical extent demo Collection _SHALL_ support Instances of the Collection.
+part:: Instance ids _SHALL_ be an RFC3339 Zulu (UTC)representation of the model run time at a detail level of minutes.
+part:: Instance ids _SHALL_ match the following regular expression ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}Z$
+
+====

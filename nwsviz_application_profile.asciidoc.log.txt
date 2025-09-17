@@ -10,7 +10,7 @@
 :received-date:
 :issued-date:
 :published-date:
-:fullname:
+:fullname: Shane Mill (NOAA)
 :docsubtype: Profile
 :keywords: ogcdoc, OGC document, API, openapi, html, profile
 :submitting-organizations:
@@ -86,7 +86,7 @@ NOTE: The security measures discussed in the following sections only provide var
 All questions regarding this submission should be directed to the editor or the submitters:
 
 |===
-|*Name* |*Affiliation*
+|*Shane Mill* |*NOAA*
 |===
 
 == Contributors
@@ -2846,7 +2846,6 @@ part:: The *Locations* query _SHALL_ support the following HTTP methods:
         * POST
 
 
-====
 part:: The *Locations* query _SHALL_ provide a listing of the available locations in a collection that conforms to GeoJSON and contains the properties contained in this example:
 
 [source,JSON]
@@ -3179,6 +3178,7 @@ part:: The *Locations* query _SHALL_ provide a listing of the available location
    ]
 }
 ....
+====
 
 ==== Location Query
 
@@ -3208,13 +3208,14 @@ part:: The *Locations* query _SHALL_ support the following HTTP methods:
         * POST
 
 
-====
 part:: The *Locations* query _SHALL_ support a custom query parameter called "ij" where the argument represents index values of the rectangular query.
 
 [source]
 ....
 &#x26;ij=i0,j0,i1,j1
 ....
+
+====
 
 // ==== Instances Query
 
@@ -3536,10 +3537,16 @@ identifier:: /conf/nwsviz-application/collectionid
 target:: /req/nwsviz-application/collectionid
 test-purpose:: Validate that a collectionid requirement is correctly defined.
 test-method::
-step:: Verify that collection id string against the Regular expression ^[a-zA-Z]\+\_[a-zA-Z]+_[a-zA-Z]+$
-step:: Verify that the collection id string contains two underscores.
-step:: Verify that the string before the first underscore in the collection id is the expected NWP model identifier.
-step:: Verify that the string after the last underscore in the collection id is a valid link:++http://codes.wmo.int/wis/topic-hierarchy/centre-id++[WMO Centre id].
+step:: Verify that collectionids match the following:
+
+|====================
+| **id** | **description**
+| HREF | High Resolution Ensemble Forecast
+| NBM  | National Blend of Models
+| LREF | Long Range Ensemble Forecast
+| LREF_TLE | Long Range Ensemble Forecast Tile-Lagged Ensemble
+| MRMS | Multi-Radar/Multi-Sensor Radar Products
+|====================
 ====
 
 [[ats_nwsviz-application_extent]]
@@ -3550,23 +3557,30 @@ identifier:: /conf/nwsviz-application/extent
 target:: /req/nwsviz-application/extent
 test-purpose:: Verify that NWSViz profile Collection Extent is correctly defined in the Collection response.
 test-method::
-step:: Verfiy NWSViz profile Collection Spatial extent Coordinate Reference System is defined as:
+step:: Verify that the collection contains a spatial extent and contain an additional attribute named "locations" containing the a list of the available locations within the collection.
+[source,JSON]
+----
+{
+   "spatial":{
+      "bbox":[
+         -180,
+         -90,
+         180,
+         90
+      ],
+      "locations":[
+         "CO",
+         "AK",
+         "HI"
+      ]
+   }
+}
+----
 
-    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
-
-step:: Verfiy NWSViz profile Collection Spatial extent bounds are defined as  [-180,-90,180,90]
-
-step:: Verfiy NWSViz profile Collection Temporal extent Temporal Reference System is defined as:
-
-    * TIMECRS["DateTime",TDATUM["Gregorian Calendar"],CS[temporal,1],AXIS["Time (T)",future],TIMEUNIT["day",86400]]
-
-step:: Verfiy NWSViz profile Collection Vertical extent Vertical Reference System is defined as:
-
-    * PARAMETRICCRS["WMO standard atmosphere layer 0",PDATUM["Mean Sea Level",ANCHOR["101325 Pa at 15°C"]],CS[parametric,1],AXIS["pressure (Pa)",down],PARAMETRICUNIT["Pascal",100.0]]
-
-step:: Verfiy NWSViz profile Collection Vertical extent has the follwoing values defined:
-
-    * "1000","925","850","700","600","500","400","300","250","200","150","100","50"
+part:: Verify that the Profile contains a temporal extent containing an interval and values.
+part:: Verify that the Profile contains an attribute named instances which contains a list of available instances for the collection.
+part:: Verify that the Profile contains a custom query dimension with the name "ensemble" containing values and ids.
+part:: Verify that the Profile contains a vertical extent if applicable
 
 
 ====
@@ -3677,108 +3691,9 @@ step:: Verify that the Collection response includes definitions for the followin
 
     * Position
     * Cube
-    * Instances
     * Locations
+    * Instances
 
-====
-
-[[ats_nwsviz-application_data-query-area]]
-[abstract_test]
-====
-[%metadata]
-identifier:: /conf/nwsviz-application/data-query-area
-target:: /req/nwsviz-application/data-query-area
-test-purpose:: Verify that NWSViz profile Collection *Area* query is correctly defined in the Collection response.
-test-method::
-step:: Verify that NWSViz profile Collection *Area* query defines the following output_format types
-
-    * GRIB2
-    * NetCDF4
-    * CoverageJSON
-
-step:: Verify that NWSViz profile Collection *Area* query defines the following default output_format.
-
-    * CoverageJSON
-
-step:: Verify that NWSViz profile Collection *Area* query requirement defines the following list of crs_details values.
-
-    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
-    * PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]
-
-step:: Verify that NWSViz profile Collection *Area* query requirement supports the following HTTP operations
-
-    * GET
-    * POST
-
-====
-
-[[ats_nwsviz-application_data-query-corridor]]
-[abstract_test]
-====
-[%metadata]
-identifier:: /conf/nwsviz-application/data-query-corridor
-target:: /req/nwsviz-application/data-query-corridor
-test-purpose:: Verify that NWSViz profile Collection *Corridor* query is correctly defined in the Collection response.
-test-method::
-step:: Verify that NWSViz profile Collection *Corridor* query defines the following output_format types
-
-    * GRIB2
-    * NetCDF4
-    * CoverageJSON
-
-step:: Verify that NWSViz profile Collection *Corridor* query defines the following default output_format.
-
-    * CoverageJSON
-
-step:: Verify that NWSViz profile Collection *Corridor* query requirement defines the following list of crs_details values.
-
-    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
-
-step:: Verify that NWSViz profile Collection *Corridor* query requirement supports the following width-units
-
-    * miles
-    * km
-    * degrees
-
-step:: Verify that NWSViz profile Collection *Corridor* query requirement supports the following height-units
-
-    * meters
-    * hPa
-
-
-step:: Verify that NWSViz profile Collection *Corridor* query requirement supports the following HTTP operations
-
-    * GET
-    * POST
-
-====
-
-[[ats_nwsviz-application_nwsviz-application_data-query-cube]]
-[abstract_test]
-====
-[%metadata]
-identifier:: /conf/nwsviz-application/data-query-cube
-target:: /req/nwsviz-application/data-query-cube
-test-purpose:: Verify that NWSViz profile Collection *Cube* query is correctly defined in the Collection response.
-test-method::
-step:: Verify that NWSViz profile Collection *Cube* query defines the following output_format types
-
-    * GRIB2
-    * NetCDF4
-    * CoverageJSON
-
-step:: Verify that NWSViz profile Collection *Cube* query defines the following default output_format.
-
-    * CoverageJSON
-
-step:: Verify that NWSViz profile Collection *Cube* query requirement defines the following list of crs_details values.
-
-    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
-
-step:: Verify that NWSViz profile Collection *Cube* query requirement supports the following HTTP operations
-
-    * GET
-    * POST
 ====
 
 [[ats_nwsviz-application_data-query-instances]]
@@ -3803,60 +3718,409 @@ test-purpose:: Verify that NWSViz profile Collection *Position* query is correct
 test-method::
 step:: Verify that NWSViz profile Collection *Position* query defines the following output_format types
 
-    * NetCDF4
-    * CoverageJSON
-    * GeoJSON
-    * CSV
+        * CoverageJSON
+        * Zarr
+        * NetCDF
 
 step:: Verify that NWSViz profile Collection *Position* query defines the following default output_format.
 
-    * GeoJSON
-
-step:: Verify that NWSViz profile Collection *Position* query requirement defines the following list of crs_details values.
-
-    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
-    * PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]
+    * CoverageJSON
 
 step:: Verify that NWSViz profile Collection *Position* requirement supports the following HTTP operations
 
     * GET
+    * POST
+
+step:: Verify that NWSViz profile Collection *Position* requirement supports the following custom query dimension
+
+[source]
+....
+&#x26;ij=i0,j0,i1,j1
+....
 
 ====
 
-[[ats_nwsviz-application_data-query-radius]]
+[[ats_nwsviz-application_data-query-locations]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/nwsviz-application/data-query-radius
-target:: /req/nwsviz-application/data-query-radius
-test-purpose:: Verify that NWSViz profile Collection *Radius* query is correctly defined in the Collection response.
+identifier:: /conf/nwsviz-application/data-query-locations
+target:: /req/nwsviz-application/data-query-locations
+test-purpose:: Verify that NWSViz profile Collection *Locations* query is correctly defined in the Collection response.
 test-method::
-step:: Verify that NWSViz profile Collection *Radius* query defines the following output_format types
+step:: Verify that NWSViz profile Collection *Locations* query defines the following output_format types
 
-    * NetCDF4
-    * CoverageJSON
-    * GeoJSON
-    * CSV
+        * GeoJSON
 
-step:: Verify that NWSViz profile Collection *Radius* query defines the following default output_format.
+step:: Verify that NWSViz profile Collection *Locations* query defines the following default output_format.
 
     * CoverageJSON
 
-step:: Verify that NWSViz profile Collection *Radius* query requirement defines the following list of crs_details values.
-
-    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
-    * PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]
-
-step:: Verify that NWSViz profile Collection *Radius* query requirement supports the following HTTP operations
+step:: Verify that NWSViz profile Collection *Locations* requirement supports the following HTTP operations
 
     * GET
+    * POST
 
-step:: Verify that NWSViz profile Collection *Radius* query requirement supports the following within-units:
+step:: Verify that the reponse provides a listing of the available locations in a collection that conforms to GeoJSON and contains the properties contained in this example:
 
-    * miles
-    * Km
+[source,JSON]
+....
+{
+   "type":"FeatureCollection",
+   "features":[
+      {
+         "type":"Feature",
+         "geometry":{
+            "type":"Polygon",
+            "coordinates":[
+               [
+                  [
+                     -60.154430455510095,
+                     19.80394886054594
+                  ],
+                  [
+                     -60.154430455510095,
+                     49.81080204452752
+                  ],
+                  [
+                     -125.13089699982356,
+                     49.81080204452752
+                  ],
+                  [
+                     -125.13089699982356,
+                     19.80394886054594
+                  ],
+                  [
+                     -60.154430455510095,
+                     19.80394886054594
+                  ]
+               ]
+            ]
+         },
+         "properties":{
+            "instance":"2025-05-21T12:00:00",
+            "name":"CO",
+            "name_alt":"link:++http://edr-api-desi-c.mdl.nws.noaa.gov/collections/HREF/instances/2025-05-21T12:00:00/locations/CO?f=json++[]",
+            "edrqueryendpoint":"link:++http://edr-api-desi-c.mdl.nws.noaa.gov/collections/HREF/instances/2025-05-21T12:00:00/locations/CO?f=json++[]",
+            "parameter-names":[
+               "apcp_1h",
+               "apcp_2h",
+               "apcp_3h",
+               "apcp_accum",
+               "apcp_accum-lpmm",
+               "apcp_accum_24h",
+               "apcp_accum_24h-lpmm",
+               "apcp_accum_6h",
+               "apcp_accum_6h-lpmm",
+               "cape",
+               "ceil",
+               "ceilingAGL",
+               "cfrzr",
+               "cicep",
+               "cin",
+               "colmd",
+               "crain",
+               "csnow",
+               "d2m",
+               "dpt_isobaric",
+               "dswrf",
+               "fram1",
+               "fram24",
+               "fram24-lpmm",
+               "fram6",
+               "fram6-lpmm",
+               "framtotal",
+               "front700",
+               "front850",
+               "frzr1",
+               "frzr24",
+               "frzr24-lpmm",
+               "frzr6",
+               "frzr6-lpmm",
+               "frzrtotal",
+               "gh1000-gh500",
+               "gh700-gh500_lr",
+               "gh_isobaric",
+               "gust",
+               "hcc",
+               "hlcy_1000",
+               "hlcy_3000",
+               "inventory",
+               "large-fire-potential",
+               "lcc",
+               "lcl",
+               "ltng",
+               "massden",
+               "mcc",
+               "mnuphl_3000",
+               "mnuphl_5000",
+               "mxuphl_3000",
+               "mxuphl_5000",
+               "orog",
+               "pfrzr",
+               "picep",
+               "prain",
+               "prmsl",
+               "psnow",
+               "pwat",
+               "r2",
+               "r_isobaric",
+               "refc",
+               "refc-lpmm",
+               "retop",
+               "sdwe_1h",
+               "sdwe_2h",
+               "sdwe_3h",
+               "sdwe_accum",
+               "sdwe_accum-lpmm",
+               "sdwe_accum_1h",
+               "sdwe_accum_24h",
+               "sdwe_accum_24h-lpmm",
+               "sdwe_accum_6h",
+               "sdwe_accum_6h-lpmm",
+               "sp",
+               "stp",
+               "t2m",
+               "t_isobaric",
+               "ta2",
+               "tadv700",
+               "tadv850",
+               "tcdc",
+               "thte2",
+               "thte850",
+               "thte925",
+               "tw2",
+               "u10",
+               "u_isobaric",
+               "v10",
+               "v_isobaric",
+               "vis",
+               "vort500",
+               "vucsh",
+               "vvcsh",
+               "w_isobaric",
+               "wd_isobaric",
+               "wd_isobaric-mean",
+               "wd_isobaric-std",
+               "wdir",
+               "wdir-mean",
+               "wdir-std",
+               "ws_isobaric",
+               "wshr0-6km",
+               "wshrd0-6km",
+               "wshrd0-6km-mean",
+               "wshrd0-6km-std",
+               "wspd"
+            ],
+            "datetimes":[
+               "2025-05-21T13:00:00",
+               "2025-05-21T14:00:00",
+               "2025-05-21T15:00:00",
+               "2025-05-21T16:00:00",
+               "2025-05-21T17:00:00",
+               "2025-05-21T18:00:00",
+               "2025-05-21T19:00:00",
+               "2025-05-21T20:00:00",
+               "2025-05-21T21:00:00",
+               "2025-05-21T22:00:00",
+               "2025-05-21T23:00:00",
+               "2025-05-22T00:00:00",
+               "2025-05-22T01:00:00",
+               "2025-05-22T02:00:00",
+               "2025-05-22T03:00:00",
+               "2025-05-22T04:00:00",
+               "2025-05-22T05:00:00",
+               "2025-05-22T06:00:00",
+               "2025-05-22T07:00:00",
+               "2025-05-22T08:00:00",
+               "2025-05-22T09:00:00",
+               "2025-05-22T10:00:00",
+               "2025-05-22T11:00:00",
+               "2025-05-22T12:00:00",
+               "2025-05-22T13:00:00",
+               "2025-05-22T14:00:00",
+               "2025-05-22T15:00:00",
+               "2025-05-22T16:00:00",
+               "2025-05-22T17:00:00",
+               "2025-05-22T18:00:00",
+               "2025-05-22T19:00:00",
+               "2025-05-22T20:00:00",
+               "2025-05-22T21:00:00",
+               "2025-05-22T22:00:00",
+               "2025-05-22T23:00:00",
+               "2025-05-23T00:00:00",
+               "2025-05-23T01:00:00",
+               "2025-05-23T02:00:00",
+               "2025-05-23T03:00:00",
+               "2025-05-23T04:00:00",
+               "2025-05-23T05:00:00",
+               "2025-05-23T06:00:00",
+               "2025-05-23T07:00:00",
+               "2025-05-23T08:00:00",
+               "2025-05-23T09:00:00",
+               "2025-05-23T10:00:00",
+               "2025-05-23T11:00:00",
+               "2025-05-23T12:00:00"
+            ],
+            "desi":{
+               "comment":"Complete files (if true) are needed for model to show up on front end display.  Format 2022090912/HREF.complete",
+               "name":"HREF",
+               "groupname":"HREF",
+               "completeFile":true,
+               "zarr_config":{
+                  "data_by_field":false,
+                  "time_key":"valid_time",
+                  "lat_key":"latitude",
+                  "lon_key":"longitude",
+                  "ens_key":"ensemble",
+                  "ens_key_text":"names",
+                  "x_key":"x",
+                  "y_key":"y",
+                  "z_key":"isobaricInhPa"
+               },
+               "x4dDomain":{
+                  "x4dGrid":[
+                     40.5,
+                     -100,
+                     388,
+                     270
+                  ],
+                  "maxDomainPoints":105000
+               },
+               "tiling":{
+                  "//":"if resolution is 5km, 1 = 5km, 2 = 10km, 4 = 20km",
+                  "y":150,
+                  "x":150,
+                  "targetNx":200,
+                  "targetNy":150,
+                  "resLevels":[
+                     1,
+                     2,
+                     4
+                  ]
+               },
+               "region":{
+                  "name":"CONUS",
+                  "foldername":"HREF"
+               },
+               "projDict":{
+                  "nx":1160,
+                  "ny":678,
+                  "dx":5079,
+                  "dy":5079,
+                  "units":"m",
+                  "first_lat":19.80394886054594,
+                  "first_lon":-125.13089699982356,
+                  "proj":"+proj=lcc +a=6371200.0 +b=6371200.0 +lon_0=265.0 +lat_0=25.0 +lat_1=25.0 +lat_2=25.0"
+               },
+               "clustering":false,
+               "members":{
+                  "HRW_ARW -12h":[
+                     "HRW_ARW -12h"
+                  ],
+                  "HRW_ARW":[
+                     "HRW_ARW"
+                  ],
+                  "HRW FV3 -12h":[
+                     "HRW FV3 -12h"
+                  ],
+                  "HRW FV3":[
+                     "HRW FV3"
+                  ],
+                  "HRW NSSL -12h":[
+                     "HRW NSSL -12h"
+                  ],
+                  "HRW NSSL":[
+                     "HRW NSSL"
+                  ],
+                  "NAM CONUS Nest -12h":[
+                     "NAM CONUS Nest -12h"
+                  ],
+                  "NAM CONUS Nest":[
+                     "NAM CONUS Nest"
+                  ],
+                  "HRRR -6h":[
+                     "HRRR -6h"
+                  ],
+                  "HRRR":[
+                     "HRRR"
+                  ]
+               },
+               "membersShort":{
+                  "HRW_ARW -12h":[
+                     "ARW -12h"
+                  ],
+                  "HRW_ARW":[
+                     "ARW"
+                  ],
+                  "HRW FV3 -12h":[
+                     "FV3 -12h"
+                  ],
+                  "HRW FV3":[
+                     "FV3"
+                  ],
+                  "HRW NSSL -12h":[
+                     "NSSL -12h"
+                  ],
+                  "HRW NSSL":[
+                     "NSSL"
+                  ],
+                  "NAM CONUS Nest -12h":[
+                     "NAM N. -12h"
+                  ],
+                  "NAM CONUS Nest":[
+                     "NAM N."
+                  ],
+                  "HRRR -6h":[
+                     "HRRR -6h"
+                  ],
+                  "HRRR":[
+                     "HRRR"
+                  ]
+               },
+               "memberDepth":2,
+               "resolutionKM":5,
+               "lengthInHours":48
+            },
+            "bbox":[
+               -125.13089699982356,
+               19.80394886054594,
+               -60.154430455510095,
+               49.81080204452752
+            ]
+         }
+      }
+   ]
+}
+....
 
 ====
+
+[[ats_nwsviz-application_nwsviz-application_data-query-cube]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query-cube
+target:: /req/nwsviz-application/data-query-cube
+test-purpose:: Verify that NWSViz profile Collection *Cube* query is correctly defined in the Collection response.
+test-method::
+step:: Verify that NWSViz profile Collection *Cube* query defines the following output_format types
+
+        * CoverageJSON
+        * Zarr
+        * NetCDF
+
+step:: Verify that NWSViz profile Collection *Cube* query defines the following default output_format.
+
+    * CoverageJSON
+
+step:: Verify that NWSViz profile Collection *Cube* query requirement supports the following HTTP operations
+
+    * GET
+    * POST
+====
+
+
 
 
 
@@ -3893,7 +4157,7 @@ Springer LNCS is widely used in technical and computer science journals and othe
 
 [n] Journal: Author Surname, A.: Title. Publication Title. Volume number, Issue number, Pages Used (Year Published)
 
-[n] Web: Author Surname, A.: Title, link:++http://Website-Url++[]
+[n] Web: Author Surname, A.: Title, http://Website-Url
 
 ===============================================
 

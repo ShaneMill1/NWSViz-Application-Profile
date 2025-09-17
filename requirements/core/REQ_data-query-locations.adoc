@@ -16,7 +16,6 @@ part:: The *Locations* query _SHALL_ support the following HTTP methods:
         * POST
 
 
-====
 part:: The *Locations* query _SHALL_ provide a listing of the available locations in a collection that conforms to GeoJSON and contains the properties contained in this example:
 
 [source,JSON]
@@ -349,3 +348,4 @@ part:: The *Locations* query _SHALL_ provide a listing of the available location
    ]
 }
 ....
+====

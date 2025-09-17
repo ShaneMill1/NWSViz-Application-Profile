@@ -6,23 +6,30 @@ identifier:: /conf/nwsviz-application/extent
 target:: /req/nwsviz-application/extent
 test-purpose:: Verify that NWSViz profile Collection Extent is correctly defined in the Collection response. 
 test-method:: 
-step:: Verfiy NWSViz profile Collection Spatial extent Coordinate Reference System is defined as:
+step:: Verify that the collection contains a spatial extent and contain an additional attribute named "locations" containing the a list of the available locations within the collection.
+[source,JSON]
+----
+{
+   "spatial":{
+      "bbox":[
+         -180,
+         -90,
+         180,
+         90
+      ],
+      "locations":[
+         "CO",
+         "AK",
+         "HI"
+      ]
+   }
+}
+----
 
-    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
-
-step:: Verfiy NWSViz profile Collection Spatial extent bounds are defined as  [-180,-90,180,90]
-
-step:: Verfiy NWSViz profile Collection Temporal extent Temporal Reference System is defined as:
-
-    * TIMECRS["DateTime",TDATUM["Gregorian Calendar"],CS[temporal,1],AXIS["Time (T)",future],TIMEUNIT["day",86400]]
-
-step:: Verfiy NWSViz profile Collection Vertical extent Vertical Reference System is defined as:
-
-    * PARAMETRICCRS["WMO standard atmosphere layer 0",PDATUM["Mean Sea Level",ANCHOR["101325 Pa at 15°C"]],CS[parametric,1],AXIS["pressure (Pa)",down],PARAMETRICUNIT["Pascal",100.0]]
-
-step:: Verfiy NWSViz profile Collection Vertical extent has the follwoing values defined:
-
-    * "1000","925","850","700","600","500","400","300","250","200","150","100","50"
+part:: Verify that the Profile contains a temporal extent containing an interval and values. 
+part:: Verify that the Profile contains an attribute named instances which contains a list of available instances for the collection.
+part:: Verify that the Profile contains a custom query dimension with the name "ensemble" containing values and ids.
+part:: Verify that the Profile contains a vertical extent if applicable
 
 
 ====

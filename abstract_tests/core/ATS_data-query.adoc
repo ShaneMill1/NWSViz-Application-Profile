@@ -10,7 +10,7 @@ step:: Verify that the Collection response includes definitions for the followin
 
     * Position
     * Cube
-    * Instances
     * Locations
+    * Instances
 
 ====

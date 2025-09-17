@@ -21,4 +21,11 @@ step:: Verify that NWSViz profile Collection *Position* requirement supports the
     * GET
     * POST
 
+step:: Verify that NWSViz profile Collection *Position* requirement supports the following custom query dimension
+
+[source]
+....
+&ij=i0,j0,i1,j1
+....
+
 ====

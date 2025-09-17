@@ -18,10 +18,11 @@ part:: The *Locations* query _SHALL_ support the following HTTP methods:
         * POST
 
 
-====
 part:: The *Locations* query _SHALL_ support a custom query parameter called "ij" where the argument represents index values of the rectangular query.
 
 [source]
 ....
 &ij=i0,j0,i1,j1
 ....
+
+====

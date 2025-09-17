@@ -7,8 +7,14 @@ identifier:: /conf/nwsviz-application/collectionid
 target:: /req/nwsviz-application/collectionid
 test-purpose:: Validate that a collectionid requirement is correctly defined.
 test-method:: 
-step:: Verify that collection id string against the Regular expression ^[a-zA-Z]\+\_[a-zA-Z]+_[a-zA-Z]+$
-step:: Verify that the collection id string contains two underscores.
-step:: Verify that the string before the first underscore in the collection id is the expected NWP model identifier.
-step:: Verify that the string after the last underscore in the collection id is a valid http://codes.wmo.int/wis/topic-hierarchy/centre-id[WMO Centre id].
+step:: Verify that collectionids match the following:
+
+|====================
+| **id** | **description** 
+| HREF | High Resolution Ensemble Forecast 
+| NBM  | National Blend of Models 
+| LREF | Long Range Ensemble Forecast 
+| LREF_TLE | Long Range Ensemble Forecast Tile-Lagged Ensemble 
+| MRMS | Multi-Radar/Multi-Sensor Radar Products 
+|====================
 ====
