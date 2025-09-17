@@ -1,0 +1,19 @@
+[[req_nwsviz-application_collectionid]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/collectionid
+statement::  A Collection id should identify the source and type of NWP model
+part:: The Collection Ids _SHALL_ contain the following attributes
+
+|====================
+| **id** | **title** | **description** 
+| HREF | HREF | High Resolution Ensemble Forecast 
+| NBM | NBM | National Blend of Models 
+| LREF | LREF | Long Range Ensemble Forecast 
+| LREF_TLE | LREF_TLE | Long Range Ensemble Forecast Tile-Lagged Ensemble 
+| MRMS | MRMS | Multi-Radar/Multi-Sensor Radar Products 
+|====================
+
+====

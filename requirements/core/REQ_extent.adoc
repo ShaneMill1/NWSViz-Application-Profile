@@ -1,0 +1,37 @@
+[[req_nwsviz-application_extent]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/extent
+statement:: The  Collection  _SHALL_ have minimum spatial bounds 
+
+part:: The Profile _SHALL_ have a spatial extent and contain an additional attribute named "locations" containing the a list of the available locations within the collection. For example:
+
+[source,JSON]
+----
+
+{
+   "spatial":{
+      "bbox":[
+         -180,
+         -90,
+         180,
+         90
+      ],
+      "locations":[
+         "CO",
+         "AK",
+         "HI"
+      ]
+   }
+}
+
+----
+
+part:: The Profile _SHALL_ have a temporal extent containing an interval and values. 
+part:: The Profile _SHALL_ contain an attribute named instances which contains a list of available instances for the collection.
+part:: The Profiles _SHALL_ contain a custom query dimension with the name "ensemble" containing values and ids.
+part:: The  Profile _SHOULD_ have a vertical extent if applicable
+====
+

@@ -1,0 +1,56 @@
+[[req_nwsviz-application_status-codes]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/status-codes
+statement:: The Vertical extent demo Collection profile _SHALL_ support the following HTTP status codes.
+part:: The message descriptions _SHALL_ be as follows:
+
+!===
+|Status code |Description
+
+| 200  |A successful request.
+
+| 204  |A successful request, but the resource has no data resulting from the request.  No additional content or message body is provided.
+
+| 304  |An <<web-caching,entity tag>> was provided in the request and the resource has not been changed since the previous request.
+
+| 400  |The server cannot or will not process the request due to an apparent client error. For example, a query parameter had an incorrect value.
+
+| 404  |The requested resource does not exist on the server. For example, a path parameter had an incorrect value.
+
+| 405  |The request method is not supported. For example, a POST request was submitted, but the resource only supports GET requests.
+
+| 413  |Request entity too large. For example, the query would involve returning more data than the server is capable of processing, the implementation should return a message explaining the query limits imposed by the server implementation.
+
+| 500  |An internal error occurred in the server.
+!===
+====
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/msg-bodies
+statement:: The Vertical extent demo Collection profile _SHALL_ support the following HTTP response body.
+part:: The Vertical extent demo Collection _SHALL_ use the following JSON schema for error response bodies (HTTP Status Codes 400 and above) 
+
+[source,JSON]
+----
+{
+    "type": "object",
+    "required": [
+        "code"
+    ],
+    "properties": {
+        "code": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        }
+    }
+}
+----
+
+====

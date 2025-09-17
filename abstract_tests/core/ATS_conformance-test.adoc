@@ -1,0 +1,27 @@
+[[ats_conformance-test]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/vertical-extent-demo/conformance-test
+target:: /req/vertical-extent-demo/conformance-test
+test-purpose:: Validate that each requirement has a corresponding conformance class
+test-method:: 
+step:: Verify that the following conformance classes are advertised:
+
+[source,JSON]
+----
+
+    [
+        "http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core",
+        "http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/collections",
+        "http://www.opengis.net/spec/ogcapi-edr-1/1.2/conf/core",
+        "http://www.opengis.net/spec/ogcapi-edr-1/1.2/conf/oas30",
+        "http://www.opengis.net/spec/ogcapi-edr-1/1.2/conf/html",
+        "http://www.opengis.net/spec/ogcapi-edr-1/1.2/conf/geojson",
+        "http://www.opengis.net/spec/ogcapi-edr-1/1.2/conf/coveragejson",
+        "http://www.opengis.net/spec/ogcapi-edr-1/1.2/conf/wkt",
+        "http://www.opengis.net/spec/ogcapi-edr-3/1.0/conf/core",
+        "http://www.example.org/profile/conf/verticalextentdemo"
+    ]
+----
+====

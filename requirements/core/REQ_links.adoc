@@ -1,0 +1,28 @@
+[[req_nwsviz-application_links]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/links
+statement:: A Vertical extent demo Collection _SHALL_  define links as follows:
+part:: All link objects _SHALL_ have *href*, *rel* and *type* attributes 
+part:: The following links _SHALL_ be included in the Collection response
+
+[source,JSON]
+----
+
+    {
+        "href": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "rel": "licence",
+        "type": "text/html"
+    },
+    {
+        "href": "https://library.wmo.int/viewer/35625?medianame=306_v.I.2_2019_edition_Updated_2022_en_#page=31&viewer=picture",
+        "rel": "related",
+        "title": "FM 92-XIV GRIB specification",
+        "type": "text/html"
+    }
+
+----
+
+====

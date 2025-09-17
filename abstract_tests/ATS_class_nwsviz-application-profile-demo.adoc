@@ -1,0 +1,25 @@
+[[ats_class-vertical-extent-demo]]
+[conformance_class]
+.Conformance Class 'Core'
+====
+[%metadata]
+identifier:: http://www.example.org/1.0/conf-class-vertical-extent-demo
+target:: http://www.example.org/1.0/req/req-class-vertical-extent-demo
+abstract-test:: /conf/vertical-extent-demo/root
+abstract-test:: /conf/vertical-extent-demo/edr-conformant
+abstract-test:: /conf/vertical-extent-demo/parameter-names
+abstract-test:: /conf/vertical-extent-demo/collectionid
+abstract-test:: /conf/vertical-extent-demo/extent
+abstract-test:: /conf/vertical-extent-demo/output-format
+abstract-test:: /conf/vertical-extent-demo/status-codes
+abstract-test:: /conf/vertical-extent-demo/msg-bodies
+abstract-test:: /conf/vertical-extent-demo/links
+abstract-test:: /conf/vertical-extent-demo/data-query
+abstract-test:: /conf/vertical-extent-demo/data-query-area
+abstract-test:: /conf/vertical-extent-demo/data-query-corridor
+abstract-test:: /conf/vertical-extent-demo/data-query-cube
+abstract-test:: /conf/vertical-extent-demo/data-query-instances
+abstract-test:: /conf/vertical-extent-demo/data-query-position
+abstract-test:: /conf/vertical-extent-demo/data-query-radius
+====
+

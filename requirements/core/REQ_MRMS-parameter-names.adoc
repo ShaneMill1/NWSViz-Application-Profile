@@ -1,0 +1,110 @@
+[[req_nwsviz-application_MRMS-parameter-names]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/MRMS-parameter-names
+statement:: The Vertical extent demo Collection _SHALL_ have a defined list of parameter_names
+part:: A Pressure level Collection _SHALL_ have the following parameter_names definition
+
+[source,JSON]
+----
+
+{
+   "parameter-names":{
+      "EchoTop_18":{
+         "Type":"Parameter",
+         "id":"EchoTop_18",
+         "description":"EchoTop_18"
+      },
+      "EchoTop_30":{
+         "Type":"Parameter",
+         "id":"EchoTop_30",
+         "description":"EchoTop_30"
+      },
+      "EchoTop_50":{
+         "Type":"Parameter",
+         "id":"EchoTop_50",
+         "description":"EchoTop_50"
+      },
+      "EchoTop_60":{
+         "Type":"Parameter",
+         "id":"EchoTop_60",
+         "description":"EchoTop_60"
+      },
+      "H50Above0C":{
+         "Type":"Parameter",
+         "id":"H50Above0C",
+         "description":"H50Above0C"
+      },
+      "H50AboveM20C":{
+         "Type":"Parameter",
+         "id":"H50AboveM20C",
+         "description":"H50AboveM20C"
+      },
+      "H60Above0C":{
+         "Type":"Parameter",
+         "id":"H60Above0C",
+         "description":"H60Above0C"
+      },
+      "H60AboveM20C":{
+         "Type":"Parameter",
+         "id":"H60AboveM20C",
+         "description":"H60AboveM20C"
+      },
+      "LightningProbabilityNext30minGrid":{
+         "Type":"Parameter",
+         "id":"LightningProbabilityNext30minGrid",
+         "description":"LightningProbabilityNext30minGrid"
+      },
+      "POSH":{
+         "Type":"Parameter",
+         "id":"POSH",
+         "description":"POSH"
+      },
+      "PrecipFlag":{
+         "Type":"Parameter",
+         "id":"PrecipFlag",
+         "description":"PrecipFlag"
+      },
+      "RadarOnly_QPE_01H":{
+         "Type":"Parameter",
+         "id":"RadarOnly_QPE_01H",
+         "description":"RadarOnly_QPE_01H"
+      },
+      "ReflectivityAtLowestAltitude5km":{
+         "Type":"Parameter",
+         "id":"ReflectivityAtLowestAltitude5km",
+         "description":"ReflectivityAtLowestAltitude5km"
+      },
+      "Reflectivity_-10C":{
+         "Type":"Parameter",
+         "id":"Reflectivity_-10C",
+         "description":"Reflectivity_-10C"
+      },
+      "Reflectivity_-20C":{
+         "Type":"Parameter",
+         "id":"Reflectivity_-20C",
+         "description":"Reflectivity_-20C"
+      },
+      "Reflectivity_0C":{
+         "Type":"Parameter",
+         "id":"Reflectivity_0C",
+         "description":"Reflectivity_0C"
+      },
+      "VII":{
+         "Type":"Parameter",
+         "id":"VII",
+         "description":"VII"
+      },
+      "VIL":{
+         "Type":"Parameter",
+         "id":"VIL",
+         "description":"VIL"
+      }
+   }
+}
+
+----
+
+====

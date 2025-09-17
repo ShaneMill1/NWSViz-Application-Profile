@@ -1,0 +1,13 @@
+[obligation=informative]
+[[context-section]]
+
+== Context
+
+=== Standardization Goal
+
+The goal of this profile is to ensure interoperabilty between Vertical extent demo data implementations of the OGC API-Environmental Data Retrieval Standard (OGC API-EDR).
+
+The OGC API-EDR Standard does not try to address every possible application domain. Rather, it provides a foundation which can be tailored for a specific domain. The result of this tailoring is a domain specific "profile" of the OGC API-EDR Standard.
+
+
+

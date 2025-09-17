@@ -1,0 +1,29 @@
+[[ats_links]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/vertical-extent-demo/links
+target:: /req/vertical-extent-demo/links
+test-purpose:: Verify that Vertical extent demo Collection Links section contains the required links
+test-method::
+step:: Verify that all links in the Vertical extent demo Collection have *href*, *rel* and *type* attributes 
+step:: Verify that Vertical extent demo Collection Links section contains the required links:
+
+[source,JSON]
+----
+
+    {
+        "href": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "rel": "licence",
+        "type": "text/html"
+    },
+    {
+        "href": "https://library.wmo.int/viewer/35625?medianame=306_v.I.2_2019_edition_Updated_2022_en_#page=31&viewer=picture",
+        "rel": "related",
+        "title": "FM 92-XIV GRIB specification",
+        "type": "text/html"
+    }
+
+----
+
+====

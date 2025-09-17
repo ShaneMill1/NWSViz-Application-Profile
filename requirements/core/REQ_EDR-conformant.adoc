@@ -1,0 +1,9 @@
+[[req_class_nwsviz-application_edr-conformant]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/edr-conformant
+statement:: The service _SHALL_ be compliant with OGC API-Environmental Data Retrieval core v1.2.
+
+====

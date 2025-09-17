@@ -1,0 +1,15 @@
+[[req_nwsviz-application_LREF-parameter-names]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/LREF-parameter-names
+statement:: The LREF Collection _SHALL_ have a defined list of parameter_names
+part:: A LREF Collection _SHALL_ have the following parameter_names definition
+
+[source,JSON]
+----
+
+----
+
+====

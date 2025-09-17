@@ -1,0 +1,26 @@
+[[req_nwsviz-application_data_root]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application_data/root
+statement:: The landing page _SHALL_ have the following infomation
+
+part:: The *Title* property value _SHALL_ be "OGC API - Environmental Data Retrieval for Dynamic Ensemble Scenarios for IDSS"
+part:: The *Description* property value _SHALL_ be "Implementation of Pygeoapi for OGC API - EDR to support DESI"
+part:: The *Links* property _SHALL_ define the links that SHALL be included in the Root response and _SHALL_ be populated with href and rel properties.
+part:: The *provider* property _SHALL_ be included in the Root response and _SHALL_ be populated with name and url properties.
+part:: The *contact* property _SHALL_ be included in the Root response and _SHALL_ be populated with an email property  
+part:: The *Links* property _SHALL_ include the following link to the OpenAPI definition of the profile:
+
+[source,JSON]
+----
+    {
+        "title": "OpenAPI definition of NWSViz Application profile",
+        "href": "https://www.example.org/edr/profile/nwsviz/openapi.json",
+        "rel": "profile",
+        "type": "application/json"
+    }
+----
+
+====

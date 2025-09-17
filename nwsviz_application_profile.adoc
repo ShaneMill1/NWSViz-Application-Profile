@@ -1,0 +1,60 @@
+= OGC API-Environmental Data Retrieval v1.2 part 3 - NWS Viz application profile
+:doctype: best-practice
+:encoding: utf-8
+:lang: en
+:status: draft
+:committee: technical
+:draft: 3.0
+:external-id: http://www.opengis.net/doc/spec/ogcapi-edr-3/1.0
+//:docnumber: 25-014
+:received-date: 
+:issued-date: 
+:published-date: 
+:fullname: 
+:docsubtype: Profile
+:keywords: ogcdoc, OGC document, API, openapi, html, profile
+:submitting-organizations: 
+:mn-document-class: ogc
+:mn-output-extensions: xml,html,doc,pdf
+:local-cache-only:
+:data-uri-image:
+:html-uri: ./nwsviz_application_profile_profile.html
+:pdf-uri: ./nwsviz_application_profile_profile.pdf
+:xml-uri: ./nwsviz_application_profile_profile.xml
+:doc-uri: ./nwsviz_application_profile_profile.doc
+:edition: 1.0
+
+////
+Make sure to complete each included document
+////
+include::sections/clause_0_front_material.adoc[]
+
+include::sections/clause_1_scope.adoc[]
+
+include::sections/clause_2_conformance.adoc[]
+
+include::sections/clause_3_references.adoc[]
+
+include::sections/clause_4_terms_and_definitions.adoc[]
+
+include::sections/clause_5_conventions.adoc[]
+
+include::sections/clause_6_context.adoc[]
+
+include::sections/clause_7_nwsviz-application-profile.adoc[]
+
+
+////
+add or remove annexes after "A" as necessary
+////
+include::sections/annex-a.adoc[]
+
+
+
+////
+Revision History should be the last annex before the Bibliography
+Bibliography should be the last annex
+////
+include::sections/annex-history.adoc[]
+
+include::sections/annex-bibliography.adoc[]

@@ -1,0 +1,17 @@
+[[ats_output-format]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/vertical-extent-demo/output-format
+target:: /req/vertical-extent-demo/output-format
+test-purpose:: Verify that Vertical extent demo Collection queries format data responses correctly.
+test-method:: 
+step:: Request data with the output format label and verify the response is correct
+
+step:: Verify a output format of *GRIB2* creates a file that has the following structure https://library.wmo.int/viewer/35625?medianame=306_v.I.2_2019_edition_Updated_2022_en_#page=31&viewer=picture
+part:: Verify a output format of *GeoJSON* is compatible with the JSON schema defined in the following repository https://github.com/opengeospatial/OGC-feat-geo-json
+part:: Verify a output format of *CoverageJSON* is compatible with the JSON schema defined by https://docs.ogc.org/cs/21-069r2/21-069r2.html
+part:: Verify a output format of *NetCDF4* creates a file that has the structure described by https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html
+part:: Verify a output format of *CSV* generates a CSV output file with a metadata file which is described by https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/
+
+====

@@ -1,0 +1,27 @@
+[[req_class_nwsviz-application]]
+[requirements_class]
+.Requirements Class 'NWSViz Application'
+====
+[%metadata]
+identifier:: http://www.example.org/1.0/req/req-class-nwsviz-application
+target-type:: NWSViz Application Profile Standard
+requirement:: /req/nwsviz-application_data/root
+requirement:: /req/nwsviz-application/edr-conformant
+requirement:: /req/nwsviz-application/parameter-names
+requirement:: /req/nwsviz-application/collectionid
+requirement:: /req/nwsviz-application/extent
+requirement:: /req/nwsviz-application/data-query
+requirement:: /req/nwsviz-application/output-format
+requirement:: /req/nwsviz-application/data-query-position
+requirement:: /req/nwsviz-application/data-query-radius
+requirement:: /req/nwsviz-application/data-query-area
+requirement:: /req/nwsviz-application/data-query-corridor
+requirement:: /req/nwsviz-application/data-query-cube
+requirement:: /req/nwsviz-application-data/data-query-instances
+requirement:: /req/nwsviz-application/status-codes
+requirement:: /req/nwsviz-application/msg-bodies
+requirement:: /req/nwsviz-application/links
+
+====
+
+

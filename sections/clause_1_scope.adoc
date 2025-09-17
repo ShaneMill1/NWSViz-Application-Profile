@@ -1,0 +1,5 @@
+== Scope
+[NOTE]
+====
+This document defines the Vertical extent demo Profile of the OGC API-EDR Part 1: Core Standard.
+====
