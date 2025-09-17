@@ -6,10 +6,8 @@
 identifier:: /req/nwsviz-application/HREF-parameter-names
 statement:: The HREF Collection _SHALL_ have a defined list of parameter_names
 part:: A HREF Collection _SHALL_ have the following parameter_names definition
-
 [source,JSON]
 ----
-
 {
    "parameter-names":{
       "apcp_1h":{
@@ -584,7 +582,6 @@ part:: A HREF Collection _SHALL_ have the following parameter_names definition
       }
    }
 }
-
 ----
 
 ====

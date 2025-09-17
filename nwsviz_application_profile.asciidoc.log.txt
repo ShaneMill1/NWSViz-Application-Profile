@@ -498,10 +498,8 @@ The Collection metadata includes an Parameter_names property which defines the d
 identifier:: /req/nwsviz-application/HREF-parameter-names
 statement:: The HREF Collection _SHALL_ have a defined list of parameter_names
 part:: A HREF Collection _SHALL_ have the following parameter_names definition
-
 [source,JSON]
 ----
-
 {
    "parameter-names":{
       "apcp_1h":{
@@ -1076,7 +1074,6 @@ part:: A HREF Collection _SHALL_ have the following parameter_names definition
       }
    }
 }
-
 ----
 
 ====
@@ -1088,10 +1085,8 @@ part:: A HREF Collection _SHALL_ have the following parameter_names definition
 identifier:: /req/nwsviz-application/NBM-parameter-names
 statement:: The NBM Collection _SHALL_ have a defined list of parameter_names
 part:: A NBM Collection _SHALL_ have the following parameter_names definition
-
 [source,JSON]
 ----
-
 {
    "parameter-names":{
       "10si_heightAboveGround":{
@@ -2526,9 +2521,7 @@ part:: A NBM Collection _SHALL_ have the following parameter_names definition
       }
    }
 }
-
 ----
-
 ====
 [[req_nwsviz-application_LREF-parameter-names]]
 
@@ -2538,12 +2531,10 @@ part:: A NBM Collection _SHALL_ have the following parameter_names definition
 identifier:: /req/nwsviz-application/LREF-parameter-names
 statement:: The LREF Collection _SHALL_ have a defined list of parameter_names
 part:: A LREF Collection _SHALL_ have the following parameter_names definition
-
 [source,JSON]
 ----
 
 ----
-
 ====
 [[req_nwsviz-application_LREF_TLE-parameter-names]]
 
@@ -2553,12 +2544,10 @@ part:: A LREF Collection _SHALL_ have the following parameter_names definition
 identifier:: /req/nwsviz-application/LREF-TLE-parameter-names
 statement:: The LREF Collection _SHALL_ have a defined list of parameter_names
 part:: A LREF Collection _SHALL_ have the following parameter_names definition
-
 [source,JSON]
 ----
 
 ----
-
 ====
 [[req_nwsviz-application_MRMS-parameter-names]]
 
@@ -2568,10 +2557,8 @@ part:: A LREF Collection _SHALL_ have the following parameter_names definition
 identifier:: /req/nwsviz-application/MRMS-parameter-names
 statement:: The MRMS Collection _SHALL_ have a defined list of parameter_names
 part:: A MRMS Collection _SHALL_ have the following parameter_names definition
-
 [source,JSON]
 ----
-
 {
    "parameter-names":{
       "EchoTop_18":{
@@ -2666,9 +2653,7 @@ part:: A MRMS Collection _SHALL_ have the following parameter_names definition
       }
    }
 }
-
 ----
-
 ====
 
 === Query Resources

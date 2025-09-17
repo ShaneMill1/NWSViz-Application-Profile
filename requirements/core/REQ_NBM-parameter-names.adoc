@@ -6,10 +6,8 @@
 identifier:: /req/nwsviz-application/NBM-parameter-names
 statement:: The NBM Collection _SHALL_ have a defined list of parameter_names
 part:: A NBM Collection _SHALL_ have the following parameter_names definition
-
 [source,JSON]
 ----
-
 {
    "parameter-names":{
       "10si_heightAboveGround":{
@@ -1444,7 +1442,5 @@ part:: A NBM Collection _SHALL_ have the following parameter_names definition
       }
    }
 }
-
 ----
-
 ====

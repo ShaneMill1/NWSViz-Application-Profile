@@ -6,10 +6,8 @@
 identifier:: /req/nwsviz-application/MRMS-parameter-names
 statement:: The MRMS Collection _SHALL_ have a defined list of parameter_names
 part:: A MRMS Collection _SHALL_ have the following parameter_names definition
-
 [source,JSON]
 ----
-
 {
    "parameter-names":{
       "EchoTop_18":{
@@ -104,7 +102,5 @@ part:: A MRMS Collection _SHALL_ have the following parameter_names definition
       }
    }
 }
-
 ----
-
 ====
