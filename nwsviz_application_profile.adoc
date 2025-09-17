@@ -10,7 +10,7 @@
 :received-date: 
 :issued-date: 
 :published-date: 
-:fullname: 
+:fullname: Shane Mill (NOAA)
 :docsubtype: Profile
 :keywords: ogcdoc, OGC document, API, openapi, html, profile
 :submitting-organizations: 
