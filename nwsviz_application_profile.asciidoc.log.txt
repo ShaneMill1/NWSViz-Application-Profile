@@ -482,7 +482,6 @@ part:: The Profile _SHALL_ have a spatial extent and contain an additional attri
 
 [source,JSON]
 ----
-
 {
    "spatial":{
       "bbox":[
@@ -498,7 +497,6 @@ part:: The Profile _SHALL_ have a spatial extent and contain an additional attri
       ]
    }
 }
-
 ----
 
 part:: The Profile _SHALL_ have a temporal extent containing an interval and values.
