@@ -1,0 +1,351 @@
+[[req_nwsviz-application_data-query-locations]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query-locations
+statement:: All Collections in the Service _SHALL_ provide support for *Locations* queries 
+part:: The *Locations* query _SHALL_ support the following output formats:
+
+        * GeoJSON
+
+part:: The default output format for the *Locations* query _SHALL_ be *GeoJSON*
+part:: The *Locations* query _SHALL_ support the following HTTP methods:
+
+        * GET
+        * POST
+
+
+====
+part:: The *Locations* query _SHALL_ provide a listing of the available locations in a collection that conforms to GeoJSON and contains the properties contained in this example:
+
+[source,JSON]
+....
+{
+   "type":"FeatureCollection",
+   "features":[
+      {
+         "type":"Feature",
+         "geometry":{
+            "type":"Polygon",
+            "coordinates":[
+               [
+                  [
+                     -60.154430455510095,
+                     19.80394886054594
+                  ],
+                  [
+                     -60.154430455510095,
+                     49.81080204452752
+                  ],
+                  [
+                     -125.13089699982356,
+                     49.81080204452752
+                  ],
+                  [
+                     -125.13089699982356,
+                     19.80394886054594
+                  ],
+                  [
+                     -60.154430455510095,
+                     19.80394886054594
+                  ]
+               ]
+            ]
+         },
+         "properties":{
+            "instance":"2025-05-21T12:00:00",
+            "name":"CO",
+            "name_alt":"http://edr-api-desi-c.mdl.nws.noaa.gov/collections/HREF/instances/2025-05-21T12:00:00/locations/CO?f=json",
+            "edrqueryendpoint":"http://edr-api-desi-c.mdl.nws.noaa.gov/collections/HREF/instances/2025-05-21T12:00:00/locations/CO?f=json",
+            "parameter-names":[
+               "apcp_1h",
+               "apcp_2h",
+               "apcp_3h",
+               "apcp_accum",
+               "apcp_accum-lpmm",
+               "apcp_accum_24h",
+               "apcp_accum_24h-lpmm",
+               "apcp_accum_6h",
+               "apcp_accum_6h-lpmm",
+               "cape",
+               "ceil",
+               "ceilingAGL",
+               "cfrzr",
+               "cicep",
+               "cin",
+               "colmd",
+               "crain",
+               "csnow",
+               "d2m",
+               "dpt_isobaric",
+               "dswrf",
+               "fram1",
+               "fram24",
+               "fram24-lpmm",
+               "fram6",
+               "fram6-lpmm",
+               "framtotal",
+               "front700",
+               "front850",
+               "frzr1",
+               "frzr24",
+               "frzr24-lpmm",
+               "frzr6",
+               "frzr6-lpmm",
+               "frzrtotal",
+               "gh1000-gh500",
+               "gh700-gh500_lr",
+               "gh_isobaric",
+               "gust",
+               "hcc",
+               "hlcy_1000",
+               "hlcy_3000",
+               "inventory",
+               "large-fire-potential",
+               "lcc",
+               "lcl",
+               "ltng",
+               "massden",
+               "mcc",
+               "mnuphl_3000",
+               "mnuphl_5000",
+               "mxuphl_3000",
+               "mxuphl_5000",
+               "orog",
+               "pfrzr",
+               "picep",
+               "prain",
+               "prmsl",
+               "psnow",
+               "pwat",
+               "r2",
+               "r_isobaric",
+               "refc",
+               "refc-lpmm",
+               "retop",
+               "sdwe_1h",
+               "sdwe_2h",
+               "sdwe_3h",
+               "sdwe_accum",
+               "sdwe_accum-lpmm",
+               "sdwe_accum_1h",
+               "sdwe_accum_24h",
+               "sdwe_accum_24h-lpmm",
+               "sdwe_accum_6h",
+               "sdwe_accum_6h-lpmm",
+               "sp",
+               "stp",
+               "t2m",
+               "t_isobaric",
+               "ta2",
+               "tadv700",
+               "tadv850",
+               "tcdc",
+               "thte2",
+               "thte850",
+               "thte925",
+               "tw2",
+               "u10",
+               "u_isobaric",
+               "v10",
+               "v_isobaric",
+               "vis",
+               "vort500",
+               "vucsh",
+               "vvcsh",
+               "w_isobaric",
+               "wd_isobaric",
+               "wd_isobaric-mean",
+               "wd_isobaric-std",
+               "wdir",
+               "wdir-mean",
+               "wdir-std",
+               "ws_isobaric",
+               "wshr0-6km",
+               "wshrd0-6km",
+               "wshrd0-6km-mean",
+               "wshrd0-6km-std",
+               "wspd"
+            ],
+            "datetimes":[
+               "2025-05-21T13:00:00",
+               "2025-05-21T14:00:00",
+               "2025-05-21T15:00:00",
+               "2025-05-21T16:00:00",
+               "2025-05-21T17:00:00",
+               "2025-05-21T18:00:00",
+               "2025-05-21T19:00:00",
+               "2025-05-21T20:00:00",
+               "2025-05-21T21:00:00",
+               "2025-05-21T22:00:00",
+               "2025-05-21T23:00:00",
+               "2025-05-22T00:00:00",
+               "2025-05-22T01:00:00",
+               "2025-05-22T02:00:00",
+               "2025-05-22T03:00:00",
+               "2025-05-22T04:00:00",
+               "2025-05-22T05:00:00",
+               "2025-05-22T06:00:00",
+               "2025-05-22T07:00:00",
+               "2025-05-22T08:00:00",
+               "2025-05-22T09:00:00",
+               "2025-05-22T10:00:00",
+               "2025-05-22T11:00:00",
+               "2025-05-22T12:00:00",
+               "2025-05-22T13:00:00",
+               "2025-05-22T14:00:00",
+               "2025-05-22T15:00:00",
+               "2025-05-22T16:00:00",
+               "2025-05-22T17:00:00",
+               "2025-05-22T18:00:00",
+               "2025-05-22T19:00:00",
+               "2025-05-22T20:00:00",
+               "2025-05-22T21:00:00",
+               "2025-05-22T22:00:00",
+               "2025-05-22T23:00:00",
+               "2025-05-23T00:00:00",
+               "2025-05-23T01:00:00",
+               "2025-05-23T02:00:00",
+               "2025-05-23T03:00:00",
+               "2025-05-23T04:00:00",
+               "2025-05-23T05:00:00",
+               "2025-05-23T06:00:00",
+               "2025-05-23T07:00:00",
+               "2025-05-23T08:00:00",
+               "2025-05-23T09:00:00",
+               "2025-05-23T10:00:00",
+               "2025-05-23T11:00:00",
+               "2025-05-23T12:00:00"
+            ],
+            "desi":{
+               "comment":"Complete files (if true) are needed for model to show up on front end display.  Format 2022090912/HREF.complete",
+               "name":"HREF",
+               "groupname":"HREF",
+               "completeFile":true,
+               "zarr_config":{
+                  "data_by_field":false,
+                  "time_key":"valid_time",
+                  "lat_key":"latitude",
+                  "lon_key":"longitude",
+                  "ens_key":"ensemble",
+                  "ens_key_text":"names",
+                  "x_key":"x",
+                  "y_key":"y",
+                  "z_key":"isobaricInhPa"
+               },
+               "x4dDomain":{
+                  "x4dGrid":[
+                     40.5,
+                     -100,
+                     388,
+                     270
+                  ],
+                  "maxDomainPoints":105000
+               },
+               "tiling":{
+                  "//":"if resolution is 5km, 1 = 5km, 2 = 10km, 4 = 20km",
+                  "y":150,
+                  "x":150,
+                  "targetNx":200,
+                  "targetNy":150,
+                  "resLevels":[
+                     1,
+                     2,
+                     4
+                  ]
+               },
+               "region":{
+                  "name":"CONUS",
+                  "foldername":"HREF"
+               },
+               "projDict":{
+                  "nx":1160,
+                  "ny":678,
+                  "dx":5079,
+                  "dy":5079,
+                  "units":"m",
+                  "first_lat":19.80394886054594,
+                  "first_lon":-125.13089699982356,
+                  "proj":"+proj=lcc +a=6371200.0 +b=6371200.0 +lon_0=265.0 +lat_0=25.0 +lat_1=25.0 +lat_2=25.0"
+               },
+               "clustering":false,
+               "members":{
+                  "HRW_ARW -12h":[
+                     "HRW_ARW -12h"
+                  ],
+                  "HRW_ARW":[
+                     "HRW_ARW"
+                  ],
+                  "HRW FV3 -12h":[
+                     "HRW FV3 -12h"
+                  ],
+                  "HRW FV3":[
+                     "HRW FV3"
+                  ],
+                  "HRW NSSL -12h":[
+                     "HRW NSSL -12h"
+                  ],
+                  "HRW NSSL":[
+                     "HRW NSSL"
+                  ],
+                  "NAM CONUS Nest -12h":[
+                     "NAM CONUS Nest -12h"
+                  ],
+                  "NAM CONUS Nest":[
+                     "NAM CONUS Nest"
+                  ],
+                  "HRRR -6h":[
+                     "HRRR -6h"
+                  ],
+                  "HRRR":[
+                     "HRRR"
+                  ]
+               },
+               "membersShort":{
+                  "HRW_ARW -12h":[
+                     "ARW -12h"
+                  ],
+                  "HRW_ARW":[
+                     "ARW"
+                  ],
+                  "HRW FV3 -12h":[
+                     "FV3 -12h"
+                  ],
+                  "HRW FV3":[
+                     "FV3"
+                  ],
+                  "HRW NSSL -12h":[
+                     "NSSL -12h"
+                  ],
+                  "HRW NSSL":[
+                     "NSSL"
+                  ],
+                  "NAM CONUS Nest -12h":[
+                     "NAM N. -12h"
+                  ],
+                  "NAM CONUS Nest":[
+                     "NAM N."
+                  ],
+                  "HRRR -6h":[
+                     "HRRR -6h"
+                  ],
+                  "HRRR":[
+                     "HRRR"
+                  ]
+               },
+               "memberDepth":2,
+               "resolutionKM":5,
+               "lengthInHours":48
+            },
+            "bbox":[
+               -125.13089699982356,
+               19.80394886054594,
+               -60.154430455510095,
+               49.81080204452752
+            ]
+         }
+      }
+   ]
+}
+....

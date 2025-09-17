@@ -25,7 +25,7 @@ Attention is drawn to the possibility that some of the elements of this document
 [abstract]
 == Abstract
 
-The aim of the Vertical extent demo service profile is to provide a standard interface for accessing Vertical extent demo data based on OGC API-EDR standard.
+The aim of the NWSViz profile service profile is to provide a standard interface for accessing NWSViz profile data based on OGC API-EDR standard.
 
 
 

@@ -8,7 +8,8 @@ statement:: The collections _SHALL_ support a defined set of data queries.
 part:: The collections _SHALL_ support the following data queries:
  
     * Position
+    * Cube
     * Locations
-
+    * Instances
 
 ====

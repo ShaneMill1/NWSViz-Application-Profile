@@ -6,7 +6,7 @@ identifier:: /conf/vertical-extent-demo/root
 target:: /req/vertical-extent-demo_data/root
 test-purpose:: Validate that the profile defines the service landing page
 test-method:: 
-step:: Verify that the profile defines a *Title* for the service and the value is *"Vertical extent demo service"*
+step:: Verify that the profile defines a *Title* for the service and the value is *"NWSViz profile service"*
 step:: Verify that each link defined for the service has a *href* and *rel* attribute.
 step:: Verify that the  *Keywords* attribute has the following values:
 
@@ -24,7 +24,7 @@ step:: Verify that the *Links* property includes the following link to the OpenA
 [source,JSON]
 ----
     {
-        "title": "OpenAPI definition of Vertical extent demo profile",
+        "title": "OpenAPI definition of NWSViz profile profile",
         "href": "https://www.example.org/edr/profile/vextdemo/openapi.json",
         "rel": "profile",
         "type": "application/json"

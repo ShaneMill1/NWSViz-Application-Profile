@@ -4,9 +4,9 @@
 [%metadata]
 identifier:: /conf/vertical-extent-demo/parameter-names
 target:: /req/vertical-extent-demo/parameter-names
-test-purpose:: Verify that Vertical extent demo Collection has the correct parameters defined.
+test-purpose:: Verify that NWSViz profile Collection has the correct parameters defined.
 test-method::
-step:: Validate that the Vertical extent demo Collection has the following definition for *parameter_names*.
+step:: Validate that the NWSViz profile Collection has the following definition for *parameter_names*.
 
 [source,JSON]
 ----

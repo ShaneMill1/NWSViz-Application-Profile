@@ -1,8 +1,8 @@
 {
   "openapi": "3.1.1",
   "info": {
-    "title": "OGC API - EDR Vertical extent demo profile",
-    "description": "Example of OGC API - EDR profile for Vertical extent demo data",
+    "title": "OGC API - EDR NWSViz profile profile",
+    "description": "Example of OGC API - EDR profile for NWSViz profile data",
     "version": "0.1.0",
     "license": {
       "name": "OGC License",
@@ -12,23 +12,23 @@
   "tags": [
     {
       "name": "Capabilities",
-      "description": "Essential characteristics of EDR API for a Vertical extent demo service."
+      "description": "Essential characteristics of EDR API for a NWSViz profile service."
     },
     {
       "name": "Collection metadata",
-      "description": "Description of the information that must be available in a Vertical extent demo service."
+      "description": "Description of the information that must be available in a NWSViz profile service."
     },
     {
       "name": "Instance metadata",
-      "description": "Description of the information that must be available from instances of a\n a Vertical extent demo service."
+      "description": "Description of the information that must be available from instances of a\n a NWSViz profile service."
     },
     {
       "name": "Collection data queries",
-      "description": "Data queries that must be available in a Vertical extent demo service."
+      "description": "Data queries that must be available in a NWSViz profile service."
     },
     {
       "name": "Instance data queries",
-      "description": "Data queries that must be available in instances of the Vertical extent demo service."
+      "description": "Data queries that must be available in instances of the NWSViz profile service."
     }
   ],
   "paths": {
@@ -38,7 +38,7 @@
           "Capabilities"
         ],
         "summary": "landing page requirements for this profile",
-        "description": "A Vertical extent demo landing page must comply with this definition.",
+        "description": "A NWSViz profile landing page must comply with this definition.",
         "operationId": "getLandingPage",
         "parameters": [
           {

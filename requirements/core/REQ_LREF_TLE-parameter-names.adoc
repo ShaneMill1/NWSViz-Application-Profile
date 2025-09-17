@@ -4,8 +4,8 @@
 ====
 [%metadata]
 identifier:: /req/nwsviz-application/LREF-TLE-parameter-names
-statement:: The Vertical extent demo Collection _SHALL_ have a defined list of parameter_names
-part:: A Pressure level Collection _SHALL_ have the following parameter_names definition
+statement:: The LREF Collection _SHALL_ have a defined list of parameter_names
+part:: A LREF Collection _SHALL_ have the following parameter_names definition
 
 [source,JSON]
 ----

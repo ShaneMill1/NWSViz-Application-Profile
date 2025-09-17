@@ -4,7 +4,7 @@
 ====
 [%metadata]
 identifier:: /req/nwsviz-application/links
-statement:: A Vertical extent demo Collection _SHALL_  define links as follows:
+statement:: A NWSViz profile Collection _SHALL_  define links as follows:
 part:: All link objects _SHALL_ have *href*, *rel* and *type* attributes 
 part:: The following links _SHALL_ be included in the Collection response
 

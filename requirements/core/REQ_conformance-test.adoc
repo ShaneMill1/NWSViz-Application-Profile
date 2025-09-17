@@ -5,7 +5,7 @@
 [%metadata]
 identifier:: /req/service-profile/conformance-test
 
-part:: A service based on the Vertical extent demo profile _SHALL_ have the following conformance classes:
+part:: A service based on the NWSViz profile profile _SHALL_ have the following conformance classes:
 
 [source,JSON]
 ----

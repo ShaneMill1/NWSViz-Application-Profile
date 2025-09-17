@@ -1,0 +1,27 @@
+[[req_nwsviz-application_data-query-location]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query-location
+statement:: All Collections in the Service _SHALL_ provide support for *Locations* queries 
+part:: The *Locations* query _SHALL_ support the following output formats:
+
+        * CoverageJSON
+        * Zarr
+        * NetCDF
+
+part:: The default output format for the *Locations* query _SHALL_ be *CoverageJSON*
+part:: The *Locations* query _SHALL_ support the following HTTP methods:
+
+        * GET
+        * POST
+
+
+====
+part:: The *Locations* query _SHALL_ support a custom query parameter called "ij" where the argument represents index values of the rectangular query.
+
+[source]
+....
+&ij=i0,j0,i1,j1
+....

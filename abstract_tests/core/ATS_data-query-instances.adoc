@@ -4,8 +4,8 @@
 [%metadata]
 identifier:: /conf/vertical-extent-demo/data-query-instances
 target:: /req/vertical-extent-demo-data/data-query-instances
-test-purpose:: Verify that Vertical extent demo Collection *Instances* query is correctly defined in the Collection response.
+test-purpose:: Verify that NWSViz profile Collection *Instances* query is correctly defined in the Collection response.
 test-method:: 
-step:: Verify that Vertical extent demo Collection has a *Instances* data query defined.
+step:: Verify that NWSViz profile Collection has a *Instances* data query defined.
 step:: Verify the *Instances* ids str against the Regular expression ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}Z$
 ====

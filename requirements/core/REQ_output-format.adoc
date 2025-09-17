@@ -4,10 +4,9 @@
 ====
 [%metadata]
 identifier:: /req/nwsviz-application/output-format
-statement:: Vertical extent demo Collections _SHALL_ support the following formats:
-part:: A format with the label *GRIB2* _SHALL_ provide GRIB2 output which is described by https://library.wmo.int/viewer/35625?medianame=306_v.I.2_2019_edition_Updated_2022_en_#page=31&viewer=picture
-part:: A format with the label *GeoJSON* _SHALL_ provide OGC Features and Geometries JSON output which is described by https://github.com/opengeospatial/OGC-feat-geo-json
+statement:: Collections _SHALL_ support the following formats:
 part:: A format with the label *CoverageJSON* _SHALL_ provide CoverageJSON output which is described by https://docs.ogc.org/cs/21-069r2/21-069r2.html
-part:: A format with the label *NetCDF4* _SHALL_ provide CF-NetCDF output which is described by https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html
-part:: A format with the label *CSV* _SHALL_ provide CSV output with a metadata file which is described by https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/
+part:: A format with the label *NetCDF4* _SHALL_ provide CF-NetCDF output which is described by https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/
+cf-conventions.html
+part:: A format with the label *Zarr* _SHALL_ provide Zarr output which is described by https://zarr-specs.readthedocs.io/en/latest/v3/core/index.html
 ====

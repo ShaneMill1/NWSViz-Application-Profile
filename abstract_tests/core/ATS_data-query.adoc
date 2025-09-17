@@ -4,7 +4,7 @@
 [%metadata]
 identifier:: /conf/vertical-extent-demo/data-query
 target:: /req/vertical-extent-demo/data-query
-test-purpose:: Verify that all required Vertical extent demo Collection queries are defined in the Collection response.
+test-purpose:: Verify that all required NWSViz profile Collection queries are defined in the Collection response.
 test-method:: 
 step:: Verify that the Collection response includes definitions for the following queries.
 

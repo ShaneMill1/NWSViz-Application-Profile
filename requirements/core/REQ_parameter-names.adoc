@@ -4,7 +4,7 @@
 ====
 [%metadata]
 identifier:: /req/nwsviz-application/parameter-names
-statement:: The Vertical extent demo Collection _SHALL_ have a defined list of parameter_names
+statement:: The NWSViz profile Collection _SHALL_ have a defined list of parameter_names
 part:: A Pressure level Collection _SHALL_ have the following parameter_names definition
 
 [source,JSON]

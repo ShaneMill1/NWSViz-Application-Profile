@@ -149,7 +149,7 @@ include::../requirements/core/REQ_MRMS-parameter-names.adoc[]
 |====================
 |PATH TEMPLATE |METHOD |RESOURCE
 |{root}/collections/{collectionId}/{queryType} |GET, POST(Optional) |Retrieve data according to the query pattern from a Collection with the unique identifier {collectionId}
-|{root}/collections/{collectionId}/instances |GET |Retrieve metadata about instances of acollection
+|{root}/collections/{collectionId}/instances |GET |Retrieve metadata about instances of a collection
 |{root}/collections/{collectionId}/instances/{instanceId} |GET |Retrieve metadata from a specific instanceof a Collection with the unique identifiers{collectionId} and {instanceId}
 |{root}/collections/{collectionId}/instances/{instanceId}/{queryType} |GET, POST(Optional) |Retrieve data according to the query pattern from a specific instance of a Collection with the unique identifiers{collectionId} and {instanceId}
 |====================
@@ -166,6 +166,7 @@ Path = {root}/collections/{collectionId}/{queryType}
 Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
 
 include::../requirements/core/REQ_data-query.adoc[]
+
 
 ==== Parameters
 
@@ -192,36 +193,6 @@ Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
 
 include::../requirements/core/REQ_data-query-position.adoc[]
 
-==== Radius Query
-
-The Radius query returns data within the defined radius of the requested coordinate. 
-
-Path = {root}/collections/{collectionId}/instances/{instanceId}/radius 
-
-Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
-
-include::../requirements/core/REQ_data-query-radius.adoc[]
-
-
-==== Area Query
-
-The Area query returns data within the polygon defined by the coords parameter. Logic for identifying the best match for the requested area will depend on the Collection and is at the discretion of the query service implementer.
-
-Path = {root}/collections/{collectionId}/instances/{instanceId}/area
-
-Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
-
-include::../requirements/core/REQ_data-query-area.adoc[]
-
-==== Corridor Query
-
-The Corridor query returns data along and around the path defined by the coords parameter. Logic for identifying the best match for the requested corridor will depend on the Collection and is at the discretion of the query service implementer. 
-
-Path = {root}/collections/{collectionId}/instances/{instanceId}/corridor
-
-Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
-
-include::../requirements/core/REQ_data-query-corridor.adoc[]
 
 ==== Cube Query
 
@@ -233,10 +204,29 @@ Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
 
 include::../requirements/core/REQ_data-query-cube.adoc[]
 
+==== Locations Query
+
+The Location query returns a GeoJSON Feature Collection containing the available locations with a collection
+
+Path = {root}/collections/{collectionId}/instances/{instanceId}/locations
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+include::../requirements/core/REQ_data-query-locations.adoc[]
+
+==== Location Query
+
+The Location query returns a location defined by a bounding box dependent on the indices of i and j.
+
+Path = {root}/collections/{collectionId}/instances/{instanceId}/locations/{locationId}
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+include::../requirements/core/REQ_data-query-location.adoc[]
 
 ==== Instances Query
 
-Having multiple versions or instances of the same Collection, where the same information is reprocessed or regenerated is not unusal. Although these versions could be described as new Collections the instance query type allows this data to be described as different views of the same Collection.
+Having multiple versions or instances of the same Collection, where the same information is reprocessed or regenerated is not unusual. Although these versions could be described as new Collections the instance query type allows this data to be described as different views of the same Collection.
 
 Path = {root}/collections/{collectionId}/instances
 
