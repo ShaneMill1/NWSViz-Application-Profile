@@ -1,9 +1,9 @@
-[[ats_data-query-position]]
+[[ats_nwsviz-application_data-query-position]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/data-query-position
-target:: /req/vertical-extent-demo/data-query-position
+identifier:: /conf/nwsviz-application/data-query-position
+target:: /req/nwsviz-application/data-query-position
 test-purpose:: Verify that NWSViz profile Collection *Position* query is correctly defined in the Collection response.
 test-method:: 
 step:: Verify that NWSViz profile Collection *Position* query defines the following output_format types

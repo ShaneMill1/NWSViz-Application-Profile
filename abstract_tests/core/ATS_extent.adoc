@@ -1,9 +1,9 @@
-[[ats_extent]]
+[[ats_nwsviz-application_extent]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/extent
-target:: /req/vertical-extent-demo/extent
+identifier:: /conf/nwsviz-application/extent
+target:: /req/nwsviz-application/extent
 test-purpose:: Verify that NWSViz profile Collection Extent is correctly defined in the Collection response. 
 test-method:: 
 step:: Verfiy NWSViz profile Collection Spatial extent Coordinate Reference System is defined as:

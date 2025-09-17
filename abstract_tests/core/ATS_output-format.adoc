@@ -1,9 +1,9 @@
-[[ats_output-format]]
+[[ats_nwsviz-application_output-format]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/output-format
-target:: /req/vertical-extent-demo/output-format
+identifier:: /conf/nwsviz-application/output-format
+target:: /req/nwsviz-application/output-format
 test-purpose:: Verify that NWSViz profile Collection queries format data responses correctly.
 test-method:: 
 step:: Request data with the output format label and verify the response is correct

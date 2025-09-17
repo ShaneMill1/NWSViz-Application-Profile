@@ -1,9 +1,9 @@
-[[ats_data-query-instances]]
+[[ats_nwsviz-application_data-query-instances]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/data-query-instances
-target:: /req/vertical-extent-demo-data/data-query-instances
+identifier:: /conf/nwsviz-application/data-query-instances
+target:: /req/nwsviz-application-data/data-query-instances
 test-purpose:: Verify that NWSViz profile Collection *Instances* query is correctly defined in the Collection response.
 test-method:: 
 step:: Verify that NWSViz profile Collection has a *Instances* data query defined.

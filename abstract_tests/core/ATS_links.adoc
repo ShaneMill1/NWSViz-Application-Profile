@@ -1,9 +1,9 @@
-[[ats_links]]
+[[ats_nwsviz-application_links]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/links
-target:: /req/vertical-extent-demo/links
+identifier:: /conf/nwsviz-application/links
+target:: /req/nwsviz-application/links
 test-purpose:: Verify that NWSViz profile Collection Links section contains the required links
 test-method::
 step:: Verify that all links in the NWSViz profile Collection have *href*, *rel* and *type* attributes 

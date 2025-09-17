@@ -1143,7 +1143,7 @@
                 "http://www.opengis.net/spec/ogcapi-edr-1/1.2/conf/coveragejson",
                 "http://www.opengis.net/spec/ogcapi-edr-1/1.2/conf/wkt",
                 "http://www.opengis.net/spec/ogcapi-edr-3/1.0/conf/core",
-                "http://www.example.org/1.0/conf-class-vertical-extent-demo"
+                "http://www.example.org/1.0/conf-class-nwsviz-application"
               ]
             }
           }

@@ -1,9 +1,9 @@
-[[ats_data-query-cube]]
+[[ats_nwsviz-application_nwsviz-application_data-query-cube]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/data-query-cube
-target:: /req/vertical-extent-demo/data-query-cube
+identifier:: /conf/nwsviz-application/data-query-cube
+target:: /req/nwsviz-application/data-query-cube
 test-purpose:: Verify that NWSViz profile Collection *Cube* query is correctly defined in the Collection response.
 test-method:: 
 step:: Verify that NWSViz profile Collection *Cube* query defines the following output_format types

@@ -1,9 +1,9 @@
-[[ats_status-codes]]
+[[ats_nwsviz-application_status-codes]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/status-codes
-target:: /req/vertical-extent-demo/status-codes
+identifier:: /conf/nwsviz-application/status-codes
+target:: /req/nwsviz-application/status-codes
 test-purpose:: Verify that NWSViz profile Collection has the correct HTTP status responses.
 test-method::
 step:: Verify that a valid request returns a HTTP status code of 200
@@ -18,8 +18,8 @@ step:: Verify that a invalid request caused by an unexpected error returns a HTT
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/msg-bodies
-target:: /req/vertical-extent-demo/msg-bodies
+identifier:: /conf/nwsviz-application/msg-bodies
+target:: /req/nwsviz-application/msg-bodies
 test-purpose:: Verify that NWSViz profile error response messages have the correct structure.
 test-method::
 step:: Verify the the message body returned by error messages (status codes 400,405,413 and 500) is JSON based on the following schema: 

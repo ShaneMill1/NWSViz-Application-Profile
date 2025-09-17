@@ -1,0 +1,3900 @@
+= OGC API-Environmental Data Retrieval v1.2 part 3 - NWS Viz application profile
+:doctype: best-practice
+:encoding: utf-8
+:lang: en
+:status: draft
+:committee: technical
+:draft: 3.0
+:external-id: http://www.opengis.net/doc/spec/ogcapi-edr-3/1.0
+//:docnumber: 25-014
+:received-date:
+:issued-date:
+:published-date:
+:fullname:
+:docsubtype: Profile
+:keywords: ogcdoc, OGC document, API, openapi, html, profile
+:submitting-organizations:
+:mn-document-class: ogc
+:mn-output-extensions: xml,html,doc,pdf
+:local-cache-only:
+:data-uri-image:
+:html-uri: ./nwsviz_application_profile_profile.html
+:pdf-uri: ./nwsviz_application_profile_profile.pdf
+:xml-uri: ./nwsviz_application_profile_profile.xml
+:doc-uri: ./nwsviz_application_profile_profile.doc
+:edition: 1.0
+
+////
+Make sure to complete each included document
+////
+.Preface
+
+////
+*OGC Declaration*
+////
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
+
+////
+NOTE: Uncomment ISO section if necessary
+
+*ISO Declaration*
+
+ISO (the International Organization for Standardization) is a worldwide federation of national standards bodies (ISO member bodies). The work of preparing International Standards is normally carried out through ISO technical committees. Each member body interested in a subject for which a technical committee has been established has the right to be represented on that committee. International organizations, governmental and non-governmental, in liaison with ISO, also take part in the work. ISO collaborates closely with the International Electrotechnical Commission (IEC) on all matters of electrotechnical standardization.
+
+International Standards are drafted in accordance with the rules given in the ISO/IEC Directives, Part 2.
+
+The main task of technical committees is to prepare International Standards. Draft International Standards adopted by the technical committees are circulated to the member bodies for voting. Publication as an International Standard requires approval by at least 75 % of the member bodies casting a vote.
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. ISO shall not be held responsible for identifying any or all such patent rights.
+////
+
+[abstract]
+== Abstract
+
+The aim of the NWSViz profile service profile is to provide a standard interface for accessing NWSViz profile data based on OGC API-EDR standard.
+
+
+
+== Preface
+
+[NOTE]
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
+
+
+== Security considerations
+
+//If no security considerations have been made for this Service Profile, use the following text.
+
+No security considerations have been made for this Service Profile.
+
+////
+If security considerations have been made for this Service Profile, follow the examples found in IANA or IETF documents. Please see the following example.
+“VRRP is designed for a range of internetworking environments that may employ different security policies. The protocol includes several authentication methods ranging from no authentication, simple clear text passwords, and strong authentication using IP Authentication with MD5 HMAC. The details on each approach including possible attacks and recommended environments follows.
+Independent of any authentication type VRRP includes a mechanism (setting TTL=255, checking on receipt) that protects against VRRP packets being injected from another remote network. This limits most vulnerabilities to local attacks.
+NOTE: The security measures discussed in the following sections only provide various kinds of authentication. No confidentiality is provided at all. This should be explicitly described as outside the scope....”
+////
+
+
+
+== Submitters
+
+All questions regarding this submission should be directed to the editor or the submitters:
+
+|===
+|*Name* |*Affiliation*
+|===
+
+== Contributors
+
+//This clause is optional.
+
+Additional contributors to this Profile include the following:
+
+Individual name(s), Organization
+
+== Scope
+[NOTE]
+====
+This document defines the NWSViz profile Profile of the OGC API-EDR Part 1: Core Standard.
+====
+
+== Conformance
+
+Conformance to the NWSViz profile Profile (this document) can be tested by inspection. The test suite is provided in <<annex-A>>.
+
+This Standard contains normative language and thus places requirements on conformance, or mechanism for adoption, of candidate standards to which this Standard applies. In particular:
+
+* <<core-section,OGC API-EDR Requirements Class: Core>> specifies the core requirements which shall be met by all standards claiming conformance to this Standard.
+
+* <<profile-section,OGC API-EDR Part 3 Service Profiles Requirements Class>> specifies the requirements to which this profile has been defined.
+
+
+[bibliography]
+== References
+
+The following normative documents contain provisions that, through reference in this text, constitute provisions of this document. For dated references, subsequent amendments to, or revisions of, any of these publications do not apply. For undated references, the latest edition of the normative document referred to applies.
+
+* [[[iso19106,ISO 19106]]], ISO 19106:2004 Geographic information - Profiles
+
+* [[[ogc-edr,OGC 19-086]]], link:++https://www.opengis.net/doc/IS/ogcapi-edr-1/1.2++[OGC API - Environmental Data Retrieval Standard]
+
+* [[[OGC17-069,OGC 17-069]]] link:++https://docs.ogc.org/is/17-069r4/17-069r4.html++[], OGC APIFeatures - Part 1: Core, Open Geospatial Consortium (2022).
+
+* [[[OGC19-072,OGC 19-072]]] link:++https://docs.ogc.org/is/19-072/19-072.html++[], OGC API — Common — Part 1: Core, Open Geospatial Consortium (2023).
+
+* [[[OGC20-024,nofetch(OGC 20-024)]]] link:++http://docs.ogc.org/DRAFTS/20-024.html++[], OGC API — Common — Part 2: Geospatial Data (Draft), Open Geospatial Consortium
+
+* [[[ogc-modspec,OGC 08-131]]], link:++https://portal.ogc.org/files/?artifact_id=34762++[The ModSpec Model - Part 1: Core - A Standard for Designing and Writing Modular Standards]
+
+* [[[OpenAPI30,nofetch(OpenAPI30)]]] OpenAPI Initiative (OAI). **OpenAPI Specification 3.0** [online]. 2024 [viewed 2025-01-03]. The latest patch version at the time of publication of this standard was 3.0.4, available at link:++https://spec.openapis.org/oas/v3.0.4++[]
+
+* [[[OpenAPI31,nofetch(OpenAPI31)]]] OpenAPI Initiative (OAI). **OpenAPI Specification 3.1** [online]. 2024 [viewed 2025-01-03]. The latest patch version at the time of publication of this standard was 3.1.1, available at link:++https://spec.openapis.org/oas/v3.1.1++[]
+
+
+
+[[terms_and_definitions-section]]
+== Terms and definitions
+
+[[collection-definition]]
+=== Collection
+
+Body of resources that belong or are used together. An aggregate, set, or group of related resources.
+
+[.source]
+<<OGC20-024,OGC 20-024>>
+
+[[conformance_module-definition]]
+=== Conformance Module; Conformance Test Module
+
+A set of related conformance classes and their associated components.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+NOTE: When no ambiguity is possible, the word `test` may be omitted. i.e. conformance test module is the same as conformance module. Conformance modules may be nested in a hierarchical way.
+
+[[conformance-class-definition]]
+=== Conformance Class; Conformance Test Class
+
+A set of conformance tests that must be passed to receive a single certificate of conformance.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+NOTE: When no ambiguity is possible, the word _test_ may be left out, so conformance test class maybe called a conformance class.
+
+[[conformance_test-definition]]
+=== Conformance Test
+
+A test, abstract or real, of one or more requirements contained within a standard, or set of standards.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+[[requirement-definition]]
+=== Requirement
+
+Expression in the content of a standard conveying criteria to be fulfilled if compliance with the standard is to be claimed and from which no deviation is permitted.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+[[requirements_class-definition]]
+=== Requirements Class
+
+An aggregate of requirements with a single standardization target type that must all be satisfied to pass a conformance test Class.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+[[requirements_module-definition]]
+=== Requirements Module
+
+A set of related requirement classes and their associated components.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+[[standardization_goal-definition]]
+=== Standardization Goal
+
+A concise statement of the problem that the standard helps address and the strategy envisioned for achieving a solution. This strategy typically identifies real-world entities that need to be modified or constrained. At the abstract level, those entities are the Standardization Target Types.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+[[standardization_target-definition]]
+=== Standardization Target
+
+Entity to which some requirements of a standard apply.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+NOTE: The standardization target is the entity which may receive a certificate of conformance for a requirements class.
+
+[[standardization_target_type-definition]]
+=== Standardization Target Type
+
+Type of entity or set of entities to which the requirements of a standard apply
+
+NOTE: For example, the standardization target type for The OGC API – Features Standard are Web APIs. The standardization target type for the CDB Standard is “datastore”. It is important to understand that a standard’s root standardization target type can have sub-types, and that there can be a hierarchy of target types. For example, a Web API can have sub types of client, server, security, and so forth. As such, each requirements class can have a standardization target type that is a sub-type of the root.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+== Conventions
+
+This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.
+
+=== Identifiers
+The normative provisions in this standard are denoted by the URI
+
+`http://www.opengis.net/doc/spec/ogcapi-edr-3/1.0`
+
+All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.
+
+==== Shortcuts
+
+In the interest of readability, the following terms will be used as shorthand for more complex text:
+
+* Profile: A Profile is a standard or specification which restricts and/or extends an existing standard. This standard defines the rules for creating a profile of the <<ogc-edr,OGC API-Environmental Data Retrieval>> Standard.  The term "Profile" will be used in this document as shorthand for "profile of the OGC API-Environmental Data Retrieval Standard".
+
+* OGC API-EDR: The term OGC API-EDR will be used in this document as shorthand for the term "OGC API-Environmental Data Retrieval Standard"
+
+[obligation=informative]
+[[context-section]]
+
+== Context
+
+=== Standardization Goal
+
+The goal of this profile is to ensure interoperabilty between NWSViz profile data implementations of the OGC API-Environmental Data Retrieval Standard (OGC API-EDR).
+
+The OGC API-EDR Standard does not try to address every possible application domain. Rather, it provides a foundation which can be tailored for a specific domain. The result of this tailoring is a domain specific "profile" of the OGC API-EDR Standard.
+
+
+
+
+[[core-section]]
+
+== Requirements Class Core
+
+[[req_class_nwsviz-application]]
+[requirements_class]
+.Requirements Class 'NWSViz Application'
+====
+[%metadata]
+identifier:: link:++http://www.example.org/1.0/req/req-class-nwsviz-application++[]
+target-type:: NWSViz Application Profile Standard
+requirement:: /req/nwsviz-application_data/root
+requirement:: /req/nwsviz-application/edr-conformant
+requirement:: /req/nwsviz-application/parameter-names
+requirement:: /req/nwsviz-application/collectionid
+requirement:: /req/nwsviz-application/extent
+requirement:: /req/nwsviz-application/data-query
+requirement:: /req/nwsviz-application/output-format
+requirement:: /req/nwsviz-application/data-query-position
+requirement:: /req/nwsviz-application/data-query-radius
+requirement:: /req/nwsviz-application/data-query-area
+requirement:: /req/nwsviz-application/data-query-corridor
+requirement:: /req/nwsviz-application/data-query-cube
+requirement:: /req/nwsviz-application-data/data-query-instances
+requirement:: /req/nwsviz-application/status-codes
+requirement:: /req/nwsviz-application/msg-bodies
+requirement:: /req/nwsviz-application/links
+
+====
+
+
+
+=== Profiling Requirements
+
+Implementations of the Profile are conformant with OGC API-EDR Part 1
+
+[[req_class_nwsviz-application_edr-conformant]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/edr-conformant
+statement:: The service _SHALL_ be compliant with OGC API-Environmental Data Retrieval core v1.2.
+
+====
+
+
+=== Platform Resources
+
+OGC API — Common defines a set of common capabilities which are applicable to any OGC Web API. Those capabilities provide the platform upon which resource-specific APIs can be built. This section describes those capabilities and any modifications needed to better support spatio-temporal data resources.
+
+.Platform Resource Paths
+[width="100%",options="header,footer"]
+|====================
+|PATH TEMPLATE |METHOD |RESOURCE
+|{root}/ |GET |Landing page
+|{root}/api |GET |API Description (optional)
+|{root}/conformance |GET |Conformance Classes
+|====================
+
+Where: {root} = Base URI for the API server
+
+==== API Landing Page
+
+Path = {root}/
+
+Dependencies
+
+* <<OGC19-072,OGC API — Common — Part 1: Core>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard - Part 1.2: Core>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard - Part 3 Service Profiles>>
+
+The landing page provides links that support exploration of the resources offered via the API. The most important component of a landing page is a list of links. The Landing Page resource is initially defined in the Core conformance class of the <<OGC19-072,OGC API — Common - Part 1>> Standard. The <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> Standard does not make any changes to this definition.
+
+The normative JSON Schema for an OGC API-EDR Landing Page is defined in the link:++https://schemas.opengis.net/ogcapi/edr/1.1/openapi/schemas/core/landingPage.yaml++[LandingPage.yaml] document. While this schema provides a rich body of information about the API, only the Links property is required.
+
+Profiles of the <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> are expected to provide a richer description of the API. The additional content that Profiles should mandate is defined in the following requirements.
+
+[[req_nwsviz-application_data_root]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application_data/root
+statement:: The landing page _SHALL_ have the following infomation
+
+part:: The *Title* property value _SHALL_ be "OGC API - Environmental Data Retrieval for Dynamic Ensemble Scenarios for IDSS"
+part:: The *Description* property value _SHALL_ be "Implementation of Pygeoapi for OGC API - EDR to support DESI"
+part:: The *Links* property _SHALL_ define the links that SHALL be included in the Root response and _SHALL_ be populated with href and rel properties.
+part:: The *provider* property _SHALL_ be included in the Root response and _SHALL_ be populated with name and url properties.
+part:: The *contact* property _SHALL_ be included in the Root response and _SHALL_ be populated with an email property
+part:: The *Links* property _SHALL_ include the following link to the OpenAPI definition of the profile:
+
+[source,JSON]
+----
+    {
+        "title": "OpenAPI definition of NWSViz Application profile",
+        "href": "https://www.example.org/edr/profile/nwsviz/openapi.json",
+        "rel": "profile",
+        "type": "application/json"
+    }
+----
+
+====
+
+==== API Definition
+
+Path = {root}/api
+
+Dependencies
+
+* <<OGC19-072,OGC API — Common — Part 1: Core>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+Every API is required to provide a definition document that describes the capabilities of that API. This definition document can be used by developers to understand the API, by software clients to connect to the server, or by development tools to support the implementation of servers and clients. The API Definition resource is initially defined in the Core conformance class of the <<OGC19-072,OGC API — Common - Part 1>> Standard. The <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> does not make any changes to this definition.
+
+NOTE: At this time only OpenAPI 3.0 and OpenAPI 3.1 documents are supported by OGC Web API Standards.
+
+Profiles of the <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> are required to provide an OpenAPI 3.1 document. This document extends the API definition provided by the OGC API-EDR Standard. These extensions reflect the additional requirements added by the Profile. Implementors of the profile will then build on that document to produce the API definition document for their implementation.
+
+==== Declaration of Conformance Classes
+
+Path = {root}/conformance
+
+Dependencies
+
+* <<OGC19-072,OGC API — Common — Part 1: Core>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard - Part 3 Service Profiles>>
+
+To support “generic” clients that want to access implementations of multiple OGC API Standards and extensions — and not “just” a specific API server, the API has to declare the conformance classes it claims to have implemented. The Conformance Classes resource is initially defined in the Core conformance class of the <<OGC19-072,OGC API — Common - Part 1>> Standard. The <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> Standard does not make any changes to this definition.
+
+Profiles of the <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> have additional requirements governing which Conformance Classes and identifiers must be included in this resource.
+
+
+
+NOTE: OpenAPI 3.0 and OpenAPI 3.1 are two distinct Conformance Classes in the OGC API-EDR Standard. This requirement can be addressed in a Profile by including the appropriate conformance classes at {root}/conformance.
+
+NOTE: Get guidence from the OGC Naming Authority on valid URIs for Profiles.
+
+=== Spatio-temporal and Information Resources
+
+.Spatial-temporal and Information Resource Paths
+[width="100%",options="header,footer"]
+|====================
+|PATH TEMPLATE |METHOD |RESOURCE
+|{root}/collections|GET |Metadata describing the Collections of data available from this API.
+|{root}/collections/{collectionId} |GET |Metadata describing the Collection of data which has the unique identifier{collectionId}
+|====================
+
+Where:
+
+* {root} = Base URI for the API server
+* {collectionId} = an identifier for a specific Collection of data
+
+==== Collections
+
+OGC API implementations typically organize their geospatial resources into Collections. Information about those is accessed through the /collections path and the link:++http://www.opengis.net/def/rel/ogc/1.0/data++[] link relation.
+
+Path = {root}/collections
+
+Dependencies
+
+* <<OGC20-024,OGC API — Common — Part 2: Geospatial Data>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+The Collections resource is initially defined in the `Collections` conformance class of the <<OGC20-024,OGC API — Common - Part 2>> Standard. The <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> Standard does not make any changes to this definition.
+
+
+==== Collection Description
+
+Each resource Collection is described by a set of metadata. That metadata can be accessed directly using the /collections/{collectionId} path and as an entry in the Collections property of the /collections response.
+
+Path:
+
+* {root}/collections (returns metadata for every Collection)
+* {root}/collections/{collectionId} (returns metadata for the specified Collection)
+
+Dependencies
+
+* <<OGC20-024,OGC API — Common — Part 2: Geospatial Data>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+===== Collection ID restictions
+
+[[req_nwsviz-application_collectionid]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/collectionid
+statement::  A Collection id should identify the source and type of NWP model
+part:: The Collection Ids _SHALL_ contain the following attributes
+
+|====================
+| **id** | **description**
+| HREF | High Resolution Ensemble Forecast
+| NBM  | National Blend of Models
+| LREF | Long Range Ensemble Forecast
+| LREF_TLE | Long Range Ensemble Forecast Tile-Lagged Ensemble
+| MRMS | Multi-Radar/Multi-Sensor Radar Products
+|====================
+
+====
+
+===== Extent property restrictions
+
+The Collection metadata includes an Extent property which defines a spatial-temporal envelope that encompasses the geospatial data in the Collection.
+
+[[req_nwsviz-application_extent]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/extent
+statement:: The  Collection  _SHALL_ have minimum spatial bounds
+
+part:: The Profile _SHALL_ have a spatial extent and contain an additional attribute named "locations" containing the a list of the available locations within the collection. For example:
+
+[source,JSON]
+----
+
+{
+   "spatial":{
+      "bbox":[
+         -180,
+         -90,
+         180,
+         90
+      ],
+      "locations":[
+         "CO",
+         "AK",
+         "HI"
+      ]
+   }
+}
+
+----
+
+part:: The Profile _SHALL_ have a temporal extent containing an interval and values.
+part:: The Profile _SHALL_ contain an attribute named instances which contains a list of available instances for the collection.
+part:: The Profiles _SHALL_ contain a custom query dimension with the name "ensemble" containing values and ids.
+part:: The  Profile _SHOULD_ have a vertical extent if applicable
+====
+
+
+===== Parameter_names property restrictions
+
+The Collection metadata includes an Parameter_names property which defines the data parameters that are available in the Collection
+
+[[req_nwsviz-application_HREF-parameter-names]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/HREF-parameter-names
+statement:: The HREF Collection _SHALL_ have a defined list of parameter_names
+part:: A HREF Collection _SHALL_ have the following parameter_names definition
+
+[source,JSON]
+----
+
+{
+   "parameter-names":{
+      "apcp_1h":{
+         "Type":"Parameter",
+         "id":"apcp_1h",
+         "description":"apcp_1h"
+      },
+      "apcp_2h":{
+         "Type":"Parameter",
+         "id":"apcp_2h",
+         "description":"apcp_2h"
+      },
+      "apcp_3h":{
+         "Type":"Parameter",
+         "id":"apcp_3h",
+         "description":"apcp_3h"
+      },
+      "apcp_accum":{
+         "Type":"Parameter",
+         "id":"apcp_accum",
+         "description":"apcp_accum"
+      },
+      "apcp_accum-lpmm":{
+         "Type":"Parameter",
+         "id":"apcp_accum-lpmm",
+         "description":"apcp_accum-lpmm"
+      },
+      "apcp_accum_24h":{
+         "Type":"Parameter",
+         "id":"apcp_accum_24h",
+         "description":"apcp_accum_24h"
+      },
+      "apcp_accum_24h-lpmm":{
+         "Type":"Parameter",
+         "id":"apcp_accum_24h-lpmm",
+         "description":"apcp_accum_24h-lpmm"
+      },
+      "apcp_accum_6h":{
+         "Type":"Parameter",
+         "id":"apcp_accum_6h",
+         "description":"apcp_accum_6h"
+      },
+      "apcp_accum_6h-lpmm":{
+         "Type":"Parameter",
+         "id":"apcp_accum_6h-lpmm",
+         "description":"apcp_accum_6h-lpmm"
+      },
+      "cape":{
+         "Type":"Parameter",
+         "id":"cape",
+         "description":"cape"
+      },
+      "ceil":{
+         "Type":"Parameter",
+         "id":"ceil",
+         "description":"ceil"
+      },
+      "ceilingAGL":{
+         "Type":"Parameter",
+         "id":"ceilingAGL",
+         "description":"ceilingAGL"
+      },
+      "cfrzr":{
+         "Type":"Parameter",
+         "id":"cfrzr",
+         "description":"cfrzr"
+      },
+      "cicep":{
+         "Type":"Parameter",
+         "id":"cicep",
+         "description":"cicep"
+      },
+      "cin":{
+         "Type":"Parameter",
+         "id":"cin",
+         "description":"cin"
+      },
+      "colmd":{
+         "Type":"Parameter",
+         "id":"colmd",
+         "description":"colmd"
+      },
+      "crain":{
+         "Type":"Parameter",
+         "id":"crain",
+         "description":"crain"
+      },
+      "csnow":{
+         "Type":"Parameter",
+         "id":"csnow",
+         "description":"csnow"
+      },
+      "d2m":{
+         "Type":"Parameter",
+         "id":"d2m",
+         "description":"d2m"
+      },
+      "dpt_isobaric":{
+         "Type":"Parameter",
+         "id":"dpt_isobaric",
+         "description":"dpt_isobaric"
+      },
+      "dswrf":{
+         "Type":"Parameter",
+         "id":"dswrf",
+         "description":"dswrf"
+      },
+      "ensemble":{
+         "Type":"Parameter",
+         "id":"ensemble",
+         "description":"ensemble"
+      },
+      "fram1":{
+         "Type":"Parameter",
+         "id":"fram1",
+         "description":"fram1"
+      },
+      "fram24":{
+         "Type":"Parameter",
+         "id":"fram24",
+         "description":"fram24"
+      },
+      "fram24-lpmm":{
+         "Type":"Parameter",
+         "id":"fram24-lpmm",
+         "description":"fram24-lpmm"
+      },
+      "fram6":{
+         "Type":"Parameter",
+         "id":"fram6",
+         "description":"fram6"
+      },
+      "fram6-lpmm":{
+         "Type":"Parameter",
+         "id":"fram6-lpmm",
+         "description":"fram6-lpmm"
+      },
+      "framtotal":{
+         "Type":"Parameter",
+         "id":"framtotal",
+         "description":"framtotal"
+      },
+      "front700":{
+         "Type":"Parameter",
+         "id":"front700",
+         "description":"front700"
+      },
+      "front850":{
+         "Type":"Parameter",
+         "id":"front850",
+         "description":"front850"
+      },
+      "frzr1":{
+         "Type":"Parameter",
+         "id":"frzr1",
+         "description":"frzr1"
+      },
+      "frzr24":{
+         "Type":"Parameter",
+         "id":"frzr24",
+         "description":"frzr24"
+      },
+      "frzr24-lpmm":{
+         "Type":"Parameter",
+         "id":"frzr24-lpmm",
+         "description":"frzr24-lpmm"
+      },
+      "frzr6":{
+         "Type":"Parameter",
+         "id":"frzr6",
+         "description":"frzr6"
+      },
+      "frzr6-lpmm":{
+         "Type":"Parameter",
+         "id":"frzr6-lpmm",
+         "description":"frzr6-lpmm"
+      },
+      "frzrtotal":{
+         "Type":"Parameter",
+         "id":"frzrtotal",
+         "description":"frzrtotal"
+      },
+      "gh1000-gh500":{
+         "Type":"Parameter",
+         "id":"gh1000-gh500",
+         "description":"gh1000-gh500"
+      },
+      "gh700-gh500_lr":{
+         "Type":"Parameter",
+         "id":"gh700-gh500_lr",
+         "description":"gh700-gh500_lr"
+      },
+      "gh_isobaric":{
+         "Type":"Parameter",
+         "id":"gh_isobaric",
+         "description":"gh_isobaric"
+      },
+      "gust":{
+         "Type":"Parameter",
+         "id":"gust",
+         "description":"gust"
+      },
+      "hcc":{
+         "Type":"Parameter",
+         "id":"hcc",
+         "description":"hcc"
+      },
+      "hlcy_1000":{
+         "Type":"Parameter",
+         "id":"hlcy_1000",
+         "description":"hlcy_1000"
+      },
+      "hlcy_3000":{
+         "Type":"Parameter",
+         "id":"hlcy_3000",
+         "description":"hlcy_3000"
+      },
+      "inventory":{
+         "Type":"Parameter",
+         "id":"inventory",
+         "description":"inventory"
+      },
+      "isobaricInhPa":{
+         "Type":"Parameter",
+         "id":"isobaricInhPa",
+         "description":"isobaricInhPa"
+      },
+      "large-fire-potential":{
+         "Type":"Parameter",
+         "id":"large-fire-potential",
+         "description":"large-fire-potential"
+      },
+      "latitude":{
+         "Type":"Parameter",
+         "id":"latitude",
+         "description":"latitude"
+      },
+      "lcc":{
+         "Type":"Parameter",
+         "id":"lcc",
+         "description":"lcc"
+      },
+      "lcl":{
+         "Type":"Parameter",
+         "id":"lcl",
+         "description":"lcl"
+      },
+      "longitude":{
+         "Type":"Parameter",
+         "id":"longitude",
+         "description":"longitude"
+      },
+      "ltng":{
+         "Type":"Parameter",
+         "id":"ltng",
+         "description":"ltng"
+      },
+      "massden":{
+         "Type":"Parameter",
+         "id":"massden",
+         "description":"massden"
+      },
+      "mcc":{
+         "Type":"Parameter",
+         "id":"mcc",
+         "description":"mcc"
+      },
+      "mnuphl_3000":{
+         "Type":"Parameter",
+         "id":"mnuphl_3000",
+         "description":"mnuphl_3000"
+      },
+      "mnuphl_5000":{
+         "Type":"Parameter",
+         "id":"mnuphl_5000",
+         "description":"mnuphl_5000"
+      },
+      "mxuphl_3000":{
+         "Type":"Parameter",
+         "id":"mxuphl_3000",
+         "description":"mxuphl_3000"
+      },
+      "mxuphl_5000":{
+         "Type":"Parameter",
+         "id":"mxuphl_5000",
+         "description":"mxuphl_5000"
+      },
+      "names":{
+         "Type":"Parameter",
+         "id":"names",
+         "description":"names"
+      },
+      "orog":{
+         "Type":"Parameter",
+         "id":"orog",
+         "description":"orog"
+      },
+      "pfrzr":{
+         "Type":"Parameter",
+         "id":"pfrzr",
+         "description":"pfrzr"
+      },
+      "picep":{
+         "Type":"Parameter",
+         "id":"picep",
+         "description":"picep"
+      },
+      "prain":{
+         "Type":"Parameter",
+         "id":"prain",
+         "description":"prain"
+      },
+      "prmsl":{
+         "Type":"Parameter",
+         "id":"prmsl",
+         "description":"prmsl"
+      },
+      "psnow":{
+         "Type":"Parameter",
+         "id":"psnow",
+         "description":"psnow"
+      },
+      "pwat":{
+         "Type":"Parameter",
+         "id":"pwat",
+         "description":"pwat"
+      },
+      "r2":{
+         "Type":"Parameter",
+         "id":"r2",
+         "description":"r2"
+      },
+      "r_isobaric":{
+         "Type":"Parameter",
+         "id":"r_isobaric",
+         "description":"r_isobaric"
+      },
+      "refc":{
+         "Type":"Parameter",
+         "id":"refc",
+         "description":"refc"
+      },
+      "refc-lpmm":{
+         "Type":"Parameter",
+         "id":"refc-lpmm",
+         "description":"refc-lpmm"
+      },
+      "reference_time":{
+         "Type":"Parameter",
+         "id":"reference_time",
+         "description":"reference_time"
+      },
+      "retop":{
+         "Type":"Parameter",
+         "id":"retop",
+         "description":"retop"
+      },
+      "sdwe_1h":{
+         "Type":"Parameter",
+         "id":"sdwe_1h",
+         "description":"sdwe_1h"
+      },
+      "sdwe_2h":{
+         "Type":"Parameter",
+         "id":"sdwe_2h",
+         "description":"sdwe_2h"
+      },
+      "sdwe_3h":{
+         "Type":"Parameter",
+         "id":"sdwe_3h",
+         "description":"sdwe_3h"
+      },
+      "sdwe_accum":{
+         "Type":"Parameter",
+         "id":"sdwe_accum",
+         "description":"sdwe_accum"
+      },
+      "sdwe_accum-lpmm":{
+         "Type":"Parameter",
+         "id":"sdwe_accum-lpmm",
+         "description":"sdwe_accum-lpmm"
+      },
+      "sdwe_accum_1h":{
+         "Type":"Parameter",
+         "id":"sdwe_accum_1h",
+         "description":"sdwe_accum_1h"
+      },
+      "sdwe_accum_24h":{
+         "Type":"Parameter",
+         "id":"sdwe_accum_24h",
+         "description":"sdwe_accum_24h"
+      },
+      "sdwe_accum_24h-lpmm":{
+         "Type":"Parameter",
+         "id":"sdwe_accum_24h-lpmm",
+         "description":"sdwe_accum_24h-lpmm"
+      },
+      "sdwe_accum_6h":{
+         "Type":"Parameter",
+         "id":"sdwe_accum_6h",
+         "description":"sdwe_accum_6h"
+      },
+      "sdwe_accum_6h-lpmm":{
+         "Type":"Parameter",
+         "id":"sdwe_accum_6h-lpmm",
+         "description":"sdwe_accum_6h-lpmm"
+      },
+      "sp":{
+         "Type":"Parameter",
+         "id":"sp",
+         "description":"sp"
+      },
+      "stp":{
+         "Type":"Parameter",
+         "id":"stp",
+         "description":"stp"
+      },
+      "t2m":{
+         "Type":"Parameter",
+         "id":"t2m",
+         "description":"t2m"
+      },
+      "t_isobaric":{
+         "Type":"Parameter",
+         "id":"t_isobaric",
+         "description":"t_isobaric"
+      },
+      "ta2":{
+         "Type":"Parameter",
+         "id":"ta2",
+         "description":"ta2"
+      },
+      "tadv700":{
+         "Type":"Parameter",
+         "id":"tadv700",
+         "description":"tadv700"
+      },
+      "tadv850":{
+         "Type":"Parameter",
+         "id":"tadv850",
+         "description":"tadv850"
+      },
+      "tcdc":{
+         "Type":"Parameter",
+         "id":"tcdc",
+         "description":"tcdc"
+      },
+      "thte2":{
+         "Type":"Parameter",
+         "id":"thte2",
+         "description":"thte2"
+      },
+      "thte850":{
+         "Type":"Parameter",
+         "id":"thte850",
+         "description":"thte850"
+      },
+      "thte925":{
+         "Type":"Parameter",
+         "id":"thte925",
+         "description":"thte925"
+      },
+      "tw2":{
+         "Type":"Parameter",
+         "id":"tw2",
+         "description":"tw2"
+      },
+      "u10":{
+         "Type":"Parameter",
+         "id":"u10",
+         "description":"u10"
+      },
+      "u_isobaric":{
+         "Type":"Parameter",
+         "id":"u_isobaric",
+         "description":"u_isobaric"
+      },
+      "v10":{
+         "Type":"Parameter",
+         "id":"v10",
+         "description":"v10"
+      },
+      "v_isobaric":{
+         "Type":"Parameter",
+         "id":"v_isobaric",
+         "description":"v_isobaric"
+      },
+      "vis":{
+         "Type":"Parameter",
+         "id":"vis",
+         "description":"vis"
+      },
+      "vort500":{
+         "Type":"Parameter",
+         "id":"vort500",
+         "description":"vort500"
+      },
+      "vucsh":{
+         "Type":"Parameter",
+         "id":"vucsh",
+         "description":"vucsh"
+      },
+      "vvcsh":{
+         "Type":"Parameter",
+         "id":"vvcsh",
+         "description":"vvcsh"
+      },
+      "w_isobaric":{
+         "Type":"Parameter",
+         "id":"w_isobaric",
+         "description":"w_isobaric"
+      },
+      "wd_isobaric":{
+         "Type":"Parameter",
+         "id":"wd_isobaric",
+         "description":"wd_isobaric"
+      },
+      "wd_isobaric-mean":{
+         "Type":"Parameter",
+         "id":"wd_isobaric-mean",
+         "description":"wd_isobaric-mean"
+      },
+      "wd_isobaric-std":{
+         "Type":"Parameter",
+         "id":"wd_isobaric-std",
+         "description":"wd_isobaric-std"
+      },
+      "wdir":{
+         "Type":"Parameter",
+         "id":"wdir",
+         "description":"wdir"
+      },
+      "wdir-mean":{
+         "Type":"Parameter",
+         "id":"wdir-mean",
+         "description":"wdir-mean"
+      },
+      "wdir-std":{
+         "Type":"Parameter",
+         "id":"wdir-std",
+         "description":"wdir-std"
+      },
+      "ws_isobaric":{
+         "Type":"Parameter",
+         "id":"ws_isobaric",
+         "description":"ws_isobaric"
+      },
+      "wshr0-6km":{
+         "Type":"Parameter",
+         "id":"wshr0-6km",
+         "description":"wshr0-6km"
+      },
+      "wshrd0-6km":{
+         "Type":"Parameter",
+         "id":"wshrd0-6km",
+         "description":"wshrd0-6km"
+      },
+      "wshrd0-6km-mean":{
+         "Type":"Parameter",
+         "id":"wshrd0-6km-mean",
+         "description":"wshrd0-6km-mean"
+      },
+      "wshrd0-6km-std":{
+         "Type":"Parameter",
+         "id":"wshrd0-6km-std",
+         "description":"wshrd0-6km-std"
+      },
+      "wspd":{
+         "Type":"Parameter",
+         "id":"wspd",
+         "description":"wspd"
+      }
+   }
+}
+
+----
+
+====
+[[req_nwsviz-application_NBM-parameter-names]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/NBM-parameter-names
+statement:: The NBM Collection _SHALL_ have a defined list of parameter_names
+part:: A NBM Collection _SHALL_ have the following parameter_names definition
+
+[source,JSON]
+----
+
+{
+   "parameter-names":{
+      "10si_heightAboveGround":{
+         "Type":"Parameter",
+         "id":"10si_heightAboveGround",
+         "description":"10si_heightAboveGround"
+      },
+      "10si_heightAboveGround_10%":{
+         "Type":"Parameter",
+         "id":"10si_heightAboveGround_10%",
+         "description":"10si_heightAboveGround_10%"
+      },
+      "10si_heightAboveGround_25%":{
+         "Type":"Parameter",
+         "id":"10si_heightAboveGround_25%",
+         "description":"10si_heightAboveGround_25%"
+      },
+      "10si_heightAboveGround_50%":{
+         "Type":"Parameter",
+         "id":"10si_heightAboveGround_50%",
+         "description":"10si_heightAboveGround_50%"
+      },
+      "10si_heightAboveGround_75%":{
+         "Type":"Parameter",
+         "id":"10si_heightAboveGround_75%",
+         "description":"10si_heightAboveGround_75%"
+      },
+      "10si_heightAboveGround_90%":{
+         "Type":"Parameter",
+         "id":"10si_heightAboveGround_90%",
+         "description":"10si_heightAboveGround_90%"
+      },
+      "10si_heightAboveGround_ens_std_dev":{
+         "Type":"Parameter",
+         "id":"10si_heightAboveGround_ens_std_dev",
+         "description":"10si_heightAboveGround_ens_std_dev"
+      },
+      "10wdir_heightAboveGround":{
+         "Type":"Parameter",
+         "id":"10wdir_heightAboveGround",
+         "description":"10wdir_heightAboveGround"
+      },
+      "10wdir_heightAboveGround_50%":{
+         "Type":"Parameter",
+         "id":"10wdir_heightAboveGround_50%",
+         "description":"10wdir_heightAboveGround_50%"
+      },
+      "10wdir_heightAboveGround_75%":{
+         "Type":"Parameter",
+         "id":"10wdir_heightAboveGround_75%",
+         "description":"10wdir_heightAboveGround_75%"
+      },
+      "10wdir_heightAboveGround_90%":{
+         "Type":"Parameter",
+         "id":"10wdir_heightAboveGround_90%",
+         "description":"10wdir_heightAboveGround_90%"
+      },
+      "2d_heightAboveGround":{
+         "Type":"Parameter",
+         "id":"2d_heightAboveGround",
+         "description":"2d_heightAboveGround"
+      },
+      "2d_heightAboveGround_ens_std_dev":{
+         "Type":"Parameter",
+         "id":"2d_heightAboveGround_ens_std_dev",
+         "description":"2d_heightAboveGround_ens_std_dev"
+      },
+      "2r_heightAboveGround":{
+         "Type":"Parameter",
+         "id":"2r_heightAboveGround",
+         "description":"2r_heightAboveGround"
+      },
+      "2t_heightAboveGround":{
+         "Type":"Parameter",
+         "id":"2t_heightAboveGround",
+         "description":"2t_heightAboveGround"
+      },
+      "2t_heightAboveGround_50%":{
+         "Type":"Parameter",
+         "id":"2t_heightAboveGround_50%",
+         "description":"2t_heightAboveGround_50%"
+      },
+      "2t_heightAboveGround_ens_std_dev":{
+         "Type":"Parameter",
+         "id":"2t_heightAboveGround_ens_std_dev",
+         "description":"2t_heightAboveGround_ens_std_dev"
+      },
+      "apcp_surface_12hrs_accum_>0.254":{
+         "Type":"Parameter",
+         "id":"apcp_surface_12hrs_accum_>0.254",
+         "description":"apcp_surface_12hrs_accum_>0.254"
+      },
+      "apcp_surface_1hrs_accum":{
+         "Type":"Parameter",
+         "id":"apcp_surface_1hrs_accum",
+         "description":"apcp_surface_1hrs_accum"
+      },
+      "apcp_surface_1hrs_accum_>0.254":{
+         "Type":"Parameter",
+         "id":"apcp_surface_1hrs_accum_>0.254",
+         "description":"apcp_surface_1hrs_accum_>0.254"
+      },
+      "apcp_surface_6hrs_accum":{
+         "Type":"Parameter",
+         "id":"apcp_surface_6hrs_accum",
+         "description":"apcp_surface_6hrs_accum"
+      },
+      "apcp_surface_6hrs_accum_>0.254":{
+         "Type":"Parameter",
+         "id":"apcp_surface_6hrs_accum_>0.254",
+         "description":"apcp_surface_6hrs_accum_>0.254"
+      },
+      "aptmp_heightAboveGround_level-2":{
+         "Type":"Parameter",
+         "id":"aptmp_heightAboveGround_level-2",
+         "description":"aptmp_heightAboveGround_level-2"
+      },
+      "asnow_surface_1hrs_accum":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum",
+         "description":"asnow_surface_1hrs_accum"
+      },
+      "asnow_surface_1hrs_accum_10%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_10%",
+         "description":"asnow_surface_1hrs_accum_10%"
+      },
+      "asnow_surface_1hrs_accum_25%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_25%",
+         "description":"asnow_surface_1hrs_accum_25%"
+      },
+      "asnow_surface_1hrs_accum_5%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_5%",
+         "description":"asnow_surface_1hrs_accum_5%"
+      },
+      "asnow_surface_1hrs_accum_50%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_50%",
+         "description":"asnow_surface_1hrs_accum_50%"
+      },
+      "asnow_surface_1hrs_accum_75%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_75%",
+         "description":"asnow_surface_1hrs_accum_75%"
+      },
+      "asnow_surface_1hrs_accum_90%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_90%",
+         "description":"asnow_surface_1hrs_accum_90%"
+      },
+      "asnow_surface_1hrs_accum_95%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_95%",
+         "description":"asnow_surface_1hrs_accum_95%"
+      },
+      "asnow_surface_1hrs_accum_>0.00254":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_>0.00254",
+         "description":"asnow_surface_1hrs_accum_>0.00254"
+      },
+      "asnow_surface_1hrs_accum_>0.00762":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_>0.00762",
+         "description":"asnow_surface_1hrs_accum_>0.00762"
+      },
+      "asnow_surface_1hrs_accum_>0.0127":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_>0.0127",
+         "description":"asnow_surface_1hrs_accum_>0.0127"
+      },
+      "asnow_surface_1hrs_accum_>0.01778":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_>0.01778",
+         "description":"asnow_surface_1hrs_accum_>0.01778"
+      },
+      "asnow_surface_1hrs_accum_>0.0254":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_>0.0254",
+         "description":"asnow_surface_1hrs_accum_>0.0254"
+      },
+      "asnow_surface_1hrs_accum_>0.0381":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_>0.0381",
+         "description":"asnow_surface_1hrs_accum_>0.0381"
+      },
+      "asnow_surface_1hrs_accum_>0.0508":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_>0.0508",
+         "description":"asnow_surface_1hrs_accum_>0.0508"
+      },
+      "asnow_surface_1hrs_accum_>0.0635":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_>0.0635",
+         "description":"asnow_surface_1hrs_accum_>0.0635"
+      },
+      "asnow_surface_1hrs_accum_>0.0762":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_>0.0762",
+         "description":"asnow_surface_1hrs_accum_>0.0762"
+      },
+      "asnow_surface_1hrs_accum_>0.1016":{
+         "Type":"Parameter",
+         "id":"asnow_surface_1hrs_accum_>0.1016",
+         "description":"asnow_surface_1hrs_accum_>0.1016"
+      },
+      "asnow_surface_24hrs_accum":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum",
+         "description":"asnow_surface_24hrs_accum"
+      },
+      "asnow_surface_24hrs_accum_10%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_10%",
+         "description":"asnow_surface_24hrs_accum_10%"
+      },
+      "asnow_surface_24hrs_accum_25%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_25%",
+         "description":"asnow_surface_24hrs_accum_25%"
+      },
+      "asnow_surface_24hrs_accum_5%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_5%",
+         "description":"asnow_surface_24hrs_accum_5%"
+      },
+      "asnow_surface_24hrs_accum_50%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_50%",
+         "description":"asnow_surface_24hrs_accum_50%"
+      },
+      "asnow_surface_24hrs_accum_75%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_75%",
+         "description":"asnow_surface_24hrs_accum_75%"
+      },
+      "asnow_surface_24hrs_accum_90%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_90%",
+         "description":"asnow_surface_24hrs_accum_90%"
+      },
+      "asnow_surface_24hrs_accum_95%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_95%",
+         "description":"asnow_surface_24hrs_accum_95%"
+      },
+      "asnow_surface_24hrs_accum_>0.00254":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_>0.00254",
+         "description":"asnow_surface_24hrs_accum_>0.00254"
+      },
+      "asnow_surface_24hrs_accum_>0.0254":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_>0.0254",
+         "description":"asnow_surface_24hrs_accum_>0.0254"
+      },
+      "asnow_surface_24hrs_accum_>0.0508":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_>0.0508",
+         "description":"asnow_surface_24hrs_accum_>0.0508"
+      },
+      "asnow_surface_24hrs_accum_>0.1016":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_>0.1016",
+         "description":"asnow_surface_24hrs_accum_>0.1016"
+      },
+      "asnow_surface_24hrs_accum_>0.1524":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_>0.1524",
+         "description":"asnow_surface_24hrs_accum_>0.1524"
+      },
+      "asnow_surface_24hrs_accum_>0.2032":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_>0.2032",
+         "description":"asnow_surface_24hrs_accum_>0.2032"
+      },
+      "asnow_surface_24hrs_accum_>0.254":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_>0.254",
+         "description":"asnow_surface_24hrs_accum_>0.254"
+      },
+      "asnow_surface_24hrs_accum_>0.3048":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_>0.3048",
+         "description":"asnow_surface_24hrs_accum_>0.3048"
+      },
+      "asnow_surface_24hrs_accum_>0.4572":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_>0.4572",
+         "description":"asnow_surface_24hrs_accum_>0.4572"
+      },
+      "asnow_surface_24hrs_accum_>0.6096":{
+         "Type":"Parameter",
+         "id":"asnow_surface_24hrs_accum_>0.6096",
+         "description":"asnow_surface_24hrs_accum_>0.6096"
+      },
+      "asnow_surface_48hrs_accum":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum",
+         "description":"asnow_surface_48hrs_accum"
+      },
+      "asnow_surface_48hrs_accum_10%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_10%",
+         "description":"asnow_surface_48hrs_accum_10%"
+      },
+      "asnow_surface_48hrs_accum_25%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_25%",
+         "description":"asnow_surface_48hrs_accum_25%"
+      },
+      "asnow_surface_48hrs_accum_5%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_5%",
+         "description":"asnow_surface_48hrs_accum_5%"
+      },
+      "asnow_surface_48hrs_accum_50%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_50%",
+         "description":"asnow_surface_48hrs_accum_50%"
+      },
+      "asnow_surface_48hrs_accum_75%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_75%",
+         "description":"asnow_surface_48hrs_accum_75%"
+      },
+      "asnow_surface_48hrs_accum_90%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_90%",
+         "description":"asnow_surface_48hrs_accum_90%"
+      },
+      "asnow_surface_48hrs_accum_95%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_95%",
+         "description":"asnow_surface_48hrs_accum_95%"
+      },
+      "asnow_surface_48hrs_accum_>0.0254":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_>0.0254",
+         "description":"asnow_surface_48hrs_accum_>0.0254"
+      },
+      "asnow_surface_48hrs_accum_>0.0508":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_>0.0508",
+         "description":"asnow_surface_48hrs_accum_>0.0508"
+      },
+      "asnow_surface_48hrs_accum_>0.1016":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_>0.1016",
+         "description":"asnow_surface_48hrs_accum_>0.1016"
+      },
+      "asnow_surface_48hrs_accum_>0.1524":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_>0.1524",
+         "description":"asnow_surface_48hrs_accum_>0.1524"
+      },
+      "asnow_surface_48hrs_accum_>0.2032":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_>0.2032",
+         "description":"asnow_surface_48hrs_accum_>0.2032"
+      },
+      "asnow_surface_48hrs_accum_>0.3048":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_>0.3048",
+         "description":"asnow_surface_48hrs_accum_>0.3048"
+      },
+      "asnow_surface_48hrs_accum_>0.4572":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_>0.4572",
+         "description":"asnow_surface_48hrs_accum_>0.4572"
+      },
+      "asnow_surface_48hrs_accum_>0.6096":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_>0.6096",
+         "description":"asnow_surface_48hrs_accum_>0.6096"
+      },
+      "asnow_surface_48hrs_accum_>0.762":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_>0.762",
+         "description":"asnow_surface_48hrs_accum_>0.762"
+      },
+      "asnow_surface_48hrs_accum_>0.9144":{
+         "Type":"Parameter",
+         "id":"asnow_surface_48hrs_accum_>0.9144",
+         "description":"asnow_surface_48hrs_accum_>0.9144"
+      },
+      "asnow_surface_6hrs_accum":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum",
+         "description":"asnow_surface_6hrs_accum"
+      },
+      "asnow_surface_6hrs_accum_10%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_10%",
+         "description":"asnow_surface_6hrs_accum_10%"
+      },
+      "asnow_surface_6hrs_accum_25%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_25%",
+         "description":"asnow_surface_6hrs_accum_25%"
+      },
+      "asnow_surface_6hrs_accum_5%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_5%",
+         "description":"asnow_surface_6hrs_accum_5%"
+      },
+      "asnow_surface_6hrs_accum_50%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_50%",
+         "description":"asnow_surface_6hrs_accum_50%"
+      },
+      "asnow_surface_6hrs_accum_75%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_75%",
+         "description":"asnow_surface_6hrs_accum_75%"
+      },
+      "asnow_surface_6hrs_accum_90%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_90%",
+         "description":"asnow_surface_6hrs_accum_90%"
+      },
+      "asnow_surface_6hrs_accum_95%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_95%",
+         "description":"asnow_surface_6hrs_accum_95%"
+      },
+      "asnow_surface_6hrs_accum_>0.00254":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_>0.00254",
+         "description":"asnow_surface_6hrs_accum_>0.00254"
+      },
+      "asnow_surface_6hrs_accum_>0.0254":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_>0.0254",
+         "description":"asnow_surface_6hrs_accum_>0.0254"
+      },
+      "asnow_surface_6hrs_accum_>0.0508":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_>0.0508",
+         "description":"asnow_surface_6hrs_accum_>0.0508"
+      },
+      "asnow_surface_6hrs_accum_>0.0762":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_>0.0762",
+         "description":"asnow_surface_6hrs_accum_>0.0762"
+      },
+      "asnow_surface_6hrs_accum_>0.1016":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_>0.1016",
+         "description":"asnow_surface_6hrs_accum_>0.1016"
+      },
+      "asnow_surface_6hrs_accum_>0.127":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_>0.127",
+         "description":"asnow_surface_6hrs_accum_>0.127"
+      },
+      "asnow_surface_6hrs_accum_>0.1524":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_>0.1524",
+         "description":"asnow_surface_6hrs_accum_>0.1524"
+      },
+      "asnow_surface_6hrs_accum_>0.2032":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_>0.2032",
+         "description":"asnow_surface_6hrs_accum_>0.2032"
+      },
+      "asnow_surface_6hrs_accum_>0.254":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_>0.254",
+         "description":"asnow_surface_6hrs_accum_>0.254"
+      },
+      "asnow_surface_6hrs_accum_>0.3048":{
+         "Type":"Parameter",
+         "id":"asnow_surface_6hrs_accum_>0.3048",
+         "description":"asnow_surface_6hrs_accum_>0.3048"
+      },
+      "asnow_surface_72hrs_accum":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum",
+         "description":"asnow_surface_72hrs_accum"
+      },
+      "asnow_surface_72hrs_accum_10%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_10%",
+         "description":"asnow_surface_72hrs_accum_10%"
+      },
+      "asnow_surface_72hrs_accum_25%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_25%",
+         "description":"asnow_surface_72hrs_accum_25%"
+      },
+      "asnow_surface_72hrs_accum_5%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_5%",
+         "description":"asnow_surface_72hrs_accum_5%"
+      },
+      "asnow_surface_72hrs_accum_50%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_50%",
+         "description":"asnow_surface_72hrs_accum_50%"
+      },
+      "asnow_surface_72hrs_accum_75%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_75%",
+         "description":"asnow_surface_72hrs_accum_75%"
+      },
+      "asnow_surface_72hrs_accum_90%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_90%",
+         "description":"asnow_surface_72hrs_accum_90%"
+      },
+      "asnow_surface_72hrs_accum_95%":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_95%",
+         "description":"asnow_surface_72hrs_accum_95%"
+      },
+      "asnow_surface_72hrs_accum_>0.0254":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_>0.0254",
+         "description":"asnow_surface_72hrs_accum_>0.0254"
+      },
+      "asnow_surface_72hrs_accum_>0.1016":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_>0.1016",
+         "description":"asnow_surface_72hrs_accum_>0.1016"
+      },
+      "asnow_surface_72hrs_accum_>0.1524":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_>0.1524",
+         "description":"asnow_surface_72hrs_accum_>0.1524"
+      },
+      "asnow_surface_72hrs_accum_>0.2032":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_>0.2032",
+         "description":"asnow_surface_72hrs_accum_>0.2032"
+      },
+      "asnow_surface_72hrs_accum_>0.3048":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_>0.3048",
+         "description":"asnow_surface_72hrs_accum_>0.3048"
+      },
+      "asnow_surface_72hrs_accum_>0.4572":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_>0.4572",
+         "description":"asnow_surface_72hrs_accum_>0.4572"
+      },
+      "asnow_surface_72hrs_accum_>0.6096":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_>0.6096",
+         "description":"asnow_surface_72hrs_accum_>0.6096"
+      },
+      "asnow_surface_72hrs_accum_>0.762":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_>0.762",
+         "description":"asnow_surface_72hrs_accum_>0.762"
+      },
+      "asnow_surface_72hrs_accum_>0.9144":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_>0.9144",
+         "description":"asnow_surface_72hrs_accum_>0.9144"
+      },
+      "asnow_surface_72hrs_accum_>1.219":{
+         "Type":"Parameter",
+         "id":"asnow_surface_72hrs_accum_>1.219",
+         "description":"asnow_surface_72hrs_accum_>1.219"
+      },
+      "cape_surface":{
+         "Type":"Parameter",
+         "id":"cape_surface",
+         "description":"cape_surface"
+      },
+      "cape_surface_ens_std_dev":{
+         "Type":"Parameter",
+         "id":"cape_surface_ens_std_dev",
+         "description":"cape_surface_ens_std_dev"
+      },
+      "cdcb_cldlayer_1":{
+         "Type":"Parameter",
+         "id":"cdcb_cldlayer_1",
+         "description":"cdcb_cldlayer_1"
+      },
+      "cdcb_cldlayer_2":{
+         "Type":"Parameter",
+         "id":"cdcb_cldlayer_2",
+         "description":"cdcb_cldlayer_2"
+      },
+      "cdcb_cldlayer_3":{
+         "Type":"Parameter",
+         "id":"cdcb_cldlayer_3",
+         "description":"cdcb_cldlayer_3"
+      },
+      "cdcb_cldlayer_above_fl250":{
+         "Type":"Parameter",
+         "id":"cdcb_cldlayer_above_fl250",
+         "description":"cdcb_cldlayer_above_fl250"
+      },
+      "cdct_cldlayer_1":{
+         "Type":"Parameter",
+         "id":"cdct_cldlayer_1",
+         "description":"cdct_cldlayer_1"
+      },
+      "cdct_cldlayer_2":{
+         "Type":"Parameter",
+         "id":"cdct_cldlayer_2",
+         "description":"cdct_cldlayer_2"
+      },
+      "cdct_cldlayer_3":{
+         "Type":"Parameter",
+         "id":"cdct_cldlayer_3",
+         "description":"cdct_cldlayer_3"
+      },
+      "ceil_cloudBase":{
+         "Type":"Parameter",
+         "id":"ceil_cloudBase",
+         "description":"ceil_cloudBase"
+      },
+      "ceil_cloudCeiling":{
+         "Type":"Parameter",
+         "id":"ceil_cloudCeiling",
+         "description":"ceil_cloudCeiling"
+      },
+      "ceil_cloudCeiling_<152.4":{
+         "Type":"Parameter",
+         "id":"ceil_cloudCeiling_<152.4",
+         "description":"ceil_cloudCeiling_<152.4"
+      },
+      "ceil_cloudCeiling_<2011.68":{
+         "Type":"Parameter",
+         "id":"ceil_cloudCeiling_<2011.68",
+         "description":"ceil_cloudCeiling_<2011.68"
+      },
+      "ceil_cloudCeiling_<304.8":{
+         "Type":"Parameter",
+         "id":"ceil_cloudCeiling_<304.8",
+         "description":"ceil_cloudCeiling_<304.8"
+      },
+      "ceil_cloudCeiling_<609.6":{
+         "Type":"Parameter",
+         "id":"ceil_cloudCeiling_<609.6",
+         "description":"ceil_cloudCeiling_<609.6"
+      },
+      "ceil_cloudCeiling_<914.5":{
+         "Type":"Parameter",
+         "id":"ceil_cloudCeiling_<914.5",
+         "description":"ceil_cloudCeiling_<914.5"
+      },
+      "cwasp_surface":{
+         "Type":"Parameter",
+         "id":"cwasp_surface",
+         "description":"cwasp_surface"
+      },
+      "cwasp_surface_10%":{
+         "Type":"Parameter",
+         "id":"cwasp_surface_10%",
+         "description":"cwasp_surface_10%"
+      },
+      "cwasp_surface_25%":{
+         "Type":"Parameter",
+         "id":"cwasp_surface_25%",
+         "description":"cwasp_surface_25%"
+      },
+      "cwasp_surface_5%":{
+         "Type":"Parameter",
+         "id":"cwasp_surface_5%",
+         "description":"cwasp_surface_5%"
+      },
+      "cwasp_surface_50%":{
+         "Type":"Parameter",
+         "id":"cwasp_surface_50%",
+         "description":"cwasp_surface_50%"
+      },
+      "cwasp_surface_75%":{
+         "Type":"Parameter",
+         "id":"cwasp_surface_75%",
+         "description":"cwasp_surface_75%"
+      },
+      "cwasp_surface_90%":{
+         "Type":"Parameter",
+         "id":"cwasp_surface_90%",
+         "description":"cwasp_surface_90%"
+      },
+      "cwasp_surface_95%":{
+         "Type":"Parameter",
+         "id":"cwasp_surface_95%",
+         "description":"cwasp_surface_95%"
+      },
+      "cwasp_surface_>50.0":{
+         "Type":"Parameter",
+         "id":"cwasp_surface_>50.0",
+         "description":"cwasp_surface_>50.0"
+      },
+      "cwasp_surface_>65.0":{
+         "Type":"Parameter",
+         "id":"cwasp_surface_>65.0",
+         "description":"cwasp_surface_>65.0"
+      },
+      "cwasp_surface_>70.0":{
+         "Type":"Parameter",
+         "id":"cwasp_surface_>70.0",
+         "description":"cwasp_surface_>70.0"
+      },
+      "cwasp_surface_>75.0":{
+         "Type":"Parameter",
+         "id":"cwasp_surface_>75.0",
+         "description":"cwasp_surface_>75.0"
+      },
+      "cwasp_surface_>85.0":{
+         "Type":"Parameter",
+         "id":"cwasp_surface_>85.0",
+         "description":"cwasp_surface_>85.0"
+      },
+      "drytprob_surface_3hrs_accum_0.0t0.0":{
+         "Type":"Parameter",
+         "id":"drytprob_surface_3hrs_accum_0.0t0.0",
+         "description":"drytprob_surface_3hrs_accum_0.0t0.0"
+      },
+      "dswrf_surface":{
+         "Type":"Parameter",
+         "id":"dswrf_surface",
+         "description":"dswrf_surface"
+      },
+      "ellinx_isobaricLayer_levels_400-300":{
+         "Type":"Parameter",
+         "id":"ellinx_isobaricLayer_levels_400-300",
+         "description":"ellinx_isobaricLayer_levels_400-300"
+      },
+      "ficeac_surface_1hrs_accum":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_1hrs_accum",
+         "description":"ficeac_surface_1hrs_accum"
+      },
+      "ficeac_surface_24hrs_accum":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum",
+         "description":"ficeac_surface_24hrs_accum"
+      },
+      "ficeac_surface_24hrs_accum_10%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum_10%",
+         "description":"ficeac_surface_24hrs_accum_10%"
+      },
+      "ficeac_surface_24hrs_accum_25%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum_25%",
+         "description":"ficeac_surface_24hrs_accum_25%"
+      },
+      "ficeac_surface_24hrs_accum_5%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum_5%",
+         "description":"ficeac_surface_24hrs_accum_5%"
+      },
+      "ficeac_surface_24hrs_accum_50%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum_50%",
+         "description":"ficeac_surface_24hrs_accum_50%"
+      },
+      "ficeac_surface_24hrs_accum_75%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum_75%",
+         "description":"ficeac_surface_24hrs_accum_75%"
+      },
+      "ficeac_surface_24hrs_accum_90%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum_90%",
+         "description":"ficeac_surface_24hrs_accum_90%"
+      },
+      "ficeac_surface_24hrs_accum_95%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum_95%",
+         "description":"ficeac_surface_24hrs_accum_95%"
+      },
+      "ficeac_surface_24hrs_accum_>0.254":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum_>0.254",
+         "description":"ficeac_surface_24hrs_accum_>0.254"
+      },
+      "ficeac_surface_24hrs_accum_>12.7":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum_>12.7",
+         "description":"ficeac_surface_24hrs_accum_>12.7"
+      },
+      "ficeac_surface_24hrs_accum_>2.54":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum_>2.54",
+         "description":"ficeac_surface_24hrs_accum_>2.54"
+      },
+      "ficeac_surface_24hrs_accum_>25.4":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum_>25.4",
+         "description":"ficeac_surface_24hrs_accum_>25.4"
+      },
+      "ficeac_surface_24hrs_accum_>6.35":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_24hrs_accum_>6.35",
+         "description":"ficeac_surface_24hrs_accum_>6.35"
+      },
+      "ficeac_surface_48hrs_accum_10%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_48hrs_accum_10%",
+         "description":"ficeac_surface_48hrs_accum_10%"
+      },
+      "ficeac_surface_48hrs_accum_25%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_48hrs_accum_25%",
+         "description":"ficeac_surface_48hrs_accum_25%"
+      },
+      "ficeac_surface_48hrs_accum_5%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_48hrs_accum_5%",
+         "description":"ficeac_surface_48hrs_accum_5%"
+      },
+      "ficeac_surface_48hrs_accum_50%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_48hrs_accum_50%",
+         "description":"ficeac_surface_48hrs_accum_50%"
+      },
+      "ficeac_surface_48hrs_accum_75%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_48hrs_accum_75%",
+         "description":"ficeac_surface_48hrs_accum_75%"
+      },
+      "ficeac_surface_48hrs_accum_90%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_48hrs_accum_90%",
+         "description":"ficeac_surface_48hrs_accum_90%"
+      },
+      "ficeac_surface_48hrs_accum_95%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_48hrs_accum_95%",
+         "description":"ficeac_surface_48hrs_accum_95%"
+      },
+      "ficeac_surface_48hrs_accum_>0.254":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_48hrs_accum_>0.254",
+         "description":"ficeac_surface_48hrs_accum_>0.254"
+      },
+      "ficeac_surface_48hrs_accum_>12.7":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_48hrs_accum_>12.7",
+         "description":"ficeac_surface_48hrs_accum_>12.7"
+      },
+      "ficeac_surface_48hrs_accum_>2.54":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_48hrs_accum_>2.54",
+         "description":"ficeac_surface_48hrs_accum_>2.54"
+      },
+      "ficeac_surface_48hrs_accum_>25.4":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_48hrs_accum_>25.4",
+         "description":"ficeac_surface_48hrs_accum_>25.4"
+      },
+      "ficeac_surface_48hrs_accum_>6.35":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_48hrs_accum_>6.35",
+         "description":"ficeac_surface_48hrs_accum_>6.35"
+      },
+      "ficeac_surface_6hrs_accum":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum",
+         "description":"ficeac_surface_6hrs_accum"
+      },
+      "ficeac_surface_6hrs_accum_10%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum_10%",
+         "description":"ficeac_surface_6hrs_accum_10%"
+      },
+      "ficeac_surface_6hrs_accum_25%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum_25%",
+         "description":"ficeac_surface_6hrs_accum_25%"
+      },
+      "ficeac_surface_6hrs_accum_5%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum_5%",
+         "description":"ficeac_surface_6hrs_accum_5%"
+      },
+      "ficeac_surface_6hrs_accum_50%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum_50%",
+         "description":"ficeac_surface_6hrs_accum_50%"
+      },
+      "ficeac_surface_6hrs_accum_75%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum_75%",
+         "description":"ficeac_surface_6hrs_accum_75%"
+      },
+      "ficeac_surface_6hrs_accum_90%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum_90%",
+         "description":"ficeac_surface_6hrs_accum_90%"
+      },
+      "ficeac_surface_6hrs_accum_95%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum_95%",
+         "description":"ficeac_surface_6hrs_accum_95%"
+      },
+      "ficeac_surface_6hrs_accum_>0.254":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum_>0.254",
+         "description":"ficeac_surface_6hrs_accum_>0.254"
+      },
+      "ficeac_surface_6hrs_accum_>12.7":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum_>12.7",
+         "description":"ficeac_surface_6hrs_accum_>12.7"
+      },
+      "ficeac_surface_6hrs_accum_>2.54":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum_>2.54",
+         "description":"ficeac_surface_6hrs_accum_>2.54"
+      },
+      "ficeac_surface_6hrs_accum_>25.4":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum_>25.4",
+         "description":"ficeac_surface_6hrs_accum_>25.4"
+      },
+      "ficeac_surface_6hrs_accum_>6.35":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_6hrs_accum_>6.35",
+         "description":"ficeac_surface_6hrs_accum_>6.35"
+      },
+      "ficeac_surface_72hrs_accum":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum",
+         "description":"ficeac_surface_72hrs_accum"
+      },
+      "ficeac_surface_72hrs_accum_10%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum_10%",
+         "description":"ficeac_surface_72hrs_accum_10%"
+      },
+      "ficeac_surface_72hrs_accum_25%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum_25%",
+         "description":"ficeac_surface_72hrs_accum_25%"
+      },
+      "ficeac_surface_72hrs_accum_5%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum_5%",
+         "description":"ficeac_surface_72hrs_accum_5%"
+      },
+      "ficeac_surface_72hrs_accum_50%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum_50%",
+         "description":"ficeac_surface_72hrs_accum_50%"
+      },
+      "ficeac_surface_72hrs_accum_75%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum_75%",
+         "description":"ficeac_surface_72hrs_accum_75%"
+      },
+      "ficeac_surface_72hrs_accum_90%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum_90%",
+         "description":"ficeac_surface_72hrs_accum_90%"
+      },
+      "ficeac_surface_72hrs_accum_95%":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum_95%",
+         "description":"ficeac_surface_72hrs_accum_95%"
+      },
+      "ficeac_surface_72hrs_accum_>0.254":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum_>0.254",
+         "description":"ficeac_surface_72hrs_accum_>0.254"
+      },
+      "ficeac_surface_72hrs_accum_>12.7":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum_>12.7",
+         "description":"ficeac_surface_72hrs_accum_>12.7"
+      },
+      "ficeac_surface_72hrs_accum_>2.54":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum_>2.54",
+         "description":"ficeac_surface_72hrs_accum_>2.54"
+      },
+      "ficeac_surface_72hrs_accum_>25.4":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum_>25.4",
+         "description":"ficeac_surface_72hrs_accum_>25.4"
+      },
+      "ficeac_surface_72hrs_accum_>6.35":{
+         "Type":"Parameter",
+         "id":"ficeac_surface_72hrs_accum_>6.35",
+         "description":"ficeac_surface_72hrs_accum_>6.35"
+      },
+      "fosindx_surface_level-2_6hrs_max":{
+         "Type":"Parameter",
+         "id":"fosindx_surface_level-2_6hrs_max",
+         "description":"fosindx_surface_level-2_6hrs_max"
+      },
+      "frzspr_surface":{
+         "Type":"Parameter",
+         "id":"frzspr_surface",
+         "description":"frzspr_surface"
+      },
+      "h_surface_levels_0-610":{
+         "Type":"Parameter",
+         "id":"h_surface_levels_0-610",
+         "description":"h_surface_levels_0-610"
+      },
+      "hindex_atmosphereSingleLayer_6hrs_max":{
+         "Type":"Parameter",
+         "id":"hindex_atmosphereSingleLayer_6hrs_max",
+         "description":"hindex_atmosphereSingleLayer_6hrs_max"
+      },
+      "i10fg_heightAboveGround":{
+         "Type":"Parameter",
+         "id":"i10fg_heightAboveGround",
+         "description":"i10fg_heightAboveGround"
+      },
+      "i10fg_heightAboveGround_50%":{
+         "Type":"Parameter",
+         "id":"i10fg_heightAboveGround_50%",
+         "description":"i10fg_heightAboveGround_50%"
+      },
+      "i10fg_heightAboveGround_ens_std_dev":{
+         "Type":"Parameter",
+         "id":"i10fg_heightAboveGround_ens_std_dev",
+         "description":"i10fg_heightAboveGround_ens_std_dev"
+      },
+      "inventory":{
+         "Type":"Parameter",
+         "id":"inventory",
+         "description":"inventory"
+      },
+      "latitude":{
+         "Type":"Parameter",
+         "id":"latitude",
+         "description":"latitude"
+      },
+      "longitude":{
+         "Type":"Parameter",
+         "id":"longitude",
+         "description":"longitude"
+      },
+      "maxref_heightAboveGround_level-1000_1hrs_max":{
+         "Type":"Parameter",
+         "id":"maxref_heightAboveGround_level-1000_1hrs_max",
+         "description":"maxref_heightAboveGround_level-1000_1hrs_max"
+      },
+      "maxrh_heightAboveGround_level-2_12hrs_max":{
+         "Type":"Parameter",
+         "id":"maxrh_heightAboveGround_level-2_12hrs_max",
+         "description":"maxrh_heightAboveGround_level-2_12hrs_max"
+      },
+      "minrh_heightAboveGround_level-2_12hrs_min":{
+         "Type":"Parameter",
+         "id":"minrh_heightAboveGround_level-2_12hrs_min",
+         "description":"minrh_heightAboveGround_level-2_12hrs_min"
+      },
+      "mld_atmosphereSingleLayer":{
+         "Type":"Parameter",
+         "id":"mld_atmosphereSingleLayer",
+         "description":"mld_atmosphereSingleLayer"
+      },
+      "pcpdur_surface_12hrs_accum":{
+         "Type":"Parameter",
+         "id":"pcpdur_surface_12hrs_accum",
+         "description":"pcpdur_surface_12hrs_accum"
+      },
+      "prmsl_meanSea_10%":{
+         "Type":"Parameter",
+         "id":"prmsl_meanSea_10%",
+         "description":"prmsl_meanSea_10%"
+      },
+      "prmsl_meanSea_25%":{
+         "Type":"Parameter",
+         "id":"prmsl_meanSea_25%",
+         "description":"prmsl_meanSea_25%"
+      },
+      "prmsl_meanSea_50%":{
+         "Type":"Parameter",
+         "id":"prmsl_meanSea_50%",
+         "description":"prmsl_meanSea_50%"
+      },
+      "prmsl_meanSea_75%":{
+         "Type":"Parameter",
+         "id":"prmsl_meanSea_75%",
+         "description":"prmsl_meanSea_75%"
+      },
+      "prmsl_meanSea_90%":{
+         "Type":"Parameter",
+         "id":"prmsl_meanSea_90%",
+         "description":"prmsl_meanSea_90%"
+      },
+      "ptype_surface_2.0t1.0":{
+         "Type":"Parameter",
+         "id":"ptype_surface_2.0t1.0",
+         "description":"ptype_surface_2.0t1.0"
+      },
+      "ptype_surface_4.0t3.0":{
+         "Type":"Parameter",
+         "id":"ptype_surface_4.0t3.0",
+         "description":"ptype_surface_4.0t3.0"
+      },
+      "ptype_surface_7.0t5.0":{
+         "Type":"Parameter",
+         "id":"ptype_surface_7.0t5.0",
+         "description":"ptype_surface_7.0t5.0"
+      },
+      "ptype_surface_9.0t8.0":{
+         "Type":"Parameter",
+         "id":"ptype_surface_9.0t8.0",
+         "description":"ptype_surface_9.0t8.0"
+      },
+      "pwther_surface":{
+         "Type":"Parameter",
+         "id":"pwther_surface",
+         "description":"pwther_surface"
+      },
+      "reference_time":{
+         "Type":"Parameter",
+         "id":"reference_time",
+         "description":"reference_time"
+      },
+      "retop_cloudTop":{
+         "Type":"Parameter",
+         "id":"retop_cloudTop",
+         "description":"retop_cloudTop"
+      },
+      "sf_surface_24hrs_accum_>7.35e-05":{
+         "Type":"Parameter",
+         "id":"sf_surface_24hrs_accum_>7.35e-05",
+         "description":"sf_surface_24hrs_accum_>7.35e-05"
+      },
+      "snowlr_surface":{
+         "Type":"Parameter",
+         "id":"snowlr_surface",
+         "description":"snowlr_surface"
+      },
+      "snowlr_surface_10%":{
+         "Type":"Parameter",
+         "id":"snowlr_surface_10%",
+         "description":"snowlr_surface_10%"
+      },
+      "snowlr_surface_25%":{
+         "Type":"Parameter",
+         "id":"snowlr_surface_25%",
+         "description":"snowlr_surface_25%"
+      },
+      "snowlr_surface_5%":{
+         "Type":"Parameter",
+         "id":"snowlr_surface_5%",
+         "description":"snowlr_surface_5%"
+      },
+      "snowlr_surface_50%":{
+         "Type":"Parameter",
+         "id":"snowlr_surface_50%",
+         "description":"snowlr_surface_50%"
+      },
+      "snowlr_surface_75%":{
+         "Type":"Parameter",
+         "id":"snowlr_surface_75%",
+         "description":"snowlr_surface_75%"
+      },
+      "snowlr_surface_90%":{
+         "Type":"Parameter",
+         "id":"snowlr_surface_90%",
+         "description":"snowlr_surface_90%"
+      },
+      "snowlr_surface_95%":{
+         "Type":"Parameter",
+         "id":"snowlr_surface_95%",
+         "description":"snowlr_surface_95%"
+      },
+      "snowlvl_heightAboveSea":{
+         "Type":"Parameter",
+         "id":"snowlvl_heightAboveSea",
+         "description":"snowlvl_heightAboveSea"
+      },
+      "snowlvl_surface_10%":{
+         "Type":"Parameter",
+         "id":"snowlvl_surface_10%",
+         "description":"snowlvl_surface_10%"
+      },
+      "snowlvl_surface_25%":{
+         "Type":"Parameter",
+         "id":"snowlvl_surface_25%",
+         "description":"snowlvl_surface_25%"
+      },
+      "snowlvl_surface_5%":{
+         "Type":"Parameter",
+         "id":"snowlvl_surface_5%",
+         "description":"snowlvl_surface_5%"
+      },
+      "snowlvl_surface_50%":{
+         "Type":"Parameter",
+         "id":"snowlvl_surface_50%",
+         "description":"snowlvl_surface_50%"
+      },
+      "snowlvl_surface_75%":{
+         "Type":"Parameter",
+         "id":"snowlvl_surface_75%",
+         "description":"snowlvl_surface_75%"
+      },
+      "snowlvl_surface_90%":{
+         "Type":"Parameter",
+         "id":"snowlvl_surface_90%",
+         "description":"snowlvl_surface_90%"
+      },
+      "snowlvl_surface_95%":{
+         "Type":"Parameter",
+         "id":"snowlvl_surface_95%",
+         "description":"snowlvl_surface_95%"
+      },
+      "swh_surface":{
+         "Type":"Parameter",
+         "id":"swh_surface",
+         "description":"swh_surface"
+      },
+      "swh_surface_10%":{
+         "Type":"Parameter",
+         "id":"swh_surface_10%",
+         "description":"swh_surface_10%"
+      },
+      "swh_surface_50%":{
+         "Type":"Parameter",
+         "id":"swh_surface_50%",
+         "description":"swh_surface_50%"
+      },
+      "swh_surface_90%":{
+         "Type":"Parameter",
+         "id":"swh_surface_90%",
+         "description":"swh_surface_90%"
+      },
+      "swh_surface_ens_std_dev":{
+         "Type":"Parameter",
+         "id":"swh_surface_ens_std_dev",
+         "description":"swh_surface_ens_std_dev"
+      },
+      "t_surface":{
+         "Type":"Parameter",
+         "id":"t_surface",
+         "description":"t_surface"
+      },
+      "tcdc_cldlayer_1":{
+         "Type":"Parameter",
+         "id":"tcdc_cldlayer_1",
+         "description":"tcdc_cldlayer_1"
+      },
+      "tcdc_cldlayer_2":{
+         "Type":"Parameter",
+         "id":"tcdc_cldlayer_2",
+         "description":"tcdc_cldlayer_2"
+      },
+      "tcdc_cldlayer_3":{
+         "Type":"Parameter",
+         "id":"tcdc_cldlayer_3",
+         "description":"tcdc_cldlayer_3"
+      },
+      "tcdc_cldlayer_above_fl250":{
+         "Type":"Parameter",
+         "id":"tcdc_cldlayer_above_fl250",
+         "description":"tcdc_cldlayer_above_fl250"
+      },
+      "tcdc_surface":{
+         "Type":"Parameter",
+         "id":"tcdc_surface",
+         "description":"tcdc_surface"
+      },
+      "tcdc_surface_ens_std_dev":{
+         "Type":"Parameter",
+         "id":"tcdc_surface_ens_std_dev",
+         "description":"tcdc_surface_ens_std_dev"
+      },
+      "thunc_atmosphere":{
+         "Type":"Parameter",
+         "id":"thunc_atmosphere",
+         "description":"thunc_atmosphere"
+      },
+      "tmax_heightAboveGround_level-2_12hrs_max":{
+         "Type":"Parameter",
+         "id":"tmax_heightAboveGround_level-2_12hrs_max",
+         "description":"tmax_heightAboveGround_level-2_12hrs_max"
+      },
+      "tmax_heightAboveGround_level-2_12hrs_max_ens_std_dev":{
+         "Type":"Parameter",
+         "id":"tmax_heightAboveGround_level-2_12hrs_max_ens_std_dev",
+         "description":"tmax_heightAboveGround_level-2_12hrs_max_ens_std_dev"
+      },
+      "tmin_heightAboveGround_level-2_12hrs_min":{
+         "Type":"Parameter",
+         "id":"tmin_heightAboveGround_level-2_12hrs_min",
+         "description":"tmin_heightAboveGround_level-2_12hrs_min"
+      },
+      "tmin_heightAboveGround_level-2_12hrs_min_ens_std_dev":{
+         "Type":"Parameter",
+         "id":"tmin_heightAboveGround_level-2_12hrs_min_ens_std_dev",
+         "description":"tmin_heightAboveGround_level-2_12hrs_min_ens_std_dev"
+      },
+      "tpwdir_heightAboveGround_level-10":{
+         "Type":"Parameter",
+         "id":"tpwdir_heightAboveGround_level-10",
+         "description":"tpwdir_heightAboveGround_level-10"
+      },
+      "tpwspd_heightAboveGround_level-10":{
+         "Type":"Parameter",
+         "id":"tpwspd_heightAboveGround_level-10",
+         "description":"tpwspd_heightAboveGround_level-10"
+      },
+      "trwdir_atmosphereSingleLayer":{
+         "Type":"Parameter",
+         "id":"trwdir_atmosphereSingleLayer",
+         "description":"trwdir_atmosphereSingleLayer"
+      },
+      "trwspd_atmosphereSingleLayer":{
+         "Type":"Parameter",
+         "id":"trwspd_atmosphereSingleLayer",
+         "description":"trwspd_atmosphereSingleLayer"
+      },
+      "tstm_surface_12hrs_accum":{
+         "Type":"Parameter",
+         "id":"tstm_surface_12hrs_accum",
+         "description":"tstm_surface_12hrs_accum"
+      },
+      "tstm_surface_1hrs_accum":{
+         "Type":"Parameter",
+         "id":"tstm_surface_1hrs_accum",
+         "description":"tstm_surface_1hrs_accum"
+      },
+      "tstm_surface_3hrs_accum":{
+         "Type":"Parameter",
+         "id":"tstm_surface_3hrs_accum",
+         "description":"tstm_surface_3hrs_accum"
+      },
+      "tstm_surface_6hrs_accum":{
+         "Type":"Parameter",
+         "id":"tstm_surface_6hrs_accum",
+         "description":"tstm_surface_6hrs_accum"
+      },
+      "turb_surface_levels_0-1372":{
+         "Type":"Parameter",
+         "id":"turb_surface_levels_0-1372",
+         "description":"turb_surface_levels_0-1372"
+      },
+      "veril_atmosphere":{
+         "Type":"Parameter",
+         "id":"veril_atmosphere",
+         "description":"veril_atmosphere"
+      },
+      "vis_surface":{
+         "Type":"Parameter",
+         "id":"vis_surface",
+         "description":"vis_surface"
+      },
+      "vis_surface_50%":{
+         "Type":"Parameter",
+         "id":"vis_surface_50%",
+         "description":"vis_surface_50%"
+      },
+      "vis_surface_<1609.34":{
+         "Type":"Parameter",
+         "id":"vis_surface_<1609.34",
+         "description":"vis_surface_<1609.34"
+      },
+      "vis_surface_<3218.69":{
+         "Type":"Parameter",
+         "id":"vis_surface_<3218.69",
+         "description":"vis_surface_<3218.69"
+      },
+      "vis_surface_<4828.03":{
+         "Type":"Parameter",
+         "id":"vis_surface_<4828.03",
+         "description":"vis_surface_<4828.03"
+      },
+      "vis_surface_<8046.73":{
+         "Type":"Parameter",
+         "id":"vis_surface_<8046.73",
+         "description":"vis_surface_<8046.73"
+      },
+      "vrate_atmosphereSingleLayer":{
+         "Type":"Parameter",
+         "id":"vrate_atmosphereSingleLayer",
+         "description":"vrate_atmosphereSingleLayer"
+      },
+      "wdir_heightAboveGround_level-30":{
+         "Type":"Parameter",
+         "id":"wdir_heightAboveGround_level-30",
+         "description":"wdir_heightAboveGround_level-30"
+      },
+      "wdir_heightAboveGround_level-30_50%":{
+         "Type":"Parameter",
+         "id":"wdir_heightAboveGround_level-30_50%",
+         "description":"wdir_heightAboveGround_level-30_50%"
+      },
+      "wdir_heightAboveGround_level-80":{
+         "Type":"Parameter",
+         "id":"wdir_heightAboveGround_level-80",
+         "description":"wdir_heightAboveGround_level-80"
+      },
+      "wdir_heightAboveGround_level-80_50%":{
+         "Type":"Parameter",
+         "id":"wdir_heightAboveGround_level-80_50%",
+         "description":"wdir_heightAboveGround_level-80_50%"
+      },
+      "wdir_surface_levels_0-610":{
+         "Type":"Parameter",
+         "id":"wdir_surface_levels_0-610",
+         "description":"wdir_surface_levels_0-610"
+      },
+      "wetglbt_surface":{
+         "Type":"Parameter",
+         "id":"wetglbt_surface",
+         "description":"wetglbt_surface"
+      },
+      "ws_heightAboveGround_level-30":{
+         "Type":"Parameter",
+         "id":"ws_heightAboveGround_level-30",
+         "description":"ws_heightAboveGround_level-30"
+      },
+      "ws_heightAboveGround_level-30_50%":{
+         "Type":"Parameter",
+         "id":"ws_heightAboveGround_level-30_50%",
+         "description":"ws_heightAboveGround_level-30_50%"
+      },
+      "ws_heightAboveGround_level-80":{
+         "Type":"Parameter",
+         "id":"ws_heightAboveGround_level-80",
+         "description":"ws_heightAboveGround_level-80"
+      },
+      "ws_heightAboveGround_level-80_50%":{
+         "Type":"Parameter",
+         "id":"ws_heightAboveGround_level-80_50%",
+         "description":"ws_heightAboveGround_level-80_50%"
+      },
+      "ws_surface_levels_0-610":{
+         "Type":"Parameter",
+         "id":"ws_surface_levels_0-610",
+         "description":"ws_surface_levels_0-610"
+      }
+   }
+}
+
+----
+
+====
+[[req_nwsviz-application_LREF-parameter-names]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/LREF-parameter-names
+statement:: The LREF Collection _SHALL_ have a defined list of parameter_names
+part:: A LREF Collection _SHALL_ have the following parameter_names definition
+
+[source,JSON]
+----
+
+----
+
+====
+[[req_nwsviz-application_LREF_TLE-parameter-names]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/LREF-TLE-parameter-names
+statement:: The LREF Collection _SHALL_ have a defined list of parameter_names
+part:: A LREF Collection _SHALL_ have the following parameter_names definition
+
+[source,JSON]
+----
+
+----
+
+====
+[[req_nwsviz-application_MRMS-parameter-names]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/MRMS-parameter-names
+statement:: The MRMS Collection _SHALL_ have a defined list of parameter_names
+part:: A MRMS Collection _SHALL_ have the following parameter_names definition
+
+[source,JSON]
+----
+
+{
+   "parameter-names":{
+      "EchoTop_18":{
+         "Type":"Parameter",
+         "id":"EchoTop_18",
+         "description":"EchoTop_18"
+      },
+      "EchoTop_30":{
+         "Type":"Parameter",
+         "id":"EchoTop_30",
+         "description":"EchoTop_30"
+      },
+      "EchoTop_50":{
+         "Type":"Parameter",
+         "id":"EchoTop_50",
+         "description":"EchoTop_50"
+      },
+      "EchoTop_60":{
+         "Type":"Parameter",
+         "id":"EchoTop_60",
+         "description":"EchoTop_60"
+      },
+      "H50Above0C":{
+         "Type":"Parameter",
+         "id":"H50Above0C",
+         "description":"H50Above0C"
+      },
+      "H50AboveM20C":{
+         "Type":"Parameter",
+         "id":"H50AboveM20C",
+         "description":"H50AboveM20C"
+      },
+      "H60Above0C":{
+         "Type":"Parameter",
+         "id":"H60Above0C",
+         "description":"H60Above0C"
+      },
+      "H60AboveM20C":{
+         "Type":"Parameter",
+         "id":"H60AboveM20C",
+         "description":"H60AboveM20C"
+      },
+      "LightningProbabilityNext30minGrid":{
+         "Type":"Parameter",
+         "id":"LightningProbabilityNext30minGrid",
+         "description":"LightningProbabilityNext30minGrid"
+      },
+      "POSH":{
+         "Type":"Parameter",
+         "id":"POSH",
+         "description":"POSH"
+      },
+      "PrecipFlag":{
+         "Type":"Parameter",
+         "id":"PrecipFlag",
+         "description":"PrecipFlag"
+      },
+      "RadarOnly_QPE_01H":{
+         "Type":"Parameter",
+         "id":"RadarOnly_QPE_01H",
+         "description":"RadarOnly_QPE_01H"
+      },
+      "ReflectivityAtLowestAltitude5km":{
+         "Type":"Parameter",
+         "id":"ReflectivityAtLowestAltitude5km",
+         "description":"ReflectivityAtLowestAltitude5km"
+      },
+      "Reflectivity_-10C":{
+         "Type":"Parameter",
+         "id":"Reflectivity_-10C",
+         "description":"Reflectivity_-10C"
+      },
+      "Reflectivity_-20C":{
+         "Type":"Parameter",
+         "id":"Reflectivity_-20C",
+         "description":"Reflectivity_-20C"
+      },
+      "Reflectivity_0C":{
+         "Type":"Parameter",
+         "id":"Reflectivity_0C",
+         "description":"Reflectivity_0C"
+      },
+      "VII":{
+         "Type":"Parameter",
+         "id":"VII",
+         "description":"VII"
+      },
+      "VIL":{
+         "Type":"Parameter",
+         "id":"VIL",
+         "description":"VIL"
+      }
+   }
+}
+
+----
+
+====
+
+=== Query Resources
+
+.Query Resource Paths
+[width="100%",options="header,footer"]
+|====================
+|PATH TEMPLATE |METHOD |RESOURCE
+|{root}/collections/{collectionId}/{queryType} |GET, POST(Optional) |Retrieve data according to the query pattern from a Collection with the unique identifier {collectionId}
+|{root}/collections/{collectionId}/instances |GET |Retrieve metadata about instances of a collection
+|{root}/collections/{collectionId}/instances/{instanceId} |GET |Retrieve metadata from a specific instanceof a Collection with the unique identifiers{collectionId} and {instanceId}
+|{root}/collections/{collectionId}/instances/{instanceId}/{queryType} |GET, POST(Optional) |Retrieve data according to the query pattern from a specific instance of a Collection with the unique identifiers{collectionId} and {instanceId}
+|====================
+
+Where:
+
+* {root} = Base URI for the API server
+* {collectionId} = an identifier for a specific Collection of data
+* {instanceId} = an identifier for a specific version or instance of a Collection of data
+* {queryType} = an identifier for a specific query pattern to retrieve data from a specific  Collection of data
+
+Path = {root}/collections/{collectionId}/{queryType}
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+[[req_nwsviz-application_data-query]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query
+statement:: The collections _SHALL_ support a defined set of data queries.
+part:: The collections _SHALL_ support the following data queries:
+
+    * Position
+    * Cube
+    * Locations
+    * Instances
+
+====
+
+
+==== Parameters
+
+The following parameters are supported by all OGC API-EDR queries.
+
+===== Output Format parameter
+
+Data format for the output data (available options are listed in the collectionsresponse).
+
+[[req_nwsviz-application_output-format]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/output-format
+statement:: Collections _SHALL_ support the following formats:
+part:: A format with the label *CoverageJSON* _SHALL_ provide CoverageJSON output which is described by link:++https://docs.ogc.org/cs/21-069r2/21-069r2.html++[]
+part:: A format with the label *NetCDF4* _SHALL_ provide CF-NetCDF output which is described by link:++https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/++[]
+cf-conventions.html
+part:: A format with the label *Zarr* _SHALL_ provide Zarr output which is described by link:++https://zarr-specs.readthedocs.io/en/latest/v3/core/index.html++[]
+====
+
+===== Parameter queryType
+
+Path -  Instance Query {root}/collections/{collectionId}/instances/{instanceId}/{queryType}
+
+
+==== Position Query
+
+The Position query returns data for the requested coordinate. Logic for identifying the best match for the coordinate will depend on the Collection and is at the discretion of the query service implementer.
+
+Path = {root}/collections/{collectionId}/instances/{instanceId}/position
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+[[req_nwsviz-application_data-query-position]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query-cube-position
+statement:: All Collections in the Service _SHALL_ provide support for *Position* queries
+part:: The *Position* query _SHALL_ support the following output formats:
+
+        * CoverageJSON
+        * Zarr
+        * NetCDF
+
+part:: The default output format for the *Cube* query _SHALL_ be *CoverageJSON*
+part:: The *Position* query _SHALL_ support the following HTTP methods:
+
+        * GET
+        * POST
+
+
+====
+
+
+==== Cube Query
+
+The Cube query returns a data cube defined by the bbox and z parameters.
+
+Path = {root}/collections/{collectionId}/instances/{instanceId}/cube
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+[[req_nwsviz-application_data-query-cube]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query-cube
+statement:: All Collections in the Service _SHALL_ provide support for *Cube* queries
+part:: The *Cube* query _SHALL_ support the following output formats:
+
+        * CoverageJSON
+        * Zarr
+        * NetCDF
+
+part:: The default output format for the *Cube* query _SHALL_ be *CoverageJSON*
+part:: The *Cube* query _SHALL_ support the following HTTP methods:
+
+        * GET
+        * POST
+
+
+====
+
+==== Locations Query
+
+The Location query returns a GeoJSON Feature Collection containing the available locations with a collection
+
+Path = {root}/collections/{collectionId}/instances/{instanceId}/locations
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+[[req_nwsviz-application_data-query-locations]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query-locations
+statement:: All Collections in the Service _SHALL_ provide support for *Locations* queries
+part:: The *Locations* query _SHALL_ support the following output formats:
+
+        * GeoJSON
+
+part:: The default output format for the *Locations* query _SHALL_ be *GeoJSON*
+part:: The *Locations* query _SHALL_ support the following HTTP methods:
+
+        * GET
+        * POST
+
+
+====
+part:: The *Locations* query _SHALL_ provide a listing of the available locations in a collection that conforms to GeoJSON and contains the properties contained in this example:
+
+[source,JSON]
+....
+{
+   "type":"FeatureCollection",
+   "features":[
+      {
+         "type":"Feature",
+         "geometry":{
+            "type":"Polygon",
+            "coordinates":[
+               [
+                  [
+                     -60.154430455510095,
+                     19.80394886054594
+                  ],
+                  [
+                     -60.154430455510095,
+                     49.81080204452752
+                  ],
+                  [
+                     -125.13089699982356,
+                     49.81080204452752
+                  ],
+                  [
+                     -125.13089699982356,
+                     19.80394886054594
+                  ],
+                  [
+                     -60.154430455510095,
+                     19.80394886054594
+                  ]
+               ]
+            ]
+         },
+         "properties":{
+            "instance":"2025-05-21T12:00:00",
+            "name":"CO",
+            "name_alt":"link:++http://edr-api-desi-c.mdl.nws.noaa.gov/collections/HREF/instances/2025-05-21T12:00:00/locations/CO?f=json++[]",
+            "edrqueryendpoint":"link:++http://edr-api-desi-c.mdl.nws.noaa.gov/collections/HREF/instances/2025-05-21T12:00:00/locations/CO?f=json++[]",
+            "parameter-names":[
+               "apcp_1h",
+               "apcp_2h",
+               "apcp_3h",
+               "apcp_accum",
+               "apcp_accum-lpmm",
+               "apcp_accum_24h",
+               "apcp_accum_24h-lpmm",
+               "apcp_accum_6h",
+               "apcp_accum_6h-lpmm",
+               "cape",
+               "ceil",
+               "ceilingAGL",
+               "cfrzr",
+               "cicep",
+               "cin",
+               "colmd",
+               "crain",
+               "csnow",
+               "d2m",
+               "dpt_isobaric",
+               "dswrf",
+               "fram1",
+               "fram24",
+               "fram24-lpmm",
+               "fram6",
+               "fram6-lpmm",
+               "framtotal",
+               "front700",
+               "front850",
+               "frzr1",
+               "frzr24",
+               "frzr24-lpmm",
+               "frzr6",
+               "frzr6-lpmm",
+               "frzrtotal",
+               "gh1000-gh500",
+               "gh700-gh500_lr",
+               "gh_isobaric",
+               "gust",
+               "hcc",
+               "hlcy_1000",
+               "hlcy_3000",
+               "inventory",
+               "large-fire-potential",
+               "lcc",
+               "lcl",
+               "ltng",
+               "massden",
+               "mcc",
+               "mnuphl_3000",
+               "mnuphl_5000",
+               "mxuphl_3000",
+               "mxuphl_5000",
+               "orog",
+               "pfrzr",
+               "picep",
+               "prain",
+               "prmsl",
+               "psnow",
+               "pwat",
+               "r2",
+               "r_isobaric",
+               "refc",
+               "refc-lpmm",
+               "retop",
+               "sdwe_1h",
+               "sdwe_2h",
+               "sdwe_3h",
+               "sdwe_accum",
+               "sdwe_accum-lpmm",
+               "sdwe_accum_1h",
+               "sdwe_accum_24h",
+               "sdwe_accum_24h-lpmm",
+               "sdwe_accum_6h",
+               "sdwe_accum_6h-lpmm",
+               "sp",
+               "stp",
+               "t2m",
+               "t_isobaric",
+               "ta2",
+               "tadv700",
+               "tadv850",
+               "tcdc",
+               "thte2",
+               "thte850",
+               "thte925",
+               "tw2",
+               "u10",
+               "u_isobaric",
+               "v10",
+               "v_isobaric",
+               "vis",
+               "vort500",
+               "vucsh",
+               "vvcsh",
+               "w_isobaric",
+               "wd_isobaric",
+               "wd_isobaric-mean",
+               "wd_isobaric-std",
+               "wdir",
+               "wdir-mean",
+               "wdir-std",
+               "ws_isobaric",
+               "wshr0-6km",
+               "wshrd0-6km",
+               "wshrd0-6km-mean",
+               "wshrd0-6km-std",
+               "wspd"
+            ],
+            "datetimes":[
+               "2025-05-21T13:00:00",
+               "2025-05-21T14:00:00",
+               "2025-05-21T15:00:00",
+               "2025-05-21T16:00:00",
+               "2025-05-21T17:00:00",
+               "2025-05-21T18:00:00",
+               "2025-05-21T19:00:00",
+               "2025-05-21T20:00:00",
+               "2025-05-21T21:00:00",
+               "2025-05-21T22:00:00",
+               "2025-05-21T23:00:00",
+               "2025-05-22T00:00:00",
+               "2025-05-22T01:00:00",
+               "2025-05-22T02:00:00",
+               "2025-05-22T03:00:00",
+               "2025-05-22T04:00:00",
+               "2025-05-22T05:00:00",
+               "2025-05-22T06:00:00",
+               "2025-05-22T07:00:00",
+               "2025-05-22T08:00:00",
+               "2025-05-22T09:00:00",
+               "2025-05-22T10:00:00",
+               "2025-05-22T11:00:00",
+               "2025-05-22T12:00:00",
+               "2025-05-22T13:00:00",
+               "2025-05-22T14:00:00",
+               "2025-05-22T15:00:00",
+               "2025-05-22T16:00:00",
+               "2025-05-22T17:00:00",
+               "2025-05-22T18:00:00",
+               "2025-05-22T19:00:00",
+               "2025-05-22T20:00:00",
+               "2025-05-22T21:00:00",
+               "2025-05-22T22:00:00",
+               "2025-05-22T23:00:00",
+               "2025-05-23T00:00:00",
+               "2025-05-23T01:00:00",
+               "2025-05-23T02:00:00",
+               "2025-05-23T03:00:00",
+               "2025-05-23T04:00:00",
+               "2025-05-23T05:00:00",
+               "2025-05-23T06:00:00",
+               "2025-05-23T07:00:00",
+               "2025-05-23T08:00:00",
+               "2025-05-23T09:00:00",
+               "2025-05-23T10:00:00",
+               "2025-05-23T11:00:00",
+               "2025-05-23T12:00:00"
+            ],
+            "desi":{
+               "comment":"Complete files (if true) are needed for model to show up on front end display.  Format 2022090912/HREF.complete",
+               "name":"HREF",
+               "groupname":"HREF",
+               "completeFile":true,
+               "zarr_config":{
+                  "data_by_field":false,
+                  "time_key":"valid_time",
+                  "lat_key":"latitude",
+                  "lon_key":"longitude",
+                  "ens_key":"ensemble",
+                  "ens_key_text":"names",
+                  "x_key":"x",
+                  "y_key":"y",
+                  "z_key":"isobaricInhPa"
+               },
+               "x4dDomain":{
+                  "x4dGrid":[
+                     40.5,
+                     -100,
+                     388,
+                     270
+                  ],
+                  "maxDomainPoints":105000
+               },
+               "tiling":{
+                  "//":"if resolution is 5km, 1 = 5km, 2 = 10km, 4 = 20km",
+                  "y":150,
+                  "x":150,
+                  "targetNx":200,
+                  "targetNy":150,
+                  "resLevels":[
+                     1,
+                     2,
+                     4
+                  ]
+               },
+               "region":{
+                  "name":"CONUS",
+                  "foldername":"HREF"
+               },
+               "projDict":{
+                  "nx":1160,
+                  "ny":678,
+                  "dx":5079,
+                  "dy":5079,
+                  "units":"m",
+                  "first_lat":19.80394886054594,
+                  "first_lon":-125.13089699982356,
+                  "proj":"+proj=lcc +a=6371200.0 +b=6371200.0 +lon_0=265.0 +lat_0=25.0 +lat_1=25.0 +lat_2=25.0"
+               },
+               "clustering":false,
+               "members":{
+                  "HRW_ARW -12h":[
+                     "HRW_ARW -12h"
+                  ],
+                  "HRW_ARW":[
+                     "HRW_ARW"
+                  ],
+                  "HRW FV3 -12h":[
+                     "HRW FV3 -12h"
+                  ],
+                  "HRW FV3":[
+                     "HRW FV3"
+                  ],
+                  "HRW NSSL -12h":[
+                     "HRW NSSL -12h"
+                  ],
+                  "HRW NSSL":[
+                     "HRW NSSL"
+                  ],
+                  "NAM CONUS Nest -12h":[
+                     "NAM CONUS Nest -12h"
+                  ],
+                  "NAM CONUS Nest":[
+                     "NAM CONUS Nest"
+                  ],
+                  "HRRR -6h":[
+                     "HRRR -6h"
+                  ],
+                  "HRRR":[
+                     "HRRR"
+                  ]
+               },
+               "membersShort":{
+                  "HRW_ARW -12h":[
+                     "ARW -12h"
+                  ],
+                  "HRW_ARW":[
+                     "ARW"
+                  ],
+                  "HRW FV3 -12h":[
+                     "FV3 -12h"
+                  ],
+                  "HRW FV3":[
+                     "FV3"
+                  ],
+                  "HRW NSSL -12h":[
+                     "NSSL -12h"
+                  ],
+                  "HRW NSSL":[
+                     "NSSL"
+                  ],
+                  "NAM CONUS Nest -12h":[
+                     "NAM N. -12h"
+                  ],
+                  "NAM CONUS Nest":[
+                     "NAM N."
+                  ],
+                  "HRRR -6h":[
+                     "HRRR -6h"
+                  ],
+                  "HRRR":[
+                     "HRRR"
+                  ]
+               },
+               "memberDepth":2,
+               "resolutionKM":5,
+               "lengthInHours":48
+            },
+            "bbox":[
+               -125.13089699982356,
+               19.80394886054594,
+               -60.154430455510095,
+               49.81080204452752
+            ]
+         }
+      }
+   ]
+}
+....
+
+==== Location Query
+
+The Location query returns a location defined by a bounding box dependent on the indices of i and j.
+
+Path = {root}/collections/{collectionId}/instances/{instanceId}/locations/{locationId}
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+[[req_nwsviz-application_data-query-location]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query-location
+statement:: All Collections in the Service _SHALL_ provide support for *Locations* queries
+part:: The *Locations* query _SHALL_ support the following output formats:
+
+        * CoverageJSON
+        * Zarr
+        * NetCDF
+
+part:: The default output format for the *Locations* query _SHALL_ be *CoverageJSON*
+part:: The *Locations* query _SHALL_ support the following HTTP methods:
+
+        * GET
+        * POST
+
+
+====
+part:: The *Locations* query _SHALL_ support a custom query parameter called "ij" where the argument represents index values of the rectangular query.
+
+[source]
+....
+&#x26;ij=i0,j0,i1,j1
+....
+
+// ==== Instances Query
+
+// Having multiple versions or instances of the same Collection, where the same information is reprocessed or regenerated is not unusual. Although these versions could be described as new Collections the instance query type allows this data to be described as different views of the same Collection.
+
+// Path = {root}/collections/{collectionId}/instances
+
+// Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+// include::../requirements/core/REQ_data-query-instances.adoc[]
+
+
+=== General Requirements
+
+==== HTTP Status Codes
+
+HTTP response
+
+ - Response status codes
+
+[[req_nwsviz-application_status-codes]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/status-codes
+statement:: The NWSViz profile Collection profile _SHALL_ support the following HTTP status codes.
+part:: The message descriptions _SHALL_ be as follows:
+
+!===
+|Status code |Description
+
+| 200  |A successful request.
+
+| 204  |A successful request, but the resource has no data resulting from the request.  No additional content or message body is provided.
+
+| 304  |An <<web-caching,entity tag>> was provided in the request and the resource has not been changed since the previous request.
+
+| 400  |The server cannot or will not process the request due to an apparent client error. For example, a query parameter had an incorrect value.
+
+| 404  |The requested resource does not exist on the server. For example, a path parameter had an incorrect value.
+
+| 405  |The request method is not supported. For example, a POST request was submitted, but the resource only supports GET requests.
+
+| 413  |Request entity too large. For example, the query would involve returning more data than the server is capable of processing, the implementation should return a message explaining the query limits imposed by the server implementation.
+
+| 500  |An internal error occurred in the server.
+!===
+====
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/msg-bodies
+statement:: The NWSViz profile Collection profile _SHALL_ support the following HTTP response body.
+part:: The NWSViz profile Collection _SHALL_ use the following JSON schema for error response bodies (HTTP Status Codes 400 and above)
+
+[source,JSON]
+----
+{
+    "type": "object",
+    "required": [
+        "code"
+    ],
+    "properties": {
+        "code": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        }
+    }
+}
+----
+
+====
+
+==== Links
+
+ - Response links
+
+[[req_nwsviz-application_links]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/links
+statement:: A NWSViz profile Collection _SHALL_  define links as follows:
+part:: All link objects _SHALL_ have *href*, *rel* and *type* attributes
+part:: The following links _SHALL_ be included in the Collection response
+
+[source,JSON]
+----
+
+    {
+        "href": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "rel": "licence",
+        "type": "text/html"
+    },
+    {
+        "href": "https://library.wmo.int/viewer/35625?medianame=306_v.I.2_2019_edition_Updated_2022_en_#page=31&viewer=picture",
+        "rel": "related",
+        "title": "FM 92-XIV GRIB specification",
+        "type": "text/html"
+    }
+
+----
+
+====
+
+
+
+
+
+
+
+////
+add or remove annexes after "A" as necessary
+////
+[[annex-A]]
+[appendix]
+== Conformance Class Abstract Test Suite (Normative)
+
+=== Conformance Class Core
+
+[[ats_class-nwsviz-application]]
+[conformance_class]
+.Conformance Class 'Core'
+====
+[%metadata]
+identifier:: link:++http://www.example.org/1.0/conf-class-nwsviz-application++[]
+target:: link:++http://www.example.org/1.0/req/req-class-nwsviz-application++[]
+abstract-test:: /conf/nwsviz-application/root
+abstract-test:: /conf/nwsviz-application/edr-conformant
+abstract-test:: /conf/nwsviz-application/parameter-names
+abstract-test:: /conf/nwsviz-application/collectionid
+abstract-test:: /conf/nwsviz-application/extent
+abstract-test:: /conf/nwsviz-application/output-format
+abstract-test:: /conf/nwsviz-application/status-codes
+abstract-test:: /conf/nwsviz-application/msg-bodies
+abstract-test:: /conf/nwsviz-application/links
+abstract-test:: /conf/nwsviz-application/data-query
+abstract-test:: /conf/nwsviz-application/data-query-area
+abstract-test:: /conf/nwsviz-application/data-query-corridor
+abstract-test:: /conf/nwsviz-application/data-query-cube
+abstract-test:: /conf/nwsviz-application/data-query-instances
+abstract-test:: /conf/nwsviz-application/data-query-position
+abstract-test:: /conf/nwsviz-application/data-query-radius
+====
+
+
+[[ats_nwsviz-application_edr-conformant]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/edr-conformant
+target:: /req/nwsviz-application/edr-conformant
+test-purpose:: Validiate the the NWSViz profile Collection is a valid OGC API-EDR implementation
+test-method::
+step:: Verify that that the Collection can pass the OGC API-EDR Part 1 - Core conformance tests.
+====
+
+
+[[ats_nwsviz-application_root]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/root
+target:: /req/nwsviz-application_data/root
+test-purpose:: Validate that the profile defines the service landing page
+test-method::
+step:: Verify that the profile defines a *Title* for the service and the value is *"NWSViz profile service"*
+step:: Verify that each link defined for the service has a *href* and *rel* attribute.
+step:: Verify that the  *Keywords* attribute has the following values:
+
+    * Geopotential Height
+    * Pressure Level
+    * Specific humidity
+    * Air temperature
+    * u-component of wind
+    * v-component of wind
+
+step:: Verify that the *Provider* attribute has *name* and *url* attributes defined.
+step:: Verify that the *Contact* attribute has an *email* attributes defined.
+step:: Verify that the *Links* property includes the following link to the OpenAPI definition of the profile:
+
+[source,JSON]
+----
+    {
+        "title": "OpenAPI definition of NWSViz profile profile",
+        "href": "https://www.example.org/edr/profile/vextdemo/openapi.json",
+        "rel": "profile",
+        "type": "application/json"
+    }
+----
+====
+
+[[ats_nwsviz-application_parameter-names]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/parameter-names
+target:: /req/nwsviz-application/parameter-names
+test-purpose:: Verify that NWSViz profile Collection has the correct parameters defined.
+test-method::
+step:: Validate that the NWSViz profile Collection has the following definition for *parameter_names*.
+
+[source,JSON]
+----
+
+    "parameter_names": {
+        "z": {
+            "type": "Parameter",
+            "description": "Geopotential Height",
+            "unit": {
+                "label": "m",
+                "symbol": {
+                    "value": "m",
+                    "type": "https://qudt.org/vocab/unit/M"
+                }
+            },
+                "observedProperty": {
+                "id": "http://codes.wmo.int/grib2/codeflag/4.2/0-3-5",
+                "label": "Geopotential Height"
+            },
+            "measurementType": {
+                "method": "instantaneous",
+                "duration": "PT0S"
+            }
+        },
+        "q": {
+            "type": "Parameter",
+            "description": "Specific humidity",
+            "unit": {
+                "label": "kg/kg",
+                "symbol": {
+                    "value": "kg%20kg",
+                    "type": "https://qudt.org/vocab/unit/KiloGM-PER-KiloGM"
+                }
+            },
+            "observedProperty": {
+                "id": "http://codes.wmo.int/grib2/codeflag/4.2/0-1-0",
+                "label": "Specific humidity"
+            },
+            "measurementType": {
+                "method": "instantaneous",
+                "duration": "PT0S"
+            }
+        },
+        "t": {
+            "type": "Parameter",
+            "description": "Air temperature",
+            "unit": {
+                "label": "Kelvin",
+                "symbol": {
+                    "value": "K",
+                    "type": "https://qudt.org/vocab/unit/K"
+                }
+            },
+            "observedProperty": {
+                "id": "http://codes.wmo.int/grib2/codeflag/4.2/0-0-0",
+                "label": "Air temperature"
+            },
+            "measurementType": {
+                "method": "instantaneous",
+                "duration": "PT0M"
+            }
+        },
+        "u": {
+            "type": "Parameter",
+            "description": "u-component of wind",
+            "unit": {
+            "label": "m/s",
+            "symbol": {
+                "value": "m%20s",
+                "type": "https://qudt.org/vocab/unit/M-PER-SEC"
+            }
+            },
+            "observedProperty": {
+                "id": "http://codes.wmo.int/grib2/codeflag/4.2/_0-2-2",
+                "label": "u component of wind"
+            },
+            "measurementType": {
+                "method": "instantaneous",
+                "duration": "PT0S"
+            }
+        },
+        "v": {
+            "type": "Parameter",
+            "description": "v-component of wind",
+            "unit": {
+                "label": "m/s",
+                "symbol": {
+                    "value": "m%20s",
+                    "type": "https://qudt.org/vocab/unit/M-PER-SEC"
+                }
+            },
+            "observedProperty": {
+                "id": "http://codes.wmo.int/grib2/codeflag/4.2/_0-2-3",
+                "label": "v component of wind"
+            },
+            "measurementType": {
+                "method": "instantaneous",
+                "duration": "PT0S"
+            }
+        }
+    }
+
+----
+
+====
+
+[[ats_nwsviz-application_collectionid]]
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/collectionid
+target:: /req/nwsviz-application/collectionid
+test-purpose:: Validate that a collectionid requirement is correctly defined.
+test-method::
+step:: Verify that collection id string against the Regular expression ^[a-zA-Z]\+\_[a-zA-Z]+_[a-zA-Z]+$
+step:: Verify that the collection id string contains two underscores.
+step:: Verify that the string before the first underscore in the collection id is the expected NWP model identifier.
+step:: Verify that the string after the last underscore in the collection id is a valid link:++http://codes.wmo.int/wis/topic-hierarchy/centre-id++[WMO Centre id].
+====
+
+[[ats_nwsviz-application_extent]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/extent
+target:: /req/nwsviz-application/extent
+test-purpose:: Verify that NWSViz profile Collection Extent is correctly defined in the Collection response.
+test-method::
+step:: Verfiy NWSViz profile Collection Spatial extent Coordinate Reference System is defined as:
+
+    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
+
+step:: Verfiy NWSViz profile Collection Spatial extent bounds are defined as  [-180,-90,180,90]
+
+step:: Verfiy NWSViz profile Collection Temporal extent Temporal Reference System is defined as:
+
+    * TIMECRS["DateTime",TDATUM["Gregorian Calendar"],CS[temporal,1],AXIS["Time (T)",future],TIMEUNIT["day",86400]]
+
+step:: Verfiy NWSViz profile Collection Vertical extent Vertical Reference System is defined as:
+
+    * PARAMETRICCRS["WMO standard atmosphere layer 0",PDATUM["Mean Sea Level",ANCHOR["101325 Pa at 15°C"]],CS[parametric,1],AXIS["pressure (Pa)",down],PARAMETRICUNIT["Pascal",100.0]]
+
+step:: Verfiy NWSViz profile Collection Vertical extent has the follwoing values defined:
+
+    * "1000","925","850","700","600","500","400","300","250","200","150","100","50"
+
+
+====
+
+[[ats_nwsviz-application_output-format]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/output-format
+target:: /req/nwsviz-application/output-format
+test-purpose:: Verify that NWSViz profile Collection queries format data responses correctly.
+test-method::
+step:: Request data with the output format label and verify the response is correct
+
+step:: Verify a output format of *GRIB2* creates a file that has the following structure link:++https://library.wmo.int/viewer/35625?medianame=306_v.I.2_2019_edition_Updated_2022_en_#page=31&viewer=picture++[]
+part:: Verify a output format of *GeoJSON* is compatible with the JSON schema defined in the following repository link:++https://github.com/opengeospatial/OGC-feat-geo-json++[]
+part:: Verify a output format of *CoverageJSON* is compatible with the JSON schema defined by link:++https://docs.ogc.org/cs/21-069r2/21-069r2.html++[]
+part:: Verify a output format of *NetCDF4* creates a file that has the structure described by link:++https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html++[]
+part:: Verify a output format of *CSV* generates a CSV output file with a metadata file which is described by link:++https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/++[]
+
+====
+
+[[ats_nwsviz-application_status-codes]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/status-codes
+target:: /req/nwsviz-application/status-codes
+test-purpose:: Verify that NWSViz profile Collection has the correct HTTP status responses.
+test-method::
+step:: Verify that a valid request returns a HTTP status code of 200
+step:: Verify that a valid request with an empty response returns a HTTP status code of 204
+step:: Verify that a request with an invalid query parameter value returns a HTTP status code of 400
+step:: Verify that that an unsupported HTTP method request returns a HTTP status code of 405.
+step:: Verify that a request for too much data returns a HTTP status code of 413.
+step:: Verify that a invalid request caused by an unexpected error returns a HTTP status code of 500.
+
+====
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/msg-bodies
+target:: /req/nwsviz-application/msg-bodies
+test-purpose:: Verify that NWSViz profile error response messages have the correct structure.
+test-method::
+step:: Verify the the message body returned by error messages (status codes 400,405,413 and 500) is JSON based on the following schema:
+
+[source,JSON]
+----
+{
+    "type": "object",
+    "required": [
+        "code"
+    ],
+    "properties": {
+        "code": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        }
+    }
+}
+----
+
+====
+
+[[ats_nwsviz-application_links]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/links
+target:: /req/nwsviz-application/links
+test-purpose:: Verify that NWSViz profile Collection Links section contains the required links
+test-method::
+step:: Verify that all links in the NWSViz profile Collection have *href*, *rel* and *type* attributes
+step:: Verify that NWSViz profile Collection Links section contains the required links:
+
+[source,JSON]
+----
+
+    {
+        "href": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "rel": "licence",
+        "type": "text/html"
+    },
+    {
+        "href": "https://library.wmo.int/viewer/35625?medianame=306_v.I.2_2019_edition_Updated_2022_en_#page=31&viewer=picture",
+        "rel": "related",
+        "title": "FM 92-XIV GRIB specification",
+        "type": "text/html"
+    }
+
+----
+
+====
+
+[[ats_nwsviz-application_data-query]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query
+target:: /req/nwsviz-application/data-query
+test-purpose:: Verify that all required NWSViz profile Collection queries are defined in the Collection response.
+test-method::
+step:: Verify that the Collection response includes definitions for the following queries.
+
+    * Position
+    * Cube
+    * Instances
+    * Locations
+
+====
+
+[[ats_nwsviz-application_data-query-area]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query-area
+target:: /req/nwsviz-application/data-query-area
+test-purpose:: Verify that NWSViz profile Collection *Area* query is correctly defined in the Collection response.
+test-method::
+step:: Verify that NWSViz profile Collection *Area* query defines the following output_format types
+
+    * GRIB2
+    * NetCDF4
+    * CoverageJSON
+
+step:: Verify that NWSViz profile Collection *Area* query defines the following default output_format.
+
+    * CoverageJSON
+
+step:: Verify that NWSViz profile Collection *Area* query requirement defines the following list of crs_details values.
+
+    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
+    * PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]
+
+step:: Verify that NWSViz profile Collection *Area* query requirement supports the following HTTP operations
+
+    * GET
+    * POST
+
+====
+
+[[ats_nwsviz-application_data-query-corridor]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query-corridor
+target:: /req/nwsviz-application/data-query-corridor
+test-purpose:: Verify that NWSViz profile Collection *Corridor* query is correctly defined in the Collection response.
+test-method::
+step:: Verify that NWSViz profile Collection *Corridor* query defines the following output_format types
+
+    * GRIB2
+    * NetCDF4
+    * CoverageJSON
+
+step:: Verify that NWSViz profile Collection *Corridor* query defines the following default output_format.
+
+    * CoverageJSON
+
+step:: Verify that NWSViz profile Collection *Corridor* query requirement defines the following list of crs_details values.
+
+    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
+
+step:: Verify that NWSViz profile Collection *Corridor* query requirement supports the following width-units
+
+    * miles
+    * km
+    * degrees
+
+step:: Verify that NWSViz profile Collection *Corridor* query requirement supports the following height-units
+
+    * meters
+    * hPa
+
+
+step:: Verify that NWSViz profile Collection *Corridor* query requirement supports the following HTTP operations
+
+    * GET
+    * POST
+
+====
+
+[[ats_nwsviz-application_nwsviz-application_data-query-cube]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query-cube
+target:: /req/nwsviz-application/data-query-cube
+test-purpose:: Verify that NWSViz profile Collection *Cube* query is correctly defined in the Collection response.
+test-method::
+step:: Verify that NWSViz profile Collection *Cube* query defines the following output_format types
+
+    * GRIB2
+    * NetCDF4
+    * CoverageJSON
+
+step:: Verify that NWSViz profile Collection *Cube* query defines the following default output_format.
+
+    * CoverageJSON
+
+step:: Verify that NWSViz profile Collection *Cube* query requirement defines the following list of crs_details values.
+
+    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
+
+step:: Verify that NWSViz profile Collection *Cube* query requirement supports the following HTTP operations
+
+    * GET
+    * POST
+====
+
+[[ats_nwsviz-application_data-query-instances]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query-instances
+target:: /req/nwsviz-application-data/data-query-instances
+test-purpose:: Verify that NWSViz profile Collection *Instances* query is correctly defined in the Collection response.
+test-method::
+step:: Verify that NWSViz profile Collection has a *Instances* data query defined.
+step:: Verify the *Instances* ids str against the Regular expression ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}Z$
+====
+
+[[ats_nwsviz-application_data-query-position]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query-position
+target:: /req/nwsviz-application/data-query-position
+test-purpose:: Verify that NWSViz profile Collection *Position* query is correctly defined in the Collection response.
+test-method::
+step:: Verify that NWSViz profile Collection *Position* query defines the following output_format types
+
+    * NetCDF4
+    * CoverageJSON
+    * GeoJSON
+    * CSV
+
+step:: Verify that NWSViz profile Collection *Position* query defines the following default output_format.
+
+    * GeoJSON
+
+step:: Verify that NWSViz profile Collection *Position* query requirement defines the following list of crs_details values.
+
+    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
+    * PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]
+
+step:: Verify that NWSViz profile Collection *Position* requirement supports the following HTTP operations
+
+    * GET
+
+====
+
+[[ats_nwsviz-application_data-query-radius]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query-radius
+target:: /req/nwsviz-application/data-query-radius
+test-purpose:: Verify that NWSViz profile Collection *Radius* query is correctly defined in the Collection response.
+test-method::
+step:: Verify that NWSViz profile Collection *Radius* query defines the following output_format types
+
+    * NetCDF4
+    * CoverageJSON
+    * GeoJSON
+    * CSV
+
+step:: Verify that NWSViz profile Collection *Radius* query defines the following default output_format.
+
+    * CoverageJSON
+
+step:: Verify that NWSViz profile Collection *Radius* query requirement defines the following list of crs_details values.
+
+    * GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],MEMBER["World Geodetic System 1984 (G2296)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]
+    * PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]
+
+step:: Verify that NWSViz profile Collection *Radius* query requirement supports the following HTTP operations
+
+    * GET
+
+step:: Verify that NWSViz profile Collection *Radius* query requirement supports the following within-units:
+
+    * miles
+    * Km
+
+====
+
+
+
+
+
+
+////
+Revision History should be the last annex before the Bibliography
+Bibliography should be the last annex
+////
+[appendix]
+== Revision History
+
+[width="90%",options="header"]
+|===
+|Date |Release |Editor | Primary clauses modified |Description
+|2016-04-28 |0.1 |G. Editor |all |initial version
+|===
+
+[bibliography]
+
+== Bibliography
+
+[NOTE]
+.Example Bibliography (Delete this note).
+===============================================
+The TC has approved Springer LNCS as the official document citation type.
+
+Springer LNCS is widely used in technical and computer science journals and other publications
+
+* For citations in the text please use square brackets and consecutive numbers: [1], [2], [3]
+
+– Actual References:
+
+[n] Journal: Author Surname, A.: Title. Publication Title. Volume number, Issue number, Pages Used (Year Published)
+
+[n] Web: Author Surname, A.: Title, link:++http://Website-Url++[]
+
+===============================================
+
+* [[[OGC2015,OGCTB12]]], _OGC: OGC Testbed 12 Annex B: Architecture_ (2015).

@@ -1,9 +1,9 @@
-[[ats_data-query-corridor]]
+[[ats_nwsviz-application_data-query-corridor]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/data-query-corridor
-target:: /req/vertical-extent-demo/data-query-corridor
+identifier:: /conf/nwsviz-application/data-query-corridor
+target:: /req/nwsviz-application/data-query-corridor
 test-purpose:: Verify that NWSViz profile Collection *Corridor* query is correctly defined in the Collection response.
 test-method:: 
 step:: Verify that NWSViz profile Collection *Corridor* query defines the following output_format types

@@ -1,9 +1,9 @@
-[[ats_edr-conformant]]
+[[ats_nwsviz-application_edr-conformant]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/edr-conformant
-target:: /req/vertical-extent-demo/edr-conformant
+identifier:: /conf/nwsviz-application/edr-conformant
+target:: /req/nwsviz-application/edr-conformant
 test-purpose:: Validiate the the NWSViz profile Collection is a valid OGC API-EDR implementation 
 test-method:: 
 step:: Verify that that the Collection can pass the OGC API-EDR Part 1 - Core conformance tests.

@@ -1,9 +1,10 @@
-[[ats_collectionid]]
+[[ats_nwsviz-application_collectionid]]
+
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/collectionid
-target:: /req/vertical-extent-demo/collectionid
+identifier:: /conf/nwsviz-application/collectionid
+target:: /req/nwsviz-application/collectionid
 test-purpose:: Validate that a collectionid requirement is correctly defined.
 test-method:: 
 step:: Verify that collection id string against the Regular expression ^[a-zA-Z]\+\_[a-zA-Z]+_[a-zA-Z]+$

@@ -1,9 +1,9 @@
-[[ats_conformance-test]]
+[[ats_nwsviz-application_conformance-test]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/conformance-test
-target:: /req/vertical-extent-demo/conformance-test
+identifier:: /conf/nwsviz-application/conformance-test
+target:: /req/nwsviz-application/conformance-test
 test-purpose:: Validate that each requirement has a corresponding conformance class
 test-method:: 
 step:: Verify that the following conformance classes are advertised:

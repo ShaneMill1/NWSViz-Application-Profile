@@ -1,9 +1,9 @@
-[[ats_data-query-area]]
+[[ats_nwsviz-application_data-query-area]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/data-query-area
-target:: /req/vertical-extent-demo/data-query-area
+identifier:: /conf/nwsviz-application/data-query-area
+target:: /req/nwsviz-application/data-query-area
 test-purpose:: Verify that NWSViz profile Collection *Area* query is correctly defined in the Collection response.
 test-method:: 
 step:: Verify that NWSViz profile Collection *Area* query defines the following output_format types

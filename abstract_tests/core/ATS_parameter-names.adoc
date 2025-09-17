@@ -1,9 +1,9 @@
-[[ats_parameter-names]]
+[[ats_nwsviz-application_parameter-names]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/parameter-names
-target:: /req/vertical-extent-demo/parameter-names
+identifier:: /conf/nwsviz-application/parameter-names
+target:: /req/nwsviz-application/parameter-names
 test-purpose:: Verify that NWSViz profile Collection has the correct parameters defined.
 test-method::
 step:: Validate that the NWSViz profile Collection has the following definition for *parameter_names*.

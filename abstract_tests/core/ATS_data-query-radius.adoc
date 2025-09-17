@@ -1,9 +1,9 @@
-[[ats_data-query-radius]]
+[[ats_nwsviz-application_data-query-radius]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/vertical-extent-demo/data-query-radius
-target:: /req/vertical-extent-demo/data-query-radius
+identifier:: /conf/nwsviz-application/data-query-radius
+target:: /req/nwsviz-application/data-query-radius
 test-purpose:: Verify that NWSViz profile Collection *Radius* query is correctly defined in the Collection response.
 test-method:: 
 step:: Verify that NWSViz profile Collection *Radius* query defines the following output_format types
