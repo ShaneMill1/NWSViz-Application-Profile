@@ -11,17 +11,52 @@ part:: The following links _SHALL_ be included in the Collection response
 [source,JSON]
 ----
 
-    {
-        "href": "https://creativecommons.org/licenses/by-nc/4.0/",
-        "rel": "licence",
-        "type": "text/html"
-    },
-    {
-        "href": "https://library.wmo.int/viewer/35625?medianame=306_v.I.2_2019_edition_Updated_2022_en_#page=31&viewer=picture",
-        "rel": "related",
-        "title": "FM 92-XIV GRIB specification",
-        "type": "text/html"
-    }
+{
+   "links":[
+      {
+         "type":"application/json",
+         "rel":"root",
+         "title":"The landing page of this server as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov?f=json"
+      },
+      {
+         "type":"application/json",
+         "rel":"self",
+         "title":"This document as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov/collections?f=json"
+      },
+      {
+         "type":"application/json",
+         "rel":"collection",
+         "title":"Collection Metadata for this collection as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk?f=json"
+      },
+      {
+         "type":"application/json",
+         "rel":"data",
+         "title":"Items Query for this collection as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/items?f=json"
+      },
+      {
+         "type":"application/json",
+         "rel":"data",
+         "title":"Locations Query for this collection as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/locations?f=json"
+      },
+      {
+         "type":"application/json",
+         "rel":"data",
+         "title":"Position Query for this collection as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/position?f=json"
+      },
+      {
+         "type":"application/json",
+         "rel":"instances",
+         "title":"Instances Metadata for this collection as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances?f=json"
+      }
+   ]
+}
 
 ----
 

@@ -1,0 +1,18 @@
+[[req_nwsviz-application_data-query-position]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query-items
+statement:: All Collections in the Service _SHALL_ provide support for *Items* queries 
+part:: The *Items* query _SHALL_ return a connection to a Virtual Zarr Store that can be accessed from a Zarr client such as Xarray.
+
+part:: The *Items* query _SHALL_ support the following HTTP methods:
+
+        * GET
+
+part:: The *Items* query _SHALL_ have an item identifier that follows the following syntax:
+
+        * zarr/<element>/<zoom>/<crs>/<unit>
+
+====

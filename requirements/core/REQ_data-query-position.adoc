@@ -3,7 +3,7 @@
 [requirement]
 ====
 [%metadata]
-identifier:: /req/nwsviz-application/data-query-cube-position
+identifier:: /req/nwsviz-application/data-query-position
 statement:: All Collections in the Service _SHALL_ provide support for *Position* queries 
 part:: The *Position* query _SHALL_ support the following output formats:
 
@@ -11,11 +11,10 @@ part:: The *Position* query _SHALL_ support the following output formats:
         * Zarr
         * NetCDF
 
-part:: The default output format for the *Cube* query _SHALL_ be *CoverageJSON*
+part:: The default output format for the *Position* query _SHALL_ be *CoverageJSON*
 part:: The *Position* query _SHALL_ support the following HTTP methods:
 
         * GET
-        * POST
 
 
 ====

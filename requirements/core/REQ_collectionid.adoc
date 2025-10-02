@@ -9,11 +9,8 @@ part:: The Collection Ids _SHALL_ contain the following attributes
 
 |====================
 | **id** | **description** 
-| HREF | High Resolution Ensemble Forecast 
-| NBM  | National Blend of Models 
-| LREF | Long Range Ensemble Forecast 
-| LREF_TLE | Long Range Ensemble Forecast Tile-Lagged Ensemble 
-| MRMS | Multi-Radar/Multi-Sensor Radar Products 
+| NBM_icechunk | National Blend of Models
+| MRMS_icechunk | Multi-Radar/Multi-Sensor Radar Products 
 |====================
 
 ====
