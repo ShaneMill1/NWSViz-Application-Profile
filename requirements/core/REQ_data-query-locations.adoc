@@ -415,7 +415,13 @@ part:: The *Locations* query _SHALL_ provide a listing of the available location
                      "2025-10-03T00:00:00"
                   ]
                }
-            }
+            },
+            "bbox":[
+               -3271151.605837171,
+               -263793.73346456443,
+               2681912.2261628294,
+               3789572.2545354357
+            ]
          }
       }
    ]
