@@ -5,7 +5,15 @@
 [%metadata]
 identifier:: /req/nwsviz-application/data-query-items
 statement:: All Collections in the Service _SHALL_ provide support for *Items* queries 
-part:: The *Items* query _SHALL_ return a connection to a Virtual Zarr Store that can be accessed from a Zarr client such as Xarray.
+part:: The *Items* query _SHALL_ return a connection to a Virtual Zarr Store that can be accessed via Xarray, such as:
+
+[source]
+....
+import xarray as xr
+
+ds=xr.open_zarr('https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS_icechunk/instances/2025-10-01T18:00:00/items/zarr/EchoTop_30/0')
+# Where EchoTop_30 is the element name and 0 is the zoom level
+....
 
 part:: The *Items* query _SHALL_ support the following HTTP methods:
 
