@@ -1,11 +1,13 @@
-[[req_nwsviz-application_MRMS-parameter-names]]
-
-[requirement]
+[[ats_nwsviz-application_MRMS-parameter-names]]
+[abstract_test]
 ====
 [%metadata]
-identifier:: /req/nwsviz-application/MRMS-parameter-names
-statement:: The MRMS Collection _SHALL_ have a defined dictionary of parameter_names
-part:: A MRMS Collection _SHALL_ follow the following schema where the metadata is dynamically loaded from the underlying store.
+identifier:: /conf/nwsviz-application/MRMS-parameter-names
+target:: /req/nwsviz-application/MRMS-parameter-names
+test-purpose:: Verify that NWSViz profile Collection uses the correct parameter-names schema.
+test-method::
+step:: Verify that the profile Collection follows the following schema where the metadata is dynamically loaded from the underlying store.
+
 [source,JSON]
 ----
 {
@@ -475,4 +477,5 @@ part:: A MRMS Collection _SHALL_ follow the following schema where the metadata 
    }
 }
 ----
+
 ====

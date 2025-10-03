@@ -1,11 +1,13 @@
-[[req_nwsviz-application_NBM-parameter-names]]
-
-[requirement]
+[[ats_nwsviz-application_NBM-parameter-names]]
+[abstract_test]
 ====
 [%metadata]
-identifier:: /req/nwsviz-application/NBM-parameter-names
-statement:: The NBM Collection _SHALL_ have a defined dictionary of parameter_names
-part:: A NBM Collection _SHALL_ follow the following schema where the metadata is dynamically loaded from the underlying store.
+identifier:: /conf/nwsviz-application/NBM-parameter-names
+target:: /req/nwsviz-application/NBM-parameter-names
+test-purpose:: Verify that NWSViz profile Collection uses the correct parameter-names schema.
+test-method::
+step:: Verify that the profile Collection follows the following schema where the metadata is dynamically loaded from the underlying store.
+
 [source,JSON]
 ----
 "parameter-names":{
@@ -180,4 +182,5 @@ part:: A NBM Collection _SHALL_ follow the following schema where the metadata i
    }
 }
 ----
+
 ====

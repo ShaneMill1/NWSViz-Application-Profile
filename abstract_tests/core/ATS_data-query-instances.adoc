@@ -3,7 +3,7 @@
 ====
 [%metadata]
 identifier:: /conf/nwsviz-application/data-query-instances
-target:: /req/nwsviz-application-data/data-query-instances
+target:: /req/nwsviz-application/data-query-instances
 test-purpose:: Verify that NWSViz profile Collection *Instances* query is correctly defined in the Collection response.
 test-method:: 
 step:: Verify that NWSViz profile Collection has a *Instances* data query defined.

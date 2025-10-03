@@ -7,7 +7,8 @@ identifier:: http://www.example.org/1.0/conf-class-nwsviz-application
 target:: http://www.example.org/1.0/req/req-class-nwsviz-application
 abstract-test:: /conf/nwsviz-application/root
 abstract-test:: /conf/nwsviz-application/edr-conformant
-abstract-test:: /conf/nwsviz-application/parameter-names
+abstract-test:: /conf/nwsviz-application/MRMS-parameter-names
+abstract-test:: /conf/nwsviz-application/NBM-parameter-names
 abstract-test:: /conf/nwsviz-application/collectionid
 abstract-test:: /conf/nwsviz-application/extent
 abstract-test:: /conf/nwsviz-application/output-format
@@ -15,11 +16,10 @@ abstract-test:: /conf/nwsviz-application/status-codes
 abstract-test:: /conf/nwsviz-application/msg-bodies
 abstract-test:: /conf/nwsviz-application/links
 abstract-test:: /conf/nwsviz-application/data-query
-abstract-test:: /conf/nwsviz-application/data-query-area
-abstract-test:: /conf/nwsviz-application/data-query-corridor
-abstract-test:: /conf/nwsviz-application/data-query-cube
 abstract-test:: /conf/nwsviz-application/data-query-instances
 abstract-test:: /conf/nwsviz-application/data-query-position
-abstract-test:: /conf/nwsviz-application/data-query-radius
+abstract-test:: /conf/nwsviz-application/data-query-items
+abstract-test:: /conf/nwsviz-application/data-query-location
+abstract-test:: /conf/nwsviz-application/data-query-locations
 ====
 

@@ -1,27 +1,27 @@
-[[ats_nwsviz-application_data-query-position]]
+[[ats_nwsviz-application_data-query-location]]
 [abstract_test]
 ====
 [%metadata]
-identifier:: /conf/nwsviz-application/data-query-position
-target:: /req/nwsviz-application/data-query-position
-test-purpose:: Verify that NWSViz profile Collection *Position* query is correctly defined in the Collection response.
+identifier:: /conf/nwsviz-application/data-query-location
+target:: /req/nwsviz-application/data-query-location
+test-purpose:: Verify that NWSViz profile Collection *Location* query is correctly defined in the Collection response.
 test-method:: 
-step:: Verify that NWSViz profile Collection *Position* query defines the following output_format types
+step:: Verify that NWSViz profile Collection *Location* query defines the following output_format types
 
         * CoverageJSON
         * Zarr
         * NetCDF
 
-step:: Verify that NWSViz profile Collection *Position* query defines the following default output_format.
+step:: Verify that NWSViz profile Collection *Location* query defines the following default output_format.
 
     * CoverageJSON
 
-step:: Verify that NWSViz profile Collection *Position* requirement supports the following HTTP operations
+step:: Verify that NWSViz profile Collection *Location* requirement supports the following HTTP operations
 
     * GET
     * POST
 
-step:: Verify that NWSViz profile Collection *Position* requirement supports the following custom query dimension
+step:: Verify that NWSViz profile Collection *Location* requirement supports the following custom query dimension
 
 [source]
 ....

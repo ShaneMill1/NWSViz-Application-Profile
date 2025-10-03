@@ -1,4 +1,4 @@
-[[req_nwsviz-application_data-query-position]]
+[[req_nwsviz-application_data-query-items]]
 
 [requirement]
 ====

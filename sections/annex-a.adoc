@@ -10,7 +10,9 @@ include::../abstract_tests/core/ATS_edr-conformant.adoc[]
 
 include::../abstract_tests/core/ATS_root.adoc[]
 
-include::../abstract_tests/core/ATS_parameter-names.adoc[]
+include::../abstract_tests/core/ATS_MRMS-parameter-names.adoc[]
+
+include::../abstract_tests/core/ATS_NBM-parameter-names.adoc[]
 
 include::../abstract_tests/core/ATS_collectionid.adoc[]
 
@@ -26,11 +28,13 @@ include::../abstract_tests/core/ATS_data-query.adoc[]
 
 include::../abstract_tests/core/ATS_data-query-instances.adoc[]
 
+include::../abstract_tests/core/ATS_data-query-position.adoc[]
+
 include::../abstract_tests/core/ATS_data-query-location.adoc[]
 
 include::../abstract_tests/core/ATS_data-query-locations.adoc[]
 
-include::../abstract_tests/core/ATS_data-query-cube.adoc[]
+include::../abstract_tests/core/ATS_data-query-items.adoc[]
 
 
 

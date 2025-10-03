@@ -20,7 +20,7 @@ part:: A service based on the NWSViz profile profile _SHALL_ have the following 
         "http://www.opengis.net/spec/ogcapi-edr-1/1.2/conf/coveragejson",
         "http://www.opengis.net/spec/ogcapi-edr-1/1.2/conf/wkt",
         "http://www.opengis.net/spec/ogcapi-edr-3/1.0/conf/core",
-        "http://www.example.org/profile/conf/verticalextentdemo"
+        "http://www.example.org/profile/conf/nwsviz-application"
     ]
 ----
 

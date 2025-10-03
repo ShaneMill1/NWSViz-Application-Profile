@@ -19,5 +19,5 @@ If metanorma is installed Run `make`.
 
 Alternatively the document can be built using a Metanorma docker image as follows:
 
-docker run --rm -v "$(pwd)":/metanorma -v ${HOME}/.fontist/fonts/:/config/fonts  metanorma/metanorma  metanorma compile --agree-to-terms -t ogc -x html nwsviz_application_profile.adoc
+docker run --rm -v "$(pwd)":/metanorma -v ${HOME}/.fontist/fonts/:/config/fonts  metanorma/metanorma  metanorma compile --agree-to-terms -t ogc -x pdf nwsviz_application_profile.adoc
 

@@ -136,10 +136,7 @@ include::../requirements/core/REQ_extent.adoc[]
 
 The Collection metadata includes an Parameter_names property which defines the data parameters that are available in the Collection
 
-include::../requirements/core/REQ_HREF-parameter-names.adoc[]
 include::../requirements/core/REQ_NBM-parameter-names.adoc[]
-include::../requirements/core/REQ_LREF-parameter-names.adoc[]
-include::../requirements/core/REQ_LREF_TLE-parameter-names.adoc[]
 include::../requirements/core/REQ_MRMS-parameter-names.adoc[]
 
 === Query Resources
@@ -194,15 +191,15 @@ Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
 include::../requirements/core/REQ_data-query-position.adoc[]
 
 
-==== Cube Query
+==== Items Query
 
-The Cube query returns a data cube defined by the bbox and z parameters.
+The Items query allows a user to query a resource based on a unique identifier.
 
-Path = {root}/collections/{collectionId}/instances/{instanceId}/cube
+Path = {root}/collections/{collectionId}/instances/{instanceId}/items
 
 Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
 
-include::../requirements/core/REQ_data-query-cube.adoc[]
+include::../requirements/core/REQ_data-query-items.adoc[]
 
 ==== Locations Query
 

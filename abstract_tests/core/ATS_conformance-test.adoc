@@ -21,7 +21,7 @@ step:: Verify that the following conformance classes are advertised:
         "http://www.opengis.net/spec/ogcapi-edr-1/1.2/conf/coveragejson",
         "http://www.opengis.net/spec/ogcapi-edr-1/1.2/conf/wkt",
         "http://www.opengis.net/spec/ogcapi-edr-3/1.0/conf/core",
-        "http://www.example.org/profile/conf/verticalextentdemo"
+        "http://www.example.org/profile/conf/nwsviz-application"
     ]
 ----
 ====

@@ -6,5 +6,4 @@ This Standard contains normative language and thus places requirements on confor
 
 * <<core-section,OGC API-EDR Requirements Class: Core>> specifies the core requirements which shall be met by all standards claiming conformance to this Standard.
 
-* <<profile-section,OGC API-EDR Part 3 Service Profiles Requirements Class>> specifies the requirements to which this profile has been defined.
 
