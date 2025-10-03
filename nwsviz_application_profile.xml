@@ -262,7 +262,7 @@
 </clause>
 </clause>
 
-<clause id="_6e9e16b6-aac2-d44f-ac2b-609a34ddc09f" anchor="core-section" obligation="normative">
+<clause id="_af4c0a9c-7f04-419a-b47a-2c99651112d0" anchor="core-section" obligation="normative">
 <title id="_913c130f-4d3b-3583-8581-b05232c1cf6c">Requirements Class Core</title>
 <requirement id="_7a7b0634-2d25-95ce-e19e-7360c7730a1f" anchor="req_class_nwsviz-application" model="ogc" type="class">
 <title>Requirements Class ‘NWSViz Application’</title><identifier>http://www.example.org/1.0/req/req-class-nwsviz-application</identifier><classification><tag>target-type</tag><value>NWSViz Application Profile Standard</value></classification><requirement id="_8abcd1e4-3458-7897-7c4f-a15b96b7247a" model="ogc" type="general"> <identifier>/req/nwsviz-application_data/root</identifier></requirement><requirement id="_6cda3f1a-0b28-9cde-8a1f-32a4d8ee3c92" model="ogc" type="general"> <identifier>/req/nwsviz-application/edr-conformant</identifier></requirement><requirement id="_ce725faa-2855-3007-a161-bce5da6a2baa" model="ogc" type="general"> <identifier>/req/nwsviz-application/parameter-names</identifier></requirement><requirement id="_0eed0958-4132-0061-599f-e2f4ec491f94" model="ogc" type="general"> <identifier>/req/nwsviz-application/NBM-parameter-names</identifier></requirement><requirement id="_4a7c8ac1-ba98-6f26-6e94-d9b7c62f1b0c" model="ogc" type="general"> <identifier>/req/nwsviz-application/MRMS-parameter-names</identifier></requirement><requirement id="_539fb696-422f-1d48-cdc5-3bbeed9f59eb" model="ogc" type="general"> <identifier>/req/nwsviz-application/collectionid</identifier></requirement><requirement id="_b4c83d6b-80c4-9085-a777-47b78d4ec694" model="ogc" type="general"> <identifier>/req/nwsviz-application/extent</identifier></requirement><requirement id="_a9417ecd-c4ab-3e8a-97ef-4495bd29a60b" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query</identifier></requirement><requirement id="_de26d7b8-12d9-295c-d806-e7995c016257" model="ogc" type="general"> <identifier>/req/nwsviz-application/output-format</identifier></requirement><requirement id="_d7a816d2-d78e-7a89-0b2e-70439c131c2b" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-position</identifier></requirement><requirement id="_102f0bb9-f169-189e-a15c-1b039a88fb57" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-instances</identifier></requirement><requirement id="_184b2ddd-f9da-3cf9-6db2-fdd2e376c3d9" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-location</identifier></requirement><requirement id="_15b6a3f3-ce7d-00a7-700d-42376dd7b8c0" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-locations</identifier></requirement><requirement id="_a00bc640-5b4f-b245-a5a9-a5560b7e3589" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-items</identifier></requirement><requirement id="_e0f9cb2b-0058-a2bf-a9c8-d6cf68dece26" model="ogc" type="general"> <identifier>/req/nwsviz-application/status-codes</identifier></requirement><requirement id="_2dae56d2-4559-2352-05e2-bfe4919a858b" model="ogc" type="general"> <identifier>/req/nwsviz-application/msg-bodies</identifier></requirement><requirement id="_33eb8774-e43b-d716-25b3-87794f6e3f22" model="ogc" type="general"> <identifier>/req/nwsviz-application/links</identifier></requirement>
@@ -1140,7 +1140,7 @@
 </clause>
 </clause>
 
-<clause id="_ffccd1f1-cf1e-2ac9-b4dd-38e33a26210c" obligation="normative">
+<clause id="_7ddfcc76-9791-929e-e2db-d6a053c06972" obligation="normative">
 <title id="_e75553c7-22a5-2375-8f20-78128e10fc85">Query Resources</title>
 <table id="_125bc828-d4ce-c001-062b-af353ad24f87" width="100%">
 <name id="_4b2bd7f0-1150-c42c-c7e0-b7e89535e585">Query Resource Paths</name>
@@ -1273,7 +1273,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 </requirement>
 </clause>
 
-<clause id="_7f1c3562-cd8a-be5d-6255-7aefbf40c562" obligation="normative">
+<clause id="_0b6cbe12-7ffc-ca9c-f575-91d98ddff878" obligation="normative">
 <title id="_b40645f6-54e1-c7c1-e406-e7a67de13167">Locations Query</title>
 <p id="_daa8545c-e432-9c93-9b75-73f34e5380f4">The Location query returns a GeoJSON Feature Collection containing the available locations with a collection</p>
 
@@ -1281,7 +1281,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 
 <p id="_434de82b-4d95-c90f-5f6b-2e136008fc5e">Dependencies: <eref type="inline" bibitemid="ogc-edr" citeas="OGC 19-086r4"><display-text>OGC API-Environmental Data Retrieval Standard</display-text></eref></p>
 
-<requirement id="_36c0f49d-f2e8-a4e4-57b0-3c7855a6e625" anchor="req_nwsviz-application_data-query-locations" model="ogc"> <identifier>/req/nwsviz-application/data-query-locations</identifier><description id="_aaf50bbf-c773-320e-5dc7-b7b766861fee"><p id="_0df7bfae-e249-8a0f-2e75-2492e99cc194">All Collections in the Service <em>SHALL</em> provide support for <strong>Locations</strong> queries</p>
+<requirement id="_66c1e438-779b-934d-8245-1dc04bd507f4" anchor="req_nwsviz-application_data-query-locations" model="ogc"> <identifier>/req/nwsviz-application/data-query-locations</identifier><description id="_aaf50bbf-c773-320e-5dc7-b7b766861fee"><p id="_0df7bfae-e249-8a0f-2e75-2492e99cc194">All Collections in the Service <em>SHALL</em> provide support for <strong>Locations</strong> queries</p>
 </description><component id="_65a70ccb-8d55-64f3-8b1c-b5dcba852938" class="part"><p id="_8cd2dfa2-7201-af07-f528-40d4f82e4b14">The <strong>Locations</strong> query <em>SHALL</em> support the following output formats:</p>
 <ul id="_fb054b43-d5dc-778f-d049-f12c5fe1cc5c"><li><p id="_98622304-22ed-f424-859b-5603e3967bb0">GeoJSON</p>
 </li>
@@ -1296,7 +1296,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 </component><component id="_919cb26e-00b3-a973-0614-8b2dbc9adc54" class="part"><p id="_245148da-0482-8e08-c0e6-b4a3a437c04e">The <strong>Locations</strong> query <em>SHALL</em> provide a listing of the available locations in a collection that conforms to GeoJSON. The GeoJSON should contain properties as shown below. Note that the example below only contains one parameter in the parameter-names-dict, but in reality it should contain all of the parameters listed in the parameter-names property.</p>
 </component>
 
-<description><sourcecode id="_2f39a8e6-3cd9-f799-5dc1-23a6436aab9c" lang="JSON"><body>{
+<description><sourcecode id="_ed5986cf-d545-c699-146e-ae036ac67056" lang="JSON"><body>{
    "type":"FeatureCollection",
    "features":[
       {
@@ -1691,7 +1691,13 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
                      "2025-10-03T00:00:00"
                   ]
                }
-            }
+            },
+            "bbox":[
+               -3271151.605837171,
+               -263793.73346456443,
+               2681912.2261628294,
+               3789572.2545354357
+            ]
          }
       }
    ]
