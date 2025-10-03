@@ -1,0 +1,3322 @@
+= OGC API-Environmental Data Retrieval v1.2 part 3 - NWS Viz application profile
+:doctype: best-practice
+:encoding: utf-8
+:lang: en
+:status: draft
+:committee: technical
+:draft: 3.0
+:external-id: http://www.opengis.net/doc/spec/ogcapi-edr-3/1.0
+//:docnumber: 25-014
+:received-date:
+:issued-date:
+:published-date:
+:fullname: Shane Mill (NOAA)
+:docsubtype: general
+:keywords: ogcdoc, OGC document, API, openapi, html, profile
+:submitting-organizations:
+:mn-document-class: ogc
+:mn-output-extensions: xml,html,doc,pdf
+:local-cache-only:
+:data-uri-image:
+:html-uri: ./nwsviz_application_profile_profile.html
+:pdf-uri: ./nwsviz_application_profile_profile.pdf
+:xml-uri: ./nwsviz_application_profile_profile.xml
+:doc-uri: ./nwsviz_application_profile_profile.doc
+:edition: 1.0
+
+////
+Make sure to complete each included document
+////
+.Preface
+
+////
+*OGC Declaration*
+////
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
+
+////
+NOTE: Uncomment ISO section if necessary
+
+*ISO Declaration*
+
+ISO (the International Organization for Standardization) is a worldwide federation of national standards bodies (ISO member bodies). The work of preparing International Standards is normally carried out through ISO technical committees. Each member body interested in a subject for which a technical committee has been established has the right to be represented on that committee. International organizations, governmental and non-governmental, in liaison with ISO, also take part in the work. ISO collaborates closely with the International Electrotechnical Commission (IEC) on all matters of electrotechnical standardization.
+
+International Standards are drafted in accordance with the rules given in the ISO/IEC Directives, Part 2.
+
+The main task of technical committees is to prepare International Standards. Draft International Standards adopted by the technical committees are circulated to the member bodies for voting. Publication as an International Standard requires approval by at least 75 % of the member bodies casting a vote.
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. ISO shall not be held responsible for identifying any or all such patent rights.
+////
+
+[abstract]
+== Abstract
+
+The aim of the NWSViz profile service profile is to provide a standard interface for accessing NWSViz profile data based on OGC API-EDR standard.
+
+
+
+== Preface
+
+[NOTE]
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
+
+
+== Security considerations
+
+//If no security considerations have been made for this Service Profile, use the following text.
+
+No security considerations have been made for this Service Profile.
+
+////
+If security considerations have been made for this Service Profile, follow the examples found in IANA or IETF documents. Please see the following example.
+“VRRP is designed for a range of internetworking environments that may employ different security policies. The protocol includes several authentication methods ranging from no authentication, simple clear text passwords, and strong authentication using IP Authentication with MD5 HMAC. The details on each approach including possible attacks and recommended environments follows.
+Independent of any authentication type VRRP includes a mechanism (setting TTL=255, checking on receipt) that protects against VRRP packets being injected from another remote network. This limits most vulnerabilities to local attacks.
+NOTE: The security measures discussed in the following sections only provide various kinds of authentication. No confidentiality is provided at all. This should be explicitly described as outside the scope....”
+////
+
+
+
+== Submitters
+
+All questions regarding this submission should be directed to the editor or the submitters:
+
+|===
+|*Shane Mill* |*NOAA*
+|===
+
+== Contributors
+
+//This clause is optional.
+
+Additional contributors to this Profile include the following:
+
+Individual name(s), Organization
+
+== Scope
+[NOTE]
+====
+This document defines the NWSViz profile Profile of the OGC API-EDR Part 1: Core Standard.
+====
+
+== Conformance
+
+Conformance to the NWSViz profile Profile (this document) can be tested by inspection. The test suite is provided in <<annex-A>>.
+
+This Standard contains normative language and thus places requirements on conformance, or mechanism for adoption, of candidate standards to which this Standard applies. In particular:
+
+* <<core-section,OGC API-EDR Requirements Class: Core>> specifies the core requirements which shall be met by all standards claiming conformance to this Standard.
+
+
+
+[bibliography]
+== References
+
+The following normative documents contain provisions that, through reference in this text, constitute provisions of this document. For dated references, subsequent amendments to, or revisions of, any of these publications do not apply. For undated references, the latest edition of the normative document referred to applies.
+
+* [[[iso19106,ISO 19106]]], ISO 19106:2004 Geographic information - Profiles
+
+* [[[ogc-edr,OGC 19-086]]], link:++https://www.opengis.net/doc/IS/ogcapi-edr-1/1.2++[OGC API - Environmental Data Retrieval Standard]
+
+* [[[OGC17-069,OGC 17-069]]] link:++https://docs.ogc.org/is/17-069r4/17-069r4.html++[], OGC APIFeatures - Part 1: Core, Open Geospatial Consortium (2022).
+
+* [[[OGC19-072,OGC 19-072]]] link:++https://docs.ogc.org/is/19-072/19-072.html++[], OGC API — Common — Part 1: Core, Open Geospatial Consortium (2023).
+
+* [[[OGC20-024,nofetch(OGC 20-024)]]] link:++http://docs.ogc.org/DRAFTS/20-024.html++[], OGC API — Common — Part 2: Geospatial Data (Draft), Open Geospatial Consortium
+
+* [[[ogc-modspec,OGC 08-131]]], link:++https://portal.ogc.org/files/?artifact_id=34762++[The ModSpec Model - Part 1: Core - A Standard for Designing and Writing Modular Standards]
+
+* [[[OpenAPI30,nofetch(OpenAPI30)]]] OpenAPI Initiative (OAI). **OpenAPI Specification 3.0** [online]. 2024 [viewed 2025-01-03]. The latest patch version at the time of publication of this standard was 3.0.4, available at link:++https://spec.openapis.org/oas/v3.0.4++[]
+
+* [[[OpenAPI31,nofetch(OpenAPI31)]]] OpenAPI Initiative (OAI). **OpenAPI Specification 3.1** [online]. 2024 [viewed 2025-01-03]. The latest patch version at the time of publication of this standard was 3.1.1, available at link:++https://spec.openapis.org/oas/v3.1.1++[]
+
+
+[[terms_and_definitions-section]]
+== Terms and definitions
+
+[[collection-definition]]
+=== Collection
+
+Body of resources that belong or are used together. An aggregate, set, or group of related resources.
+
+[.source]
+<<OGC20-024,OGC 20-024>>
+
+[[conformance_module-definition]]
+=== Conformance Module; Conformance Test Module
+
+A set of related conformance classes and their associated components.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+NOTE: When no ambiguity is possible, the word `test` may be omitted. i.e. conformance test module is the same as conformance module. Conformance modules may be nested in a hierarchical way.
+
+[[conformance-class-definition]]
+=== Conformance Class; Conformance Test Class
+
+A set of conformance tests that must be passed to receive a single certificate of conformance.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+NOTE: When no ambiguity is possible, the word _test_ may be left out, so conformance test class maybe called a conformance class.
+
+[[conformance_test-definition]]
+=== Conformance Test
+
+A test, abstract or real, of one or more requirements contained within a standard, or set of standards.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+[[requirement-definition]]
+=== Requirement
+
+Expression in the content of a standard conveying criteria to be fulfilled if compliance with the standard is to be claimed and from which no deviation is permitted.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+[[requirements_class-definition]]
+=== Requirements Class
+
+An aggregate of requirements with a single standardization target type that must all be satisfied to pass a conformance test Class.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+[[requirements_module-definition]]
+=== Requirements Module
+
+A set of related requirement classes and their associated components.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+[[standardization_goal-definition]]
+=== Standardization Goal
+
+A concise statement of the problem that the standard helps address and the strategy envisioned for achieving a solution. This strategy typically identifies real-world entities that need to be modified or constrained. At the abstract level, those entities are the Standardization Target Types.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+[[standardization_target-definition]]
+=== Standardization Target
+
+Entity to which some requirements of a standard apply.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+NOTE: The standardization target is the entity which may receive a certificate of conformance for a requirements class.
+
+[[standardization_target_type-definition]]
+=== Standardization Target Type
+
+Type of entity or set of entities to which the requirements of a standard apply
+
+NOTE: For example, the standardization target type for The OGC API – Features Standard are Web APIs. The standardization target type for the CDB Standard is “datastore”. It is important to understand that a standard’s root standardization target type can have sub-types, and that there can be a hierarchy of target types. For example, a Web API can have sub types of client, server, security, and so forth. As such, each requirements class can have a standardization target type that is a sub-type of the root.
+
+[.source]
+<<ogc-modspec,OGC 08-131r5>>
+
+== Conventions
+
+This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.
+
+=== Identifiers
+The normative provisions in this standard are denoted by the URI
+
+`http://www.opengis.net/doc/spec/ogcapi-edr-3/1.0`
+
+All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.
+
+==== Shortcuts
+
+In the interest of readability, the following terms will be used as shorthand for more complex text:
+
+* Profile: A Profile is a standard or specification which restricts and/or extends an existing standard. This standard defines the rules for creating a profile of the <<ogc-edr,OGC API-Environmental Data Retrieval>> Standard.  The term "Profile" will be used in this document as shorthand for "profile of the OGC API-Environmental Data Retrieval Standard".
+
+* OGC API-EDR: The term OGC API-EDR will be used in this document as shorthand for the term "OGC API-Environmental Data Retrieval Standard"
+
+[obligation=informative]
+[[context-section]]
+
+== Context
+
+=== Standardization Goal
+
+The goal of this profile is to ensure interoperabilty between NWSViz profile data implementations of the OGC API-Environmental Data Retrieval Standard (OGC API-EDR).
+
+The OGC API-EDR Standard does not try to address every possible application domain. Rather, it provides a foundation which can be tailored for a specific domain. The result of this tailoring is a domain specific "profile" of the OGC API-EDR Standard.
+
+
+
+
+[[core-section]]
+
+== Requirements Class Core
+
+[[req_class_nwsviz-application]]
+[requirements_class]
+.Requirements Class 'NWSViz Application'
+====
+[%metadata]
+identifier:: link:++http://www.example.org/1.0/req/req-class-nwsviz-application++[]
+target-type:: NWSViz Application Profile Standard
+requirement:: /req/nwsviz-application_data/root
+requirement:: /req/nwsviz-application/edr-conformant
+requirement:: /req/nwsviz-application/parameter-names
+requirement:: /req/nwsviz-application/NBM-parameter-names
+requirement:: /req/nwsviz-application/MRMS-parameter-names
+requirement:: /req/nwsviz-application/collectionid
+requirement:: /req/nwsviz-application/extent
+requirement:: /req/nwsviz-application/data-query
+requirement:: /req/nwsviz-application/output-format
+requirement:: /req/nwsviz-application/data-query-position
+requirement:: /req/nwsviz-application/data-query-instances
+requirement:: /req/nwsviz-application/data-query-location
+requirement:: /req/nwsviz-application/data-query-locations
+requirement:: /req/nwsviz-application/data-query-items
+requirement:: /req/nwsviz-application/status-codes
+requirement:: /req/nwsviz-application/msg-bodies
+requirement:: /req/nwsviz-application/links
+
+====
+
+
+
+=== Profiling Requirements
+
+Implementations of the Profile are conformant with OGC API-EDR Part 1
+
+[[req_class_nwsviz-application_edr-conformant]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/edr-conformant
+statement:: The service _SHALL_ be compliant with OGC API-Environmental Data Retrieval core v1.2.
+
+====
+
+
+=== Platform Resources
+
+OGC API — Common defines a set of common capabilities which are applicable to any OGC Web API. Those capabilities provide the platform upon which resource-specific APIs can be built. This section describes those capabilities and any modifications needed to better support spatio-temporal data resources.
+
+.Platform Resource Paths
+[width="100%",options="header,footer"]
+|====================
+|PATH TEMPLATE |METHOD |RESOURCE
+|{root}/ |GET |Landing page
+|{root}/api |GET |API Description (optional)
+|{root}/conformance |GET |Conformance Classes
+|====================
+
+Where: {root} = Base URI for the API server
+
+==== API Landing Page
+
+Path = {root}/
+
+Dependencies
+
+* <<OGC19-072,OGC API — Common — Part 1: Core>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard - Part 1.2: Core>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard - Part 3 Service Profiles>>
+
+The landing page provides links that support exploration of the resources offered via the API. The most important component of a landing page is a list of links. The Landing Page resource is initially defined in the Core conformance class of the <<OGC19-072,OGC API — Common - Part 1>> Standard. The <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> Standard does not make any changes to this definition.
+
+The normative JSON Schema for an OGC API-EDR Landing Page is defined in the link:++https://schemas.opengis.net/ogcapi/edr/1.1/openapi/schemas/core/landingPage.yaml++[LandingPage.yaml] document. While this schema provides a rich body of information about the API, only the Links property is required.
+
+Profiles of the <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> are expected to provide a richer description of the API. The additional content that Profiles should mandate is defined in the following requirements.
+
+[[req_nwsviz-application_data_root]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application_data/root
+statement:: The landing page _SHALL_ have the following infomation
+
+part:: The *Title* property value _SHALL_ be "OGC API - Environmental Data Retrieval for Dynamic Ensemble Scenarios for IDSS"
+part:: The *Description* property value _SHALL_ be "Implementation of Pygeoapi for OGC API - EDR to support DESI"
+part:: The *Links* property _SHALL_ define the links that SHALL be included in the Root response and _SHALL_ be populated with href and rel properties.
+part:: The *provider* property _SHALL_ be included in the Root response and _SHALL_ be populated with name and url properties.
+part:: The *contact* property _SHALL_ be included in the Root response and _SHALL_ be populated with an email property
+part:: The *Links* property _SHALL_ include the following link to the OpenAPI definition of the profile:
+
+[source,JSON]
+----
+    {
+        "title": "OpenAPI definition of NWSViz Application profile",
+        "href": "https://www.example.org/edr/profile/nwsviz/openapi.json",
+        "rel": "profile",
+        "type": "application/json"
+    }
+----
+
+====
+
+==== API Definition
+
+Path = {root}/api
+
+Dependencies
+
+* <<OGC19-072,OGC API — Common — Part 1: Core>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+Every API is required to provide a definition document that describes the capabilities of that API. This definition document can be used by developers to understand the API, by software clients to connect to the server, or by development tools to support the implementation of servers and clients. The API Definition resource is initially defined in the Core conformance class of the <<OGC19-072,OGC API — Common - Part 1>> Standard. The <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> does not make any changes to this definition.
+
+NOTE: At this time only OpenAPI 3.0 and OpenAPI 3.1 documents are supported by OGC Web API Standards.
+
+Profiles of the <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> are required to provide an OpenAPI 3.1 document. This document extends the API definition provided by the OGC API-EDR Standard. These extensions reflect the additional requirements added by the Profile. Implementors of the profile will then build on that document to produce the API definition document for their implementation.
+
+==== Declaration of Conformance Classes
+
+Path = {root}/conformance
+
+Dependencies
+
+* <<OGC19-072,OGC API — Common — Part 1: Core>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard - Part 3 Service Profiles>>
+
+To support “generic” clients that want to access implementations of multiple OGC API Standards and extensions — and not “just” a specific API server, the API has to declare the conformance classes it claims to have implemented. The Conformance Classes resource is initially defined in the Core conformance class of the <<OGC19-072,OGC API — Common - Part 1>> Standard. The <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> Standard does not make any changes to this definition.
+
+Profiles of the <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> have additional requirements governing which Conformance Classes and identifiers must be included in this resource.
+
+
+
+NOTE: OpenAPI 3.0 and OpenAPI 3.1 are two distinct Conformance Classes in the OGC API-EDR Standard. This requirement can be addressed in a Profile by including the appropriate conformance classes at {root}/conformance.
+
+NOTE: Get guidence from the OGC Naming Authority on valid URIs for Profiles.
+
+=== Spatio-temporal and Information Resources
+
+.Spatial-temporal and Information Resource Paths
+[width="100%",options="header,footer"]
+|====================
+|PATH TEMPLATE |METHOD |RESOURCE
+|{root}/collections|GET |Metadata describing the Collections of data available from this API.
+|{root}/collections/{collectionId} |GET |Metadata describing the Collection of data which has the unique identifier{collectionId}
+|====================
+
+Where:
+
+* {root} = Base URI for the API server
+* {collectionId} = an identifier for a specific Collection of data
+
+==== Collections
+
+OGC API implementations typically organize their geospatial resources into Collections. Information about those is accessed through the /collections path and the link:++http://www.opengis.net/def/rel/ogc/1.0/data++[] link relation.
+
+Path = {root}/collections
+
+Dependencies
+
+* <<OGC20-024,OGC API — Common — Part 2: Geospatial Data>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+The Collections resource is initially defined in the `Collections` conformance class of the <<OGC20-024,OGC API — Common - Part 2>> Standard. The <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> Standard does not make any changes to this definition.
+
+
+==== Collection Description
+
+Each resource Collection is described by a set of metadata. That metadata can be accessed directly using the /collections/{collectionId} path and as an entry in the Collections property of the /collections response.
+
+Path:
+
+* {root}/collections (returns metadata for every Collection)
+* {root}/collections/{collectionId} (returns metadata for the specified Collection)
+
+Dependencies
+
+* <<OGC20-024,OGC API — Common — Part 2: Geospatial Data>>
+* <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+===== Collection ID restictions
+
+[[req_nwsviz-application_collectionid]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/collectionid
+statement::  A Collection id should identify the source and type of NWP model
+part:: The Collection Ids _SHALL_ contain the following attributes
+
+|====================
+| **id** | **description**
+| NBM_icechunk | National Blend of Models
+| MRMS_icechunk | Multi-Radar/Multi-Sensor Radar Products
+|====================
+
+====
+
+===== Extent property restrictions
+
+The Collection metadata includes an Extent property which defines a spatial-temporal envelope that encompasses the geospatial data in the Collection.
+
+[[req_nwsviz-application_extent]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/extent
+statement:: The  Collection  _SHALL_ have minimum spatial bounds
+
+part:: The Profile _SHALL_ have a spatial extent and contain an additional attribute named "locations" containing the a list of the available locations within the collection.
+part:: The Profile _SHALL_ have a temporal extent containing an interval and values.
+part:: The Profile _SHALL_ contain an attribute named instances which contains a list of available instances for the collection.
+part:: The Profiles _SHALL_ contain a custom query dimension with the name "ensemble" containing values and ids.
+part:: The  Profile _SHOULD_ have a vertical extent if applicable
+====
+
+
+===== Parameter_names property restrictions
+
+The Collection metadata includes an Parameter_names property which defines the data parameters that are available in the Collection
+
+[[req_nwsviz-application_NBM-parameter-names]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/NBM-parameter-names
+statement:: The NBM Collection _SHALL_ have a defined dictionary of parameter_names
+part:: A NBM Collection _SHALL_ follow the following schema where the metadata is dynamically loaded from the underlying store.
+[source,JSON]
+----
+"parameter-names":{
+   "apparent_temperature":{
+      "Type":"Parameter",
+      "id":"apparent_temperature",
+      "description":"apparent_temperature",
+      "unit":{
+         "symbol":"K"
+      },
+      "temporal":{
+         "values":[
+            "2025-09-22T01:00:00",
+            "2025-09-22T02:00:00",
+            "2025-09-22T03:00:00",
+            "2025-09-22T04:00:00",
+            "2025-09-22T05:00:00",
+            "2025-09-22T06:00:00",
+            "2025-09-22T07:00:00",
+            "2025-09-22T08:00:00",
+            "2025-09-22T09:00:00",
+            "2025-09-22T10:00:00",
+            "2025-09-22T11:00:00",
+            "2025-09-22T12:00:00",
+            "2025-09-22T13:00:00",
+            "2025-09-22T14:00:00",
+            "2025-09-22T15:00:00",
+            "2025-09-22T16:00:00",
+            "2025-09-22T17:00:00",
+            "2025-09-22T18:00:00",
+            "2025-09-22T19:00:00",
+            "2025-09-22T20:00:00",
+            "2025-09-22T21:00:00",
+            "2025-09-22T22:00:00",
+            "2025-09-22T23:00:00",
+            "2025-09-23T00:00:00",
+            "2025-09-23T01:00:00",
+            "2025-09-23T02:00:00",
+            "2025-09-23T03:00:00",
+            "2025-09-23T04:00:00",
+            "2025-09-23T05:00:00",
+            "2025-09-23T06:00:00",
+            "2025-09-23T07:00:00",
+            "2025-09-23T08:00:00",
+            "2025-09-23T09:00:00",
+            "2025-09-23T10:00:00",
+            "2025-09-23T11:00:00",
+            "2025-09-23T12:00:00",
+            "2025-09-23T13:00:00",
+            "2025-09-23T14:00:00",
+            "2025-09-23T15:00:00",
+            "2025-09-23T16:00:00",
+            "2025-09-23T17:00:00",
+            "2025-09-23T18:00:00",
+            "2025-09-23T19:00:00",
+            "2025-09-23T20:00:00",
+            "2025-09-23T21:00:00",
+            "2025-09-23T22:00:00",
+            "2025-09-23T23:00:00",
+            "2025-09-24T00:00:00",
+            "2025-09-24T03:00:00",
+            "2025-09-24T06:00:00",
+            "2025-09-24T09:00:00",
+            "2025-09-24T12:00:00",
+            "2025-09-24T15:00:00",
+            "2025-09-24T18:00:00",
+            "2025-09-24T21:00:00",
+            "2025-09-25T00:00:00",
+            "2025-09-25T03:00:00",
+            "2025-09-25T06:00:00",
+            "2025-09-25T09:00:00",
+            "2025-09-25T12:00:00",
+            "2025-09-25T15:00:00",
+            "2025-09-25T18:00:00",
+            "2025-09-25T21:00:00",
+            "2025-09-26T00:00:00",
+            "2025-09-26T03:00:00",
+            "2025-09-26T06:00:00",
+            "2025-09-26T09:00:00",
+            "2025-09-26T12:00:00",
+            "2025-09-26T15:00:00",
+            "2025-09-26T18:00:00",
+            "2025-09-26T21:00:00",
+            "2025-09-27T00:00:00",
+            "2025-09-27T03:00:00",
+            "2025-09-27T06:00:00",
+            "2025-09-27T09:00:00",
+            "2025-09-27T12:00:00",
+            "2025-09-27T15:00:00",
+            "2025-09-27T18:00:00",
+            "2025-09-27T21:00:00",
+            "2025-09-28T00:00:00",
+            "2025-09-28T03:00:00",
+            "2025-09-28T06:00:00",
+            "2025-09-28T09:00:00",
+            "2025-09-28T12:00:00",
+            "2025-09-28T15:00:00",
+            "2025-09-28T18:00:00",
+            "2025-09-28T21:00:00",
+            "2025-09-29T00:00:00",
+            "2025-09-29T03:00:00",
+            "2025-09-29T06:00:00",
+            "2025-09-29T09:00:00",
+            "2025-09-29T12:00:00",
+            "2025-09-29T15:00:00",
+            "2025-09-29T18:00:00",
+            "2025-09-29T21:00:00",
+            "2025-09-30T00:00:00",
+            "2025-09-30T06:00:00",
+            "2025-09-30T12:00:00",
+            "2025-09-30T18:00:00",
+            "2025-10-01T00:00:00",
+            "2025-10-01T06:00:00",
+            "2025-10-01T12:00:00",
+            "2025-10-01T18:00:00",
+            "2025-10-02T00:00:00",
+            "2025-10-02T06:00:00",
+            "2025-10-02T12:00:00",
+            "2025-10-02T18:00:00",
+            "2025-10-03T00:00:00"
+         ]
+      },
+      "attrs":{
+         "grib_section3":[
+            0,
+            3744965,
+            0,
+            0,
+            30,
+            1,
+            0,
+            6371200,
+            255,
+            255,
+            255,
+            255,
+            2345,
+            1597,
+            19229000,
+            233723400,
+            48,
+            25000000,
+            265000000,
+            2539703,
+            2539703,
+            0,
+            80,
+            25000000,
+            25000000,
+            -90000000,
+            0
+         ],
+         "long_name":"Apparent Temperature",
+         "short_name":"APTMP",
+         "units":"K",
+         "originating_center":"US National Weather Service - NCEP (WMC)",
+         "originating_sub_center":"NWS Meteorological Development Laboratory",
+         "master_table_info":"Version Implemented on 7 November 2001",
+         "product_definition_template_number":"Analysis or forecast at a horizontal level or in a horizontal layer at a point in time. (see Template 4.0)",
+         "type_of_generating_process":"Forecast",
+         "type_of_first_fixed_surface":"Specified Height Level Above Ground (m)",
+         "type_of_second_fixed_surface":"Missing (unknown)",
+         "crs_wkt":"PROJCRS[\"unknown\",BASEGEOGCRS[\"unknown\",DATUM[\"unknown\",ELLIPSOID[\"unknown\",6371200,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8901]]],CONVERSION[\"unknown\",METHOD[\"Lambert Conic Conformal (2SP)\",ID[\"EPSG\",9802]],PARAMETER[\"Latitude of false origin\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8821]],PARAMETER[\"Longitude of false origin\",265,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8822]],PARAMETER[\"Latitude of 1st standard parallel\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8823]],PARAMETER[\"Latitude of 2nd standard parallel\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8824]],PARAMETER[\"Easting at false origin\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8826]],PARAMETER[\"Northing at false origin\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8827]]],CS[Cartesian,2],AXIS[\"(E)\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"(N)\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+         "gridlength_x_direction":2539.703,
+         "gridlength_y_direction":2539.703,
+         "latitude_first_gridpoint":19.229,
+         "longitude_first_gridpoint":233.7234,
+         "standard_name":"apparent_air_temperature",
+         "coordinates":"forecast_reference_time lead_time specified_height_level_above_ground",
+         "_FillValue":"AAAAAAAA+H8="
+      }
+   }
+}
+----
+====
+[[req_nwsviz-application_MRMS-parameter-names]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/MRMS-parameter-names
+statement:: The MRMS Collection _SHALL_ have a defined dictionary of parameter_names
+part:: A MRMS Collection _SHALL_ follow the following schema where the metadata is dynamically loaded from the underlying store.
+[source,JSON]
+----
+{
+   "parameter-names":{
+      "EchoTop_18":{
+         "Type":"Parameter",
+         "id":"EchoTop_18",
+         "description":"EchoTop_18",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:34:37",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:54:38"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "EchoTop_30":{
+         "Type":"Parameter",
+         "id":"EchoTop_30",
+         "description":"EchoTop_30",
+         "temporal":{
+            "values":[
+               "2025-10-01T17:58:37",
+               "2025-10-01T18:02:40",
+               "2025-10-01T18:04:39",
+               "2025-10-01T18:06:38",
+               "2025-10-01T18:08:34",
+               "2025-10-01T18:10:35",
+               "2025-10-01T18:12:36",
+               "2025-10-01T18:14:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:30:32",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:42:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:54:38",
+               "2025-10-01T18:56:37"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "EchoTop_60":{
+         "Type":"Parameter",
+         "id":"EchoTop_60",
+         "description":"EchoTop_60",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:06:38",
+               "2025-10-01T18:10:35",
+               "2025-10-01T18:12:36",
+               "2025-10-01T18:14:39",
+               "2025-10-01T18:16:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:30:32",
+               "2025-10-01T18:34:37",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:42:37",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:48:36",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:54:38",
+               "2025-10-01T18:56:37"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "H50Above0C":{
+         "Type":"Parameter",
+         "id":"H50Above0C",
+         "description":"H50Above0C",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:00:34",
+               "2025-10-01T18:04:39",
+               "2025-10-01T18:06:38",
+               "2025-10-01T18:08:36",
+               "2025-10-01T18:10:35",
+               "2025-10-01T18:12:36",
+               "2025-10-01T18:14:39",
+               "2025-10-01T18:16:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:30:32",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:34:37",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:48:36"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "H60AboveM20C":{
+         "Type":"Parameter",
+         "id":"H60AboveM20C",
+         "description":"H60AboveM20C",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:28:40",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:56:37"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "LightningProbabilityNext30minGrid":{
+         "Type":"Parameter",
+         "id":"LightningProbabilityNext30minGrid",
+         "description":"LightningProbabilityNext30minGrid",
+         "temporal":{
+            "values":[
+               "2025-10-01T17:58:37",
+               "2025-10-01T18:00:34",
+               "2025-10-01T18:02:35",
+               "2025-10-01T18:04:39",
+               "2025-10-01T18:06:38",
+               "2025-10-01T18:08:36",
+               "2025-10-01T18:10:35",
+               "2025-10-01T18:14:39",
+               "2025-10-01T18:16:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:28:40",
+               "2025-10-01T18:30:32",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:34:37",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:42:37",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:48:36",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:54:38"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "POSH":{
+         "Type":"Parameter",
+         "id":"POSH",
+         "description":"POSH",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:12:36",
+               "2025-10-01T18:16:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:30:39",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:54:38",
+               "2025-10-01T18:56:37",
+               "2025-10-01T18:58:39"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "PrecipFlag":{
+         "Type":"Parameter",
+         "id":"PrecipFlag",
+         "description":"PrecipFlag",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:04:00",
+               "2025-10-01T18:06:00",
+               "2025-10-01T18:08:00",
+               "2025-10-01T18:10:00",
+               "2025-10-01T18:12:00",
+               "2025-10-01T18:14:00",
+               "2025-10-01T18:16:00",
+               "2025-10-01T18:18:00",
+               "2025-10-01T18:22:00",
+               "2025-10-01T18:24:00",
+               "2025-10-01T18:26:00",
+               "2025-10-01T18:28:00",
+               "2025-10-01T18:30:00",
+               "2025-10-01T18:34:00",
+               "2025-10-01T18:36:00",
+               "2025-10-01T18:40:00",
+               "2025-10-01T18:42:00",
+               "2025-10-01T18:44:00",
+               "2025-10-01T18:48:00",
+               "2025-10-01T18:56:00"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "RadarOnly_QPE_01H":{
+         "Type":"Parameter",
+         "id":"RadarOnly_QPE_01H",
+         "description":"RadarOnly_QPE_01H",
+         "temporal":{
+            "values":[
+               "2025-10-01T17:58:00",
+               "2025-10-01T18:00:00",
+               "2025-10-01T18:06:00",
+               "2025-10-01T18:08:00",
+               "2025-10-01T18:10:00",
+               "2025-10-01T18:12:00",
+               "2025-10-01T18:14:00",
+               "2025-10-01T18:16:00",
+               "2025-10-01T18:18:00",
+               "2025-10-01T18:22:00",
+               "2025-10-01T18:24:00",
+               "2025-10-01T18:26:00",
+               "2025-10-01T18:28:00",
+               "2025-10-01T18:30:00",
+               "2025-10-01T18:32:00",
+               "2025-10-01T18:34:00",
+               "2025-10-01T18:36:00",
+               "2025-10-01T18:38:00",
+               "2025-10-01T18:40:00",
+               "2025-10-01T18:42:00",
+               "2025-10-01T18:44:00",
+               "2025-10-01T18:46:00",
+               "2025-10-01T18:48:00",
+               "2025-10-01T18:50:00",
+               "2025-10-01T18:52:00",
+               "2025-10-01T18:54:00",
+               "2025-10-01T18:56:00"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "RadarOnly_QPE_03H":{
+         "Type":"Parameter",
+         "id":"RadarOnly_QPE_03H",
+         "description":"RadarOnly_QPE_03H",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:00:00"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "RadarOnly_QPE_15M":{
+         "Type":"Parameter",
+         "id":"RadarOnly_QPE_15M",
+         "description":"RadarOnly_QPE_15M",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:00:00",
+               "2025-10-01T18:15:00",
+               "2025-10-01T18:45:00"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "RadarOnly_QPE_72H":{
+         "Type":"Parameter",
+         "id":"RadarOnly_QPE_72H",
+         "description":"RadarOnly_QPE_72H",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:00:00"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "Reflectivity_-10C":{
+         "Type":"Parameter",
+         "id":"Reflectivity_-10C",
+         "description":"Reflectivity_-10C",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:02:35",
+               "2025-10-01T18:06:38",
+               "2025-10-01T18:08:36",
+               "2025-10-01T18:10:35",
+               "2025-10-01T18:16:39",
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:28:40",
+               "2025-10-01T18:30:32",
+               "2025-10-01T18:34:37",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:48:36",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:56:37"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "Reflectivity_-20C":{
+         "Type":"Parameter",
+         "id":"Reflectivity_-20C",
+         "description":"Reflectivity_-20C",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:28:40",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:42:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:48:36",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:54:38"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "Reflectivity_0C":{
+         "Type":"Parameter",
+         "id":"Reflectivity_0C",
+         "description":"Reflectivity_0C",
+         "temporal":{
+            "values":[
+               "2025-10-01T17:58:37",
+               "2025-10-01T18:00:34",
+               "2025-10-01T18:02:35",
+               "2025-10-01T18:04:39",
+               "2025-10-01T18:08:36",
+               "2025-10-01T18:10:35",
+               "2025-10-01T18:12:36",
+               "2025-10-01T18:14:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:28:40",
+               "2025-10-01T18:30:32",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:34:37",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:48:36",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:56:37"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "VII":{
+         "Type":"Parameter",
+         "id":"VII",
+         "description":"VII",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:00:34",
+               "2025-10-01T18:02:40",
+               "2025-10-01T18:04:39",
+               "2025-10-01T18:08:34",
+               "2025-10-01T18:14:39",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:52:38"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "VIL":{
+         "Type":"Parameter",
+         "id":"VIL",
+         "description":"VIL",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:00:34",
+               "2025-10-01T18:04:39",
+               "2025-10-01T18:06:38",
+               "2025-10-01T18:08:34",
+               "2025-10-01T18:10:34",
+               "2025-10-01T18:12:36",
+               "2025-10-01T18:16:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:28:40",
+               "2025-10-01T18:30:39",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:34:39",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:42:37",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:48:36",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:54:38",
+               "2025-10-01T18:58:39"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      }
+   }
+}
+----
+====
+
+=== Query Resources
+
+.Query Resource Paths
+[width="100%",options="header,footer"]
+|====================
+|PATH TEMPLATE |METHOD |RESOURCE
+|{root}/collections/{collectionId}/{queryType} |GET, POST(Optional) |Retrieve data according to the query pattern from a Collection with the unique identifier {collectionId}
+|{root}/collections/{collectionId}/instances |GET |Retrieve metadata about instances of a collection
+|{root}/collections/{collectionId}/instances/{instanceId} |GET |Retrieve metadata from a specific instanceof a Collection with the unique identifiers{collectionId} and {instanceId}
+|{root}/collections/{collectionId}/instances/{instanceId}/{queryType} |GET, POST(Optional) |Retrieve data according to the query pattern from a specific instance of a Collection with the unique identifiers{collectionId} and {instanceId}
+|====================
+
+Where:
+
+* {root} = Base URI for the API server
+* {collectionId} = an identifier for a specific Collection of data
+* {instanceId} = an identifier for a specific version or instance of a Collection of data
+* {queryType} = an identifier for a specific query pattern to retrieve data from a specific  Collection of data
+
+Path = {root}/collections/{collectionId}/{queryType}
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+[[req_nwsviz-application_data-query]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query
+statement:: The collections _SHALL_ support a defined set of data queries.
+part:: The collections _SHALL_ support the following data queries:
+
+    * Position
+    * Locations
+    * Items
+    * Instances
+
+====
+
+
+==== Parameters
+
+The following parameters are supported by all OGC API-EDR queries.
+
+===== Output Format parameter
+
+Data format for the output data (available options are listed in the collectionsresponse).
+
+[[req_nwsviz-application_output-format]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/output-format
+statement:: Collections _SHALL_ support the following formats:
+part:: A format with the label *CoverageJSON* _SHALL_ provide CoverageJSON output which is described by link:++https://docs.ogc.org/cs/21-069r2/21-069r2.html++[]
+part:: A format with the label *NetCDF4* _SHALL_ provide CF-NetCDF output which is described by link:++https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/++[]
+cf-conventions.html
+part:: A format with the label *Zarr* _SHALL_ provide Zarr output which is described by link:++https://zarr-specs.readthedocs.io/en/latest/v3/core/index.html++[]
+====
+
+===== Parameter queryType
+
+Path -  Instance Query {root}/collections/{collectionId}/instances/{instanceId}/{queryType}
+
+
+==== Position Query
+
+The Position query returns data for the requested coordinate. Logic for identifying the best match for the coordinate will depend on the Collection and is at the discretion of the query service implementer.
+
+Path = {root}/collections/{collectionId}/instances/{instanceId}/position
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+[[req_nwsviz-application_data-query-position]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query-position
+statement:: All Collections in the Service _SHALL_ provide support for *Position* queries
+part:: The *Position* query _SHALL_ support the following output formats:
+
+        * CoverageJSON
+        * Zarr
+        * NetCDF
+
+part:: The default output format for the *Position* query _SHALL_ be *CoverageJSON*
+part:: The *Position* query _SHALL_ support the following HTTP methods:
+
+        * GET
+
+
+====
+
+
+==== Items Query
+
+The Items query allows a user to query a resource based on a unique identifier.
+
+Path = {root}/collections/{collectionId}/instances/{instanceId}/items
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+[[req_nwsviz-application_data-query-items]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query-items
+statement:: All Collections in the Service _SHALL_ provide support for *Items* queries
+part:: The *Items* query _SHALL_ return a connection to a Virtual Zarr Store that can be accessed via Xarray, such as:
+
+[source]
+....
+import xarray as xr
+
+ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS_icechunk/instances/2025-10-01T18:00:00/items/zarr/EchoTop_30/0++[]')
+# Where EchoTop_30 is the element name and 0 is the zoom level
+....
+
+part:: The *Items* query _SHALL_ support the following HTTP methods:
+
+        * GET
+
+part:: The *Items* query _SHALL_ have an item identifier that follows the following syntax:
+
+        * zarr/<element>/<zoom>/<crs>/<unit>
+
+====
+
+==== Locations Query
+
+The Location query returns a GeoJSON Feature Collection containing the available locations with a collection
+
+Path = {root}/collections/{collectionId}/instances/{instanceId}/locations
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+[[req_nwsviz-application_data-query-locations]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query-locations
+statement:: All Collections in the Service _SHALL_ provide support for *Locations* queries
+part:: The *Locations* query _SHALL_ support the following output formats:
+
+        * GeoJSON
+
+part:: The default output format for the *Locations* query _SHALL_ be *GeoJSON*
+part:: The *Locations* query _SHALL_ support the following HTTP methods:
+
+        * GET
+        * POST
+
+
+part:: The *Locations* query _SHALL_ provide a listing of the available locations in a collection that conforms to GeoJSON. The GeoJSON should contain properties as shown below. Note that the example below only contains one parameter in the parameter-names-dict, but in reality it should contain all of the parameters listed in the parameter-names property.
+
+[source,JSON]
+....
+{
+   "type":"FeatureCollection",
+   "features":[
+      {
+         "type":"Feature",
+         "geometry":{
+            "type":"Polygon",
+            "coordinates":[
+               [
+                  [
+                     2681912.2261628294,
+                     -263793.73346456443
+                  ],
+                  [
+                     2681912.2261628294,
+                     3789572.2545354357
+                  ],
+                  [
+                     -3271151.605837171,
+                     3789572.2545354357
+                  ],
+                  [
+                     -3271151.605837171,
+                     -263793.73346456443
+                  ],
+                  [
+                     2681912.2261628294,
+                     -263793.73346456443
+                  ]
+               ]
+            ]
+         },
+         "properties":{
+            "instance":"2025-09-22T00:00:00",
+            "name":"conus",
+            "name_alt":"link:++http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/locations/conus?f=json++[]",
+            "edrqueryendpoint":"link:++http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/locations/conus?f=json++[]",
+            "parameter-names":[
+               "apparent_temperature",
+               "ceiling",
+               "ceiling_probability",
+               "cloud_base",
+               "conditional_probability_of_precipitation_type",
+               "convective_available_potential_energy",
+               "convective_available_potential_energy_percentiles",
+               "convective_available_potential_energy_standard_deviation",
+               "dewpoint",
+               "dewpoint_standard_deviation",
+               "downward_shortwave_radiation_flux",
+               "dry_thunderstorm_probability",
+               "echo_top",
+               "ellrod_index",
+               "fosberg_index_06_hour",
+               "ice_accumulation_01_hour",
+               "ice_accumulation_06_hour",
+               "ice_accumulation_06_hour_percentiles",
+               "low_level_turbulence",
+               "low_level_wind_shear_altitude",
+               "low_level_wind_shear_direction",
+               "low_level_wind_shear_magnitude",
+               "maximum_reflectivity",
+               "maximum_relative_humidity_12_hour",
+               "maximum_temperature_12_hour",
+               "maximum_temperature_12_hour_standard_deviation",
+               "minimum_relative_humidity_12_hour",
+               "minimum_temperature_12_hour",
+               "minimum_temperature_12_hour_standard_deviation",
+               "mixing_height",
+               "precipitable_water",
+               "precipitable_water_percentiles",
+               "precipitation_01_hour_probability",
+               "precipitation_06_hour_probability",
+               "precipitation_12_hour_probability",
+               "precipitation_accumulation_01_hour",
+               "precipitation_accumulation_06_hour",
+               "precipitation_duration_12_hour",
+               "predominant_weather",
+               "relative_humidity",
+               "sea_surface_temperature",
+               "snow_accumulation_01_hour",
+               "snow_accumulation_01_hour_percentiles",
+               "snow_accumulation_06_hour",
+               "snow_accumulation_06_hour_percentiles",
+               "snow_level",
+               "snow_level_percentiles",
+               "snow_liquid_ratio",
+               "snow_liquid_ratio_percentiles",
+               "spc_hail_04_hour_probability",
+               "spc_tornado_04_hour_probability",
+               "spc_wind_04_hour_probability",
+               "temperature",
+               "temperature_standard_deviation",
+               "thunderstorm_01_hour_probability",
+               "thunderstorm_03_hour_probability",
+               "thunderstorm_06_hour_probability",
+               "thunderstorm_12_hour_probability",
+               "thunderstorm_coverage",
+               "total_cloud_cover",
+               "total_cloud_cover_standard_deviation",
+               "transport_wind_direction",
+               "transport_wind_speed",
+               "ventilation_rate",
+               "vertically_integrated_liquid",
+               "visibility",
+               "visibility_probability",
+               "wind_direction",
+               "wind_gust",
+               "wind_gust_standard_deviation",
+               "wind_speed",
+               "wind_speed_standard_deviation"
+            ],
+            "datetimes":[
+               "2025-09-22T01:00:00",
+               "2025-09-22T02:00:00",
+               "2025-09-22T03:00:00",
+               "2025-09-22T04:00:00",
+               "2025-09-22T05:00:00",
+               "2025-09-22T06:00:00",
+               "2025-09-22T07:00:00",
+               "2025-09-22T08:00:00",
+               "2025-09-22T09:00:00",
+               "2025-09-22T10:00:00",
+               "2025-09-22T11:00:00",
+               "2025-09-22T12:00:00",
+               "2025-09-22T13:00:00",
+               "2025-09-22T14:00:00",
+               "2025-09-22T15:00:00",
+               "2025-09-22T16:00:00",
+               "2025-09-22T17:00:00",
+               "2025-09-22T18:00:00",
+               "2025-09-22T19:00:00",
+               "2025-09-22T20:00:00",
+               "2025-09-22T21:00:00",
+               "2025-09-22T22:00:00",
+               "2025-09-22T23:00:00",
+               "2025-09-23T00:00:00",
+               "2025-09-23T01:00:00",
+               "2025-09-23T02:00:00",
+               "2025-09-23T03:00:00",
+               "2025-09-23T04:00:00",
+               "2025-09-23T05:00:00",
+               "2025-09-23T06:00:00",
+               "2025-09-23T07:00:00",
+               "2025-09-23T08:00:00",
+               "2025-09-23T09:00:00",
+               "2025-09-23T10:00:00",
+               "2025-09-23T11:00:00",
+               "2025-09-23T12:00:00",
+               "2025-09-23T13:00:00",
+               "2025-09-23T14:00:00",
+               "2025-09-23T15:00:00",
+               "2025-09-23T16:00:00",
+               "2025-09-23T17:00:00",
+               "2025-09-23T18:00:00",
+               "2025-09-23T19:00:00",
+               "2025-09-23T20:00:00",
+               "2025-09-23T21:00:00",
+               "2025-09-23T22:00:00",
+               "2025-09-23T23:00:00",
+               "2025-09-24T00:00:00",
+               "2025-09-24T03:00:00",
+               "2025-09-24T06:00:00",
+               "2025-09-24T09:00:00",
+               "2025-09-24T12:00:00",
+               "2025-09-24T15:00:00",
+               "2025-09-24T18:00:00",
+               "2025-09-24T21:00:00",
+               "2025-09-25T00:00:00",
+               "2025-09-25T03:00:00",
+               "2025-09-25T06:00:00",
+               "2025-09-25T09:00:00",
+               "2025-09-25T12:00:00",
+               "2025-09-25T15:00:00",
+               "2025-09-25T18:00:00",
+               "2025-09-25T21:00:00",
+               "2025-09-26T00:00:00",
+               "2025-09-26T03:00:00",
+               "2025-09-26T06:00:00",
+               "2025-09-26T09:00:00",
+               "2025-09-26T12:00:00",
+               "2025-09-26T15:00:00",
+               "2025-09-26T18:00:00",
+               "2025-09-26T21:00:00",
+               "2025-09-27T00:00:00",
+               "2025-09-27T03:00:00",
+               "2025-09-27T06:00:00",
+               "2025-09-27T09:00:00",
+               "2025-09-27T12:00:00",
+               "2025-09-27T15:00:00",
+               "2025-09-27T18:00:00",
+               "2025-09-27T21:00:00",
+               "2025-09-28T00:00:00",
+               "2025-09-28T03:00:00",
+               "2025-09-28T06:00:00",
+               "2025-09-28T09:00:00",
+               "2025-09-28T12:00:00",
+               "2025-09-28T15:00:00",
+               "2025-09-28T18:00:00",
+               "2025-09-28T21:00:00",
+               "2025-09-29T00:00:00",
+               "2025-09-29T03:00:00",
+               "2025-09-29T06:00:00",
+               "2025-09-29T09:00:00",
+               "2025-09-29T12:00:00",
+               "2025-09-29T15:00:00",
+               "2025-09-29T18:00:00",
+               "2025-09-29T21:00:00",
+               "2025-09-30T00:00:00",
+               "2025-09-30T06:00:00",
+               "2025-09-30T12:00:00",
+               "2025-09-30T18:00:00",
+               "2025-10-01T00:00:00",
+               "2025-10-01T06:00:00",
+               "2025-10-01T12:00:00",
+               "2025-10-01T18:00:00",
+               "2025-10-02T00:00:00",
+               "2025-10-02T06:00:00",
+               "2025-10-02T12:00:00",
+               "2025-10-02T18:00:00",
+               "2025-10-03T00:00:00"
+            ],
+            "desi":{
+               "projDict":{
+                  "proj":"+proj=lcc +lat_0=25 +lon_0=265 +lat_1=25 +lat_2=25 +x_0=0 +y_0=0 +R=6371200 +units=m +no_defs +type=crs",
+                  "crs_wkt":"PROJCRS[\"unknown\",BASEGEOGCRS[\"unknown\",DATUM[\"unknown\",ELLIPSOID[\"unknown\",6371200,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8901]]],CONVERSION[\"unknown\",METHOD[\"Lambert Conic Conformal (2SP)\",ID[\"EPSG\",9802]],PARAMETER[\"Latitude of false origin\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8821]],PARAMETER[\"Longitude of false origin\",265,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8822]],PARAMETER[\"Latitude of 1st standard parallel\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8823]],PARAMETER[\"Latitude of 2nd standard parallel\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8824]],PARAMETER[\"Easting at false origin\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8826]],PARAMETER[\"Northing at false origin\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8827]]],CS[Cartesian,2],AXIS[\"(E)\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"(N)\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+                  "first_lat":-263793.73346456443,
+                  "first_lon":-3271151.605837171,
+                  "nx":2345,
+                  "ny":2345,
+                  "dx":2539.703,
+                  "dy":2539.703
+               }
+            },
+            "parameter-names-dict":{
+               "apparent_temperature":{
+                  "attrs":{
+                     "grib_section3":[
+                        0,
+                        3744965,
+                        0,
+                        0,
+                        30,
+                        1,
+                        0,
+                        6371200,
+                        255,
+                        255,
+                        255,
+                        255,
+                        2345,
+                        1597,
+                        19229000,
+                        233723400,
+                        48,
+                        25000000,
+                        265000000,
+                        2539703,
+                        2539703,
+                        0,
+                        80,
+                        25000000,
+                        25000000,
+                        -90000000,
+                        0
+                     ],
+                     "long_name":"Apparent Temperature",
+                     "short_name":"APTMP",
+                     "units":"K",
+                     "originating_center":"US National Weather Service - NCEP (WMC)",
+                     "originating_sub_center":"NWS Meteorological Development Laboratory",
+                     "master_table_info":"Version Implemented on 7 November 2001",
+                     "product_definition_template_number":"Analysis or forecast at a horizontal level or in a horizontal layer at a point in time. (see Template 4.0)",
+                     "type_of_generating_process":"Forecast",
+                     "type_of_first_fixed_surface":"Specified Height Level Above Ground (m)",
+                     "type_of_second_fixed_surface":"Missing (unknown)",
+                     "crs_wkt":"PROJCRS[\"unknown\",BASEGEOGCRS[\"unknown\",DATUM[\"unknown\",ELLIPSOID[\"unknown\",6371200,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8901]]],CONVERSION[\"unknown\",METHOD[\"Lambert Conic Conformal (2SP)\",ID[\"EPSG\",9802]],PARAMETER[\"Latitude of false origin\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8821]],PARAMETER[\"Longitude of false origin\",265,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8822]],PARAMETER[\"Latitude of 1st standard parallel\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8823]],PARAMETER[\"Latitude of 2nd standard parallel\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8824]],PARAMETER[\"Easting at false origin\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8826]],PARAMETER[\"Northing at false origin\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8827]]],CS[Cartesian,2],AXIS[\"(E)\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"(N)\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+                     "gridlength_x_direction":2539.703,
+                     "gridlength_y_direction":2539.703,
+                     "latitude_first_gridpoint":19.229,
+                     "longitude_first_gridpoint":233.7234,
+                     "standard_name":"apparent_air_temperature",
+                     "coordinates":"forecast_reference_time lead_time specified_height_level_above_ground",
+                     "_FillValue":"AAAAAAAA+H8="
+                  },
+                  "time":[
+                     "2025-09-22T01:00:00",
+                     "2025-09-22T02:00:00",
+                     "2025-09-22T03:00:00",
+                     "2025-09-22T04:00:00",
+                     "2025-09-22T05:00:00",
+                     "2025-09-22T06:00:00",
+                     "2025-09-22T07:00:00",
+                     "2025-09-22T08:00:00",
+                     "2025-09-22T09:00:00",
+                     "2025-09-22T10:00:00",
+                     "2025-09-22T11:00:00",
+                     "2025-09-22T12:00:00",
+                     "2025-09-22T13:00:00",
+                     "2025-09-22T14:00:00",
+                     "2025-09-22T15:00:00",
+                     "2025-09-22T16:00:00",
+                     "2025-09-22T17:00:00",
+                     "2025-09-22T18:00:00",
+                     "2025-09-22T19:00:00",
+                     "2025-09-22T20:00:00",
+                     "2025-09-22T21:00:00",
+                     "2025-09-22T22:00:00",
+                     "2025-09-22T23:00:00",
+                     "2025-09-23T00:00:00",
+                     "2025-09-23T01:00:00",
+                     "2025-09-23T02:00:00",
+                     "2025-09-23T03:00:00",
+                     "2025-09-23T04:00:00",
+                     "2025-09-23T05:00:00",
+                     "2025-09-23T06:00:00",
+                     "2025-09-23T07:00:00",
+                     "2025-09-23T08:00:00",
+                     "2025-09-23T09:00:00",
+                     "2025-09-23T10:00:00",
+                     "2025-09-23T11:00:00",
+                     "2025-09-23T12:00:00",
+                     "2025-09-23T13:00:00",
+                     "2025-09-23T14:00:00",
+                     "2025-09-23T15:00:00",
+                     "2025-09-23T16:00:00",
+                     "2025-09-23T17:00:00",
+                     "2025-09-23T18:00:00",
+                     "2025-09-23T19:00:00",
+                     "2025-09-23T20:00:00",
+                     "2025-09-23T21:00:00",
+                     "2025-09-23T22:00:00",
+                     "2025-09-23T23:00:00",
+                     "2025-09-24T00:00:00",
+                     "2025-09-24T03:00:00",
+                     "2025-09-24T06:00:00",
+                     "2025-09-24T09:00:00",
+                     "2025-09-24T12:00:00",
+                     "2025-09-24T15:00:00",
+                     "2025-09-24T18:00:00",
+                     "2025-09-24T21:00:00",
+                     "2025-09-25T00:00:00",
+                     "2025-09-25T03:00:00",
+                     "2025-09-25T06:00:00",
+                     "2025-09-25T09:00:00",
+                     "2025-09-25T12:00:00",
+                     "2025-09-25T15:00:00",
+                     "2025-09-25T18:00:00",
+                     "2025-09-25T21:00:00",
+                     "2025-09-26T00:00:00",
+                     "2025-09-26T03:00:00",
+                     "2025-09-26T06:00:00",
+                     "2025-09-26T09:00:00",
+                     "2025-09-26T12:00:00",
+                     "2025-09-26T15:00:00",
+                     "2025-09-26T18:00:00",
+                     "2025-09-26T21:00:00",
+                     "2025-09-27T00:00:00",
+                     "2025-09-27T03:00:00",
+                     "2025-09-27T06:00:00",
+                     "2025-09-27T09:00:00",
+                     "2025-09-27T12:00:00",
+                     "2025-09-27T15:00:00",
+                     "2025-09-27T18:00:00",
+                     "2025-09-27T21:00:00",
+                     "2025-09-28T00:00:00",
+                     "2025-09-28T03:00:00",
+                     "2025-09-28T06:00:00",
+                     "2025-09-28T09:00:00",
+                     "2025-09-28T12:00:00",
+                     "2025-09-28T15:00:00",
+                     "2025-09-28T18:00:00",
+                     "2025-09-28T21:00:00",
+                     "2025-09-29T00:00:00",
+                     "2025-09-29T03:00:00",
+                     "2025-09-29T06:00:00",
+                     "2025-09-29T09:00:00",
+                     "2025-09-29T12:00:00",
+                     "2025-09-29T15:00:00",
+                     "2025-09-29T18:00:00",
+                     "2025-09-29T21:00:00",
+                     "2025-09-30T00:00:00",
+                     "2025-09-30T06:00:00",
+                     "2025-09-30T12:00:00",
+                     "2025-09-30T18:00:00",
+                     "2025-10-01T00:00:00",
+                     "2025-10-01T06:00:00",
+                     "2025-10-01T12:00:00",
+                     "2025-10-01T18:00:00",
+                     "2025-10-02T00:00:00",
+                     "2025-10-02T06:00:00",
+                     "2025-10-02T12:00:00",
+                     "2025-10-02T18:00:00",
+                     "2025-10-03T00:00:00"
+                  ]
+               }
+            }
+         }
+      }
+   ]
+}
+....
+====
+
+==== Location Query
+
+The Location query returns a location defined by a bounding box dependent on the indices of i and j.
+
+Path = {root}/collections/{collectionId}/instances/{instanceId}/locations/{locationId}
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+[[req_nwsviz-application_data-query-location]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query-location
+statement:: All Collections in the Service _SHALL_ provide support for *Locations* queries
+part:: The *Locations* query _SHALL_ support the following output formats:
+
+        * CoverageJSON
+        * Zarr
+        * NetCDF
+
+part:: The default output format for the *Locations* query _SHALL_ be *CoverageJSON*
+part:: The *Locations* query _SHALL_ support the following HTTP methods:
+
+        * GET
+        * POST
+
+
+part:: The *Locations* query _SHALL_ support a custom query parameter called "ij" where the argument represents index values of the rectangular query.
+
+[source]
+....
+&#x26;ij=i0,j0,i1,j1
+....
+
+====
+
+==== Instances Query
+
+Having multiple versions or instances of the same Collection, where the same information is reprocessed or regenerated is not unusual. Although these versions could be described as new Collections the instance query type allows this data to be described as different views of the same Collection.
+
+Path = {root}/collections/{collectionId}/instances
+
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+
+[[req_nwsviz-application_data-query-instances]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/data-query-instances
+statement:: Verify that the Vertical extent demo Collection Instances query is correctly defined
+part::  Vertical extent demo Collection _SHALL_ support Instances of the Collection.
+part:: Instance ids _SHALL_ be an RFC3339 Zulu (UTC)representation of the model run time at a detail level of minutes.
+part:: Instance ids _SHALL_ match the following regular expression ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}Z$
+
+====
+
+
+=== General Requirements
+
+==== HTTP Status Codes
+
+HTTP response
+
+ - Response status codes
+
+[[req_nwsviz-application_status-codes]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/status-codes
+statement:: The NWSViz profile Collection profile _SHALL_ support the following HTTP status codes.
+part:: The message descriptions _SHALL_ be as follows:
+
+!===
+|Status code |Description
+
+| 200  |A successful request.
+
+| 204  |A successful request, but the resource has no data resulting from the request.  No additional content or message body is provided.
+
+| 400  |The server cannot or will not process the request due to an apparent client error. For example, a query parameter had an incorrect value.
+
+| 404  |The requested resource does not exist on the server. For example, a path parameter had an incorrect value.
+
+| 405  |The request method is not supported. For example, a POST request was submitted, but the resource only supports GET requests.
+
+| 413  |Request entity too large. For example, the query would involve returning more data than the server is capable of processing, the implementation should return a message explaining the query limits imposed by the server implementation.
+
+| 500  |An internal error occurred in the server.
+!===
+====
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/msg-bodies
+statement:: The NWSViz profile Collection profile _SHALL_ support the following HTTP response body.
+part:: The NWSViz profile Collection _SHALL_ use the following JSON schema for error response bodies (HTTP Status Codes 400 and above)
+
+[source,JSON]
+----
+{
+    "type": "object",
+    "required": [
+        "code"
+    ],
+    "properties": {
+        "code": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        }
+    }
+}
+----
+
+====
+
+==== Links
+
+ - Response links
+
+[[req_nwsviz-application_links]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/links
+statement:: A NWSViz profile Collection _SHALL_  define links as follows:
+part:: All link objects _SHALL_ have *href*, *rel* and *type* attributes
+part:: The following links _SHALL_ be included in the Collection response
+
+[source,JSON]
+----
+
+{
+   "links":[
+      {
+         "type":"application/json",
+         "rel":"root",
+         "title":"The landing page of this server as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov?f=json"
+      },
+      {
+         "type":"application/json",
+         "rel":"self",
+         "title":"This document as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov/collections?f=json"
+      },
+      {
+         "type":"application/json",
+         "rel":"collection",
+         "title":"Collection Metadata for this collection as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk?f=json"
+      },
+      {
+         "type":"application/json",
+         "rel":"data",
+         "title":"Items Query for this collection as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/items?f=json"
+      },
+      {
+         "type":"application/json",
+         "rel":"data",
+         "title":"Locations Query for this collection as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/locations?f=json"
+      },
+      {
+         "type":"application/json",
+         "rel":"data",
+         "title":"Position Query for this collection as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/position?f=json"
+      },
+      {
+         "type":"application/json",
+         "rel":"instances",
+         "title":"Instances Metadata for this collection as JSON",
+         "href":"https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances?f=json"
+      }
+   ]
+}
+
+----
+
+====
+
+
+
+
+
+
+
+////
+add or remove annexes after "A" as necessary
+////
+[[annex-A]]
+[appendix]
+== Conformance Class Abstract Test Suite (Normative)
+
+=== Conformance Class Core
+
+[[ats_class-nwsviz-application]]
+[conformance_class]
+.Conformance Class 'Core'
+====
+[%metadata]
+identifier:: link:++http://www.example.org/1.0/conf-class-nwsviz-application++[]
+target:: link:++http://www.example.org/1.0/req/req-class-nwsviz-application++[]
+abstract-test:: /conf/nwsviz-application/root
+abstract-test:: /conf/nwsviz-application/edr-conformant
+abstract-test:: /conf/nwsviz-application/MRMS-parameter-names
+abstract-test:: /conf/nwsviz-application/NBM-parameter-names
+abstract-test:: /conf/nwsviz-application/collectionid
+abstract-test:: /conf/nwsviz-application/extent
+abstract-test:: /conf/nwsviz-application/output-format
+abstract-test:: /conf/nwsviz-application/status-codes
+abstract-test:: /conf/nwsviz-application/msg-bodies
+abstract-test:: /conf/nwsviz-application/links
+abstract-test:: /conf/nwsviz-application/data-query
+abstract-test:: /conf/nwsviz-application/data-query-instances
+abstract-test:: /conf/nwsviz-application/data-query-position
+abstract-test:: /conf/nwsviz-application/data-query-items
+abstract-test:: /conf/nwsviz-application/data-query-location
+abstract-test:: /conf/nwsviz-application/data-query-locations
+====
+
+
+[[ats_nwsviz-application_edr-conformant]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/edr-conformant
+target:: /req/nwsviz-application/edr-conformant
+test-purpose:: Validiate the the NWSViz profile Collection is a valid OGC API-EDR implementation
+test-method::
+step:: Verify that that the Collection can pass the OGC API-EDR Part 1 - Core conformance tests.
+====
+
+
+[[ats_nwsviz-application_root]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/root
+target:: /req/nwsviz-application_data/root
+test-purpose:: Validate that the profile defines the service landing page
+test-method::
+step:: Verify that the profile defines a *Title* for the service and the value is *"NWSViz profile service"*
+step:: Verify that each link defined for the service has a *href* and *rel* attribute.
+step:: Verify that the  *Keywords* attribute has the following values:
+
+    * Geopotential Height
+    * Pressure Level
+    * Specific humidity
+    * Air temperature
+    * u-component of wind
+    * v-component of wind
+
+step:: Verify that the *Provider* attribute has *name* and *url* attributes defined.
+step:: Verify that the *Contact* attribute has an *email* attributes defined.
+step:: Verify that the *Links* property includes the following link to the OpenAPI definition of the profile:
+
+[source,JSON]
+----
+    {
+        "title": "OpenAPI definition of NWSViz profile profile",
+        "href": "https://www.example.org/edr/profile/vextdemo/openapi.json",
+        "rel": "profile",
+        "type": "application/json"
+    }
+----
+====
+
+[[ats_nwsviz-application_MRMS-parameter-names]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/MRMS-parameter-names
+target:: /req/nwsviz-application/MRMS-parameter-names
+test-purpose:: Verify that NWSViz profile Collection uses the correct parameter-names schema.
+test-method::
+step:: Verify that the profile Collection follows the following schema where the metadata is dynamically loaded from the underlying store.
+
+[source,JSON]
+----
+{
+   "parameter-names":{
+      "EchoTop_18":{
+         "Type":"Parameter",
+         "id":"EchoTop_18",
+         "description":"EchoTop_18",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:34:37",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:54:38"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "EchoTop_30":{
+         "Type":"Parameter",
+         "id":"EchoTop_30",
+         "description":"EchoTop_30",
+         "temporal":{
+            "values":[
+               "2025-10-01T17:58:37",
+               "2025-10-01T18:02:40",
+               "2025-10-01T18:04:39",
+               "2025-10-01T18:06:38",
+               "2025-10-01T18:08:34",
+               "2025-10-01T18:10:35",
+               "2025-10-01T18:12:36",
+               "2025-10-01T18:14:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:30:32",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:42:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:54:38",
+               "2025-10-01T18:56:37"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "EchoTop_60":{
+         "Type":"Parameter",
+         "id":"EchoTop_60",
+         "description":"EchoTop_60",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:06:38",
+               "2025-10-01T18:10:35",
+               "2025-10-01T18:12:36",
+               "2025-10-01T18:14:39",
+               "2025-10-01T18:16:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:30:32",
+               "2025-10-01T18:34:37",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:42:37",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:48:36",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:54:38",
+               "2025-10-01T18:56:37"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "H50Above0C":{
+         "Type":"Parameter",
+         "id":"H50Above0C",
+         "description":"H50Above0C",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:00:34",
+               "2025-10-01T18:04:39",
+               "2025-10-01T18:06:38",
+               "2025-10-01T18:08:36",
+               "2025-10-01T18:10:35",
+               "2025-10-01T18:12:36",
+               "2025-10-01T18:14:39",
+               "2025-10-01T18:16:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:30:32",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:34:37",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:48:36"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "H60AboveM20C":{
+         "Type":"Parameter",
+         "id":"H60AboveM20C",
+         "description":"H60AboveM20C",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:28:40",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:56:37"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "LightningProbabilityNext30minGrid":{
+         "Type":"Parameter",
+         "id":"LightningProbabilityNext30minGrid",
+         "description":"LightningProbabilityNext30minGrid",
+         "temporal":{
+            "values":[
+               "2025-10-01T17:58:37",
+               "2025-10-01T18:00:34",
+               "2025-10-01T18:02:35",
+               "2025-10-01T18:04:39",
+               "2025-10-01T18:06:38",
+               "2025-10-01T18:08:36",
+               "2025-10-01T18:10:35",
+               "2025-10-01T18:14:39",
+               "2025-10-01T18:16:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:28:40",
+               "2025-10-01T18:30:32",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:34:37",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:42:37",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:48:36",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:54:38"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "POSH":{
+         "Type":"Parameter",
+         "id":"POSH",
+         "description":"POSH",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:12:36",
+               "2025-10-01T18:16:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:30:39",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:54:38",
+               "2025-10-01T18:56:37",
+               "2025-10-01T18:58:39"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "PrecipFlag":{
+         "Type":"Parameter",
+         "id":"PrecipFlag",
+         "description":"PrecipFlag",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:04:00",
+               "2025-10-01T18:06:00",
+               "2025-10-01T18:08:00",
+               "2025-10-01T18:10:00",
+               "2025-10-01T18:12:00",
+               "2025-10-01T18:14:00",
+               "2025-10-01T18:16:00",
+               "2025-10-01T18:18:00",
+               "2025-10-01T18:22:00",
+               "2025-10-01T18:24:00",
+               "2025-10-01T18:26:00",
+               "2025-10-01T18:28:00",
+               "2025-10-01T18:30:00",
+               "2025-10-01T18:34:00",
+               "2025-10-01T18:36:00",
+               "2025-10-01T18:40:00",
+               "2025-10-01T18:42:00",
+               "2025-10-01T18:44:00",
+               "2025-10-01T18:48:00",
+               "2025-10-01T18:56:00"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "RadarOnly_QPE_01H":{
+         "Type":"Parameter",
+         "id":"RadarOnly_QPE_01H",
+         "description":"RadarOnly_QPE_01H",
+         "temporal":{
+            "values":[
+               "2025-10-01T17:58:00",
+               "2025-10-01T18:00:00",
+               "2025-10-01T18:06:00",
+               "2025-10-01T18:08:00",
+               "2025-10-01T18:10:00",
+               "2025-10-01T18:12:00",
+               "2025-10-01T18:14:00",
+               "2025-10-01T18:16:00",
+               "2025-10-01T18:18:00",
+               "2025-10-01T18:22:00",
+               "2025-10-01T18:24:00",
+               "2025-10-01T18:26:00",
+               "2025-10-01T18:28:00",
+               "2025-10-01T18:30:00",
+               "2025-10-01T18:32:00",
+               "2025-10-01T18:34:00",
+               "2025-10-01T18:36:00",
+               "2025-10-01T18:38:00",
+               "2025-10-01T18:40:00",
+               "2025-10-01T18:42:00",
+               "2025-10-01T18:44:00",
+               "2025-10-01T18:46:00",
+               "2025-10-01T18:48:00",
+               "2025-10-01T18:50:00",
+               "2025-10-01T18:52:00",
+               "2025-10-01T18:54:00",
+               "2025-10-01T18:56:00"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "RadarOnly_QPE_03H":{
+         "Type":"Parameter",
+         "id":"RadarOnly_QPE_03H",
+         "description":"RadarOnly_QPE_03H",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:00:00"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "RadarOnly_QPE_15M":{
+         "Type":"Parameter",
+         "id":"RadarOnly_QPE_15M",
+         "description":"RadarOnly_QPE_15M",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:00:00",
+               "2025-10-01T18:15:00",
+               "2025-10-01T18:45:00"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "RadarOnly_QPE_72H":{
+         "Type":"Parameter",
+         "id":"RadarOnly_QPE_72H",
+         "description":"RadarOnly_QPE_72H",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:00:00"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "Reflectivity_-10C":{
+         "Type":"Parameter",
+         "id":"Reflectivity_-10C",
+         "description":"Reflectivity_-10C",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:02:35",
+               "2025-10-01T18:06:38",
+               "2025-10-01T18:08:36",
+               "2025-10-01T18:10:35",
+               "2025-10-01T18:16:39",
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:28:40",
+               "2025-10-01T18:30:32",
+               "2025-10-01T18:34:37",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:48:36",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:56:37"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "Reflectivity_-20C":{
+         "Type":"Parameter",
+         "id":"Reflectivity_-20C",
+         "description":"Reflectivity_-20C",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:28:40",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:42:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:48:36",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:54:38"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "Reflectivity_0C":{
+         "Type":"Parameter",
+         "id":"Reflectivity_0C",
+         "description":"Reflectivity_0C",
+         "temporal":{
+            "values":[
+               "2025-10-01T17:58:37",
+               "2025-10-01T18:00:34",
+               "2025-10-01T18:02:35",
+               "2025-10-01T18:04:39",
+               "2025-10-01T18:08:36",
+               "2025-10-01T18:10:35",
+               "2025-10-01T18:12:36",
+               "2025-10-01T18:14:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:24:39",
+               "2025-10-01T18:28:40",
+               "2025-10-01T18:30:32",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:34:37",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:48:36",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:56:37"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "VII":{
+         "Type":"Parameter",
+         "id":"VII",
+         "description":"VII",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:00:34",
+               "2025-10-01T18:02:40",
+               "2025-10-01T18:04:39",
+               "2025-10-01T18:08:34",
+               "2025-10-01T18:14:39",
+               "2025-10-01T18:22:35",
+               "2025-10-01T18:26:38",
+               "2025-10-01T18:36:40",
+               "2025-10-01T18:40:35",
+               "2025-10-01T18:52:38"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      },
+      "VIL":{
+         "Type":"Parameter",
+         "id":"VIL",
+         "description":"VIL",
+         "temporal":{
+            "values":[
+               "2025-10-01T18:00:34",
+               "2025-10-01T18:04:39",
+               "2025-10-01T18:06:38",
+               "2025-10-01T18:08:34",
+               "2025-10-01T18:10:34",
+               "2025-10-01T18:12:36",
+               "2025-10-01T18:16:39",
+               "2025-10-01T18:18:41",
+               "2025-10-01T18:20:37",
+               "2025-10-01T18:28:40",
+               "2025-10-01T18:30:39",
+               "2025-10-01T18:32:41",
+               "2025-10-01T18:34:39",
+               "2025-10-01T18:38:35",
+               "2025-10-01T18:42:37",
+               "2025-10-01T18:44:37",
+               "2025-10-01T18:46:34",
+               "2025-10-01T18:48:36",
+               "2025-10-01T18:50:33",
+               "2025-10-01T18:52:38",
+               "2025-10-01T18:54:38",
+               "2025-10-01T18:58:39"
+            ]
+         },
+         "attrs":{
+            "_FillValue":"AAAAAAAA+H8="
+         }
+      }
+   }
+}
+----
+
+====
+
+[[ats_nwsviz-application_NBM-parameter-names]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/NBM-parameter-names
+target:: /req/nwsviz-application/NBM-parameter-names
+test-purpose:: Verify that NWSViz profile Collection uses the correct parameter-names schema.
+test-method::
+step:: Verify that the profile Collection follows the following schema where the metadata is dynamically loaded from the underlying store.
+
+[source,JSON]
+----
+"parameter-names":{
+   "apparent_temperature":{
+      "Type":"Parameter",
+      "id":"apparent_temperature",
+      "description":"apparent_temperature",
+      "unit":{
+         "symbol":"K"
+      },
+      "temporal":{
+         "values":[
+            "2025-09-22T01:00:00",
+            "2025-09-22T02:00:00",
+            "2025-09-22T03:00:00",
+            "2025-09-22T04:00:00",
+            "2025-09-22T05:00:00",
+            "2025-09-22T06:00:00",
+            "2025-09-22T07:00:00",
+            "2025-09-22T08:00:00",
+            "2025-09-22T09:00:00",
+            "2025-09-22T10:00:00",
+            "2025-09-22T11:00:00",
+            "2025-09-22T12:00:00",
+            "2025-09-22T13:00:00",
+            "2025-09-22T14:00:00",
+            "2025-09-22T15:00:00",
+            "2025-09-22T16:00:00",
+            "2025-09-22T17:00:00",
+            "2025-09-22T18:00:00",
+            "2025-09-22T19:00:00",
+            "2025-09-22T20:00:00",
+            "2025-09-22T21:00:00",
+            "2025-09-22T22:00:00",
+            "2025-09-22T23:00:00",
+            "2025-09-23T00:00:00",
+            "2025-09-23T01:00:00",
+            "2025-09-23T02:00:00",
+            "2025-09-23T03:00:00",
+            "2025-09-23T04:00:00",
+            "2025-09-23T05:00:00",
+            "2025-09-23T06:00:00",
+            "2025-09-23T07:00:00",
+            "2025-09-23T08:00:00",
+            "2025-09-23T09:00:00",
+            "2025-09-23T10:00:00",
+            "2025-09-23T11:00:00",
+            "2025-09-23T12:00:00",
+            "2025-09-23T13:00:00",
+            "2025-09-23T14:00:00",
+            "2025-09-23T15:00:00",
+            "2025-09-23T16:00:00",
+            "2025-09-23T17:00:00",
+            "2025-09-23T18:00:00",
+            "2025-09-23T19:00:00",
+            "2025-09-23T20:00:00",
+            "2025-09-23T21:00:00",
+            "2025-09-23T22:00:00",
+            "2025-09-23T23:00:00",
+            "2025-09-24T00:00:00",
+            "2025-09-24T03:00:00",
+            "2025-09-24T06:00:00",
+            "2025-09-24T09:00:00",
+            "2025-09-24T12:00:00",
+            "2025-09-24T15:00:00",
+            "2025-09-24T18:00:00",
+            "2025-09-24T21:00:00",
+            "2025-09-25T00:00:00",
+            "2025-09-25T03:00:00",
+            "2025-09-25T06:00:00",
+            "2025-09-25T09:00:00",
+            "2025-09-25T12:00:00",
+            "2025-09-25T15:00:00",
+            "2025-09-25T18:00:00",
+            "2025-09-25T21:00:00",
+            "2025-09-26T00:00:00",
+            "2025-09-26T03:00:00",
+            "2025-09-26T06:00:00",
+            "2025-09-26T09:00:00",
+            "2025-09-26T12:00:00",
+            "2025-09-26T15:00:00",
+            "2025-09-26T18:00:00",
+            "2025-09-26T21:00:00",
+            "2025-09-27T00:00:00",
+            "2025-09-27T03:00:00",
+            "2025-09-27T06:00:00",
+            "2025-09-27T09:00:00",
+            "2025-09-27T12:00:00",
+            "2025-09-27T15:00:00",
+            "2025-09-27T18:00:00",
+            "2025-09-27T21:00:00",
+            "2025-09-28T00:00:00",
+            "2025-09-28T03:00:00",
+            "2025-09-28T06:00:00",
+            "2025-09-28T09:00:00",
+            "2025-09-28T12:00:00",
+            "2025-09-28T15:00:00",
+            "2025-09-28T18:00:00",
+            "2025-09-28T21:00:00",
+            "2025-09-29T00:00:00",
+            "2025-09-29T03:00:00",
+            "2025-09-29T06:00:00",
+            "2025-09-29T09:00:00",
+            "2025-09-29T12:00:00",
+            "2025-09-29T15:00:00",
+            "2025-09-29T18:00:00",
+            "2025-09-29T21:00:00",
+            "2025-09-30T00:00:00",
+            "2025-09-30T06:00:00",
+            "2025-09-30T12:00:00",
+            "2025-09-30T18:00:00",
+            "2025-10-01T00:00:00",
+            "2025-10-01T06:00:00",
+            "2025-10-01T12:00:00",
+            "2025-10-01T18:00:00",
+            "2025-10-02T00:00:00",
+            "2025-10-02T06:00:00",
+            "2025-10-02T12:00:00",
+            "2025-10-02T18:00:00",
+            "2025-10-03T00:00:00"
+         ]
+      },
+      "attrs":{
+         "grib_section3":[
+            0,
+            3744965,
+            0,
+            0,
+            30,
+            1,
+            0,
+            6371200,
+            255,
+            255,
+            255,
+            255,
+            2345,
+            1597,
+            19229000,
+            233723400,
+            48,
+            25000000,
+            265000000,
+            2539703,
+            2539703,
+            0,
+            80,
+            25000000,
+            25000000,
+            -90000000,
+            0
+         ],
+         "long_name":"Apparent Temperature",
+         "short_name":"APTMP",
+         "units":"K",
+         "originating_center":"US National Weather Service - NCEP (WMC)",
+         "originating_sub_center":"NWS Meteorological Development Laboratory",
+         "master_table_info":"Version Implemented on 7 November 2001",
+         "product_definition_template_number":"Analysis or forecast at a horizontal level or in a horizontal layer at a point in time. (see Template 4.0)",
+         "type_of_generating_process":"Forecast",
+         "type_of_first_fixed_surface":"Specified Height Level Above Ground (m)",
+         "type_of_second_fixed_surface":"Missing (unknown)",
+         "crs_wkt":"PROJCRS[\"unknown\",BASEGEOGCRS[\"unknown\",DATUM[\"unknown\",ELLIPSOID[\"unknown\",6371200,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8901]]],CONVERSION[\"unknown\",METHOD[\"Lambert Conic Conformal (2SP)\",ID[\"EPSG\",9802]],PARAMETER[\"Latitude of false origin\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8821]],PARAMETER[\"Longitude of false origin\",265,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8822]],PARAMETER[\"Latitude of 1st standard parallel\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8823]],PARAMETER[\"Latitude of 2nd standard parallel\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8824]],PARAMETER[\"Easting at false origin\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8826]],PARAMETER[\"Northing at false origin\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8827]]],CS[Cartesian,2],AXIS[\"(E)\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"(N)\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+         "gridlength_x_direction":2539.703,
+         "gridlength_y_direction":2539.703,
+         "latitude_first_gridpoint":19.229,
+         "longitude_first_gridpoint":233.7234,
+         "standard_name":"apparent_air_temperature",
+         "coordinates":"forecast_reference_time lead_time specified_height_level_above_ground",
+         "_FillValue":"AAAAAAAA+H8="
+      }
+   }
+}
+----
+
+====
+
+[[ats_nwsviz-application_collectionid]]
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/collectionid
+target:: /req/nwsviz-application/collectionid
+test-purpose:: Validate that a collectionid requirement is correctly defined.
+test-method::
+step:: Verify that collectionids match the following:
+
+|====================
+| **id** | **description**
+| HREF | High Resolution Ensemble Forecast
+| NBM  | National Blend of Models
+| LREF | Long Range Ensemble Forecast
+| LREF_TLE | Long Range Ensemble Forecast Tile-Lagged Ensemble
+| MRMS | Multi-Radar/Multi-Sensor Radar Products
+|====================
+====
+
+[[ats_nwsviz-application_extent]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/extent
+target:: /req/nwsviz-application/extent
+test-purpose:: Verify that NWSViz profile Collection Extent is correctly defined in the Collection response.
+test-method::
+step:: Verify that the collection contains a spatial extent and contain an additional attribute named "locations" containing the a list of the available locations within the collection.
+[source,JSON]
+----
+{
+   "spatial":{
+      "bbox":[
+         -180,
+         -90,
+         180,
+         90
+      ],
+      "locations":[
+         "CO",
+         "AK",
+         "HI"
+      ]
+   }
+}
+----
+
+part:: Verify that the Profile contains a temporal extent containing an interval and values.
+part:: Verify that the Profile contains an attribute named instances which contains a list of available instances for the collection.
+part:: Verify that the Profile contains a custom query dimension with the name "ensemble" containing values and ids.
+part:: Verify that the Profile contains a vertical extent if applicable
+
+
+====
+
+[[ats_nwsviz-application_output-format]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/output-format
+target:: /req/nwsviz-application/output-format
+test-purpose:: Verify that NWSViz profile Collection queries format data responses correctly.
+test-method::
+step:: Request data with the output format label and verify the response is correct
+
+step:: Verify a output format of *GRIB2* creates a file that has the following structure link:++https://library.wmo.int/viewer/35625?medianame=306_v.I.2_2019_edition_Updated_2022_en_#page=31&viewer=picture++[]
+part:: Verify a output format of *GeoJSON* is compatible with the JSON schema defined in the following repository link:++https://github.com/opengeospatial/OGC-feat-geo-json++[]
+part:: Verify a output format of *CoverageJSON* is compatible with the JSON schema defined by link:++https://docs.ogc.org/cs/21-069r2/21-069r2.html++[]
+part:: Verify a output format of *NetCDF4* creates a file that has the structure described by link:++https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html++[]
+part:: Verify a output format of *CSV* generates a CSV output file with a metadata file which is described by link:++https://www.w3.org/TR/2015/REC-tabular-data-model-20151217/++[]
+
+====
+
+[[ats_nwsviz-application_status-codes]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/status-codes
+target:: /req/nwsviz-application/status-codes
+test-purpose:: Verify that NWSViz profile Collection has the correct HTTP status responses.
+test-method::
+step:: Verify that a valid request returns a HTTP status code of 200
+step:: Verify that a valid request with an empty response returns a HTTP status code of 204
+step:: Verify that a request with an invalid query parameter value returns a HTTP status code of 400
+step:: Verify that that an unsupported HTTP method request returns a HTTP status code of 405.
+step:: Verify that a request for too much data returns a HTTP status code of 413.
+step:: Verify that a invalid request caused by an unexpected error returns a HTTP status code of 500.
+
+====
+
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/msg-bodies
+target:: /req/nwsviz-application/msg-bodies
+test-purpose:: Verify that NWSViz profile error response messages have the correct structure.
+test-method::
+step:: Verify the the message body returned by error messages (status codes 400,405,413 and 500) is JSON based on the following schema:
+
+[source,JSON]
+----
+{
+    "type": "object",
+    "required": [
+        "code"
+    ],
+    "properties": {
+        "code": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        }
+    }
+}
+----
+
+====
+
+[[ats_nwsviz-application_links]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/links
+target:: /req/nwsviz-application/links
+test-purpose:: Verify that NWSViz profile Collection Links section contains the required links
+test-method::
+step:: Verify that all links in the NWSViz profile Collection have *href*, *rel* and *type* attributes
+step:: Verify that NWSViz profile Collection Links section contains the required links:
+
+[source,JSON]
+----
+
+    {
+        "href": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "rel": "licence",
+        "type": "text/html"
+    },
+    {
+        "href": "https://library.wmo.int/viewer/35625?medianame=306_v.I.2_2019_edition_Updated_2022_en_#page=31&viewer=picture",
+        "rel": "related",
+        "title": "FM 92-XIV GRIB specification",
+        "type": "text/html"
+    }
+
+----
+
+====
+
+[[ats_nwsviz-application_data-query]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query
+target:: /req/nwsviz-application/data-query
+test-purpose:: Verify that all required NWSViz profile Collection queries are defined in the Collection response.
+test-method::
+step:: Verify that the Collection response includes definitions for the following queries.
+
+    * Position
+    * Cube
+    * Locations
+    * Instances
+
+====
+
+[[ats_nwsviz-application_data-query-instances]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query-instances
+target:: /req/nwsviz-application/data-query-instances
+test-purpose:: Verify that NWSViz profile Collection *Instances* query is correctly defined in the Collection response.
+test-method::
+step:: Verify that NWSViz profile Collection has a *Instances* data query defined.
+step:: Verify the *Instances* ids str against the Regular expression ^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}Z$
+====
+
+[[ats_nwsviz-application_data-query-position]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query-position
+target:: /req/nwsviz-application/data-query-position
+test-purpose:: Verify that NWSViz profile Collection *Position* query is correctly defined in the Collection response.
+test-method::
+step:: Verify that NWSViz profile Collection *Position* query defines the following output_format types
+
+        * CoverageJSON
+        * Zarr
+        * NetCDF
+
+step:: Verify that NWSViz profile Collection *Position* query defines the following default output_format.
+
+    * CoverageJSON
+
+step:: Verify that NWSViz profile Collection *Position* requirement supports the following HTTP operations
+
+    * GET
+    * POST
+
+====
+
+[[ats_nwsviz-application_data-query-location]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query-location
+target:: /req/nwsviz-application/data-query-location
+test-purpose:: Verify that NWSViz profile Collection *Location* query is correctly defined in the Collection response.
+test-method::
+step:: Verify that NWSViz profile Collection *Location* query defines the following output_format types
+
+        * CoverageJSON
+        * Zarr
+        * NetCDF
+
+step:: Verify that NWSViz profile Collection *Location* query defines the following default output_format.
+
+    * CoverageJSON
+
+step:: Verify that NWSViz profile Collection *Location* requirement supports the following HTTP operations
+
+    * GET
+    * POST
+
+step:: Verify that NWSViz profile Collection *Location* requirement supports the following custom query dimension
+
+[source]
+....
+&#x26;ij=i0,j0,i1,j1
+....
+
+====
+
+[[ats_nwsviz-application_data-query-locations]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query-locations
+target:: /req/nwsviz-application/data-query-locations
+test-purpose:: Verify that NWSViz profile Collection *Locations* query is correctly defined in the Collection response.
+test-method::
+step:: Verify that NWSViz profile Collection *Locations* query defines the following output_format types
+
+        * GeoJSON
+
+step:: Verify that NWSViz profile Collection *Locations* query defines the following default output_format.
+
+    * CoverageJSON
+
+step:: Verify that NWSViz profile Collection *Locations* requirement supports the following HTTP operations
+
+    * GET
+    * POST
+
+step:: Verify that the reponse provides a listing of the available locations in a collection that conforms to GeoJSON and contains the properties contained in this example:
+
+[source,JSON]
+....
+{
+   "type":"FeatureCollection",
+   "features":[
+      {
+         "type":"Feature",
+         "geometry":{
+            "type":"Polygon",
+            "coordinates":[
+               [
+                  [
+                     -60.154430455510095,
+                     19.80394886054594
+                  ],
+                  [
+                     -60.154430455510095,
+                     49.81080204452752
+                  ],
+                  [
+                     -125.13089699982356,
+                     49.81080204452752
+                  ],
+                  [
+                     -125.13089699982356,
+                     19.80394886054594
+                  ],
+                  [
+                     -60.154430455510095,
+                     19.80394886054594
+                  ]
+               ]
+            ]
+         },
+         "properties":{
+            "instance":"2025-05-21T12:00:00",
+            "name":"CO",
+            "name_alt":"link:++http://edr-api-desi-c.mdl.nws.noaa.gov/collections/HREF/instances/2025-05-21T12:00:00/locations/CO?f=json++[]",
+            "edrqueryendpoint":"link:++http://edr-api-desi-c.mdl.nws.noaa.gov/collections/HREF/instances/2025-05-21T12:00:00/locations/CO?f=json++[]",
+            "parameter-names":[
+               "apcp_1h",
+               "apcp_2h",
+               "apcp_3h",
+               "apcp_accum",
+               "apcp_accum-lpmm",
+               "apcp_accum_24h",
+               "apcp_accum_24h-lpmm",
+               "apcp_accum_6h",
+               "apcp_accum_6h-lpmm",
+               "cape",
+               "ceil",
+               "ceilingAGL",
+               "cfrzr",
+               "cicep",
+               "cin",
+               "colmd",
+               "crain",
+               "csnow",
+               "d2m",
+               "dpt_isobaric",
+               "dswrf",
+               "fram1",
+               "fram24",
+               "fram24-lpmm",
+               "fram6",
+               "fram6-lpmm",
+               "framtotal",
+               "front700",
+               "front850",
+               "frzr1",
+               "frzr24",
+               "frzr24-lpmm",
+               "frzr6",
+               "frzr6-lpmm",
+               "frzrtotal",
+               "gh1000-gh500",
+               "gh700-gh500_lr",
+               "gh_isobaric",
+               "gust",
+               "hcc",
+               "hlcy_1000",
+               "hlcy_3000",
+               "inventory",
+               "large-fire-potential",
+               "lcc",
+               "lcl",
+               "ltng",
+               "massden",
+               "mcc",
+               "mnuphl_3000",
+               "mnuphl_5000",
+               "mxuphl_3000",
+               "mxuphl_5000",
+               "orog",
+               "pfrzr",
+               "picep",
+               "prain",
+               "prmsl",
+               "psnow",
+               "pwat",
+               "r2",
+               "r_isobaric",
+               "refc",
+               "refc-lpmm",
+               "retop",
+               "sdwe_1h",
+               "sdwe_2h",
+               "sdwe_3h",
+               "sdwe_accum",
+               "sdwe_accum-lpmm",
+               "sdwe_accum_1h",
+               "sdwe_accum_24h",
+               "sdwe_accum_24h-lpmm",
+               "sdwe_accum_6h",
+               "sdwe_accum_6h-lpmm",
+               "sp",
+               "stp",
+               "t2m",
+               "t_isobaric",
+               "ta2",
+               "tadv700",
+               "tadv850",
+               "tcdc",
+               "thte2",
+               "thte850",
+               "thte925",
+               "tw2",
+               "u10",
+               "u_isobaric",
+               "v10",
+               "v_isobaric",
+               "vis",
+               "vort500",
+               "vucsh",
+               "vvcsh",
+               "w_isobaric",
+               "wd_isobaric",
+               "wd_isobaric-mean",
+               "wd_isobaric-std",
+               "wdir",
+               "wdir-mean",
+               "wdir-std",
+               "ws_isobaric",
+               "wshr0-6km",
+               "wshrd0-6km",
+               "wshrd0-6km-mean",
+               "wshrd0-6km-std",
+               "wspd"
+            ],
+            "datetimes":[
+               "2025-05-21T13:00:00",
+               "2025-05-21T14:00:00",
+               "2025-05-21T15:00:00",
+               "2025-05-21T16:00:00",
+               "2025-05-21T17:00:00",
+               "2025-05-21T18:00:00",
+               "2025-05-21T19:00:00",
+               "2025-05-21T20:00:00",
+               "2025-05-21T21:00:00",
+               "2025-05-21T22:00:00",
+               "2025-05-21T23:00:00",
+               "2025-05-22T00:00:00",
+               "2025-05-22T01:00:00",
+               "2025-05-22T02:00:00",
+               "2025-05-22T03:00:00",
+               "2025-05-22T04:00:00",
+               "2025-05-22T05:00:00",
+               "2025-05-22T06:00:00",
+               "2025-05-22T07:00:00",
+               "2025-05-22T08:00:00",
+               "2025-05-22T09:00:00",
+               "2025-05-22T10:00:00",
+               "2025-05-22T11:00:00",
+               "2025-05-22T12:00:00",
+               "2025-05-22T13:00:00",
+               "2025-05-22T14:00:00",
+               "2025-05-22T15:00:00",
+               "2025-05-22T16:00:00",
+               "2025-05-22T17:00:00",
+               "2025-05-22T18:00:00",
+               "2025-05-22T19:00:00",
+               "2025-05-22T20:00:00",
+               "2025-05-22T21:00:00",
+               "2025-05-22T22:00:00",
+               "2025-05-22T23:00:00",
+               "2025-05-23T00:00:00",
+               "2025-05-23T01:00:00",
+               "2025-05-23T02:00:00",
+               "2025-05-23T03:00:00",
+               "2025-05-23T04:00:00",
+               "2025-05-23T05:00:00",
+               "2025-05-23T06:00:00",
+               "2025-05-23T07:00:00",
+               "2025-05-23T08:00:00",
+               "2025-05-23T09:00:00",
+               "2025-05-23T10:00:00",
+               "2025-05-23T11:00:00",
+               "2025-05-23T12:00:00"
+            ],
+            "desi":{
+               "comment":"Complete files (if true) are needed for model to show up on front end display.  Format 2022090912/HREF.complete",
+               "name":"HREF",
+               "groupname":"HREF",
+               "completeFile":true,
+               "zarr_config":{
+                  "data_by_field":false,
+                  "time_key":"valid_time",
+                  "lat_key":"latitude",
+                  "lon_key":"longitude",
+                  "ens_key":"ensemble",
+                  "ens_key_text":"names",
+                  "x_key":"x",
+                  "y_key":"y",
+                  "z_key":"isobaricInhPa"
+               },
+               "x4dDomain":{
+                  "x4dGrid":[
+                     40.5,
+                     -100,
+                     388,
+                     270
+                  ],
+                  "maxDomainPoints":105000
+               },
+               "tiling":{
+                  "//":"if resolution is 5km, 1 = 5km, 2 = 10km, 4 = 20km",
+                  "y":150,
+                  "x":150,
+                  "targetNx":200,
+                  "targetNy":150,
+                  "resLevels":[
+                     1,
+                     2,
+                     4
+                  ]
+               },
+               "region":{
+                  "name":"CONUS",
+                  "foldername":"HREF"
+               },
+               "projDict":{
+                  "nx":1160,
+                  "ny":678,
+                  "dx":5079,
+                  "dy":5079,
+                  "units":"m",
+                  "first_lat":19.80394886054594,
+                  "first_lon":-125.13089699982356,
+                  "proj":"+proj=lcc +a=6371200.0 +b=6371200.0 +lon_0=265.0 +lat_0=25.0 +lat_1=25.0 +lat_2=25.0"
+               },
+               "clustering":false,
+               "members":{
+                  "HRW_ARW -12h":[
+                     "HRW_ARW -12h"
+                  ],
+                  "HRW_ARW":[
+                     "HRW_ARW"
+                  ],
+                  "HRW FV3 -12h":[
+                     "HRW FV3 -12h"
+                  ],
+                  "HRW FV3":[
+                     "HRW FV3"
+                  ],
+                  "HRW NSSL -12h":[
+                     "HRW NSSL -12h"
+                  ],
+                  "HRW NSSL":[
+                     "HRW NSSL"
+                  ],
+                  "NAM CONUS Nest -12h":[
+                     "NAM CONUS Nest -12h"
+                  ],
+                  "NAM CONUS Nest":[
+                     "NAM CONUS Nest"
+                  ],
+                  "HRRR -6h":[
+                     "HRRR -6h"
+                  ],
+                  "HRRR":[
+                     "HRRR"
+                  ]
+               },
+               "membersShort":{
+                  "HRW_ARW -12h":[
+                     "ARW -12h"
+                  ],
+                  "HRW_ARW":[
+                     "ARW"
+                  ],
+                  "HRW FV3 -12h":[
+                     "FV3 -12h"
+                  ],
+                  "HRW FV3":[
+                     "FV3"
+                  ],
+                  "HRW NSSL -12h":[
+                     "NSSL -12h"
+                  ],
+                  "HRW NSSL":[
+                     "NSSL"
+                  ],
+                  "NAM CONUS Nest -12h":[
+                     "NAM N. -12h"
+                  ],
+                  "NAM CONUS Nest":[
+                     "NAM N."
+                  ],
+                  "HRRR -6h":[
+                     "HRRR -6h"
+                  ],
+                  "HRRR":[
+                     "HRRR"
+                  ]
+               },
+               "memberDepth":2,
+               "resolutionKM":5,
+               "lengthInHours":48
+            },
+            "bbox":[
+               -125.13089699982356,
+               19.80394886054594,
+               -60.154430455510095,
+               49.81080204452752
+            ]
+         }
+      }
+   ]
+}
+....
+
+====
+
+[[ats_nwsviz-application_data-query-items]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/data-query-items
+target:: /req/nwsviz-application/data-query-items
+test-purpose:: Verify that NWSViz profile Collection *Items* query is correctly defined in the Collection response.
+test-method::
+step:: Verify that the *Items* query returns a connection to a Virtual Zarr Store that can be accessed via Xarray, such as:
+
+[source]
+....
+import xarray as xr
+
+ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS_icechunk/instances/2025-10-01T18:00:00/items/zarr/EchoTop_30/0++[]')
+# Where EchoTop_30 is the element name and 0 is the zoom level
+....
+
+step:: Verify that the *Items* query supports the following HTTP methods:
+
+        * GET
+
+step:: Verify that the *Items* query has an item identifier that follows the following syntax:
+
+        * zarr/<element>/<zoom>/<crs>/<unit>
+====
+
+
+
+
+
+
+
+
+////
+Revision History should be the last annex before the Bibliography
+Bibliography should be the last annex
+////
+[appendix]
+== Revision History
+
+[width="90%",options="header"]
+|===
+|Date |Release |Editor | Primary clauses modified |Description
+|2016-04-28 |0.1 |G. Editor |all |initial version
+|===
+
+[bibliography]
+
+== Bibliography
+
+[NOTE]
+.Example Bibliography (Delete this note).
+===============================================
+The TC has approved Springer LNCS as the official document citation type.
+
+Springer LNCS is widely used in technical and computer science journals and other publications
+
+* For citations in the text please use square brackets and consecutive numbers: [1], [2], [3]
+
+– Actual References:
+
+[n] Journal: Author Surname, A.: Title. Publication Title. Volume number, Issue number, Pages Used (Year Published)
+
+[n] Web: Author Surname, A.: Title, http://Website-Url
+
+===============================================
+
+* [[[OGC2015,OGCTB12]]], _OGC: OGC Testbed 12 Annex B: Architecture_ (2015).

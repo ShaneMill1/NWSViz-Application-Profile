@@ -221,15 +221,15 @@ Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
 
 include::../requirements/core/REQ_data-query-location.adoc[]
 
-// ==== Instances Query
+==== Instances Query
 
-// Having multiple versions or instances of the same Collection, where the same information is reprocessed or regenerated is not unusual. Although these versions could be described as new Collections the instance query type allows this data to be described as different views of the same Collection.
+Having multiple versions or instances of the same Collection, where the same information is reprocessed or regenerated is not unusual. Although these versions could be described as new Collections the instance query type allows this data to be described as different views of the same Collection.
 
-// Path = {root}/collections/{collectionId}/instances
+Path = {root}/collections/{collectionId}/instances
 
-// Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
+Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
 
-// include::../requirements/core/REQ_data-query-instances.adoc[]
+include::../requirements/core/REQ_data-query-instances.adoc[]
 
 
 === General Requirements
