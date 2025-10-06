@@ -1042,7 +1042,7 @@ paths:
           required: true
           schema:
             type: object
-            example: ".zmetadata"
+            example: "temperature/0.0.0"
       responses:
         '200':
           description: The raw content of the requested Zarr node (e.g., a JSON file or a compressed binary data chunk).
