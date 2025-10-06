@@ -55,7 +55,7 @@ components:
       required: true
       schema:
         type: string
-        example: "apparent_temperature"
+        example: "temperature"
     zoom:
       name: zoom
       in: path
@@ -95,7 +95,7 @@ components:
       required: false
       schema:
         type: string
-        example: "apparent_temperature"
+        example: "temperature"
     ij:
       name: ij
       in: query
@@ -500,7 +500,7 @@ paths:
                           href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/position?f=json"
                           rel: "data"
                     'parameter-names':
-                      apparent_temperature:
+                      temperature:
                         Type: "Parameter"
                         id: "temperature"
                         description: "temperature"
@@ -790,7 +790,7 @@ paths:
                       name: "conus"
                       name_alt: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/locations/conus?f=json"
                       edrqueryendpoint: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/locations/conus?f=json"
-                      parameter-names: [ "apparent_temperature" ]
+                      parameter-names: [ "temperature" ]
                       datetimes: [ "2025-09-22T01:00:00Z", "2025-09-22T02:00:00Z" ]
                       bbox: [ -3271151.605, -263793.733, 2661594.602, 3779413.442 ]
         '400':
