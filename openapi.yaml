@@ -22,7 +22,7 @@ components:
       required: true
       schema:
         type: string
-        enum: [json, CoverageJSON, Zarr, NetCDF]
+        enum: [json, html, zarr, netcdf]
         default: json
     lang:
       name: lang
