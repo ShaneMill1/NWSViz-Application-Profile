@@ -397,7 +397,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json, html]
+            enum: [json]
             default: json
         - $ref: '#/components/parameters/lang'
       responses:
@@ -454,7 +454,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json, html]
+            enum: [json]
             default: json
         - $ref: '#/components/parameters/lang'
       responses:
@@ -583,7 +583,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json, html]
+            enum: [json]
             default: json
         - $ref: '#/components/parameters/lang'
       responses:
@@ -680,7 +680,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json, html]
+            enum: [json]
             default: json
         - $ref: '#/components/parameters/lang'
       responses:
@@ -763,7 +763,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json, html]
+            enum: [json]
             default: json
         - $ref: '#/components/parameters/lang'
       responses:
@@ -910,7 +910,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json, html]
+            enum: [json]
             default: json
         - $ref: '#/components/parameters/lang'
       responses:
