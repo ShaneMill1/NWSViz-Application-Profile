@@ -161,16 +161,16 @@ components:
           example: "Parameter"
         id:
           type: string
-          example: "apparent_temperature"
+          example: "temperature"
         description:
           type: string
-          example: "apparent_temperature"
+          example: "temperature"
         unit:
           type: object
           properties:
             symbol:
               type: string
-              example: "K"
+              example: "degF"
         temporal:
           type: object
           properties:
@@ -183,8 +183,8 @@ components:
         attrs:
           type: object
           example:
-            long_name: "Apparent Temperature"
-            short_name: "APTMP"
+            long_name: "Temperature"
+            short_name: "TMP"
 
     parameterNames:
       type: object
@@ -502,11 +502,11 @@ paths:
                     'parameter-names':
                       apparent_temperature:
                         Type: "Parameter"
-                        id: "apparent_temperature"
-                        description: "apparent_temperature"
+                        id: "temperature"
+                        description: "temperature"
                         unit: { symbol: "K" }
                         temporal: { values: ["2025-09-22T01:00:00Z"] }
-                        attrs: { long_name: "Apparent Temperature" }
+                        attrs: { long_name: "Temperature" }
                 MRMS_icechunk:
                   summary: Example for the MRMS_icechunk collection
                   value:
