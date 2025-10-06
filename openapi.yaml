@@ -39,7 +39,7 @@ components:
       schema:
         type: string
         format: date-time
-        example: "2025-09-22T00:00:00"
+        example: "2025-09-22T00:00:00Z"
     locationId:
       name: locationId
       in: path
@@ -71,7 +71,7 @@ components:
       required: true
       schema:
         type: string
-        example: "EPSG:4326"
+        example: "4326"
     unit:
       name: unit
       in: path
@@ -179,7 +179,7 @@ components:
               items:
                 type: string
                 format: date-time
-              example: ["2025-09-22T01:00:00", "2025-09-22T02:00:00"]
+              example: ["2025-09-22T01:00:00Z", "2025-09-22T02:00:00Z"]
         attrs:
           type: object
           example:
@@ -606,13 +606,13 @@ paths:
                 instances:
                   - id: "2025-09-22T00:00:00"
                     links:
-                      - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00?f=json"
+                      - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z?f=json"
                         rel: "self"
                         type: "application/json"
                     data_queries:
                       position:
                         link:
-                          href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/position?f=json"
+                          href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/position?f=json"
                           rel: "data"
                           title: "position query"
                 links:
@@ -693,7 +693,7 @@ paths:
               example:
                 id: "2025-09-22T00:00:00"
                 links:
-                  - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00?f=json"
+                  - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z?f=json"
                     rel: "self"
                     type: "application/json"
                   - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk?f=json"
@@ -703,17 +703,17 @@ paths:
                 data_queries:
                   items:
                     link:
-                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/items?f=json"
+                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/items?f=json"
                       rel: "data"
                       title: "items query"
                   locations:
                     link:
-                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/locations?f=json"
+                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/locations?f=json"
                       rel: "data"
                       title: "locations query"
                   position:
                     link:
-                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/position?f=json"
+                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00ZS/position?f=json"
                       rel: "data"
                       title: "position query"
         '400':
@@ -786,12 +786,12 @@ paths:
                           - [ -3271151.605, -263793.733 ]
                           - [ 2661594.602, -263793.733 ]
                     properties:
-                      instance: "2025-09-22T00:00:00"
+                      instance: "2025-09-22T00:00:00Z"
                       name: "conus"
-                      name_alt: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/locations/conus?f=json"
-                      edrqueryendpoint: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/locations/conus?f=json"
+                      name_alt: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/locations/conus?f=json"
+                      edrqueryendpoint: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/locations/conus?f=json"
                       parameter-names: [ "apparent_temperature" ]
-                      datetimes: [ "2025-09-22T01:00:00", "2025-09-22T02:00:00" ]
+                      datetimes: [ "2025-09-22T01:00:00Z", "2025-09-22T02:00:00Z" ]
                       bbox: [ -3271151.605, -263793.733, 2661594.602, 3779413.442 ]
         '400':
           description: InvalidParameterValue
@@ -928,7 +928,7 @@ paths:
                       type: "Polygon"
                       coordinates: [[]]
                     properties:
-                      name_alt: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/items/zarr?f=json"
+                      name_alt: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/items/zarr?f=json"
         '400':
           description: InvalidParameterValue
           content:
