@@ -533,7 +533,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  code:
+                  status_code:
                     type: integer
                     example: 404
                   message:
@@ -589,7 +589,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  code:
+                  status_code:
                     type: integer
                     example: 404
                   message:
@@ -645,7 +645,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  code:
+                  status_code:
                     type: integer
                     example: 404
                   message:
@@ -696,7 +696,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  code:
+                  status_code:
                     type: integer
                     example: 404
                   message:
@@ -741,7 +741,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  code:
+                  status_code:
                     type: integer
                     example: 404
                   message:
@@ -780,7 +780,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  code:
+                  status_code:
                     type: integer
                     example: 404
                   message:
@@ -821,7 +821,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  code:
+                  status_code:
                     type: integer
                     example: 404
                   message:
@@ -864,7 +864,7 @@ paths:
               schema:
                 type: object
                 properties:
-                  code:
+                  status_code:
                     type: integer
                     example: 404
                   message:
