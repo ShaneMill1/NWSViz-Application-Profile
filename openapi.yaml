@@ -63,7 +63,7 @@ components:
       required: true
       schema:
         type: integer
-        example: 1
+        example: 8
     crs:
       name: crs
       in: path
@@ -95,7 +95,7 @@ components:
       required: false
       schema:
         type: string
-        example: "apparent_temperature,wind_speed"
+        example: "apparent_temperature"
     ij:
       name: ij
       in: query
@@ -790,7 +790,7 @@ paths:
                       name: "conus"
                       name_alt: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/locations/conus?f=json"
                       edrqueryendpoint: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/locations/conus?f=json"
-                      parameter-names: [ "apparent_temperature", "ceiling" ]
+                      parameter-names: [ "apparent_temperature" ]
                       datetimes: [ "2025-09-22T01:00:00", "2025-09-22T02:00:00" ]
                       bbox: [ -3271151.605, -263793.733, 2661594.602, 3779413.442 ]
         '400':
