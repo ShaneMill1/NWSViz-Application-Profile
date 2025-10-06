@@ -15,15 +15,6 @@ servers:
 # Defines reusable components used throughout the API.
 components:
   parameters:
-    f:
-      name: f
-      in: query
-      description: The format of the response.
-      required: true
-      schema:
-        type: string
-        enum: [json, html, zarr, netcdf]
-        default: json
     lang:
       name: lang
       in: query
@@ -357,7 +348,14 @@ paths:
       description: Landing page
       operationId: getLandingPage
       parameters:
-        - $ref: '#/components/parameters/f'
+        - name: f
+          in: query
+          description: The format of the response. Defaults to 'json' if not specified.
+          required: false
+          schema:
+            type: string
+            enum: [json, html]
+            default: json
         - $ref: '#/components/parameters/lang'
       responses:
         '200':
@@ -393,7 +391,14 @@ paths:
       description: Provides a list of all data collections available.
       operationId: getCollections
       parameters:
-        - $ref: '#/components/parameters/f'
+        - name: f
+          in: query
+          description: The format of the response. Defaults to 'json' if not specified.
+          required: false
+          schema:
+            type: string
+            enum: [json, html]
+            default: json
         - $ref: '#/components/parameters/lang'
       responses:
         '200':
@@ -443,7 +448,14 @@ paths:
       operationId: getCollectionById
       parameters:
         - $ref: '#/components/parameters/collectionId'
-        - $ref: '#/components/parameters/f'
+        - name: f
+          in: query
+          description: The format of the response. Defaults to 'json' if not specified.
+          required: false
+          schema:
+            type: string
+            enum: [json, html]
+            default: json
         - $ref: '#/components/parameters/lang'
       responses:
         '200':
@@ -565,7 +577,14 @@ paths:
       operationId: getCollectionInstances
       parameters:
         - $ref: '#/components/parameters/collectionId'
-        - $ref: '#/components/parameters/f'
+        - name: f
+          in: query
+          description: The format of the response. Defaults to 'json' if not specified.
+          required: false
+          schema:
+            type: string
+            enum: [json, html]
+            default: json
         - $ref: '#/components/parameters/lang'
       responses:
         '200':
@@ -655,7 +674,14 @@ paths:
       parameters:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/instanceId'
-        - $ref: '#/components/parameters/f'
+        - name: f
+          in: query
+          description: The format of the response. Defaults to 'json' if not specified.
+          required: false
+          schema:
+            type: string
+            enum: [json, html]
+            default: json
         - $ref: '#/components/parameters/lang'
       responses:
         '200':
@@ -731,7 +757,14 @@ paths:
       parameters:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/instanceId'
-        - $ref: '#/components/parameters/f'
+        - name: f
+          in: query
+          description: The format of the response. Defaults to 'json' if not specified.
+          required: false
+          schema:
+            type: string
+            enum: [json, html]
+            default: json
         - $ref: '#/components/parameters/lang'
       responses:
         '200':
@@ -805,7 +838,14 @@ paths:
         - $ref: '#/components/parameters/ij'
         - $ref: '#/components/parameters/datetime'
         - $ref: '#/components/parameters/parameter-name'
-        - $ref: '#/components/parameters/f'
+        - name: f
+          in: query
+          description: The format of the response. Defaults to 'json' if not specified.
+          required: false
+          schema:
+            type: string
+            enum: [json, netcdf, zarr]
+            default: json
       responses:
         '200':
           description: A data tile in the format specified by the 'f' parameter.
@@ -864,7 +904,14 @@ paths:
       parameters:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/instanceId'
-        - $ref: '#/components/parameters/f'
+        - name: f
+          in: query
+          description: The format of the response. Defaults to 'json' if not specified.
+          required: false
+          schema:
+            type: string
+            enum: [json, html]
+            default: json
         - $ref: '#/components/parameters/lang'
       responses:
         '200':
