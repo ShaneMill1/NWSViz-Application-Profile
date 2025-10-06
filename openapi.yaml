@@ -526,6 +526,22 @@ paths:
                         description: "EchoTop_18"
                         attrs:
                           _FillValue: "AAAAAAAA+H8="
+        '400':
+          description: InvalidParameterValue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: InvalidParameterValue
+                  type:
+                    type: string
+                    example: InvalidParameterValue
+                  description:
+                    type: string
+                    example: "Invalid format requested"
         '404':
           description: Not Found
           content:
@@ -600,7 +616,38 @@ paths:
                   description:
                     type: string
                     example: "Collection not found"
-
+        '400':
+          description: InvalidParameterValue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: InvalidParameterValue
+                  type:
+                    type: string
+                    example: InvalidParameterValue
+                  description:
+                    type: string
+                    example: "Invalid format requested"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: NotFound
+                  type:
+                    type: string
+                    example: NotFound
+                  description:
+                    type: string
+                    example: "Collection not found"
   /collections/{collectionId}/instances/{instanceId}:
     get:
       description: Retrieves the details of a specific instance within a collection.
@@ -643,6 +690,22 @@ paths:
                       href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/position?f=json"
                       rel: "data"
                       title: "position query"
+        '400':
+          description: InvalidParameterValue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: InvalidParameterValue
+                  type:
+                    type: string
+                    example: InvalidParameterValue
+                  description:
+                    type: string
+                    example: "Invalid format requested"
         '404':
           description: Not Found
           content:
@@ -697,6 +760,22 @@ paths:
                       parameter-names: [ "apparent_temperature", "ceiling" ]
                       datetimes: [ "2025-09-22T01:00:00", "2025-09-22T02:00:00" ]
                       bbox: [ -3271151.605, -263793.733, 2661594.602, 3779413.442 ]
+        '400':
+          description: InvalidParameterValue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: InvalidParameterValue
+                  type:
+                    type: string
+                    example: InvalidParameterValue
+                  description:
+                    type: string
+                    example: "Invalid format requested"
         '404':
           description: Not Found
           content:
@@ -745,6 +824,22 @@ paths:
                 type: string
                 format: binary
                 description: The data tile formatted as a NetCDF file.
+        '400':
+          description: InvalidParameterValue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: InvalidParameterValue
+                  type:
+                    type: string
+                    example: InvalidParameterValue
+                  description:
+                    type: string
+                    example: "Invalid format requested"
         '404':
           description: Not Found
           content:
@@ -787,6 +882,22 @@ paths:
                       coordinates: [[]]
                     properties:
                       name_alt: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/items/zarr?f=json"
+        '400':
+          description: InvalidParameterValue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: InvalidParameterValue
+                  type:
+                    type: string
+                    example: InvalidParameterValue
+                  description:
+                    type: string
+                    example: "Invalid format requested"
         '404':
           description: Not Found
           content:
@@ -831,6 +942,22 @@ paths:
                   - ".zgroup"
                   - ".zmetadata"
                   - "data"
+        '400':
+          description: InvalidParameterValue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: InvalidParameterValue
+                  type:
+                    type: string
+                    example: InvalidParameterValue
+                  description:
+                    type: string
+                    example: "Invalid format requested"
         '404':
           description: Not Found
           content:
@@ -877,6 +1004,22 @@ paths:
               schema:
                 type: string
                 format: binary
+        '400':
+          description: InvalidParameterValue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: InvalidParameterValue
+                  type:
+                    type: string
+                    example: InvalidParameterValue
+                  description:
+                    type: string
+                    example: "Invalid format requested"
         '404':
           description: Not Found
           content:
