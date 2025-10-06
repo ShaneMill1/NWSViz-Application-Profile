@@ -79,7 +79,7 @@ components:
       required: true
       schema:
         type: string
-        example: "K"
+        example: "degF"
     datetime:
       name: datetime
       in: query
