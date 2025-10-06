@@ -1041,8 +1041,8 @@ paths:
           description: The path to the Zarr node, such as `.zattrs`, `.zmetadata`, or a data chunk like `data/0.0.0`.
           required: true
           schema:
-            type: string
-            example: ".zattrs"
+            type: object
+            example: ".zmetadata"
       responses:
         '200':
           description: The raw content of the requested Zarr node (e.g., a JSON file or a compressed binary data chunk).
