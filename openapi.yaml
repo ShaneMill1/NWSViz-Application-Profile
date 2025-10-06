@@ -1,0 +1,767 @@
+# Specifies the OpenAPI Specification version.
+openapi: 3.0.3
+
+# Provides metadata about the API.
+info:
+  title: OGC API - Environmental Data Retrieval for NWSViz
+  version: 1.0.0
+  description: An example API demonstrating a valid landing page and collections response.
+
+# Defines the server URL.
+servers:
+  - url: https://edr-api-desi-c.mdl.nws.noaa.gov
+    description: Production Server
+
+# Defines reusable components used throughout the API.
+components:
+  parameters:
+    f:
+      name: f
+      in: query
+      description: The format of the response.
+      required: false
+      schema:
+        type: string
+        enum: [json, CoverageJSON, Zarr, NetCDF]
+        default: json
+    lang:
+      name: lang
+      in: query
+      description: The language of the response.
+      required: false
+      schema:
+        type: string
+        default: en-US
+    collectionId:
+      name: collectionId
+      in: path
+      description: The identifier of the collection.
+      required: true
+      schema:
+        type: string
+        example: "NBM_icechunk"
+    instanceId:
+      name: instanceId
+      in: path
+      description: The identifier of the instance.
+      required: true
+      schema:
+        type: string
+        format: date-time
+        example: "2025-09-22T00:00:00Z"
+    locationId:
+      name: locationId
+      in: path
+      description: The identifier of the location (e.g., 'conus').
+      required: true
+      schema:
+        type: string
+        example: "conus"
+    element:
+      name: element
+      in: path
+      description: The data element or parameter to retrieve.
+      required: true
+      schema:
+        type: string
+        example: "apparent_temperature"
+    zoom:
+      name: zoom
+      in: path
+      description: The zoom level for the tile.
+      required: true
+      schema:
+        type: integer
+        example: 1
+    crs:
+      name: crs
+      in: path
+      description: The Coordinate Reference System for the tile.
+      required: true
+      schema:
+        type: string
+        example: "EPSG:4326"
+    unit:
+      name: unit
+      in: path
+      description: The unit of measurement for the data.
+      required: true
+      schema:
+        type: string
+        example: "K"
+    datetime:
+      name: datetime
+      in: query
+      description: A single datetime or a time range for the query.
+      required: false
+      schema:
+        type: string
+        example: "2025-09-22T01:00:00Z"
+    'parameter-name':
+      name: parameter-name
+      in: query
+      description: A comma-separated list of parameter names to retrieve.
+      required: false
+      schema:
+        type: string
+        example: "apparent_temperature,wind_speed"
+    ij:
+      name: ij
+      in: query
+      description: The i,j bounding box for a data tile subset (i_min,j_min,i_max,j_max).
+      required: false
+      schema:
+        type: string
+        pattern: '^\d+,\d+,\d+,\d+$'
+        example: "0,0,100,100"
+
+  # Reusable schema definitions.
+  schemas:
+    link:
+      type: object
+      properties:
+        type:
+          type: string
+        rel:
+          type: string
+        title:
+          type: string
+        href:
+          type: string
+          format: uri
+
+    spatialExtent:
+      type: object
+      properties:
+        bbox:
+          type: array
+          items:
+            type: number
+            format: double
+        crs:
+          type: string
+        locations:
+          type: array
+          items:
+            type: string
+
+    temporalExtent:
+      type: object
+      properties:
+        interval:
+          type: array
+          items:
+            type: string
+            format: date-time
+        values:
+          type: array
+          items:
+            type: string
+            format: date-time
+        instances:
+          type: array
+          items: {}
+
+    parameterDetail:
+      type: object
+      properties:
+        Type:
+          type: string
+          example: "Parameter"
+        id:
+          type: string
+          example: "apparent_temperature"
+        description:
+          type: string
+          example: "apparent_temperature"
+        unit:
+          type: object
+          properties:
+            symbol:
+              type: string
+              example: "K"
+        temporal:
+          type: object
+          properties:
+            values:
+              type: array
+              items:
+                type: string
+                format: date-time
+              example: ["2025-09-22T01:00:00Z", "2025-09-22T02:00:00Z"]
+        attrs:
+          type: object
+          example:
+            long_name: "Apparent Temperature"
+            short_name: "APTMP"
+
+    parameterNames:
+      type: object
+      description: A dictionary of available parameters, where each key is the parameter name.
+      additionalProperties:
+        $ref: '#/components/schemas/parameterDetail'
+    
+    instance:
+      type: object
+      properties:
+        id:
+          type: string
+          format: date-time
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/link'
+        data_queries:
+          type: object
+          additionalProperties:
+            type: object
+            properties:
+              link:
+                $ref: '#/components/schemas/link'
+
+    collection:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        keywords:
+          type: array
+          items:
+            type: string
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/link'
+        extent:
+          type: object
+          properties:
+            spatial:
+              $ref: '#/components/schemas/spatialExtent'
+            temporal:
+              $ref: '#/components/schemas/temporalExtent'
+        data_queries:
+          type: object
+        'parameter-names':
+          $ref: '#/components/schemas/parameterNames'
+          
+    feature:
+      type: object
+      properties:
+        type:
+          type: string
+          example: "Feature"
+        geometry:
+          type: object
+          properties:
+            type:
+              type: string
+              example: "Polygon"
+            coordinates:
+              type: array
+              items:
+                type: array
+                items: {}
+        properties:
+          type: object
+          properties:
+            name_alt:
+              type: string
+              format: uri
+
+    featureCollection:
+      type: object
+      properties:
+        type:
+          type: string
+          example: "FeatureCollection"
+        features:
+          type: array
+          items:
+            $ref: '#/components/schemas/feature'
+            
+    locationFeatureProperties:
+      type: object
+      properties:
+        instance: { type: string, format: "date-time" }
+        name: { type: string }
+        name_alt: { type: string, format: "uri" }
+        edrqueryendpoint: { type: string, format: "uri" }
+        'parameter-names':
+          type: array
+          items: { type: string }
+        datetimes:
+          type: array
+          items: { type: string, format: "date-time" }
+        desi:
+          type: object
+        'parameter-names-dict':
+          type: object
+        bbox:
+          type: array
+          items: { type: number }
+
+    locationFeature:
+      type: object
+      properties:
+        type:
+          type: string
+          example: "Feature"
+        geometry:
+          type: object
+          properties:
+            type: { type: string, example: "Polygon" }
+            coordinates:
+              type: array
+              items:
+                type: array
+                items:
+                  type: array
+                  items:
+                    type: number
+        properties:
+          $ref: '#/components/schemas/locationFeatureProperties'
+          
+    locationFeatureCollection:
+      type: object
+      properties:
+        type:
+          type: string
+          example: "FeatureCollection"
+        features:
+          type: array
+          items:
+            $ref: '#/components/schemas/locationFeature'
+            
+    zarrConnection:
+      type: object
+      properties:
+        zarr_consolidated_format:
+          type: integer
+          example: 1
+        metadata_key:
+          type: string
+          example: ".zmetadata"
+        nodes:
+          type: array
+          items:
+            type: string
+
+# Contains the available paths and operations for the API.
+paths:
+  /:
+    get:
+      description: Landing page
+      operationId: getLandingPage
+      parameters:
+        - $ref: '#/components/parameters/f'
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: Successful response for landing page
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  links:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/link'
+              example:
+                title: "OGC API - Environmental Data Retrieval for NWSViz"
+                description: "Implementation of Pygeoapi for OGC API - EDR to support NWSViz"
+                links:
+                  - rel: "self"
+                    type: "application/json"
+                    title: "This document as JSON"
+                    href: "https://edr-api-desi-c.mdl.nws.noaa.gov?f=json"
+                  - rel: "data"
+                    type: "application/json"
+                    title: "Collections"
+                    href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections"
+  
+  /collections:
+    get:
+      description: Provides a list of all data collections available.
+      operationId: getCollections
+      parameters:
+        - $ref: '#/components/parameters/f'
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: A list of available data collections.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  collections:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/collection'
+                  links:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/link'
+              example:
+                collections:
+                  - id: "NBM_icechunk"
+                    title: "NBM_icechunk"
+                    description: "National Blend of Models"
+                    keywords: ["edr"]
+                    links:
+                      - type: "application/json"
+                        rel: "root"
+                        title: "The landing page of this server as JSON"
+                        href: "https://edr-api-desi-c.mdl.nws.noaa.gov?f=json"
+                  - id: "MRMS_icechunk"
+                    title: "MRMS_icechunk"
+                    description: "Multi-Radar/Multi-Sensor"
+                    keywords: ["edr"]
+                    links:
+                      - type: "application/json"
+                        rel: "root"
+                        title: "The landing page of this server as JSON"
+                        href: "https://edr-api-desi-c.mdl.nws.noaa.gov?f=json"
+                links:
+                  - type: "application/json"
+                    rel: "self"
+                    title: "This document as JSON"
+                    href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections?f=json"
+
+  /collections/{collectionId}:
+    get:
+      description: Provides metadata for a single data collection.
+      operationId: getCollectionById
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/f'
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: Detailed metadata for the requested data collection.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/collection'
+              examples:
+                NBM_icechunk:
+                  summary: Example for the NBM_icechunk collection
+                  value:
+                    id: "NBM_icechunk"
+                    title: "NBM_icechunk"
+                    description: "National Blend of Models"
+                    keywords: ["edr"]
+                    links:
+                      - type: "application/json"
+                        rel: "root"
+                        title: "The landing page of this server as JSON"
+                        href: "https://edr-api-desi-c.mdl.nws.noaa.gov?f=json"
+                      - type: "application/json"
+                        rel: "self"
+                        title: "This document as JSON"
+                        href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk?f=json"
+                    extent:
+                      spatial:
+                        bbox: [-180, -90, 180, 90]
+                        crs: ""
+                        locations: ["conus"]
+                      temporal:
+                        interval: ["2025-09-22T01:00:00Z", "2025-10-03T00:00:00Z"]
+                        values: ["2025-09-22T01:00:00Z"]
+                        instances: []
+                    data_queries:
+                      locations:
+                        link:
+                          href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/locations?f=json"
+                          rel: "data"
+                      position:
+                        link:
+                          href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/position?f=json"
+                          rel: "data"
+                    'parameter-names':
+                      apparent_temperature:
+                        Type: "Parameter"
+                        id: "apparent_temperature"
+                        description: "apparent_temperature"
+                        unit: { symbol: "K" }
+                        temporal: { values: ["2025-09-22T01:00:00Z"] }
+                        attrs: { long_name: "Apparent Temperature" }
+                MRMS_icechunk:
+                  summary: Example for the MRMS_icechunk collection
+                  value:
+                    id: "MRMS_icechunk"
+                    title: "MRMS_icechunk"
+                    description: "Multi-Radar/Multi-Sensor"
+                    keywords: ["edr"]
+                    links:
+                      - type: "application/json"
+                        rel: "root"
+                        title: "The landing page of this server as JSON"
+                        href: "https://edr-api-desi-c.mdl.nws.noaa.gov?f=json"
+                      - type: "application/json"
+                        rel: "self"
+                        title: "This document as JSON"
+                        href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS_icechunk?f=json"
+                    extent:
+                      spatial:
+                        bbox: [-180, -90, 180, 90]
+                        crs: ""
+                        locations: ["conus"]
+                      temporal:
+                        interval: ["2025-10-01T17:58:00Z", "2025-10-01T18:58:39Z"]
+                        values: ["2025-10-01T17:58:00Z"]
+                    'parameter-names':
+                      EchoTop_18:
+                        Type: "Parameter"
+                        id: "EchoTop_18"
+                        description: "EchoTop_18"
+                        attrs:
+                          _FillValue: "AAAAAAAA+H8="
+
+  /collections/{collectionId}/instances:
+    get:
+      description: Retrieves the list of available instances for a collection.
+      operationId: getCollectionInstances
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/f'
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: A list of instances for the requested data collection.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  instances:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/instance'
+                  links:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/link'
+              example:
+                instances:
+                  - id: "2025-09-22T00:00:00"
+                    links:
+                      - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00?f=json"
+                        rel: "self"
+                        type: "application/json"
+                    data_queries:
+                      position:
+                        link:
+                          href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/position?f=json"
+                          rel: "data"
+                          title: "position query"
+                links:
+                  - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances?f=json"
+                    rel: "self"
+                    type: "application/json"
+
+  /collections/{collectionId}/instances/{instanceId}:
+    get:
+      description: Retrieves the details of a specific instance within a collection.
+      operationId: getCollectionInstanceById
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/instanceId'
+        - $ref: '#/components/parameters/f'
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: The details of the requested instance.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/instance'
+              example:
+                id: "2025-09-22T00:00:00"
+                links:
+                  - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00?f=json"
+                    rel: "self"
+                    type: "application/json"
+                  - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk?f=json"
+                    rel: "collection"
+                    title: "NBM_icechunk"
+                    type: "application/json"
+                data_queries:
+                  items:
+                    link:
+                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/items?f=json"
+                      rel: "data"
+                      title: "items query"
+                  locations:
+                    link:
+                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/locations?f=json"
+                      rel: "data"
+                      title: "locations query"
+                  position:
+                    link:
+                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/position?f=json"
+                      rel: "data"
+                      title: "position query"
+
+  /collections/{collectionId}/instances/{instanceId}/locations:
+    get:
+      summary: Get Instance Locations
+      description: Retrieves the available locations (as features) for a specific data instance.
+      operationId: getCollectionInstanceLocations
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/instanceId'
+        - $ref: '#/components/parameters/f'
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: A FeatureCollection listing available data locations.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/locationFeatureCollection'
+              example:
+                type: "FeatureCollection"
+                features:
+                  - type: "Feature"
+                    geometry:
+                      type: "Polygon"
+                      coordinates:
+                        - - - [ 2661594.602, -263793.733 ]
+                          - [ 2661594.602, 3779413.442 ]
+                          - [ -3271151.605, 3779413.442 ]
+                          - [ -3271151.605, -263793.733 ]
+                          - [ 2661594.602, -263793.733 ]
+                    properties:
+                      instance: "2025-09-22T00:00:00"
+                      name: "conus"
+                      name_alt: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/locations/conus?f=json"
+                      edrqueryendpoint: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/locations/conus?f=json"
+                      parameter-names: [ "apparent_temperature", "ceiling" ]
+                      datetimes: [ "2025-09-22T01:00:00", "2025-09-22T02:00:00" ]
+                      bbox: [ -3271151.605, -263793.733, 2661594.602, 3779413.442 ]
+
+  /collections/{collectionId}/instances/{instanceId}/locations/{locationId}:
+    get:
+      summary: Get Data Tile from Location
+      description: Retrieves a data tile from a specific location, defined by an i,j bounding box.
+      operationId: getLocationDataTile
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/instanceId'
+        - $ref: '#/components/parameters/locationId'
+        - $ref: '#/components/parameters/ij'
+        - $ref: '#/components/parameters/datetime'
+        - $ref: '#/components/parameters/parameter-name'
+        - $ref: '#/components/parameters/f'
+      responses:
+        '200':
+          description: A data tile in the format specified by the 'f' parameter.
+          content:
+            application/json: # Represents CoverageJSON
+              schema:
+                type: object
+                description: A CoverageJSON object representing the data tile.
+            application/octet-stream: # Represents Zarr
+              schema:
+                type: string
+                format: binary
+                description: A binary representation of the data tile, such as a Zarr archive.
+            application/netcdf: # Represents NetCDF
+              schema:
+                type: string
+                format: binary
+                description: The data tile formatted as a NetCDF file.
+
+  /collections/{collectionId}/instances/{instanceId}/items:
+    get:
+      description: Retrieves a list of available data items for a specific instance.
+      operationId: getCollectionInstanceItems
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/instanceId'
+        - $ref: '#/components/parameters/f'
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: A FeatureCollection listing available items.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/featureCollection'
+              example:
+                type: "FeatureCollection"
+                features:
+                  - type: "Feature"
+                    geometry:
+                      type: "Polygon"
+                      coordinates: [[]]
+                    properties:
+                      name_alt: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/items/zarr?f=json"
+
+  /collections/{collectionId}/instances/{instanceId}/items/zarr/{element}/{zoom}/{crs}/{unit}:
+    get:
+      summary: Zarr Entry Point
+      description: Provides the root metadata for a Zarr dataset. A Zarr client should be pointed to this URL.
+      operationId: getZarrEntryPoint
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/instanceId'
+        - $ref: '#/components/parameters/element'
+        - $ref: '#/components/parameters/zoom'
+        - $ref: '#/components/parameters/crs'
+        - $ref: '#/components/parameters/unit'
+      responses:
+        '200':
+          description: A Zarr connection object pointing to metadata and data nodes.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/zarrConnection'
+              example:
+                zarr_consolidated_format: 1
+                metadata_key: ".zmetadata"
+                nodes:
+                  - ".zattrs"
+                  - ".zgroup"
+                  - ".zmetadata"
+                  - "data"
+
+  /collections/{collectionId}/instances/{instanceId}/items/zarr/{element}/{zoom}/{crs}/{unit}/{nodePath}:
+    get:
+      summary: Zarr Node Access
+      description: |
+        Retrieves a specific node (metadata file or data chunk) from the Zarr dataset. 
+        The Zarr client library will construct and call these paths automatically by appending the node path to the base Zarr URL.
+      operationId: getZarrNode
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/instanceId'
+        - $ref: '#/components/parameters/element'
+        - $ref: '#/components/parameters/zoom'
+        - $ref: '#/components/parameters/crs'
+        - $ref: '#/components/parameters/unit'
+        - name: nodePath
+          in: path
+          description: The path to the Zarr node, such as `.zattrs`, `.zmetadata`, or a data chunk like `data/0.0.0`.
+          required: true
+          schema:
+            type: string
+            example: ".zattrs"
+      responses:
+        '200':
+          description: The raw content of the requested Zarr node (e.g., a JSON file or a compressed binary data chunk).
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
