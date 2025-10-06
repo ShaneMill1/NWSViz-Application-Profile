@@ -1,0 +1,4 @@
+# file: /home/shane.mill/mambaforge/envs/edr-part3/bin/schemathesis
+# hypothesis_version: 6.140.3
+
+['.exe', '__main__']

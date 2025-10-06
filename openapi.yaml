@@ -19,7 +19,7 @@ components:
       name: f
       in: query
       description: The format of the response.
-      required: false
+      required: true
       schema:
         type: string
         enum: [json, CoverageJSON, Zarr, NetCDF]
@@ -48,7 +48,7 @@ components:
       schema:
         type: string
         format: date-time
-        example: "2025-09-22T00:00:00Z"
+        example: "2025-09-22T00:00:00"
     locationId:
       name: locationId
       in: path
@@ -188,7 +188,7 @@ components:
               items:
                 type: string
                 format: date-time
-              example: ["2025-09-22T01:00:00Z", "2025-09-22T02:00:00Z"]
+              example: ["2025-09-22T01:00:00", "2025-09-22T02:00:00"]
         attrs:
           type: object
           example:
@@ -526,6 +526,20 @@ paths:
                         description: "EchoTop_18"
                         attrs:
                           _FillValue: "AAAAAAAA+H8="
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: "Not Found"
+
 
   /collections/{collectionId}/instances:
     get:
@@ -568,6 +582,19 @@ paths:
                   - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances?f=json"
                     rel: "self"
                     type: "application/json"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: "Not Found"
 
   /collections/{collectionId}/instances/{instanceId}:
     get:
@@ -611,6 +638,19 @@ paths:
                       href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/position?f=json"
                       rel: "data"
                       title: "position query"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: "Not Found"
 
   /collections/{collectionId}/instances/{instanceId}/locations:
     get:
@@ -649,6 +689,19 @@ paths:
                       parameter-names: [ "apparent_temperature", "ceiling" ]
                       datetimes: [ "2025-09-22T01:00:00", "2025-09-22T02:00:00" ]
                       bbox: [ -3271151.605, -263793.733, 2661594.602, 3779413.442 ]
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: "Not Found"
 
   /collections/{collectionId}/instances/{instanceId}/locations/{locationId}:
     get:
@@ -681,6 +734,19 @@ paths:
                 type: string
                 format: binary
                 description: The data tile formatted as a NetCDF file.
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: "Not Found"
 
   /collections/{collectionId}/instances/{instanceId}/items:
     get:
@@ -707,6 +773,19 @@ paths:
                       coordinates: [[]]
                     properties:
                       name_alt: "http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/items/zarr?f=json"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: "Not Found"
 
   /collections/{collectionId}/instances/{instanceId}/items/zarr/{element}/{zoom}/{crs}/{unit}:
     get:
@@ -735,6 +814,19 @@ paths:
                   - ".zgroup"
                   - ".zmetadata"
                   - "data"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: "Not Found"
 
   /collections/{collectionId}/instances/{instanceId}/items/zarr/{element}/{zoom}/{crs}/{unit}/{nodePath}:
     get:
@@ -765,3 +857,16 @@ paths:
               schema:
                 type: string
                 format: binary
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 404
+                  message:
+                    type: string
+                    example: "Not Found"
