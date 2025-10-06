@@ -533,13 +533,15 @@ paths:
               schema:
                 type: object
                 properties:
-                  status_code:
-                    type: integer
-                    example: 404
-                  message:
+                  code:
                     type: string
-                    example: "Not Found"
-
+                    example: NotFound
+                  type:
+                    type: string
+                    example: NotFound
+                  description:
+                    type: string
+                    example: "Collection not found"
 
   /collections/{collectionId}/instances:
     get:
@@ -589,12 +591,15 @@ paths:
               schema:
                 type: object
                 properties:
-                  status_code:
-                    type: integer
-                    example: 404
-                  message:
+                  code:
                     type: string
-                    example: "Not Found"
+                    example: NotFound
+                  type:
+                    type: string
+                    example: NotFound
+                  description:
+                    type: string
+                    example: "Collection not found"
 
   /collections/{collectionId}/instances/{instanceId}:
     get:
@@ -645,12 +650,15 @@ paths:
               schema:
                 type: object
                 properties:
-                  status_code:
-                    type: integer
-                    example: 404
-                  message:
+                  code:
                     type: string
-                    example: "Not Found"
+                    example: NotFound
+                  type:
+                    type: string
+                    example: NotFound
+                  description:
+                    type: string
+                    example: "Collection not found"
 
   /collections/{collectionId}/instances/{instanceId}/locations:
     get:
@@ -696,12 +704,15 @@ paths:
               schema:
                 type: object
                 properties:
-                  status_code:
-                    type: integer
-                    example: 404
-                  message:
+                  code:
                     type: string
-                    example: "Not Found"
+                    example: NotFound
+                  type:
+                    type: string
+                    example: NotFound
+                  description:
+                    type: string
+                    example: "Collection not found"
 
   /collections/{collectionId}/instances/{instanceId}/locations/{locationId}:
     get:
@@ -741,12 +752,15 @@ paths:
               schema:
                 type: object
                 properties:
-                  status_code:
-                    type: integer
-                    example: 404
-                  message:
+                  code:
                     type: string
-                    example: "Not Found"
+                    example: NotFound
+                  type:
+                    type: string
+                    example: NotFound
+                  description:
+                    type: string
+                    example: "Collection not found"
 
   /collections/{collectionId}/instances/{instanceId}/items:
     get:
@@ -780,12 +794,15 @@ paths:
               schema:
                 type: object
                 properties:
-                  status_code:
-                    type: integer
-                    example: 404
-                  message:
+                  code:
                     type: string
-                    example: "Not Found"
+                    example: NotFound
+                  type:
+                    type: string
+                    example: NotFound
+                  description:
+                    type: string
+                    example: "Collection not found"
 
   /collections/{collectionId}/instances/{instanceId}/items/zarr/{element}/{zoom}/{crs}/{unit}:
     get:
@@ -821,12 +838,15 @@ paths:
               schema:
                 type: object
                 properties:
-                  status_code:
-                    type: integer
-                    example: 404
-                  message:
+                  code:
                     type: string
-                    example: "Not Found"
+                    example: NotFound
+                  type:
+                    type: string
+                    example: NotFound
+                  description:
+                    type: string
+                    example: "Collection not found"
 
   /collections/{collectionId}/instances/{instanceId}/items/zarr/{element}/{zoom}/{crs}/{unit}/{nodePath}:
     get:
@@ -864,9 +884,12 @@ paths:
               schema:
                 type: object
                 properties:
-                  status_code:
-                    type: integer
-                    example: 404
-                  message:
+                  code:
                     type: string
-                    example: "Not Found"
+                    example: NotFound
+                  type:
+                    type: string
+                    example: NotFound
+                  description:
+                    type: string
+                    example: "Collection not found"
