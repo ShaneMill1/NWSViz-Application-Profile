@@ -875,6 +875,11 @@ paths:
                 type: string
                 format: binary
                 description: A binary representation of the data tile, such as a Zarr archive.
+            application/zip: # Represents Zarr
+              schema:
+                type: string
+                format: binary
+                description: A binary representation of the data tile, such as a Zarr archive in a zipped directory
             application/netcdf: # Represents NetCDF
               schema:
                 type: string
@@ -1067,6 +1072,11 @@ paths:
               schema:
                 type: string
                 format: binary
+            application/zip: # Represents Zarr
+              schema:
+                type: string
+                format: binary
+                description: A binary representation of the data tile, such as a Zarr archive in a zipped directory
         '400':
           description: InvalidParameterValue
           content:
