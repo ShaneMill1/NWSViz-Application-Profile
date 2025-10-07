@@ -92,7 +92,7 @@ components:
       name: parameter-name
       in: query
       description: A comma-separated list of parameter names to retrieve.
-      required: false
+      required: true
       schema:
         type: string
         example: "temperature"
