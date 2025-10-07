@@ -880,7 +880,7 @@ paths:
                 type: string
                 format: binary
                 description: A binary representation of the data tile, such as a Zarr archive in a zipped directory
-            application/netcdf: # Represents NetCDF
+            application/x-netcdf: # Represents NetCDF
               schema:
                 type: string
                 format: binary
