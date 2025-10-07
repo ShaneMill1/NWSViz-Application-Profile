@@ -255,7 +255,10 @@ components:
               type: array
               items:
                 type: array
-                items: {}
+                items:
+                  type: array
+                  items:
+                    type: number
         properties:
           type: object
           properties:
@@ -354,7 +357,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json]
+            # enum: [json]
             default: json
         - $ref: '#/components/parameters/lang'
       responses:
@@ -413,7 +416,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json]
+            # enum: [json]
             default: json
         - $ref: '#/components/parameters/lang'
       responses:
@@ -486,7 +489,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json]
+            # enum: [json]
             default: json
         - $ref: '#/components/parameters/lang'
       responses:
@@ -615,7 +618,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json]
+            # enum: [json]
             default: json
         - $ref: '#/components/parameters/lang'
       responses:
@@ -636,7 +639,7 @@ paths:
                       $ref: '#/components/schemas/link'
               example:
                 instances:
-                  - id: "2025-09-22T00:00:00"
+                  - id: "2025-09-22T00:00:00Z"
                     links:
                       - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z?f=json"
                         rel: "self"
@@ -651,87 +654,6 @@ paths:
                   - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances?f=json"
                     rel: "self"
                     type: "application/json"
-        '404':
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  code:
-                    type: string
-                    example: NotFound
-                  type:
-                    type: string
-                    example: NotFound
-                  description:
-                    type: string
-                    example: "Collection not found"
-        '400':
-          description: InvalidParameterValue
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  code:
-                    type: string
-                    example: InvalidParameterValue
-                  type:
-                    type: string
-                    example: InvalidParameterValue
-                  description:
-                    type: string
-                    example: "Invalid format requested"
-  /collections/{collectionId}/instances/{instanceId}:
-    get:
-      description: Retrieves the details of a specific instance within a collection.
-      operationId: getCollectionInstanceById
-      parameters:
-        - $ref: '#/components/parameters/collectionId'
-        - $ref: '#/components/parameters/instanceId'
-        - name: f
-          in: query
-          description: The format of the response. Defaults to 'json' if not specified.
-          required: false
-          schema:
-            type: string
-            enum: [json]
-            default: json
-        - $ref: '#/components/parameters/lang'
-      responses:
-        '200':
-          description: The details of the requested instance.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/instance'
-              example:
-                id: "2025-09-22T00:00:00"
-                links:
-                  - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z?f=json"
-                    rel: "self"
-                    type: "application/json"
-                  - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk?f=json"
-                    rel: "collection"
-                    title: "NBM_icechunk"
-                    type: "application/json"
-                data_queries:
-                  items:
-                    link:
-                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/items?f=json"
-                      rel: "data"
-                      title: "items query"
-                  locations:
-                    link:
-                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/locations?f=json"
-                      rel: "data"
-                      title: "locations query"
-                  position:
-                    link:
-                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00ZS/position?f=json"
-                      rel: "data"
-                      title: "position query"
         '400':
           description: InvalidParameterValue
           content:
@@ -765,6 +687,88 @@ paths:
                     type: string
                     example: "Collection not found"
 
+  /collections/{collectionId}/instances/{instanceId}:
+    get:
+      description: Retrieves the details of a specific instance within a collection.
+      operationId: getCollectionInstanceById
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/instanceId'
+        - name: f
+          in: query
+          description: The format of the response. Defaults to 'json' if not specified.
+          required: false
+          schema:
+            type: string
+            # enum: [json]
+            default: json
+        - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          description: The details of the requested instance.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/instance'
+              example:
+                id: "2025-09-22T00:00:00Z"
+                links:
+                  - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z?f=json"
+                    rel: "self"
+                    type: "application/json"
+                  - href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk?f=json"
+                    rel: "collection"
+                    title: "NBM_icechunk"
+                    type: "application/json"
+                data_queries:
+                  items:
+                    link:
+                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/items?f=json"
+                      rel: "data"
+                      title: "items query"
+                  locations:
+                    link:
+                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/locations?f=json"
+                      rel: "data"
+                      title: "locations query"
+                  position:
+                    link:
+                      href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00Z/position?f=json"
+                      rel: "data"
+                      title: "position query"
+        '400':
+          description: InvalidParameterValue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: InvalidParameterValue
+                  type:
+                    type: string
+                    example: InvalidParameterValue
+                  description:
+                    type: string
+                    example: "Invalid format requested"
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: NotFound
+                  type:
+                    type: string
+                    example: NotFound
+                  description:
+                    type: string
+                    example: "Collection or Instance not found"
+
   /collections/{collectionId}/instances/{instanceId}/locations:
     get:
       summary: Get Instance Locations
@@ -779,7 +783,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json]
+            # enum: [json]
             default: json
         - $ref: '#/components/parameters/lang'
       responses:
@@ -840,7 +844,7 @@ paths:
                     example: NotFound
                   description:
                     type: string
-                    example: "Collection not found"
+                    example: "Collection or Instance not found"
 
   /collections/{collectionId}/instances/{instanceId}/locations/{locationId}:
     get:
@@ -860,7 +864,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json, netcdf, zarr]
+            # enum: [json, netcdf, zarr]
             default: json
       responses:
         '200':
@@ -905,7 +909,7 @@ paths:
                     example: InvalidParameterValue
                   description:
                     type: string
-                    example: "Invalid format requested"
+                    example: "Invalid format or parameter requested"
         '404':
           description: Not Found
           content:
@@ -921,7 +925,7 @@ paths:
                     example: NotFound
                   description:
                     type: string
-                    example: "Collection not found"
+                    example: "Resource not found"
 
   /collections/{collectionId}/instances/{instanceId}/items:
     get:
@@ -936,7 +940,7 @@ paths:
           required: false
           schema:
             type: string
-            enum: [json]
+            # enum: [json]
             default: json
         - $ref: '#/components/parameters/lang'
       responses:
@@ -986,7 +990,7 @@ paths:
                     example: NotFound
                   description:
                     type: string
-                    example: "Collection not found"
+                    example: "Resource not found"
 
   /collections/{collectionId}/instances/{instanceId}/items/zarr/{element}/{zoom}/{crs}/{unit}:
     get:
@@ -1030,7 +1034,7 @@ paths:
                     example: InvalidParameterValue
                   description:
                     type: string
-                    example: "Invalid format requested"
+                    example: "Invalid parameter requested"
         '404':
           description: Not Found
           content:
@@ -1046,7 +1050,7 @@ paths:
                     example: NotFound
                   description:
                     type: string
-                    example: "Collection not found"
+                    example: "Resource not found"
 
   /collections/{collectionId}/instances/{instanceId}/items/zarr/{element}/{zoom}/{crs}/{unit}/{nodePath}:
     get:
@@ -1067,8 +1071,8 @@ paths:
           description: The path to the Zarr node, such as `.zattrs`, `.zmetadata`, or a data chunk like `data/0.0.0`.
           required: true
           schema:
-            type: object
-            example: "temperature/0.0.0"
+            type: string
+            example: "data/0.0.0"
       responses:
         '200':
           description: The raw content of the requested Zarr node (e.g., a JSON file or a compressed binary data chunk).
@@ -1097,7 +1101,7 @@ paths:
                     example: InvalidParameterValue
                   description:
                     type: string
-                    example: "Invalid format requested"
+                    example: "Invalid parameter requested"
         '404':
           description: Not Found
           content:
@@ -1113,4 +1117,4 @@ paths:
                     example: NotFound
                   description:
                     type: string
-                    example: "Collection not found"
+                    example: "Node not found"
