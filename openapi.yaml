@@ -768,6 +768,36 @@ paths:
                   description:
                     type: string
                     example: "Collection or Instance not found"
+    post:
+      summary: "Create or update an instance"
+      description: "Use this method to create a new instance or update an existing one."
+      operationId: "createOrUpdateInstance"
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/instanceId'
+        - name: f
+          in: query
+          description: The format of the response. Defaults to 'json' if not specified.
+          required: false
+          schema:
+            type: string
+            # enum: [json]
+            default: json
+        - $ref: '#/components/parameters/lang'
+      requestBody:
+        description: "The JSON data for the instance."
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/instance' 
+      responses:
+        '201':
+          description: "Instance was successfully created."
+        '200':
+          description: "Instance was successfully updated."
+        '400':
+          description: "The request body was invalid."
 
   /collections/{collectionId}/instances/{instanceId}/locations:
     get:
