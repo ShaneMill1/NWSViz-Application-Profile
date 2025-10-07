@@ -885,6 +885,11 @@ paths:
                 type: string
                 format: binary
                 description: The data tile formatted as a NetCDF file.
+            application/netcdf: # Represents NetCDF
+              schema:
+                type: string
+                format: binary
+                description: The data tile formatted as a NetCDF file.
         '400':
           description: InvalidParameterValue
           content:
