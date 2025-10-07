@@ -100,7 +100,7 @@ components:
       name: ij
       in: query
       description: The i,j bounding box for a data tile subset (i_min,j_min,i_max,j_max).
-      required: false
+      required: true
       schema:
         type: string
         pattern: '^\d+,\d+,\d+,\d+$'
@@ -385,6 +385,22 @@ paths:
                     type: "application/json"
                     title: "Collections"
                     href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections"
+        '400':
+          description: InvalidParameterValue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: InvalidParameterValue
+                  type:
+                    type: string
+                    example: InvalidParameterValue
+                  description:
+                    type: string
+                    example: "Invalid format requested"
   
   /collections:
     get:
@@ -441,6 +457,22 @@ paths:
                     rel: "self"
                     title: "This document as JSON"
                     href: "https://edr-api-desi-c.mdl.nws.noaa.gov/collections?f=json"
+        '400':
+          description: InvalidParameterValue
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: InvalidParameterValue
+                  type:
+                    type: string
+                    example: InvalidParameterValue
+                  description:
+                    type: string
+                    example: "Invalid format requested"
 
   /collections/{collectionId}:
     get:
@@ -651,22 +683,6 @@ paths:
                   description:
                     type: string
                     example: "Invalid format requested"
-        '404':
-          description: Not Found
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  code:
-                    type: string
-                    example: NotFound
-                  type:
-                    type: string
-                    example: NotFound
-                  description:
-                    type: string
-                    example: "Collection not found"
   /collections/{collectionId}/instances/{instanceId}:
     get:
       description: Retrieves the details of a specific instance within a collection.
