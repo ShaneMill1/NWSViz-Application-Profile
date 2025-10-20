@@ -8,8 +8,6 @@ statement:: All Collections in the Service _SHALL_ provide support for *Position
 part:: The *Position* query _SHALL_ support the following output formats:
 
         * CoverageJSON
-        * Zarr
-        * NetCDF
 
 part:: The default output format for the *Position* query _SHALL_ be *CoverageJSON*
 part:: The *Position* query _SHALL_ support the following HTTP methods:
