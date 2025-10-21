@@ -11,10 +11,7 @@ step:: Verify that collectionids match the following:
 
 |====================
 | **id** | **description** 
-| HREF | High Resolution Ensemble Forecast 
-| NBM  | National Blend of Models 
-| LREF | Long Range Ensemble Forecast 
-| LREF_TLE | Long Range Ensemble Forecast Tile-Lagged Ensemble 
-| MRMS | Multi-Radar/Multi-Sensor Radar Products 
+| NBM_icechunk | National Blend of Models
+| MRMS_icechunk | Multi-Radar/Multi-Sensor Radar Products 
 |====================
 ====

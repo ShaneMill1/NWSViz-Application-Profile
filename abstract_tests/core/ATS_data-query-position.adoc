@@ -9,8 +9,6 @@ test-method::
 step:: Verify that NWSViz profile Collection *Position* query defines the following output_format types
 
         * CoverageJSON
-        * Zarr
-        * NetCDF
 
 step:: Verify that NWSViz profile Collection *Position* query defines the following default output_format.
 

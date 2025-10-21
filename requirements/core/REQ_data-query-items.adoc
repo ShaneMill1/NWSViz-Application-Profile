@@ -5,7 +5,7 @@
 [%metadata]
 identifier:: /req/nwsviz-application/data-query-items
 statement:: All Collections in the Service _SHALL_ provide support for *Items* queries 
-part:: The *Items* query _SHALL_ return a connection to a Virtual Zarr Store that can be accessed via Xarray, such as:
+part:: The *Items* query _SHALL_ return a connection to a Virtual Zarr Store that can be accessed via Xarray. For example:
 
 [source]
 ....

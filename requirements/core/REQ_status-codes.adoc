@@ -12,17 +12,10 @@ part:: The message descriptions _SHALL_ be as follows:
 
 | 200  |A successful request.
 
-| 204  |A successful request, but the resource has no data resulting from the request.  No additional content or message body is provided.
-
 | 400  |The server cannot or will not process the request due to an apparent client error. For example, a query parameter had an incorrect value.
 
 | 404  |The requested resource does not exist on the server. For example, a path parameter had an incorrect value.
 
-| 405  |The request method is not supported. For example, a POST request was submitted, but the resource only supports GET requests.
-
-| 413  |Request entity too large. For example, the query would involve returning more data than the server is capable of processing, the implementation should return a message explaining the query limits imposed by the server implementation.
-
-| 500  |An internal error occurred in the server.
 !===
 ====
 

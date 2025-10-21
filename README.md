@@ -4,3 +4,5 @@ not make
 
 # NWSViz-Application-Profile
 This is a prototype of the nwsviz-application-Profile for OGC API - EDR Part 3
+
+schemathesis run -u http://localhost:5900 https://raw.githubusercontent.com/ShaneMill1/NWSViz-Application-Profile/refs/heads/main/openapi.yaml

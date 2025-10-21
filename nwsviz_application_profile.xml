@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="2.8.6" schema-version="v2.1.3" flavor="ogc">
+<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="2.8.7" schema-version="v2.1.3" flavor="ogc">
 <bibdata type="standard">
 <title language="en" type="main">OGC API-Environmental Data Retrieval v1.2 part 3 - NWS Viz application profile</title>
 <uri type="xml">./nwsviz_application_profile_profile.xml</uri><uri type="html">./nwsviz_application_profile_profile.html</uri><uri type="pdf">./nwsviz_application_profile_profile.pdf</uri><uri type="doc">./nwsviz_application_profile_profile.doc</uri><docidentifier type="ogc-external">http://www.opengis.net/doc/spec/ogcapi-edr-3/1.0</docidentifier><date type="published"><on/></date><date type="issued"><on/></date><date type="received"><on/></date><contributor><role type="editor"/><person>
@@ -262,7 +262,7 @@
 </clause>
 </clause>
 
-<clause id="_af4c0a9c-7f04-419a-b47a-2c99651112d0" anchor="core-section" obligation="normative">
+<clause id="_cdb854fe-8b7f-7c7b-a7ac-a2c3d9696f1c" anchor="core-section" obligation="normative">
 <title id="_913c130f-4d3b-3583-8581-b05232c1cf6c">Requirements Class Core</title>
 <requirement id="_7a7b0634-2d25-95ce-e19e-7360c7730a1f" anchor="req_class_nwsviz-application" model="ogc" type="class">
 <title>Requirements Class ‘NWSViz Application’</title><identifier>http://www.example.org/1.0/req/req-class-nwsviz-application</identifier><classification><tag>target-type</tag><value>NWSViz Application Profile Standard</value></classification><requirement id="_8abcd1e4-3458-7897-7c4f-a15b96b7247a" model="ogc" type="general"> <identifier>/req/nwsviz-application_data/root</identifier></requirement><requirement id="_6cda3f1a-0b28-9cde-8a1f-32a4d8ee3c92" model="ogc" type="general"> <identifier>/req/nwsviz-application/edr-conformant</identifier></requirement><requirement id="_ce725faa-2855-3007-a161-bce5da6a2baa" model="ogc" type="general"> <identifier>/req/nwsviz-application/parameter-names</identifier></requirement><requirement id="_0eed0958-4132-0061-599f-e2f4ec491f94" model="ogc" type="general"> <identifier>/req/nwsviz-application/NBM-parameter-names</identifier></requirement><requirement id="_4a7c8ac1-ba98-6f26-6e94-d9b7c62f1b0c" model="ogc" type="general"> <identifier>/req/nwsviz-application/MRMS-parameter-names</identifier></requirement><requirement id="_539fb696-422f-1d48-cdc5-3bbeed9f59eb" model="ogc" type="general"> <identifier>/req/nwsviz-application/collectionid</identifier></requirement><requirement id="_b4c83d6b-80c4-9085-a777-47b78d4ec694" model="ogc" type="general"> <identifier>/req/nwsviz-application/extent</identifier></requirement><requirement id="_a9417ecd-c4ab-3e8a-97ef-4495bd29a60b" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query</identifier></requirement><requirement id="_de26d7b8-12d9-295c-d806-e7995c016257" model="ogc" type="general"> <identifier>/req/nwsviz-application/output-format</identifier></requirement><requirement id="_d7a816d2-d78e-7a89-0b2e-70439c131c2b" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-position</identifier></requirement><requirement id="_102f0bb9-f169-189e-a15c-1b039a88fb57" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-instances</identifier></requirement><requirement id="_184b2ddd-f9da-3cf9-6db2-fdd2e376c3d9" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-location</identifier></requirement><requirement id="_15b6a3f3-ce7d-00a7-700d-42376dd7b8c0" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-locations</identifier></requirement><requirement id="_a00bc640-5b4f-b245-a5a9-a5560b7e3589" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-items</identifier></requirement><requirement id="_e0f9cb2b-0058-a2bf-a9c8-d6cf68dece26" model="ogc" type="general"> <identifier>/req/nwsviz-application/status-codes</identifier></requirement><requirement id="_2dae56d2-4559-2352-05e2-bfe4919a858b" model="ogc" type="general"> <identifier>/req/nwsviz-application/msg-bodies</identifier></requirement><requirement id="_33eb8774-e43b-d716-25b3-87794f6e3f22" model="ogc" type="general"> <identifier>/req/nwsviz-application/links</identifier></requirement>
@@ -388,7 +388,7 @@
 </clause>
 </clause>
 
-<clause id="_73d6ef95-cf57-3707-6093-ff29ec5823ab" obligation="normative">
+<clause id="_b0a86038-a77b-b914-3f90-03e1c559f28c" obligation="normative">
 <title id="_ebb3dcbb-cd8d-a9bf-2370-7e723c2dee13">Spatio-temporal and Information Resources</title>
 <table id="_e6916c61-5575-4800-a2db-bacb785d34a8" width="100%">
 <name id="_496ec83c-3283-f626-7344-fa97099343ba">Spatial-temporal and Information Resource Paths</name>
@@ -431,7 +431,7 @@
 <p id="_879eb55a-8474-76d9-961b-491ef1b47bea">The Collections resource is initially defined in the <tt>Collections</tt> conformance class of the <eref type="inline" bibitemid="OGC20-024" citeas="OGC 20-024"><display-text>OGC API — Common — Part 2</display-text></eref> Standard. The <eref type="inline" bibitemid="ogc-edr" citeas="OGC 19-086r4"><display-text>OGC API-Environmental Data Retrieval Standard</display-text></eref> Standard does not make any changes to this definition.</p>
 </clause>
 
-<clause id="_9f8ab68e-c1ca-ecbf-b0d2-6fa05071c88e" obligation="normative">
+<clause id="_96e1c075-dd1e-c53d-3c12-ee7394967d86" obligation="normative">
 <title id="_04dbb074-2e65-4af9-a0f7-4e5120ac7981">Collection Description</title>
 <p id="_c373ad6f-1ebf-178d-dbe4-e6cd314eace0">Each resource Collection is described by a set of metadata. That metadata can be accessed directly using the /collections/{collectionId} path and as an entry in the Collections property of the /collections response.</p>
 
@@ -482,15 +482,15 @@
 </requirement>
 </clause>
 
-<clause id="_1654f24a-1b8a-1150-967a-b421437774a5" obligation="normative">
+<clause id="_090689bb-256e-39bd-e07b-66a911704116" obligation="normative">
 <title id="_ad22a589-66cc-8a56-379a-1caade7bfd93">Parameter_names property restrictions</title>
 <p id="_1fc79d6e-141a-fa2c-44ea-16155105f142">The Collection metadata includes an Parameter_names property which defines the data parameters that are available in the Collection</p>
 
-<requirement id="_089c3c97-6906-815b-22be-04a51d0f14b1" anchor="req_nwsviz-application_NBM-parameter-names" model="ogc"> <identifier>/req/nwsviz-application/NBM-parameter-names</identifier><description id="_71de9de3-3745-63b9-2327-a332310ea5c3"><p id="_8c87807d-69ee-503d-a5fa-aabea0d72d0b">The NBM Collection <em>SHALL</em> have a defined dictionary of parameter_names</p>
+<requirement id="_90ccbd31-f8eb-04ae-3c03-3f1a206edf89" anchor="req_nwsviz-application_NBM-parameter-names" model="ogc"> <identifier>/req/nwsviz-application/NBM-parameter-names</identifier><description id="_71de9de3-3745-63b9-2327-a332310ea5c3"><p id="_8c87807d-69ee-503d-a5fa-aabea0d72d0b">The NBM Collection <em>SHALL</em> have a defined dictionary of parameter_names</p>
 </description><component id="_3fe7297d-a855-cffc-8418-3701220ac40d" class="part"><p id="_4d0e9c8f-cde2-613a-f3ca-fe6d374c37d4">A NBM Collection <em>SHALL</em> follow the following schema where the metadata is dynamically loaded from the underlying store.</p>
 </component>
 
-<description><sourcecode id="_8fcd0ae7-dc88-4bbc-9845-6a85eeac7443" lang="JSON"><body>"parameter-names":{
+<description><sourcecode id="_4aa46a8a-c69e-74ec-c922-e19c3c76fb0a" lang="JSON"><body>"parameter-names":{
    "apparent_temperature":{
       "Type":"Parameter",
       "id":"apparent_temperature",
@@ -502,112 +502,7 @@
          "values":[
             "2025-09-22T01:00:00",
             "2025-09-22T02:00:00",
-            "2025-09-22T03:00:00",
-            "2025-09-22T04:00:00",
-            "2025-09-22T05:00:00",
-            "2025-09-22T06:00:00",
-            "2025-09-22T07:00:00",
-            "2025-09-22T08:00:00",
-            "2025-09-22T09:00:00",
-            "2025-09-22T10:00:00",
-            "2025-09-22T11:00:00",
-            "2025-09-22T12:00:00",
-            "2025-09-22T13:00:00",
-            "2025-09-22T14:00:00",
-            "2025-09-22T15:00:00",
-            "2025-09-22T16:00:00",
-            "2025-09-22T17:00:00",
-            "2025-09-22T18:00:00",
-            "2025-09-22T19:00:00",
-            "2025-09-22T20:00:00",
-            "2025-09-22T21:00:00",
-            "2025-09-22T22:00:00",
-            "2025-09-22T23:00:00",
-            "2025-09-23T00:00:00",
-            "2025-09-23T01:00:00",
-            "2025-09-23T02:00:00",
-            "2025-09-23T03:00:00",
-            "2025-09-23T04:00:00",
-            "2025-09-23T05:00:00",
-            "2025-09-23T06:00:00",
-            "2025-09-23T07:00:00",
-            "2025-09-23T08:00:00",
-            "2025-09-23T09:00:00",
-            "2025-09-23T10:00:00",
-            "2025-09-23T11:00:00",
-            "2025-09-23T12:00:00",
-            "2025-09-23T13:00:00",
-            "2025-09-23T14:00:00",
-            "2025-09-23T15:00:00",
-            "2025-09-23T16:00:00",
-            "2025-09-23T17:00:00",
-            "2025-09-23T18:00:00",
-            "2025-09-23T19:00:00",
-            "2025-09-23T20:00:00",
-            "2025-09-23T21:00:00",
-            "2025-09-23T22:00:00",
-            "2025-09-23T23:00:00",
-            "2025-09-24T00:00:00",
-            "2025-09-24T03:00:00",
-            "2025-09-24T06:00:00",
-            "2025-09-24T09:00:00",
-            "2025-09-24T12:00:00",
-            "2025-09-24T15:00:00",
-            "2025-09-24T18:00:00",
-            "2025-09-24T21:00:00",
-            "2025-09-25T00:00:00",
-            "2025-09-25T03:00:00",
-            "2025-09-25T06:00:00",
-            "2025-09-25T09:00:00",
-            "2025-09-25T12:00:00",
-            "2025-09-25T15:00:00",
-            "2025-09-25T18:00:00",
-            "2025-09-25T21:00:00",
-            "2025-09-26T00:00:00",
-            "2025-09-26T03:00:00",
-            "2025-09-26T06:00:00",
-            "2025-09-26T09:00:00",
-            "2025-09-26T12:00:00",
-            "2025-09-26T15:00:00",
-            "2025-09-26T18:00:00",
-            "2025-09-26T21:00:00",
-            "2025-09-27T00:00:00",
-            "2025-09-27T03:00:00",
-            "2025-09-27T06:00:00",
-            "2025-09-27T09:00:00",
-            "2025-09-27T12:00:00",
-            "2025-09-27T15:00:00",
-            "2025-09-27T18:00:00",
-            "2025-09-27T21:00:00",
-            "2025-09-28T00:00:00",
-            "2025-09-28T03:00:00",
-            "2025-09-28T06:00:00",
-            "2025-09-28T09:00:00",
-            "2025-09-28T12:00:00",
-            "2025-09-28T15:00:00",
-            "2025-09-28T18:00:00",
-            "2025-09-28T21:00:00",
-            "2025-09-29T00:00:00",
-            "2025-09-29T03:00:00",
-            "2025-09-29T06:00:00",
-            "2025-09-29T09:00:00",
-            "2025-09-29T12:00:00",
-            "2025-09-29T15:00:00",
-            "2025-09-29T18:00:00",
-            "2025-09-29T21:00:00",
-            "2025-09-30T00:00:00",
-            "2025-09-30T06:00:00",
-            "2025-09-30T12:00:00",
-            "2025-09-30T18:00:00",
-            "2025-10-01T00:00:00",
-            "2025-10-01T06:00:00",
-            "2025-10-01T12:00:00",
-            "2025-10-01T18:00:00",
-            "2025-10-02T00:00:00",
-            "2025-10-02T06:00:00",
-            "2025-10-02T12:00:00",
-            "2025-10-02T18:00:00",
-            "2025-10-03T00:00:00"
+            "...etc"
          ]
       },
       "attrs":{
@@ -664,11 +559,11 @@
 
 </requirement>
 
-<requirement id="_a8a2973c-69a8-df84-5cfe-96ff8fbd23ee" anchor="req_nwsviz-application_MRMS-parameter-names" model="ogc"> <identifier>/req/nwsviz-application/MRMS-parameter-names</identifier><description id="_dc923beb-1e0d-ea57-74b8-8e21936a347f"><p id="_39cff7a3-4932-8a7b-5d57-8bb0a506a1d7">The MRMS Collection <em>SHALL</em> have a defined dictionary of parameter_names</p>
+<requirement id="_59a1aef9-3a53-7777-9cef-c0b4c713607d" anchor="req_nwsviz-application_MRMS-parameter-names" model="ogc"> <identifier>/req/nwsviz-application/MRMS-parameter-names</identifier><description id="_dc923beb-1e0d-ea57-74b8-8e21936a347f"><p id="_39cff7a3-4932-8a7b-5d57-8bb0a506a1d7">The MRMS Collection <em>SHALL</em> have a defined dictionary of parameter_names</p>
 </description><component id="_9aefe366-e3f0-e33d-0a85-4314a4321dcb" class="part"><p id="_8fb9c918-5a62-aacd-fc6c-b88412afafbf">A MRMS Collection <em>SHALL</em> follow the following schema where the metadata is dynamically loaded from the underlying store.</p>
 </component>
 
-<description><sourcecode id="_cea53abc-2e8d-69a8-e021-ba906023c686" lang="JSON"><body>{
+<description><sourcecode id="_d97d06bc-601a-a969-00ea-f3f432dfbed5" lang="JSON"><body>{
    "parameter-names":{
       "EchoTop_18":{
          "Type":"Parameter",
@@ -678,12 +573,7 @@
             "values":[
                "2025-10-01T18:24:39",
                "2025-10-01T18:32:41",
-               "2025-10-01T18:34:37",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:54:38"
+               "...etc"
             ]
          },
          "attrs":{
@@ -698,25 +588,7 @@
             "values":[
                "2025-10-01T17:58:37",
                "2025-10-01T18:02:40",
-               "2025-10-01T18:04:39",
-               "2025-10-01T18:06:38",
-               "2025-10-01T18:08:34",
-               "2025-10-01T18:10:35",
-               "2025-10-01T18:12:36",
-               "2025-10-01T18:14:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:30:32",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:42:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:54:38",
-               "2025-10-01T18:56:37"
+               "...etc"
             ]
          },
          "attrs":{
@@ -731,25 +603,7 @@
             "values":[
                "2025-10-01T18:06:38",
                "2025-10-01T18:10:35",
-               "2025-10-01T18:12:36",
-               "2025-10-01T18:14:39",
-               "2025-10-01T18:16:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:20:37",
-               "2025-10-01T18:22:35",
-               "2025-10-01T18:24:39",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:30:32",
-               "2025-10-01T18:34:37",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:42:37",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:48:36",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:54:38",
-               "2025-10-01T18:56:37"
+               "...etc"
             ]
          },
          "attrs":{
@@ -764,23 +618,7 @@
             "values":[
                "2025-10-01T18:00:34",
                "2025-10-01T18:04:39",
-               "2025-10-01T18:06:38",
-               "2025-10-01T18:08:36",
-               "2025-10-01T18:10:35",
-               "2025-10-01T18:12:36",
-               "2025-10-01T18:14:39",
-               "2025-10-01T18:16:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:22:35",
-               "2025-10-01T18:24:39",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:30:32",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:34:37",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:48:36"
+               "...etc"
             ]
          },
          "attrs":{
@@ -795,13 +633,7 @@
             "values":[
                "2025-10-01T18:26:38",
                "2025-10-01T18:28:40",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:56:37"
+               "...etc"
             ]
          },
          "attrs":{
@@ -817,31 +649,7 @@
                "2025-10-01T17:58:37",
                "2025-10-01T18:00:34",
                "2025-10-01T18:02:35",
-               "2025-10-01T18:04:39",
-               "2025-10-01T18:06:38",
-               "2025-10-01T18:08:36",
-               "2025-10-01T18:10:35",
-               "2025-10-01T18:14:39",
-               "2025-10-01T18:16:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:20:37",
-               "2025-10-01T18:22:35",
-               "2025-10-01T18:24:39",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:28:40",
-               "2025-10-01T18:30:32",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:34:37",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:42:37",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:48:36",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:54:38"
+               "...etc"
             ]
          },
          "attrs":{
@@ -856,19 +664,7 @@
             "values":[
                "2025-10-01T18:12:36",
                "2025-10-01T18:16:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:20:37",
-               "2025-10-01T18:24:39",
-               "2025-10-01T18:30:39",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:54:38",
-               "2025-10-01T18:56:37",
-               "2025-10-01T18:58:39"
+               "...etc"
             ]
          },
          "attrs":{
@@ -883,24 +679,7 @@
             "values":[
                "2025-10-01T18:04:00",
                "2025-10-01T18:06:00",
-               "2025-10-01T18:08:00",
-               "2025-10-01T18:10:00",
-               "2025-10-01T18:12:00",
-               "2025-10-01T18:14:00",
-               "2025-10-01T18:16:00",
-               "2025-10-01T18:18:00",
-               "2025-10-01T18:22:00",
-               "2025-10-01T18:24:00",
-               "2025-10-01T18:26:00",
-               "2025-10-01T18:28:00",
-               "2025-10-01T18:30:00",
-               "2025-10-01T18:34:00",
-               "2025-10-01T18:36:00",
-               "2025-10-01T18:40:00",
-               "2025-10-01T18:42:00",
-               "2025-10-01T18:44:00",
-               "2025-10-01T18:48:00",
-               "2025-10-01T18:56:00"
+               "...etc"
             ]
          },
          "attrs":{
@@ -915,31 +694,7 @@
             "values":[
                "2025-10-01T17:58:00",
                "2025-10-01T18:00:00",
-               "2025-10-01T18:06:00",
-               "2025-10-01T18:08:00",
-               "2025-10-01T18:10:00",
-               "2025-10-01T18:12:00",
-               "2025-10-01T18:14:00",
-               "2025-10-01T18:16:00",
-               "2025-10-01T18:18:00",
-               "2025-10-01T18:22:00",
-               "2025-10-01T18:24:00",
-               "2025-10-01T18:26:00",
-               "2025-10-01T18:28:00",
-               "2025-10-01T18:30:00",
-               "2025-10-01T18:32:00",
-               "2025-10-01T18:34:00",
-               "2025-10-01T18:36:00",
-               "2025-10-01T18:38:00",
-               "2025-10-01T18:40:00",
-               "2025-10-01T18:42:00",
-               "2025-10-01T18:44:00",
-               "2025-10-01T18:46:00",
-               "2025-10-01T18:48:00",
-               "2025-10-01T18:50:00",
-               "2025-10-01T18:52:00",
-               "2025-10-01T18:54:00",
-               "2025-10-01T18:56:00"
+               "...etc"
             ]
          },
          "attrs":{
@@ -967,7 +722,7 @@
             "values":[
                "2025-10-01T18:00:00",
                "2025-10-01T18:15:00",
-               "2025-10-01T18:45:00"
+               "...etc"
             ]
          },
          "attrs":{
@@ -995,22 +750,7 @@
             "values":[
                "2025-10-01T18:02:35",
                "2025-10-01T18:06:38",
-               "2025-10-01T18:08:36",
-               "2025-10-01T18:10:35",
-               "2025-10-01T18:16:39",
-               "2025-10-01T18:20:37",
-               "2025-10-01T18:22:35",
-               "2025-10-01T18:24:39",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:28:40",
-               "2025-10-01T18:30:32",
-               "2025-10-01T18:34:37",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:48:36",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:56:37"
+               "...etc"
             ]
          },
          "attrs":{
@@ -1025,18 +765,7 @@
             "values":[
                "2025-10-01T18:20:37",
                "2025-10-01T18:22:35",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:28:40",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:42:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:48:36",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:54:38"
+               "...etc"
             ]
          },
          "attrs":{
@@ -1051,25 +780,7 @@
             "values":[
                "2025-10-01T17:58:37",
                "2025-10-01T18:00:34",
-               "2025-10-01T18:02:35",
-               "2025-10-01T18:04:39",
-               "2025-10-01T18:08:36",
-               "2025-10-01T18:10:35",
-               "2025-10-01T18:12:36",
-               "2025-10-01T18:14:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:20:37",
-               "2025-10-01T18:22:35",
-               "2025-10-01T18:24:39",
-               "2025-10-01T18:28:40",
-               "2025-10-01T18:30:32",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:34:37",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:48:36",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:56:37"
+               "...etc"
             ]
          },
          "attrs":{
@@ -1084,14 +795,7 @@
             "values":[
                "2025-10-01T18:00:34",
                "2025-10-01T18:02:40",
-               "2025-10-01T18:04:39",
-               "2025-10-01T18:08:34",
-               "2025-10-01T18:14:39",
-               "2025-10-01T18:22:35",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:52:38"
+               "...etc"
             ]
          },
          "attrs":{
@@ -1106,26 +810,7 @@
             "values":[
                "2025-10-01T18:00:34",
                "2025-10-01T18:04:39",
-               "2025-10-01T18:06:38",
-               "2025-10-01T18:08:34",
-               "2025-10-01T18:10:34",
-               "2025-10-01T18:12:36",
-               "2025-10-01T18:16:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:20:37",
-               "2025-10-01T18:28:40",
-               "2025-10-01T18:30:39",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:34:39",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:42:37",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:48:36",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:54:38",
-               "2025-10-01T18:58:39"
+               "...etc"
             ]
          },
          "attrs":{
@@ -1140,7 +825,7 @@
 </clause>
 </clause>
 
-<clause id="_7ddfcc76-9791-929e-e2db-d6a053c06972" obligation="normative">
+<clause id="_9cff6eac-e2a3-0ddd-ad2f-fa2bd9f66e96" obligation="normative">
 <title id="_e75553c7-22a5-2375-8f20-78128e10fc85">Query Resources</title>
 <table id="_125bc828-d4ce-c001-062b-af353ad24f87" width="100%">
 <name id="_4b2bd7f0-1150-c42c-c7e0-b7e89535e585">Query Resource Paths</name>
@@ -1216,7 +901,7 @@
 </clause>
 </clause>
 
-<clause id="_73efc833-4c91-3d87-5201-ab9a33928ec5" obligation="normative">
+<clause id="_f283b15f-e6b5-208b-2510-1ba2542e71ce" obligation="normative">
 <title id="_32c6065d-f56f-5692-ab43-0f74c345e2a7">Position Query</title>
 <p id="_e98bd069-c6e1-1397-e670-078e2662c644">The Position query returns data for the requested coordinate. Logic for identifying the best match for the coordinate will depend on the Collection and is at the discretion of the query service implementer.</p>
 
@@ -1224,13 +909,9 @@
 
 <p id="_285b3a58-51d3-5872-8d14-802c34a1018a">Dependencies: <eref type="inline" bibitemid="ogc-edr" citeas="OGC 19-086r4"><display-text>OGC API-Environmental Data Retrieval Standard</display-text></eref></p>
 
-<requirement id="_cc667985-3a2b-c3f4-2092-0fc3f1d80427" anchor="req_nwsviz-application_data-query-position" model="ogc"> <identifier>/req/nwsviz-application/data-query-position</identifier><description id="_981e747f-6963-7e59-4cba-86581d1cda3d"><p id="_f4e5bea2-8605-e133-bdaf-5c0d38a28c9c">All Collections in the Service <em>SHALL</em> provide support for <strong>Position</strong> queries</p>
-</description><component id="_4eb0487b-e099-cf0a-9c37-65ed3d914466" class="part"><p id="_64885374-4933-9aab-6d4e-ad9bccdc09fc">The <strong>Position</strong> query <em>SHALL</em> support the following output formats:</p>
-<ul id="_462fb67f-be6d-4c2c-9bc4-df80834f8b9c"><li><p id="_8bb34709-4691-a3b5-8214-a267982373d6">CoverageJSON</p>
-</li>
-<li><p id="_8013c41a-c6ad-4844-872f-af78c16f7903">Zarr</p>
-</li>
-<li><p id="_b10584b0-ff48-3e76-f8ee-e83645cc12dc">NetCDF</p>
+<requirement id="_b58b4124-3870-761f-ecc9-dcd82306d555" anchor="req_nwsviz-application_data-query-position" model="ogc"> <identifier>/req/nwsviz-application/data-query-position</identifier><description id="_981e747f-6963-7e59-4cba-86581d1cda3d"><p id="_f4e5bea2-8605-e133-bdaf-5c0d38a28c9c">All Collections in the Service <em>SHALL</em> provide support for <strong>Position</strong> queries</p>
+</description><component id="_0efb149b-fe2d-cc4f-2984-ae96eaf02cc8" class="part"><p id="_64885374-4933-9aab-6d4e-ad9bccdc09fc">The <strong>Position</strong> query <em>SHALL</em> support the following output formats:</p>
+<ul id="_26fd6660-7441-c976-202b-22db9bf82e28"><li><p id="_55226e90-732b-6e05-9d52-03aaea5b3b47">CoverageJSON</p>
 </li>
 </ul>
 </component><component id="_d1e6fc25-25a9-29f6-36ef-3a752161ebec" class="part"><p id="_e483b735-b96d-4323-7933-87dee70cf611">The default output format for the <strong>Position</strong> query <em>SHALL</em> be <strong>CoverageJSON</strong></p>
@@ -1242,7 +923,7 @@
 </requirement>
 </clause>
 
-<clause id="_931c76ac-a1b8-518d-6ee8-86f2f1b9e4e1" obligation="normative">
+<clause id="_687abe1c-7d10-14ae-7a85-8cb0944cd08d" obligation="normative">
 <title id="_df19cae4-2ffa-5f02-21cf-183bbb30c3b9">Items Query</title>
 <p id="_d4571298-fa62-41e2-356f-3ea90b3758a7">The Items query allows a user to query a resource based on a unique identifier.</p>
 
@@ -1250,8 +931,8 @@
 
 <p id="_f1904012-d1d5-da08-aa46-62e67b32ffbf">Dependencies: <eref type="inline" bibitemid="ogc-edr" citeas="OGC 19-086r4"><display-text>OGC API-Environmental Data Retrieval Standard</display-text></eref></p>
 
-<requirement id="_4841dd5a-3f7e-be05-ee56-5b8e483550a9" anchor="req_nwsviz-application_data-query-items" model="ogc"> <identifier>/req/nwsviz-application/data-query-items</identifier><description id="_e6031e41-58fe-3aed-7184-48e9bdfec50e"><p id="_5c4e39ab-c5a8-57e5-da4d-47789f42d135">All Collections in the Service <em>SHALL</em> provide support for <strong>Items</strong> queries</p>
-</description><component id="_b3551c98-4d0c-c7a3-6b76-b32eefefc95c" class="part"><p id="_29cb495a-cdcc-a8d9-ead9-8727b9715f9c">The <strong>Items</strong> query <em>SHALL</em> return a connection to a Virtual Zarr Store that can be accessed via Xarray, such as:</p>
+<requirement id="_2fcb8175-767d-b586-71be-e06775957abe" anchor="req_nwsviz-application_data-query-items" model="ogc"> <identifier>/req/nwsviz-application/data-query-items</identifier><description id="_e6031e41-58fe-3aed-7184-48e9bdfec50e"><p id="_5c4e39ab-c5a8-57e5-da4d-47789f42d135">All Collections in the Service <em>SHALL</em> provide support for <strong>Items</strong> queries</p>
+</description><component id="_97756c61-18f3-f7cc-e8c9-590ce5731bea" class="part"><p id="_46cd7828-6916-21e3-e76a-4d502584312f">The <strong>Items</strong> query <em>SHALL</em> return a connection to a Virtual Zarr Store that can be accessed via Xarray. For example:</p>
 </component>
 
 <description><sourcecode id="_e93a800a-1b77-26bf-3396-9c443a74fdaf"><body>import xarray as xr
@@ -1273,7 +954,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 </requirement>
 </clause>
 
-<clause id="_0b6cbe12-7ffc-ca9c-f575-91d98ddff878" obligation="normative">
+<clause id="_c19a183e-9bc1-6cbb-dde4-f7eb3bd392d2" obligation="normative">
 <title id="_b40645f6-54e1-c7c1-e406-e7a67de13167">Locations Query</title>
 <p id="_daa8545c-e432-9c93-9b75-73f34e5380f4">The Location query returns a GeoJSON Feature Collection containing the available locations with a collection</p>
 
@@ -1281,7 +962,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 
 <p id="_434de82b-4d95-c90f-5f6b-2e136008fc5e">Dependencies: <eref type="inline" bibitemid="ogc-edr" citeas="OGC 19-086r4"><display-text>OGC API-Environmental Data Retrieval Standard</display-text></eref></p>
 
-<requirement id="_66c1e438-779b-934d-8245-1dc04bd507f4" anchor="req_nwsviz-application_data-query-locations" model="ogc"> <identifier>/req/nwsviz-application/data-query-locations</identifier><description id="_aaf50bbf-c773-320e-5dc7-b7b766861fee"><p id="_0df7bfae-e249-8a0f-2e75-2492e99cc194">All Collections in the Service <em>SHALL</em> provide support for <strong>Locations</strong> queries</p>
+<requirement id="_b800a7b7-7a02-3a6d-e557-44baae2aedca" anchor="req_nwsviz-application_data-query-locations" model="ogc"> <identifier>/req/nwsviz-application/data-query-locations</identifier><description id="_aaf50bbf-c773-320e-5dc7-b7b766861fee"><p id="_0df7bfae-e249-8a0f-2e75-2492e99cc194">All Collections in the Service <em>SHALL</em> provide support for <strong>Locations</strong> queries</p>
 </description><component id="_65a70ccb-8d55-64f3-8b1c-b5dcba852938" class="part"><p id="_8cd2dfa2-7201-af07-f528-40d4f82e4b14">The <strong>Locations</strong> query <em>SHALL</em> support the following output formats:</p>
 <ul id="_fb054b43-d5dc-778f-d049-f12c5fe1cc5c"><li><p id="_98622304-22ed-f424-859b-5603e3967bb0">GeoJSON</p>
 </li>
@@ -1296,7 +977,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 </component><component id="_919cb26e-00b3-a973-0614-8b2dbc9adc54" class="part"><p id="_245148da-0482-8e08-c0e6-b4a3a437c04e">The <strong>Locations</strong> query <em>SHALL</em> provide a listing of the available locations in a collection that conforms to GeoJSON. The GeoJSON should contain properties as shown below. Note that the example below only contains one parameter in the parameter-names-dict, but in reality it should contain all of the parameters listed in the parameter-names property.</p>
 </component>
 
-<description><sourcecode id="_ed5986cf-d545-c699-146e-ae036ac67056" lang="JSON"><body>{
+<description><sourcecode id="_ff6da36d-54f9-db93-4daa-a1b8ca9c0ca1" lang="JSON"><body>{
    "type":"FeatureCollection",
    "features":[
       {
@@ -1410,112 +1091,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "datetimes":[
                "2025-09-22T01:00:00",
                "2025-09-22T02:00:00",
-               "2025-09-22T03:00:00",
-               "2025-09-22T04:00:00",
-               "2025-09-22T05:00:00",
-               "2025-09-22T06:00:00",
-               "2025-09-22T07:00:00",
-               "2025-09-22T08:00:00",
-               "2025-09-22T09:00:00",
-               "2025-09-22T10:00:00",
-               "2025-09-22T11:00:00",
-               "2025-09-22T12:00:00",
-               "2025-09-22T13:00:00",
-               "2025-09-22T14:00:00",
-               "2025-09-22T15:00:00",
-               "2025-09-22T16:00:00",
-               "2025-09-22T17:00:00",
-               "2025-09-22T18:00:00",
-               "2025-09-22T19:00:00",
-               "2025-09-22T20:00:00",
-               "2025-09-22T21:00:00",
-               "2025-09-22T22:00:00",
-               "2025-09-22T23:00:00",
-               "2025-09-23T00:00:00",
-               "2025-09-23T01:00:00",
-               "2025-09-23T02:00:00",
-               "2025-09-23T03:00:00",
-               "2025-09-23T04:00:00",
-               "2025-09-23T05:00:00",
-               "2025-09-23T06:00:00",
-               "2025-09-23T07:00:00",
-               "2025-09-23T08:00:00",
-               "2025-09-23T09:00:00",
-               "2025-09-23T10:00:00",
-               "2025-09-23T11:00:00",
-               "2025-09-23T12:00:00",
-               "2025-09-23T13:00:00",
-               "2025-09-23T14:00:00",
-               "2025-09-23T15:00:00",
-               "2025-09-23T16:00:00",
-               "2025-09-23T17:00:00",
-               "2025-09-23T18:00:00",
-               "2025-09-23T19:00:00",
-               "2025-09-23T20:00:00",
-               "2025-09-23T21:00:00",
-               "2025-09-23T22:00:00",
-               "2025-09-23T23:00:00",
-               "2025-09-24T00:00:00",
-               "2025-09-24T03:00:00",
-               "2025-09-24T06:00:00",
-               "2025-09-24T09:00:00",
-               "2025-09-24T12:00:00",
-               "2025-09-24T15:00:00",
-               "2025-09-24T18:00:00",
-               "2025-09-24T21:00:00",
-               "2025-09-25T00:00:00",
-               "2025-09-25T03:00:00",
-               "2025-09-25T06:00:00",
-               "2025-09-25T09:00:00",
-               "2025-09-25T12:00:00",
-               "2025-09-25T15:00:00",
-               "2025-09-25T18:00:00",
-               "2025-09-25T21:00:00",
-               "2025-09-26T00:00:00",
-               "2025-09-26T03:00:00",
-               "2025-09-26T06:00:00",
-               "2025-09-26T09:00:00",
-               "2025-09-26T12:00:00",
-               "2025-09-26T15:00:00",
-               "2025-09-26T18:00:00",
-               "2025-09-26T21:00:00",
-               "2025-09-27T00:00:00",
-               "2025-09-27T03:00:00",
-               "2025-09-27T06:00:00",
-               "2025-09-27T09:00:00",
-               "2025-09-27T12:00:00",
-               "2025-09-27T15:00:00",
-               "2025-09-27T18:00:00",
-               "2025-09-27T21:00:00",
-               "2025-09-28T00:00:00",
-               "2025-09-28T03:00:00",
-               "2025-09-28T06:00:00",
-               "2025-09-28T09:00:00",
-               "2025-09-28T12:00:00",
-               "2025-09-28T15:00:00",
-               "2025-09-28T18:00:00",
-               "2025-09-28T21:00:00",
-               "2025-09-29T00:00:00",
-               "2025-09-29T03:00:00",
-               "2025-09-29T06:00:00",
-               "2025-09-29T09:00:00",
-               "2025-09-29T12:00:00",
-               "2025-09-29T15:00:00",
-               "2025-09-29T18:00:00",
-               "2025-09-29T21:00:00",
-               "2025-09-30T00:00:00",
-               "2025-09-30T06:00:00",
-               "2025-09-30T12:00:00",
-               "2025-09-30T18:00:00",
-               "2025-10-01T00:00:00",
-               "2025-10-01T06:00:00",
-               "2025-10-01T12:00:00",
-               "2025-10-01T18:00:00",
-               "2025-10-02T00:00:00",
-               "2025-10-02T06:00:00",
-               "2025-10-02T12:00:00",
-               "2025-10-02T18:00:00",
-               "2025-10-03T00:00:00"
+               "...etc",
             ],
             "desi":{
                "projDict":{
@@ -1583,112 +1159,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
                   "time":[
                      "2025-09-22T01:00:00",
                      "2025-09-22T02:00:00",
-                     "2025-09-22T03:00:00",
-                     "2025-09-22T04:00:00",
-                     "2025-09-22T05:00:00",
-                     "2025-09-22T06:00:00",
-                     "2025-09-22T07:00:00",
-                     "2025-09-22T08:00:00",
-                     "2025-09-22T09:00:00",
-                     "2025-09-22T10:00:00",
-                     "2025-09-22T11:00:00",
-                     "2025-09-22T12:00:00",
-                     "2025-09-22T13:00:00",
-                     "2025-09-22T14:00:00",
-                     "2025-09-22T15:00:00",
-                     "2025-09-22T16:00:00",
-                     "2025-09-22T17:00:00",
-                     "2025-09-22T18:00:00",
-                     "2025-09-22T19:00:00",
-                     "2025-09-22T20:00:00",
-                     "2025-09-22T21:00:00",
-                     "2025-09-22T22:00:00",
-                     "2025-09-22T23:00:00",
-                     "2025-09-23T00:00:00",
-                     "2025-09-23T01:00:00",
-                     "2025-09-23T02:00:00",
-                     "2025-09-23T03:00:00",
-                     "2025-09-23T04:00:00",
-                     "2025-09-23T05:00:00",
-                     "2025-09-23T06:00:00",
-                     "2025-09-23T07:00:00",
-                     "2025-09-23T08:00:00",
-                     "2025-09-23T09:00:00",
-                     "2025-09-23T10:00:00",
-                     "2025-09-23T11:00:00",
-                     "2025-09-23T12:00:00",
-                     "2025-09-23T13:00:00",
-                     "2025-09-23T14:00:00",
-                     "2025-09-23T15:00:00",
-                     "2025-09-23T16:00:00",
-                     "2025-09-23T17:00:00",
-                     "2025-09-23T18:00:00",
-                     "2025-09-23T19:00:00",
-                     "2025-09-23T20:00:00",
-                     "2025-09-23T21:00:00",
-                     "2025-09-23T22:00:00",
-                     "2025-09-23T23:00:00",
-                     "2025-09-24T00:00:00",
-                     "2025-09-24T03:00:00",
-                     "2025-09-24T06:00:00",
-                     "2025-09-24T09:00:00",
-                     "2025-09-24T12:00:00",
-                     "2025-09-24T15:00:00",
-                     "2025-09-24T18:00:00",
-                     "2025-09-24T21:00:00",
-                     "2025-09-25T00:00:00",
-                     "2025-09-25T03:00:00",
-                     "2025-09-25T06:00:00",
-                     "2025-09-25T09:00:00",
-                     "2025-09-25T12:00:00",
-                     "2025-09-25T15:00:00",
-                     "2025-09-25T18:00:00",
-                     "2025-09-25T21:00:00",
-                     "2025-09-26T00:00:00",
-                     "2025-09-26T03:00:00",
-                     "2025-09-26T06:00:00",
-                     "2025-09-26T09:00:00",
-                     "2025-09-26T12:00:00",
-                     "2025-09-26T15:00:00",
-                     "2025-09-26T18:00:00",
-                     "2025-09-26T21:00:00",
-                     "2025-09-27T00:00:00",
-                     "2025-09-27T03:00:00",
-                     "2025-09-27T06:00:00",
-                     "2025-09-27T09:00:00",
-                     "2025-09-27T12:00:00",
-                     "2025-09-27T15:00:00",
-                     "2025-09-27T18:00:00",
-                     "2025-09-27T21:00:00",
-                     "2025-09-28T00:00:00",
-                     "2025-09-28T03:00:00",
-                     "2025-09-28T06:00:00",
-                     "2025-09-28T09:00:00",
-                     "2025-09-28T12:00:00",
-                     "2025-09-28T15:00:00",
-                     "2025-09-28T18:00:00",
-                     "2025-09-28T21:00:00",
-                     "2025-09-29T00:00:00",
-                     "2025-09-29T03:00:00",
-                     "2025-09-29T06:00:00",
-                     "2025-09-29T09:00:00",
-                     "2025-09-29T12:00:00",
-                     "2025-09-29T15:00:00",
-                     "2025-09-29T18:00:00",
-                     "2025-09-29T21:00:00",
-                     "2025-09-30T00:00:00",
-                     "2025-09-30T06:00:00",
-                     "2025-09-30T12:00:00",
-                     "2025-09-30T18:00:00",
-                     "2025-10-01T00:00:00",
-                     "2025-10-01T06:00:00",
-                     "2025-10-01T12:00:00",
-                     "2025-10-01T18:00:00",
-                     "2025-10-02T00:00:00",
-                     "2025-10-02T06:00:00",
-                     "2025-10-02T12:00:00",
-                     "2025-10-02T18:00:00",
-                     "2025-10-03T00:00:00"
+                     "...etc"
                   ]
                }
             },
@@ -1755,9 +1226,9 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 </clause>
 </clause>
 
-<clause id="_28427728-69cf-01ec-7238-94955fc977e1" obligation="normative">
+<clause id="_279a8062-f1ca-b04d-c6d8-18edb0b9cdef" obligation="normative">
 <title id="_b2d06524-468a-de84-241a-a017b8d8a2ba">General Requirements</title>
-<clause id="_a6e1fedf-8af0-5c8a-ee86-c2d2140c81ff" obligation="normative">
+<clause id="_52b3aef0-eb81-0c0d-2370-e105ab2c3928" obligation="normative">
 <title id="_f6aafa92-e186-86aa-fa51-3cfbb1eb5c79">HTTP Status Codes</title>
 <p id="_7a03f785-b2f2-7a12-fbb1-9e4c5f02645e">HTTP response</p>
 
@@ -1765,27 +1236,19 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 </li>
 </ul>
 
-<requirement id="_57347343-eb7a-f3f5-75c9-802f3aefb9f8" anchor="req_nwsviz-application_status-codes" model="ogc"> <identifier>/req/nwsviz-application/status-codes</identifier><description id="_7438857f-c307-7fec-c1e3-61015c70ea1d"><p id="_f98d0e94-9f78-445a-415d-67d29e179512">The NWSViz profile Collection profile <em>SHALL</em> support the following HTTP status codes.</p>
+<requirement id="_2d3ffb33-3e09-4bd6-571d-d1d54ebe6933" anchor="req_nwsviz-application_status-codes" model="ogc"> <identifier>/req/nwsviz-application/status-codes</identifier><description id="_7438857f-c307-7fec-c1e3-61015c70ea1d"><p id="_f98d0e94-9f78-445a-415d-67d29e179512">The NWSViz profile Collection profile <em>SHALL</em> support the following HTTP status codes.</p>
 </description><component id="_08527544-15c6-7129-6e9c-dfba49ef2940" class="part"><p id="_9aeece0f-b1d6-892e-8a2b-1d28d8bea36c">The message descriptions <em>SHALL</em> be as follows:</p>
 </component>
 
-<description><table id="_3aa8946f-0370-773d-6325-12fbf1bf7c02"><thead><tr id="_176f80db-0f57-d6f3-7d0d-1a0eec06dc31"><th id="_e8e4bfe0-2745-2c46-87d0-3db163200a34" valign="middle" align="left">Status code</th>
+<description><table id="_39173271-88b2-565d-d542-f252658dfb51"><thead><tr id="_176f80db-0f57-d6f3-7d0d-1a0eec06dc31"><th id="_e8e4bfe0-2745-2c46-87d0-3db163200a34" valign="middle" align="left">Status code</th>
 <th id="_dd5592af-d3fe-b8a2-0f04-71b452f3b625" valign="middle" align="left">Description</th>
 </tr></thead>
 <tbody><tr id="_0e8b1b3e-a821-9515-4479-92ddb169cc7d"><td id="_ff2a0120-48b3-b35e-2417-497ccfbb63c1" valign="middle" align="left">200</td>
 <td id="_2680c2ee-8a3d-1f39-7a1b-3f3646935888" valign="middle" align="left">A successful request.</td>
-</tr><tr id="_f429fdc3-d3d4-c043-230e-f8af626a7c93"><td id="_fa4df2a4-782d-71d3-1d22-5760d49b608a" valign="middle" align="left">204</td>
-<td id="_5a3d0689-bb09-25c3-9216-683f58bc34a1" valign="middle" align="left">A successful request, but the resource has no data resulting from the request.  No additional content or message body is provided.</td>
-</tr><tr id="_cdb43342-4a23-fc04-4338-f576e906797b"><td id="_c5be3410-5493-f05a-85d7-42411fc5460c" valign="middle" align="left">400</td>
-<td id="_88bec450-3c2b-b6e6-fe8e-25641c98b181" valign="middle" align="left">The server cannot or will not process the request due to an apparent client error. For example, a query parameter had an incorrect value.</td>
-</tr><tr id="_4cf52f56-9153-b68b-d5a0-0fee82d05eb6"><td id="_e0ab1b97-fcd1-39a9-e07a-164c5802fc8b" valign="middle" align="left">404</td>
-<td id="_3227414e-0ead-0eb7-af2c-456254905821" valign="middle" align="left">The requested resource does not exist on the server. For example, a path parameter had an incorrect value.</td>
-</tr><tr id="_80931253-674e-f7fe-3abc-b1da7143404b"><td id="_501635ce-dad2-6f9d-b214-651c14ad0428" valign="middle" align="left">405</td>
-<td id="_010f64e6-6f73-6b13-2c8f-c477a9bdb5f0" valign="middle" align="left">The request method is not supported. For example, a POST request was submitted, but the resource only supports GET requests.</td>
-</tr><tr id="_eb174f30-563d-d046-1a03-82bbc6f35144"><td id="_0622b69e-833c-5ff8-6b82-a60925509bea" valign="middle" align="left">413</td>
-<td id="_e788e241-be59-db75-a77b-bd6a07a76463" valign="middle" align="left">Request entity too large. For example, the query would involve returning more data than the server is capable of processing, the implementation should return a message explaining the query limits imposed by the server implementation.</td>
-</tr><tr id="_4ba587dd-8403-abc8-c325-aaa7ca198330"><td id="_b8b5e90f-0e55-6b56-68e5-aa6727b6c815" valign="middle" align="left">500</td>
-<td id="_27363966-2a2f-bc9f-70f7-533f87bde195" valign="middle" align="left">An internal error occurred in the server.</td>
+</tr><tr id="_8656a089-6ac9-559b-5ac9-dd1397cc9bec"><td id="_f28e0b42-9303-062d-a63c-1010bd125e32" valign="middle" align="left">400</td>
+<td id="_1fe2dc02-110e-ef95-d12a-43ed48b5fe3c" valign="middle" align="left">The server cannot or will not process the request due to an apparent client error. For example, a query parameter had an incorrect value.</td>
+</tr><tr id="_be27966e-1586-d486-3656-62c1f47d76d9"><td id="_5103ae54-989f-7f37-29c5-d45067b2c574" valign="middle" align="left">404</td>
+<td id="_3d4ffd20-c58f-3966-0746-d2e4bcf6fa18" valign="middle" align="left">The requested resource does not exist on the server. For example, a path parameter had an incorrect value.</td>
 </tr></tbody>
 </table></description>
 </requirement>
@@ -1880,9 +1343,9 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 
 
 
-</sections><annex id="_f98a30ee-ea1f-f372-4cbc-e682cbfe4ce2" anchor="annex-A" obligation="informative">
+</sections><annex id="_a7446c2f-18eb-a869-7d43-9f26a51bb2a0" anchor="annex-A" obligation="informative">
 <title id="_0ae400d0-fc5b-94a1-586c-a20b12ca10c6">Conformance Class Abstract Test Suite (Normative)</title>
-<clause id="_71e11f90-7118-54fc-0da8-32e108fc191f" obligation="informative">
+<clause id="_a539339a-b769-8734-60dc-498a64d4f4bd" obligation="informative">
 <title id="_6fd6e9aa-9dfc-193e-16b7-8d2e3ec60610">Conformance Class Core</title>
 <requirement id="_2dd4cf8c-3981-d114-5feb-dae318b9593d" anchor="ats_class-nwsviz-application" model="ogc" type="conformanceclass">
 <title>Conformance Class ‘Core’</title><identifier>http://www.example.org/1.0/conf-class-nwsviz-application</identifier><classification><tag>target</tag><value>http://www.example.org/1.0/req/req-class-nwsviz-application</value></classification><requirement id="_a4d87686-e922-0362-d9a0-c3b83497f747" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/root</identifier></requirement><requirement id="_2dbb7ee1-59de-3f7f-baf7-f11e88c66964" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/edr-conformant</identifier></requirement><requirement id="_39f923a3-9d03-20ea-0f64-99f5192dc2c7" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/MRMS-parameter-names</identifier></requirement><requirement id="_e6b13d3d-f278-e542-8f62-94e0e50accb9" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/NBM-parameter-names</identifier></requirement><requirement id="_80e21a15-9a26-4cf5-85fe-0a74e0c3f4b7" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/collectionid</identifier></requirement><requirement id="_b372c8bc-080b-eecb-6876-954f6bba2dd6" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/extent</identifier></requirement><requirement id="_97c01640-7655-59e5-b564-712ca3f51622" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/output-format</identifier></requirement><requirement id="_eacf7863-9b5c-0db9-4efd-f9a4a5b8d054" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/status-codes</identifier></requirement><requirement id="_6a92128a-4c30-46a5-a01d-3cc0963efe0f" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/msg-bodies</identifier></requirement><requirement id="_bb823bd1-9fdd-cf06-738e-d5ab26c6c3f6" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/links</identifier></requirement><requirement id="_b5c57df0-2c95-0560-4263-518506df1ab9" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query</identifier></requirement><requirement id="_a8d97b62-77f7-96d9-59e1-9ce88f652fb7" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-instances</identifier></requirement><requirement id="_f7dad1f4-ebfc-1262-87e3-027b2cea6f94" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-position</identifier></requirement><requirement id="_769f9c7d-e030-eec1-e343-3359d96d1ce7" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-items</identifier></requirement><requirement id="_e9d977d8-eefd-fc89-b5d4-fdc652f4352f" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-location</identifier></requirement><requirement id="_982e2b42-f45c-8de9-c08f-660ae64e8af8" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-locations</identifier></requirement>
@@ -1925,11 +1388,11 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 
 </requirement>
 
-<requirement id="_43d42fec-a5a0-f384-88fa-f140717c443c" anchor="ats_nwsviz-application_MRMS-parameter-names" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/MRMS-parameter-names</identifier><classification><tag>target</tag><value>/req/nwsviz-application/MRMS-parameter-names</value></classification><component id="_ca3c8315-b42f-d032-2abc-ca018dd85688" class="test-purpose"><p id="_c179d6da-fb3a-91ad-0640-7562e8fd7775">Verify that NWSViz profile Collection uses the correct parameter-names schema.</p>
+<requirement id="_f2b86c81-c387-b627-9c31-a380fb253e53" anchor="ats_nwsviz-application_MRMS-parameter-names" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/MRMS-parameter-names</identifier><classification><tag>target</tag><value>/req/nwsviz-application/MRMS-parameter-names</value></classification><component id="_ca3c8315-b42f-d032-2abc-ca018dd85688" class="test-purpose"><p id="_c179d6da-fb3a-91ad-0640-7562e8fd7775">Verify that NWSViz profile Collection uses the correct parameter-names schema.</p>
 </component><component class="test-method"/><component id="_b870813d-e962-defd-b64a-88ada00127b1" class="step"><p id="_715e3097-cc3c-9c87-8e7f-9f6287addc7e">Verify that the profile Collection follows the following schema where the metadata is dynamically loaded from the underlying store.</p>
 </component>
 
-<description><sourcecode id="_b3e307b5-b190-9965-2672-f4c7deede9f2" lang="JSON"><body>{
+<description><sourcecode id="_731225e6-1bfe-5667-2ab4-924f8dd6bcd9" lang="JSON"><body>{
    "parameter-names":{
       "EchoTop_18":{
          "Type":"Parameter",
@@ -1939,12 +1402,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T18:24:39",
                "2025-10-01T18:32:41",
-               "2025-10-01T18:34:37",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:54:38"
+               "...etc"
             ]
          },
          "attrs":{
@@ -1959,25 +1417,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T17:58:37",
                "2025-10-01T18:02:40",
-               "2025-10-01T18:04:39",
-               "2025-10-01T18:06:38",
-               "2025-10-01T18:08:34",
-               "2025-10-01T18:10:35",
-               "2025-10-01T18:12:36",
-               "2025-10-01T18:14:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:30:32",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:42:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:54:38",
-               "2025-10-01T18:56:37"
+               "...etc"
             ]
          },
          "attrs":{
@@ -1992,25 +1432,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T18:06:38",
                "2025-10-01T18:10:35",
-               "2025-10-01T18:12:36",
-               "2025-10-01T18:14:39",
-               "2025-10-01T18:16:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:20:37",
-               "2025-10-01T18:22:35",
-               "2025-10-01T18:24:39",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:30:32",
-               "2025-10-01T18:34:37",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:42:37",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:48:36",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:54:38",
-               "2025-10-01T18:56:37"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2025,23 +1447,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T18:00:34",
                "2025-10-01T18:04:39",
-               "2025-10-01T18:06:38",
-               "2025-10-01T18:08:36",
-               "2025-10-01T18:10:35",
-               "2025-10-01T18:12:36",
-               "2025-10-01T18:14:39",
-               "2025-10-01T18:16:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:22:35",
-               "2025-10-01T18:24:39",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:30:32",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:34:37",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:48:36"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2056,13 +1462,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T18:26:38",
                "2025-10-01T18:28:40",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:56:37"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2078,31 +1478,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
                "2025-10-01T17:58:37",
                "2025-10-01T18:00:34",
                "2025-10-01T18:02:35",
-               "2025-10-01T18:04:39",
-               "2025-10-01T18:06:38",
-               "2025-10-01T18:08:36",
-               "2025-10-01T18:10:35",
-               "2025-10-01T18:14:39",
-               "2025-10-01T18:16:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:20:37",
-               "2025-10-01T18:22:35",
-               "2025-10-01T18:24:39",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:28:40",
-               "2025-10-01T18:30:32",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:34:37",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:42:37",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:48:36",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:54:38"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2117,19 +1493,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T18:12:36",
                "2025-10-01T18:16:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:20:37",
-               "2025-10-01T18:24:39",
-               "2025-10-01T18:30:39",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:54:38",
-               "2025-10-01T18:56:37",
-               "2025-10-01T18:58:39"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2144,24 +1508,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T18:04:00",
                "2025-10-01T18:06:00",
-               "2025-10-01T18:08:00",
-               "2025-10-01T18:10:00",
-               "2025-10-01T18:12:00",
-               "2025-10-01T18:14:00",
-               "2025-10-01T18:16:00",
-               "2025-10-01T18:18:00",
-               "2025-10-01T18:22:00",
-               "2025-10-01T18:24:00",
-               "2025-10-01T18:26:00",
-               "2025-10-01T18:28:00",
-               "2025-10-01T18:30:00",
-               "2025-10-01T18:34:00",
-               "2025-10-01T18:36:00",
-               "2025-10-01T18:40:00",
-               "2025-10-01T18:42:00",
-               "2025-10-01T18:44:00",
-               "2025-10-01T18:48:00",
-               "2025-10-01T18:56:00"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2176,31 +1523,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T17:58:00",
                "2025-10-01T18:00:00",
-               "2025-10-01T18:06:00",
-               "2025-10-01T18:08:00",
-               "2025-10-01T18:10:00",
-               "2025-10-01T18:12:00",
-               "2025-10-01T18:14:00",
-               "2025-10-01T18:16:00",
-               "2025-10-01T18:18:00",
-               "2025-10-01T18:22:00",
-               "2025-10-01T18:24:00",
-               "2025-10-01T18:26:00",
-               "2025-10-01T18:28:00",
-               "2025-10-01T18:30:00",
-               "2025-10-01T18:32:00",
-               "2025-10-01T18:34:00",
-               "2025-10-01T18:36:00",
-               "2025-10-01T18:38:00",
-               "2025-10-01T18:40:00",
-               "2025-10-01T18:42:00",
-               "2025-10-01T18:44:00",
-               "2025-10-01T18:46:00",
-               "2025-10-01T18:48:00",
-               "2025-10-01T18:50:00",
-               "2025-10-01T18:52:00",
-               "2025-10-01T18:54:00",
-               "2025-10-01T18:56:00"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2228,7 +1551,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T18:00:00",
                "2025-10-01T18:15:00",
-               "2025-10-01T18:45:00"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2256,22 +1579,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T18:02:35",
                "2025-10-01T18:06:38",
-               "2025-10-01T18:08:36",
-               "2025-10-01T18:10:35",
-               "2025-10-01T18:16:39",
-               "2025-10-01T18:20:37",
-               "2025-10-01T18:22:35",
-               "2025-10-01T18:24:39",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:28:40",
-               "2025-10-01T18:30:32",
-               "2025-10-01T18:34:37",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:48:36",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:56:37"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2286,18 +1594,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T18:20:37",
                "2025-10-01T18:22:35",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:28:40",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:42:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:48:36",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:54:38"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2312,25 +1609,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T17:58:37",
                "2025-10-01T18:00:34",
-               "2025-10-01T18:02:35",
-               "2025-10-01T18:04:39",
-               "2025-10-01T18:08:36",
-               "2025-10-01T18:10:35",
-               "2025-10-01T18:12:36",
-               "2025-10-01T18:14:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:20:37",
-               "2025-10-01T18:22:35",
-               "2025-10-01T18:24:39",
-               "2025-10-01T18:28:40",
-               "2025-10-01T18:30:32",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:34:37",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:48:36",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:56:37"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2345,14 +1624,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T18:00:34",
                "2025-10-01T18:02:40",
-               "2025-10-01T18:04:39",
-               "2025-10-01T18:08:34",
-               "2025-10-01T18:14:39",
-               "2025-10-01T18:22:35",
-               "2025-10-01T18:26:38",
-               "2025-10-01T18:36:40",
-               "2025-10-01T18:40:35",
-               "2025-10-01T18:52:38"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2367,26 +1639,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "values":[
                "2025-10-01T18:00:34",
                "2025-10-01T18:04:39",
-               "2025-10-01T18:06:38",
-               "2025-10-01T18:08:34",
-               "2025-10-01T18:10:34",
-               "2025-10-01T18:12:36",
-               "2025-10-01T18:16:39",
-               "2025-10-01T18:18:41",
-               "2025-10-01T18:20:37",
-               "2025-10-01T18:28:40",
-               "2025-10-01T18:30:39",
-               "2025-10-01T18:32:41",
-               "2025-10-01T18:34:39",
-               "2025-10-01T18:38:35",
-               "2025-10-01T18:42:37",
-               "2025-10-01T18:44:37",
-               "2025-10-01T18:46:34",
-               "2025-10-01T18:48:36",
-               "2025-10-01T18:50:33",
-               "2025-10-01T18:52:38",
-               "2025-10-01T18:54:38",
-               "2025-10-01T18:58:39"
+               "...etc"
             ]
          },
          "attrs":{
@@ -2398,11 +1651,11 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 
 </requirement>
 
-<requirement id="_5f204f03-43da-d2cd-bb56-2329c8eee5aa" anchor="ats_nwsviz-application_NBM-parameter-names" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/NBM-parameter-names</identifier><classification><tag>target</tag><value>/req/nwsviz-application/NBM-parameter-names</value></classification><component id="_b85f4bfc-2d7b-28c0-e0ab-9d3660fe20ef" class="test-purpose"><p id="_b942c057-f2ee-5e7d-08b4-2235018e544c">Verify that NWSViz profile Collection uses the correct parameter-names schema.</p>
+<requirement id="_5c5cb8f1-9c65-8a58-2895-a87ebb61d84e" anchor="ats_nwsviz-application_NBM-parameter-names" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/NBM-parameter-names</identifier><classification><tag>target</tag><value>/req/nwsviz-application/NBM-parameter-names</value></classification><component id="_b85f4bfc-2d7b-28c0-e0ab-9d3660fe20ef" class="test-purpose"><p id="_b942c057-f2ee-5e7d-08b4-2235018e544c">Verify that NWSViz profile Collection uses the correct parameter-names schema.</p>
 </component><component class="test-method"/><component id="_710aa09f-1c61-0764-3613-2a6a265924a9" class="step"><p id="_88ff5a89-d22f-df16-cfc7-b0b7cbd5e832">Verify that the profile Collection follows the following schema where the metadata is dynamically loaded from the underlying store.</p>
 </component>
 
-<description><sourcecode id="_f0a958a0-9875-9228-85bc-5c95d54c917c" lang="JSON"><body>"parameter-names":{
+<description><sourcecode id="_74cf8e05-ce77-0651-c08c-5effe173a7e2" lang="JSON"><body>"parameter-names":{
    "apparent_temperature":{
       "Type":"Parameter",
       "id":"apparent_temperature",
@@ -2414,112 +1667,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
          "values":[
             "2025-09-22T01:00:00",
             "2025-09-22T02:00:00",
-            "2025-09-22T03:00:00",
-            "2025-09-22T04:00:00",
-            "2025-09-22T05:00:00",
-            "2025-09-22T06:00:00",
-            "2025-09-22T07:00:00",
-            "2025-09-22T08:00:00",
-            "2025-09-22T09:00:00",
-            "2025-09-22T10:00:00",
-            "2025-09-22T11:00:00",
-            "2025-09-22T12:00:00",
-            "2025-09-22T13:00:00",
-            "2025-09-22T14:00:00",
-            "2025-09-22T15:00:00",
-            "2025-09-22T16:00:00",
-            "2025-09-22T17:00:00",
-            "2025-09-22T18:00:00",
-            "2025-09-22T19:00:00",
-            "2025-09-22T20:00:00",
-            "2025-09-22T21:00:00",
-            "2025-09-22T22:00:00",
-            "2025-09-22T23:00:00",
-            "2025-09-23T00:00:00",
-            "2025-09-23T01:00:00",
-            "2025-09-23T02:00:00",
-            "2025-09-23T03:00:00",
-            "2025-09-23T04:00:00",
-            "2025-09-23T05:00:00",
-            "2025-09-23T06:00:00",
-            "2025-09-23T07:00:00",
-            "2025-09-23T08:00:00",
-            "2025-09-23T09:00:00",
-            "2025-09-23T10:00:00",
-            "2025-09-23T11:00:00",
-            "2025-09-23T12:00:00",
-            "2025-09-23T13:00:00",
-            "2025-09-23T14:00:00",
-            "2025-09-23T15:00:00",
-            "2025-09-23T16:00:00",
-            "2025-09-23T17:00:00",
-            "2025-09-23T18:00:00",
-            "2025-09-23T19:00:00",
-            "2025-09-23T20:00:00",
-            "2025-09-23T21:00:00",
-            "2025-09-23T22:00:00",
-            "2025-09-23T23:00:00",
-            "2025-09-24T00:00:00",
-            "2025-09-24T03:00:00",
-            "2025-09-24T06:00:00",
-            "2025-09-24T09:00:00",
-            "2025-09-24T12:00:00",
-            "2025-09-24T15:00:00",
-            "2025-09-24T18:00:00",
-            "2025-09-24T21:00:00",
-            "2025-09-25T00:00:00",
-            "2025-09-25T03:00:00",
-            "2025-09-25T06:00:00",
-            "2025-09-25T09:00:00",
-            "2025-09-25T12:00:00",
-            "2025-09-25T15:00:00",
-            "2025-09-25T18:00:00",
-            "2025-09-25T21:00:00",
-            "2025-09-26T00:00:00",
-            "2025-09-26T03:00:00",
-            "2025-09-26T06:00:00",
-            "2025-09-26T09:00:00",
-            "2025-09-26T12:00:00",
-            "2025-09-26T15:00:00",
-            "2025-09-26T18:00:00",
-            "2025-09-26T21:00:00",
-            "2025-09-27T00:00:00",
-            "2025-09-27T03:00:00",
-            "2025-09-27T06:00:00",
-            "2025-09-27T09:00:00",
-            "2025-09-27T12:00:00",
-            "2025-09-27T15:00:00",
-            "2025-09-27T18:00:00",
-            "2025-09-27T21:00:00",
-            "2025-09-28T00:00:00",
-            "2025-09-28T03:00:00",
-            "2025-09-28T06:00:00",
-            "2025-09-28T09:00:00",
-            "2025-09-28T12:00:00",
-            "2025-09-28T15:00:00",
-            "2025-09-28T18:00:00",
-            "2025-09-28T21:00:00",
-            "2025-09-29T00:00:00",
-            "2025-09-29T03:00:00",
-            "2025-09-29T06:00:00",
-            "2025-09-29T09:00:00",
-            "2025-09-29T12:00:00",
-            "2025-09-29T15:00:00",
-            "2025-09-29T18:00:00",
-            "2025-09-29T21:00:00",
-            "2025-09-30T00:00:00",
-            "2025-09-30T06:00:00",
-            "2025-09-30T12:00:00",
-            "2025-09-30T18:00:00",
-            "2025-10-01T00:00:00",
-            "2025-10-01T06:00:00",
-            "2025-10-01T12:00:00",
-            "2025-10-01T18:00:00",
-            "2025-10-02T00:00:00",
-            "2025-10-02T06:00:00",
-            "2025-10-02T12:00:00",
-            "2025-10-02T18:00:00",
-            "2025-10-03T00:00:00"
+            "...etc"
          ]
       },
       "attrs":{
@@ -2576,22 +1724,16 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 
 </requirement>
 
-<requirement id="_8f65d194-eb0c-7ba0-5c48-88789be7e288" anchor="ats_nwsviz-application_collectionid" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/collectionid</identifier><classification><tag>target</tag><value>/req/nwsviz-application/collectionid</value></classification><component id="_8bafe00c-2a21-1140-de47-8b2c53cf2146" class="test-purpose"><p id="_d06f433d-7a67-60fc-9ef2-7c5681b1bfec">Validate that a collectionid requirement is correctly defined.</p>
+<requirement id="_e7ac1f44-cf70-3e57-574f-a74282c4460e" anchor="ats_nwsviz-application_collectionid" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/collectionid</identifier><classification><tag>target</tag><value>/req/nwsviz-application/collectionid</value></classification><component id="_8bafe00c-2a21-1140-de47-8b2c53cf2146" class="test-purpose"><p id="_d06f433d-7a67-60fc-9ef2-7c5681b1bfec">Validate that a collectionid requirement is correctly defined.</p>
 </component><component class="test-method"/><component id="_7dd60d84-66e3-27a0-c243-f18a3f8df50e" class="step"><p id="_8111c8a3-a1c6-67e3-f133-f3674c2afb7b">Verify that collectionids match the following:</p>
 </component>
 
-<description><table id="_244711f2-5470-0310-b313-abb13a0e4e63"><tbody><tr id="_69c0c09d-2651-9844-5c98-a7326e3454cb"><td id="_daefd466-6227-3283-0b61-e2e4dfb8ce49" valign="middle" align="left"><strong>id</strong></td>
+<description><table id="_047c086c-7264-571f-edef-85b3e3986a92"><tbody><tr id="_69c0c09d-2651-9844-5c98-a7326e3454cb"><td id="_daefd466-6227-3283-0b61-e2e4dfb8ce49" valign="middle" align="left"><strong>id</strong></td>
 <td id="_6483764f-0d74-b90c-adf5-f171908cb319" valign="middle" align="left"><strong>description</strong></td>
-</tr><tr id="_e3ef5bc4-53e4-7502-5e2a-8c57af9cced3"><td id="_6c5cc242-fd42-507f-90d9-4a1738e6ee33" valign="middle" align="left">HREF</td>
-<td id="_e606a397-6fbe-3cc0-a605-852c33eb21f2" valign="middle" align="left">High Resolution Ensemble Forecast</td>
-</tr><tr id="_73b56487-b2fa-30e7-c291-266239775d4b"><td id="_f1df3709-8348-1417-4b62-ae0d72a803e8" valign="middle" align="left">NBM</td>
-<td id="_7560c38e-0e27-24bf-7460-d26121e73c52" valign="middle" align="left">National Blend of Models</td>
-</tr><tr id="_29a5c884-5a7c-f008-edee-fbedb0d4749f"><td id="_9c6fd154-3c0d-8b70-74e5-f8896d8ac349" valign="middle" align="left">LREF</td>
-<td id="_dfdb0c97-9926-7e7e-23b7-83405c95b9cc" valign="middle" align="left">Long Range Ensemble Forecast</td>
-</tr><tr id="_fe992ee6-9bb3-a88b-0951-a238a1fe5197"><td id="_cdf5fe93-a866-0965-b6d0-255c2d9c859f" valign="middle" align="left">LREF_TLE</td>
-<td id="_813c0039-4db2-3a0a-ecc8-b977e2a05864" valign="middle" align="left">Long Range Ensemble Forecast Tile-Lagged Ensemble</td>
-</tr><tr id="_049c6b88-b534-2bf6-cf45-259b365f681d"><td id="_bac4ef46-fcbc-0a3a-d232-07f770912294" valign="middle" align="left">MRMS</td>
-<td id="_d0e33339-5465-98ce-ae11-09d40b721fad" valign="middle" align="left">Multi-Radar/Multi-Sensor Radar Products</td>
+</tr><tr id="_15d94e37-0080-b14f-99b4-b68542625fca"><td id="_2841ea56-5a25-085b-a327-5e70ac270d5a" valign="middle" align="left">NBM_icechunk</td>
+<td id="_b892b788-9529-dbf1-c1c4-f8e19569ba65" valign="middle" align="left">National Blend of Models</td>
+</tr><tr id="_95da529e-09b7-6542-da1e-13e0e5ddbccc"><td id="_7036bbd0-c17c-cebb-3cf8-ea253c2b6622" valign="middle" align="left">MRMS_icechunk</td>
+<td id="_ff3b665a-17f5-b5fc-0bbb-b23099b784e8" valign="middle" align="left">Multi-Radar/Multi-Sensor Radar Products</td>
 </tr></tbody>
 </table></description>
 </requirement>
@@ -2709,13 +1851,9 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 </component>
 </requirement>
 
-<requirement id="_19fcb861-7f17-d4c8-6650-1eadb6982944" anchor="ats_nwsviz-application_data-query-position" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-position</identifier><classification><tag>target</tag><value>/req/nwsviz-application/data-query-position</value></classification><component id="_7b2d47bc-1e8f-ef9d-3397-5a6ee6a14504" class="test-purpose"><p id="_567ad892-9524-e652-aa56-ebb196a1fd91">Verify that NWSViz profile Collection <strong>Position</strong> query is correctly defined in the Collection response.</p>
-</component><component class="test-method"/><component id="_e2db3946-86c7-c263-75d0-992796429786" class="step"><p id="_de4ee1a3-fbbd-0376-39d4-3c8a2ff81459">Verify that NWSViz profile Collection <strong>Position</strong> query defines the following output_format types</p>
-<ul id="_29840414-e9f0-6ae6-f56b-8283bf404895"><li><p id="_5440ede8-4208-4cd2-81c3-47842d38a646">CoverageJSON</p>
-</li>
-<li><p id="_052ef26d-f9b2-8390-a3b0-5508260c4db1">Zarr</p>
-</li>
-<li><p id="_e7f192e8-384e-d3ba-b447-b23d4dd17388">NetCDF</p>
+<requirement id="_45f3c545-7275-0f42-1ffb-3515a89ec419" anchor="ats_nwsviz-application_data-query-position" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-position</identifier><classification><tag>target</tag><value>/req/nwsviz-application/data-query-position</value></classification><component id="_7b2d47bc-1e8f-ef9d-3397-5a6ee6a14504" class="test-purpose"><p id="_567ad892-9524-e652-aa56-ebb196a1fd91">Verify that NWSViz profile Collection <strong>Position</strong> query is correctly defined in the Collection response.</p>
+</component><component class="test-method"/><component id="_1bcdfba8-08a1-aca9-54a1-6948047060c7" class="step"><p id="_de4ee1a3-fbbd-0376-39d4-3c8a2ff81459">Verify that NWSViz profile Collection <strong>Position</strong> query defines the following output_format types</p>
+<ul id="_f62ce222-a0b8-085e-2247-7c41f4962bf8"><li><p id="_bdb0f7b3-d752-bdae-ed95-e022868028fa">CoverageJSON</p>
 </li>
 </ul>
 </component><component id="_d5d380ba-9394-ec58-a2e4-d1fc0bd2bf4f" class="step"><p id="_45e650aa-bd4d-2d32-35de-436f0684d386">Verify that NWSViz profile Collection <strong>Position</strong> query defines the following default output_format.</p>
@@ -2757,7 +1895,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 
 </requirement>
 
-<requirement id="_1041822d-d11e-fa34-6961-a1c30b96b856" anchor="ats_nwsviz-application_data-query-locations" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-locations</identifier><classification><tag>target</tag><value>/req/nwsviz-application/data-query-locations</value></classification><component id="_91a26666-115e-8339-e26b-d24c4694cb9e" class="test-purpose"><p id="_2c013918-b192-d6c3-1d55-b4ef28b2d56c">Verify that NWSViz profile Collection <strong>Locations</strong> query is correctly defined in the Collection response.</p>
+<requirement id="_9733f51e-79fb-fd95-b423-2795400ef3ad" anchor="ats_nwsviz-application_data-query-locations" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-locations</identifier><classification><tag>target</tag><value>/req/nwsviz-application/data-query-locations</value></classification><component id="_91a26666-115e-8339-e26b-d24c4694cb9e" class="test-purpose"><p id="_2c013918-b192-d6c3-1d55-b4ef28b2d56c">Verify that NWSViz profile Collection <strong>Locations</strong> query is correctly defined in the Collection response.</p>
 </component><component class="test-method"/><component id="_3dd17ea4-4c0a-8666-4f65-fd17028af73b" class="step"><p id="_284f3d10-cb7a-ddac-e1d9-1ac3d7b9f57e">Verify that NWSViz profile Collection <strong>Locations</strong> query defines the following output_format types</p>
 <ul id="_b101b898-9bfc-5c79-be1f-811fa6d8ae39"><li><p id="_b2bb2060-f729-7f47-d3bc-d31b7a75780a">GeoJSON</p>
 </li>
@@ -2775,7 +1913,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 </component><component id="_e1c8672e-1aa5-c7ce-8401-d04031718738" class="step"><p id="_ef323b79-dff4-f62a-7bc6-38d7020c345d">Verify that the reponse provides a listing of the available locations in a collection that conforms to GeoJSON and contains the properties contained in this example:</p>
 </component>
 
-<description><sourcecode id="_ce45e7a5-39be-8ec2-19bf-366323783761" lang="JSON"><body>{
+<description><sourcecode id="_3e778ee8-86e1-37ae-7a4d-7fc94a379379" lang="JSON"><body>{
    "type":"FeatureCollection",
    "features":[
       {
@@ -2785,318 +1923,187 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
             "coordinates":[
                [
                   [
-                     -60.154430455510095,
-                     19.80394886054594
+                     2681912.2261628294,
+                     -263793.73346456443
                   ],
                   [
-                     -60.154430455510095,
-                     49.81080204452752
+                     2681912.2261628294,
+                     3789572.2545354357
                   ],
                   [
-                     -125.13089699982356,
-                     49.81080204452752
+                     -3271151.605837171,
+                     3789572.2545354357
                   ],
                   [
-                     -125.13089699982356,
-                     19.80394886054594
+                     -3271151.605837171,
+                     -263793.73346456443
                   ],
                   [
-                     -60.154430455510095,
-                     19.80394886054594
+                     2681912.2261628294,
+                     -263793.73346456443
                   ]
                ]
             ]
          },
          "properties":{
-            "instance":"2025-05-21T12:00:00",
-            "name":"CO",
-            "name_alt":"link:++http://edr-api-desi-c.mdl.nws.noaa.gov/collections/HREF/instances/2025-05-21T12:00:00/locations/CO?f=json++[]",
-            "edrqueryendpoint":"link:++http://edr-api-desi-c.mdl.nws.noaa.gov/collections/HREF/instances/2025-05-21T12:00:00/locations/CO?f=json++[]",
+            "instance":"2025-09-22T00:00:00",
+            "name":"conus",
+            "name_alt":"link:++http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/locations/conus?f=json++[]",
+            "edrqueryendpoint":"link:++http://edr-api-desi-c.mdl.nws.noaa.gov/collections/NBM_icechunk/instances/2025-09-22T00:00:00/locations/conus?f=json++[]",
             "parameter-names":[
-               "apcp_1h",
-               "apcp_2h",
-               "apcp_3h",
-               "apcp_accum",
-               "apcp_accum-lpmm",
-               "apcp_accum_24h",
-               "apcp_accum_24h-lpmm",
-               "apcp_accum_6h",
-               "apcp_accum_6h-lpmm",
-               "cape",
-               "ceil",
-               "ceilingAGL",
-               "cfrzr",
-               "cicep",
-               "cin",
-               "colmd",
-               "crain",
-               "csnow",
-               "d2m",
-               "dpt_isobaric",
-               "dswrf",
-               "fram1",
-               "fram24",
-               "fram24-lpmm",
-               "fram6",
-               "fram6-lpmm",
-               "framtotal",
-               "front700",
-               "front850",
-               "frzr1",
-               "frzr24",
-               "frzr24-lpmm",
-               "frzr6",
-               "frzr6-lpmm",
-               "frzrtotal",
-               "gh1000-gh500",
-               "gh700-gh500_lr",
-               "gh_isobaric",
-               "gust",
-               "hcc",
-               "hlcy_1000",
-               "hlcy_3000",
-               "inventory",
-               "large-fire-potential",
-               "lcc",
-               "lcl",
-               "ltng",
-               "massden",
-               "mcc",
-               "mnuphl_3000",
-               "mnuphl_5000",
-               "mxuphl_3000",
-               "mxuphl_5000",
-               "orog",
-               "pfrzr",
-               "picep",
-               "prain",
-               "prmsl",
-               "psnow",
-               "pwat",
-               "r2",
-               "r_isobaric",
-               "refc",
-               "refc-lpmm",
-               "retop",
-               "sdwe_1h",
-               "sdwe_2h",
-               "sdwe_3h",
-               "sdwe_accum",
-               "sdwe_accum-lpmm",
-               "sdwe_accum_1h",
-               "sdwe_accum_24h",
-               "sdwe_accum_24h-lpmm",
-               "sdwe_accum_6h",
-               "sdwe_accum_6h-lpmm",
-               "sp",
-               "stp",
-               "t2m",
-               "t_isobaric",
-               "ta2",
-               "tadv700",
-               "tadv850",
-               "tcdc",
-               "thte2",
-               "thte850",
-               "thte925",
-               "tw2",
-               "u10",
-               "u_isobaric",
-               "v10",
-               "v_isobaric",
-               "vis",
-               "vort500",
-               "vucsh",
-               "vvcsh",
-               "w_isobaric",
-               "wd_isobaric",
-               "wd_isobaric-mean",
-               "wd_isobaric-std",
-               "wdir",
-               "wdir-mean",
-               "wdir-std",
-               "ws_isobaric",
-               "wshr0-6km",
-               "wshrd0-6km",
-               "wshrd0-6km-mean",
-               "wshrd0-6km-std",
-               "wspd"
+               "apparent_temperature",
+               "ceiling",
+               "ceiling_probability",
+               "cloud_base",
+               "conditional_probability_of_precipitation_type",
+               "convective_available_potential_energy",
+               "convective_available_potential_energy_percentiles",
+               "convective_available_potential_energy_standard_deviation",
+               "dewpoint",
+               "dewpoint_standard_deviation",
+               "downward_shortwave_radiation_flux",
+               "dry_thunderstorm_probability",
+               "echo_top",
+               "ellrod_index",
+               "fosberg_index_06_hour",
+               "ice_accumulation_01_hour",
+               "ice_accumulation_06_hour",
+               "ice_accumulation_06_hour_percentiles",
+               "low_level_turbulence",
+               "low_level_wind_shear_altitude",
+               "low_level_wind_shear_direction",
+               "low_level_wind_shear_magnitude",
+               "maximum_reflectivity",
+               "maximum_relative_humidity_12_hour",
+               "maximum_temperature_12_hour",
+               "maximum_temperature_12_hour_standard_deviation",
+               "minimum_relative_humidity_12_hour",
+               "minimum_temperature_12_hour",
+               "minimum_temperature_12_hour_standard_deviation",
+               "mixing_height",
+               "precipitable_water",
+               "precipitable_water_percentiles",
+               "precipitation_01_hour_probability",
+               "precipitation_06_hour_probability",
+               "precipitation_12_hour_probability",
+               "precipitation_accumulation_01_hour",
+               "precipitation_accumulation_06_hour",
+               "precipitation_duration_12_hour",
+               "predominant_weather",
+               "relative_humidity",
+               "sea_surface_temperature",
+               "snow_accumulation_01_hour",
+               "snow_accumulation_01_hour_percentiles",
+               "snow_accumulation_06_hour",
+               "snow_accumulation_06_hour_percentiles",
+               "snow_level",
+               "snow_level_percentiles",
+               "snow_liquid_ratio",
+               "snow_liquid_ratio_percentiles",
+               "spc_hail_04_hour_probability",
+               "spc_tornado_04_hour_probability",
+               "spc_wind_04_hour_probability",
+               "temperature",
+               "temperature_standard_deviation",
+               "thunderstorm_01_hour_probability",
+               "thunderstorm_03_hour_probability",
+               "thunderstorm_06_hour_probability",
+               "thunderstorm_12_hour_probability",
+               "thunderstorm_coverage",
+               "total_cloud_cover",
+               "total_cloud_cover_standard_deviation",
+               "transport_wind_direction",
+               "transport_wind_speed",
+               "ventilation_rate",
+               "vertically_integrated_liquid",
+               "visibility",
+               "visibility_probability",
+               "wind_direction",
+               "wind_gust",
+               "wind_gust_standard_deviation",
+               "wind_speed",
+               "wind_speed_standard_deviation"
             ],
             "datetimes":[
-               "2025-05-21T13:00:00",
-               "2025-05-21T14:00:00",
-               "2025-05-21T15:00:00",
-               "2025-05-21T16:00:00",
-               "2025-05-21T17:00:00",
-               "2025-05-21T18:00:00",
-               "2025-05-21T19:00:00",
-               "2025-05-21T20:00:00",
-               "2025-05-21T21:00:00",
-               "2025-05-21T22:00:00",
-               "2025-05-21T23:00:00",
-               "2025-05-22T00:00:00",
-               "2025-05-22T01:00:00",
-               "2025-05-22T02:00:00",
-               "2025-05-22T03:00:00",
-               "2025-05-22T04:00:00",
-               "2025-05-22T05:00:00",
-               "2025-05-22T06:00:00",
-               "2025-05-22T07:00:00",
-               "2025-05-22T08:00:00",
-               "2025-05-22T09:00:00",
-               "2025-05-22T10:00:00",
-               "2025-05-22T11:00:00",
-               "2025-05-22T12:00:00",
-               "2025-05-22T13:00:00",
-               "2025-05-22T14:00:00",
-               "2025-05-22T15:00:00",
-               "2025-05-22T16:00:00",
-               "2025-05-22T17:00:00",
-               "2025-05-22T18:00:00",
-               "2025-05-22T19:00:00",
-               "2025-05-22T20:00:00",
-               "2025-05-22T21:00:00",
-               "2025-05-22T22:00:00",
-               "2025-05-22T23:00:00",
-               "2025-05-23T00:00:00",
-               "2025-05-23T01:00:00",
-               "2025-05-23T02:00:00",
-               "2025-05-23T03:00:00",
-               "2025-05-23T04:00:00",
-               "2025-05-23T05:00:00",
-               "2025-05-23T06:00:00",
-               "2025-05-23T07:00:00",
-               "2025-05-23T08:00:00",
-               "2025-05-23T09:00:00",
-               "2025-05-23T10:00:00",
-               "2025-05-23T11:00:00",
-               "2025-05-23T12:00:00"
+               "2025-09-22T01:00:00",
+               "2025-09-22T02:00:00",
+               "...etc",
             ],
             "desi":{
-               "comment":"Complete files (if true) are needed for model to show up on front end display.  Format 2022090912/HREF.complete",
-               "name":"HREF",
-               "groupname":"HREF",
-               "completeFile":true,
-               "zarr_config":{
-                  "data_by_field":false,
-                  "time_key":"valid_time",
-                  "lat_key":"latitude",
-                  "lon_key":"longitude",
-                  "ens_key":"ensemble",
-                  "ens_key_text":"names",
-                  "x_key":"x",
-                  "y_key":"y",
-                  "z_key":"isobaricInhPa"
-               },
-               "x4dDomain":{
-                  "x4dGrid":[
-                     40.5,
-                     -100,
-                     388,
-                     270
-                  ],
-                  "maxDomainPoints":105000
-               },
-               "tiling":{
-                  "//":"if resolution is 5km, 1 = 5km, 2 = 10km, 4 = 20km",
-                  "y":150,
-                  "x":150,
-                  "targetNx":200,
-                  "targetNy":150,
-                  "resLevels":[
-                     1,
-                     2,
-                     4
-                  ]
-               },
-               "region":{
-                  "name":"CONUS",
-                  "foldername":"HREF"
-               },
                "projDict":{
-                  "nx":1160,
-                  "ny":678,
-                  "dx":5079,
-                  "dy":5079,
-                  "units":"m",
-                  "first_lat":19.80394886054594,
-                  "first_lon":-125.13089699982356,
-                  "proj":"+proj=lcc +a=6371200.0 +b=6371200.0 +lon_0=265.0 +lat_0=25.0 +lat_1=25.0 +lat_2=25.0"
-               },
-               "clustering":false,
-               "members":{
-                  "HRW_ARW -12h":[
-                     "HRW_ARW -12h"
-                  ],
-                  "HRW_ARW":[
-                     "HRW_ARW"
-                  ],
-                  "HRW FV3 -12h":[
-                     "HRW FV3 -12h"
-                  ],
-                  "HRW FV3":[
-                     "HRW FV3"
-                  ],
-                  "HRW NSSL -12h":[
-                     "HRW NSSL -12h"
-                  ],
-                  "HRW NSSL":[
-                     "HRW NSSL"
-                  ],
-                  "NAM CONUS Nest -12h":[
-                     "NAM CONUS Nest -12h"
-                  ],
-                  "NAM CONUS Nest":[
-                     "NAM CONUS Nest"
-                  ],
-                  "HRRR -6h":[
-                     "HRRR -6h"
-                  ],
-                  "HRRR":[
-                     "HRRR"
+                  "proj":"+proj=lcc +lat_0=25 +lon_0=265 +lat_1=25 +lat_2=25 +x_0=0 +y_0=0 +R=6371200 +units=m +no_defs +type=crs",
+                  "crs_wkt":"PROJCRS[\"unknown\",BASEGEOGCRS[\"unknown\",DATUM[\"unknown\",ELLIPSOID[\"unknown\",6371200,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8901]]],CONVERSION[\"unknown\",METHOD[\"Lambert Conic Conformal (2SP)\",ID[\"EPSG\",9802]],PARAMETER[\"Latitude of false origin\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8821]],PARAMETER[\"Longitude of false origin\",265,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8822]],PARAMETER[\"Latitude of 1st standard parallel\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8823]],PARAMETER[\"Latitude of 2nd standard parallel\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8824]],PARAMETER[\"Easting at false origin\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8826]],PARAMETER[\"Northing at false origin\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8827]]],CS[Cartesian,2],AXIS[\"(E)\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"(N)\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+                  "first_lat":-263793.73346456443,
+                  "first_lon":-3271151.605837171,
+                  "nx":2345,
+                  "ny":2345,
+                  "dx":2539.703,
+                  "dy":2539.703
+               }
+            },
+            "parameter-names-dict":{
+               "apparent_temperature":{
+                  "attrs":{
+                     "grib_section3":[
+                        0,
+                        3744965,
+                        0,
+                        0,
+                        30,
+                        1,
+                        0,
+                        6371200,
+                        255,
+                        255,
+                        255,
+                        255,
+                        2345,
+                        1597,
+                        19229000,
+                        233723400,
+                        48,
+                        25000000,
+                        265000000,
+                        2539703,
+                        2539703,
+                        0,
+                        80,
+                        25000000,
+                        25000000,
+                        -90000000,
+                        0
+                     ],
+                     "long_name":"Apparent Temperature",
+                     "short_name":"APTMP",
+                     "units":"K",
+                     "originating_center":"US National Weather Service - NCEP (WMC)",
+                     "originating_sub_center":"NWS Meteorological Development Laboratory",
+                     "master_table_info":"Version Implemented on 7 November 2001",
+                     "product_definition_template_number":"Analysis or forecast at a horizontal level or in a horizontal layer at a point in time. (see Template 4.0)",
+                     "type_of_generating_process":"Forecast",
+                     "type_of_first_fixed_surface":"Specified Height Level Above Ground (m)",
+                     "type_of_second_fixed_surface":"Missing (unknown)",
+                     "crs_wkt":"PROJCRS[\"unknown\",BASEGEOGCRS[\"unknown\",DATUM[\"unknown\",ELLIPSOID[\"unknown\",6371200,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8901]]],CONVERSION[\"unknown\",METHOD[\"Lambert Conic Conformal (2SP)\",ID[\"EPSG\",9802]],PARAMETER[\"Latitude of false origin\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8821]],PARAMETER[\"Longitude of false origin\",265,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8822]],PARAMETER[\"Latitude of 1st standard parallel\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8823]],PARAMETER[\"Latitude of 2nd standard parallel\",25,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8824]],PARAMETER[\"Easting at false origin\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8826]],PARAMETER[\"Northing at false origin\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8827]]],CS[Cartesian,2],AXIS[\"(E)\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"(N)\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+                     "gridlength_x_direction":2539.703,
+                     "gridlength_y_direction":2539.703,
+                     "latitude_first_gridpoint":19.229,
+                     "longitude_first_gridpoint":233.7234,
+                     "standard_name":"apparent_air_temperature",
+                     "coordinates":"forecast_reference_time lead_time specified_height_level_above_ground",
+                     "_FillValue":"AAAAAAAA+H8="
+                  },
+                  "time":[
+                     "2025-09-22T01:00:00",
+                     "2025-09-22T02:00:00",
+                     "...etc"
                   ]
-               },
-               "membersShort":{
-                  "HRW_ARW -12h":[
-                     "ARW -12h"
-                  ],
-                  "HRW_ARW":[
-                     "ARW"
-                  ],
-                  "HRW FV3 -12h":[
-                     "FV3 -12h"
-                  ],
-                  "HRW FV3":[
-                     "FV3"
-                  ],
-                  "HRW NSSL -12h":[
-                     "NSSL -12h"
-                  ],
-                  "HRW NSSL":[
-                     "NSSL"
-                  ],
-                  "NAM CONUS Nest -12h":[
-                     "NAM N. -12h"
-                  ],
-                  "NAM CONUS Nest":[
-                     "NAM N."
-                  ],
-                  "HRRR -6h":[
-                     "HRRR -6h"
-                  ],
-                  "HRRR":[
-                     "HRRR"
-                  ]
-               },
-               "memberDepth":2,
-               "resolutionKM":5,
-               "lengthInHours":48
+               }
             },
             "bbox":[
-               -125.13089699982356,
-               19.80394886054594,
-               -60.154430455510095,
-               49.81080204452752
+               -3271151.605837171,
+               -263793.73346456443,
+               2681912.2261628294,
+               3789572.2545354357
             ]
          }
       }
