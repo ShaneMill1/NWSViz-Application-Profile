@@ -9,6 +9,7 @@ test-purpose:: Validate that a collectionid requirement is correctly defined.
 test-method:: 
 step:: Verify that collectionids match the following:
 
+.Collection IDs
 |====================
 | **id** | **description** 
 | NBM_icechunk | National Blend of Models

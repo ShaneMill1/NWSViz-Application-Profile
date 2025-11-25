@@ -3,8 +3,8 @@
 .Conformance Class 'Core'
 ====
 [%metadata]
-identifier:: http://www.example.org/1.0/conf-class-nwsviz-application
-target:: http://www.example.org/1.0/req/req-class-nwsviz-application
+identifier:: http://www.opengis.net/spec/ogcapi-edr-3/1.0/conf/nwsviz-application
+target:: http://www.opengis.net/spec/ogcapi-edr-3/1.0/req/nwsviz-application
 abstract-test:: /conf/nwsviz-application/root
 abstract-test:: /conf/nwsviz-application/edr-conformant
 abstract-test:: /conf/nwsviz-application/MRMS-parameter-names
@@ -21,5 +21,6 @@ abstract-test:: /conf/nwsviz-application/data-query-position
 abstract-test:: /conf/nwsviz-application/data-query-items
 abstract-test:: /conf/nwsviz-application/data-query-location
 abstract-test:: /conf/nwsviz-application/data-query-locations
+abstract-test:: /conf/nwsviz-application/differencing-processes
 ====
 

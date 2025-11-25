@@ -3,7 +3,7 @@
 [requirement]
 ====
 [%metadata]
-identifier:: /req/nwsviz-application_data/root
+identifier:: /req/nwsviz-application/root
 statement:: The landing page _SHALL_ have the following infomation
 
 part:: The *Title* property value _SHALL_ be "OGC API - Environmental Data Retrieval for Dynamic Ensemble Scenarios for IDSS"

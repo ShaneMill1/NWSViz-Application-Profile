@@ -231,6 +231,15 @@ Dependencies: <<ogc-edr,OGC API-Environmental Data Retrieval Standard>>
 
 include::../requirements/core/REQ_data-query-instances.adoc[]
 
+==== Differencing Processes
+
+The API supports OGC API Processes for performing differencing operations between collections and instances.
+
+Path = /processes/edr-zarr-difference-streaming/execution
+
+Dependencies: <<ogc-processes,OGC API - Processes>>
+
+include::../requirements/core/REQ_differencing-processes.adoc[]
 
 === General Requirements
 

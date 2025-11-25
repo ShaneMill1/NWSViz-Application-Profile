@@ -1,0 +1,12 @@
+[[req_nwsviz-application_differencing-processes]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/differencing-processes
+statement:: The API _SHALL_ support OGC API Processes for data differencing operations.
+part:: The API _SHALL_ provide a process endpoint that accepts differencing requests with collection_a, instance_a, collection_b, instance_b, parameter_name, zoom_level, epsg, units, and datetime parameters.
+part:: The API _SHALL_ return a response containing job_id, zarr_endpoint, metadata_url, status, and description fields for differencing operations.
+part:: The zarr_endpoint _SHALL_ provide access to the computed difference data in Zarr format.
+part:: The metadata_url _SHALL_ provide access to Zarr metadata for the difference result.
+====

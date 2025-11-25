@@ -3,7 +3,7 @@
 ====
 [%metadata]
 identifier:: /conf/nwsviz-application/root
-target:: /req/nwsviz-application_data/root
+target:: /req/nwsviz-application/root
 test-purpose:: Validate that the profile defines the service landing page
 test-method:: 
 step:: Verify that the profile defines a *Title* for the service and the value is *"NWSViz profile service"*

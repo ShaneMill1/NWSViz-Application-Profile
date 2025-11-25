@@ -36,6 +36,8 @@ include::../abstract_tests/core/ATS_data-query-locations.adoc[]
 
 include::../abstract_tests/core/ATS_data-query-items.adoc[]
 
+include::../abstract_tests/core/ATS_differencing-processes.adoc[]
+
 
 
 

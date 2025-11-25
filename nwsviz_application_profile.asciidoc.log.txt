@@ -85,6 +85,7 @@ NOTE: The security measures discussed in the following sections only provide var
 
 All questions regarding this submission should be directed to the editor or the submitters:
 
+.Submitters
 |===
 |*Shane Mill* |*NOAA*
 |===
@@ -133,6 +134,8 @@ The following normative documents contain provisions that, through reference in 
 * [[[OpenAPI30,nofetch(OpenAPI30)]]] OpenAPI Initiative (OAI). **OpenAPI Specification 3.0** [online]. 2024 [viewed 2025-01-03]. The latest patch version at the time of publication of this standard was 3.0.4, available at link:++https://spec.openapis.org/oas/v3.0.4++[]
 
 * [[[OpenAPI31,nofetch(OpenAPI31)]]] OpenAPI Initiative (OAI). **OpenAPI Specification 3.1** [online]. 2024 [viewed 2025-01-03]. The latest patch version at the time of publication of this standard was 3.1.1, available at link:++https://spec.openapis.org/oas/v3.1.1++[]
+
+* [[[ogc-processes,OGC 18-062]]], link:++https://docs.ogc.org/is/18-062r2/18-062r2.html++[OGC API - Processes - Part 1: Core]
 
 
 [[terms_and_definitions-section]]
@@ -268,9 +271,9 @@ The OGC API-EDR Standard does not try to address every possible application doma
 .Requirements Class 'NWSViz Application'
 ====
 [%metadata]
-identifier:: link:++http://www.example.org/1.0/req/req-class-nwsviz-application++[]
+identifier:: link:++http://www.opengis.net/spec/ogcapi-edr-3/1.0/req/nwsviz-application++[]
 target-type:: NWSViz Application Profile Standard
-requirement:: /req/nwsviz-application_data/root
+requirement:: /req/nwsviz-application/root
 requirement:: /req/nwsviz-application/edr-conformant
 requirement:: /req/nwsviz-application/parameter-names
 requirement:: /req/nwsviz-application/NBM-parameter-names
@@ -287,6 +290,7 @@ requirement:: /req/nwsviz-application/data-query-items
 requirement:: /req/nwsviz-application/status-codes
 requirement:: /req/nwsviz-application/msg-bodies
 requirement:: /req/nwsviz-application/links
+requirement:: /req/nwsviz-application/differencing-processes
 
 ====
 
@@ -343,7 +347,7 @@ Profiles of the <<ogc-edr,OGC API-Environmental Data Retrieval Standard>> are ex
 [requirement]
 ====
 [%metadata]
-identifier:: /req/nwsviz-application_data/root
+identifier:: /req/nwsviz-application/root
 statement:: The landing page _SHALL_ have the following infomation
 
 part:: The *Title* property value _SHALL_ be "OGC API - Environmental Data Retrieval for Dynamic Ensemble Scenarios for IDSS"
@@ -454,6 +458,7 @@ identifier:: /req/nwsviz-application/collectionid
 statement::  A Collection id should identify the source and type of NWP model
 part:: The Collection Ids _SHALL_ contain the following attributes
 
+.Collection IDs
 |====================
 | **id** | **description**
 | NBM_icechunk | National Blend of Models
@@ -944,13 +949,13 @@ identifier:: /req/nwsviz-application/data-query-items
 statement:: All Collections in the Service _SHALL_ provide support for *Items* queries
 part:: The *Items* query _SHALL_ return a connection to a Virtual Zarr Store that can be accessed via Xarray. For example:
 
-[source]
-....
+[source,python]
+----
 import xarray as xr
 
-ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS_icechunk/instances/2025-10-01T18:00:00/items/zarr/EchoTop_30/0++[]')
+ds=xr.open_zarr('https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS_icechunk/instances/2025-10-01T18:00:00/items/zarr/EchoTop_30/0')
 # Where EchoTop_30 is the element name and 0 is the zoom level
-....
+----
 
 part:: The *Items* query _SHALL_ support the following HTTP methods:
 
@@ -1249,6 +1254,26 @@ part:: Instance ids _SHALL_ match the following regular expression ^\d{4}-\d{2}-
 
 ====
 
+==== Differencing Processes
+
+The API supports OGC API Processes for performing differencing operations between collections and instances.
+
+Path = /processes/edr-zarr-difference-streaming/execution
+
+Dependencies: <<ogc-processes,OGC API - Processes>>
+
+[[req_nwsviz-application_differencing-processes]]
+
+[requirement]
+====
+[%metadata]
+identifier:: /req/nwsviz-application/differencing-processes
+statement:: The API _SHALL_ support OGC API Processes for data differencing operations.
+part:: The API _SHALL_ provide a process endpoint that accepts differencing requests with collection_a, instance_a, collection_b, instance_b, parameter_name, zoom_level, epsg, units, and datetime parameters.
+part:: The API _SHALL_ return a response containing job_id, zarr_endpoint, metadata_url, status, and description fields for differencing operations.
+part:: The zarr_endpoint _SHALL_ provide access to the computed difference data in Zarr format.
+part:: The metadata_url _SHALL_ provide access to Zarr metadata for the difference result.
+====
 
 === General Requirements
 
@@ -1394,8 +1419,8 @@ add or remove annexes after "A" as necessary
 .Conformance Class 'Core'
 ====
 [%metadata]
-identifier:: link:++http://www.example.org/1.0/conf-class-nwsviz-application++[]
-target:: link:++http://www.example.org/1.0/req/req-class-nwsviz-application++[]
+identifier:: link:++http://www.opengis.net/spec/ogcapi-edr-3/1.0/conf/nwsviz-application++[]
+target:: link:++http://www.opengis.net/spec/ogcapi-edr-3/1.0/req/nwsviz-application++[]
 abstract-test:: /conf/nwsviz-application/root
 abstract-test:: /conf/nwsviz-application/edr-conformant
 abstract-test:: /conf/nwsviz-application/MRMS-parameter-names
@@ -1412,6 +1437,7 @@ abstract-test:: /conf/nwsviz-application/data-query-position
 abstract-test:: /conf/nwsviz-application/data-query-items
 abstract-test:: /conf/nwsviz-application/data-query-location
 abstract-test:: /conf/nwsviz-application/data-query-locations
+abstract-test:: /conf/nwsviz-application/differencing-processes
 ====
 
 
@@ -1432,7 +1458,7 @@ step:: Verify that that the Collection can pass the OGC API-EDR Part 1 - Core co
 ====
 [%metadata]
 identifier:: /conf/nwsviz-application/root
-target:: /req/nwsviz-application_data/root
+target:: /req/nwsviz-application/root
 test-purpose:: Validate that the profile defines the service landing page
 test-method::
 step:: Verify that the profile defines a *Title* for the service and the value is *"NWSViz profile service"*
@@ -1824,6 +1850,7 @@ test-purpose:: Validate that a collectionid requirement is correctly defined.
 test-method::
 step:: Verify that collectionids match the following:
 
+.Collection IDs
 |====================
 | **id** | **description**
 | NBM_icechunk | National Blend of Models
@@ -2296,6 +2323,21 @@ step:: Verify that the *Items* query has an item identifier that follows the fol
         * zarr/<element>/<zoom>/<crs>/<unit>
 ====
 
+[[ats_nwsviz-application_differencing-processes]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/differencing-processes
+target:: /req/nwsviz-application/differencing-processes
+test-purpose:: Verify that the API supports OGC API Processes for data differencing operations.
+test-method::
+step:: Send a POST request to /processes/edr-zarr-difference-streaming/execution with required input parameters (collection_a, instance_a, collection_b, instance_b, parameter_name, zoom_level, epsg, units, datetime).
+step:: Verify the response contains job_id, zarr_endpoint, metadata_url, status, and description fields.
+step:: Verify the zarr_endpoint provides valid Zarr format data access.
+step:: Verify the metadata_url provides valid Zarr metadata (.zmetadata) access.
+step:: Verify the status field indicates processing state (e.g., "ready").
+====
+
 
 
 
@@ -2310,6 +2352,7 @@ Bibliography should be the last annex
 [appendix]
 == Revision History
 
+.Revision History
 [width="90%",options="header"]
 |===
 |Date |Release |Editor | Primary clauses modified |Description

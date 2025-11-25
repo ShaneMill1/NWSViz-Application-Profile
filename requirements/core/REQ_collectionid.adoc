@@ -7,6 +7,7 @@ identifier:: /req/nwsviz-application/collectionid
 statement::  A Collection id should identify the source and type of NWP model
 part:: The Collection Ids _SHALL_ contain the following attributes
 
+.Collection IDs
 |====================
 | **id** | **description** 
 | NBM_icechunk | National Blend of Models

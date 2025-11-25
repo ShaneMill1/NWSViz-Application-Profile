@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="2.8.7" schema-version="v2.1.3" flavor="ogc">
+<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="2.8.9" schema-version="v2.1.4" flavor="ogc">
 <bibdata type="standard">
 <title language="en" type="main">OGC API-Environmental Data Retrieval v1.2 part 3 - NWS Viz application profile</title>
-<uri type="xml">./nwsviz_application_profile_profile.xml</uri><uri type="html">./nwsviz_application_profile_profile.html</uri><uri type="pdf">./nwsviz_application_profile_profile.pdf</uri><uri type="doc">./nwsviz_application_profile_profile.doc</uri><docidentifier type="ogc-external">http://www.opengis.net/doc/spec/ogcapi-edr-3/1.0</docidentifier><date type="published"><on/></date><date type="issued"><on/></date><date type="received"><on/></date><contributor><role type="editor"/><person>
+<uri type="xml">./nwsviz_application_profile_profile.xml</uri><uri type="html">./nwsviz_application_profile_profile.html</uri><uri type="pdf">./nwsviz_application_profile_profile.pdf</uri><uri type="doc">./nwsviz_application_profile_profile.doc</uri><docidentifier type="ogc-external">http://www.opengis.net/doc/spec/ogcapi-edr-3/1.0</docidentifier><date type="published"/><date type="issued"/><date type="received"/><contributor><role type="editor"/><person>
 <name><completename>Shane Mill (NOAA)</completename></name>
 </person></contributor><contributor><role type="author"><description>committee</description></role><organization>
 <name>Open Geospatial Consortium</name>
@@ -14,7 +14,7 @@
 </abstract><status><stage>draft</stage></status><copyright><from>2025</from><owner><organization>
 <name>Open Geospatial Consortium</name>
 <abbreviation>OGC</abbreviation></organization></owner></copyright><keyword>ogcdoc</keyword><keyword>OGC document</keyword><keyword>API</keyword><keyword>openapi</keyword><keyword>html</keyword><keyword>profile</keyword><ext><doctype>best-practice</doctype><subdoctype>general</subdoctype><flavor>ogc</flavor></ext></bibdata><metanorma-extension><semantic-metadata><stage-published>false</stage-published></semantic-metadata>
-<presentation-metadata><name>color-admonition-caution</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-editor</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-important</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-note</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-safety-precaution</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-tip</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-todo</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-warning</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-background-definition-description</name><value>rgb(242, 251, 255)</value></presentation-metadata><presentation-metadata><name>color-background-definition-term</name><value>rgb(215, 243, 255)</value></presentation-metadata><presentation-metadata><name>color-background-page</name><value>rgb(33, 55, 92)</value></presentation-metadata><presentation-metadata><name>color-background-table-header</name><value>rgb(33, 55, 92)</value></presentation-metadata><presentation-metadata><name>color-background-table-row-even</name><value>rgb(252, 246, 222)</value></presentation-metadata><presentation-metadata><name>color-background-table-row-odd</name><value>rgb(254, 252, 245)</value></presentation-metadata><presentation-metadata><name>color-background-term-admitted-label</name><value>rgb(223, 236, 249)</value></presentation-metadata><presentation-metadata><name>color-background-term-deprecated-label</name><value>rgb(237, 237, 238)</value></presentation-metadata><presentation-metadata><name>color-background-term-preferred-label</name><value>rgb(249, 235, 187)</value></presentation-metadata><presentation-metadata><name>color-background-text-label-legacy</name><value>rgb(33, 60, 107)</value></presentation-metadata><presentation-metadata><name>color-secondary-shade-1</name><value>rgb(237, 193, 35)</value></presentation-metadata><presentation-metadata><name>color-secondary-shade-2</name><value>rgb(246, 223, 140)</value></presentation-metadata><presentation-metadata><name>color-text</name><value>rgb(88, 89, 91)</value></presentation-metadata><presentation-metadata><name>color-text-title</name><value>rgb(33, 55, 92)</value></presentation-metadata><table anchor="_misccontainer_anchor_aliases" id="_27215eeb-57bc-ce5a-186b-2660beb420dd"><tbody><tr><th>req_class_nwsviz-application</th><td>http://www.example.org/1.0/req/req-class-nwsviz-application</td><td>http___www.example.org_1.0_req_req-class-nwsviz-application</td></tr><tr><th>req_class_nwsviz-application_edr-conformant</th><td>/req/nwsviz-application/edr-conformant</td><td>_req_nwsviz-application_edr-conformant</td></tr><tr><th>req_nwsviz-application_data_root</th><td>/req/nwsviz-application_data/root</td><td>_req_nwsviz-application_data_root</td></tr><tr><th>req_nwsviz-application_collectionid</th><td>/req/nwsviz-application/collectionid</td><td>_req_nwsviz-application_collectionid</td></tr><tr><th>req_nwsviz-application_extent</th><td>/req/nwsviz-application/extent</td><td>_req_nwsviz-application_extent</td></tr><tr><th>req_nwsviz-application_NBM-parameter-names</th><td>/req/nwsviz-application/NBM-parameter-names</td><td>_req_nwsviz-application_NBM-parameter-names</td></tr><tr><th>req_nwsviz-application_MRMS-parameter-names</th><td>/req/nwsviz-application/MRMS-parameter-names</td><td>_req_nwsviz-application_MRMS-parameter-names</td></tr><tr><th>req_nwsviz-application_data-query</th><td>/req/nwsviz-application/data-query</td><td>_req_nwsviz-application_data-query</td></tr><tr><th>req_nwsviz-application_output-format</th><td>/req/nwsviz-application/output-format</td><td>_req_nwsviz-application_output-format</td></tr><tr><th>req_nwsviz-application_data-query-position</th><td>/req/nwsviz-application/data-query-position</td><td>_req_nwsviz-application_data-query-position</td></tr><tr><th>req_nwsviz-application_data-query-items</th><td>/req/nwsviz-application/data-query-items</td><td>_req_nwsviz-application_data-query-items</td></tr><tr><th>req_nwsviz-application_data-query-locations</th><td>/req/nwsviz-application/data-query-locations</td><td>_req_nwsviz-application_data-query-locations</td></tr><tr><th>req_nwsviz-application_data-query-location</th><td>/req/nwsviz-application/data-query-location</td><td>_req_nwsviz-application_data-query-location</td></tr><tr><th>req_nwsviz-application_data-query-instances</th><td>/req/nwsviz-application/data-query-instances</td><td>_req_nwsviz-application_data-query-instances</td></tr><tr><th>req_nwsviz-application_status-codes</th><td>/req/nwsviz-application/status-codes</td><td>_req_nwsviz-application_status-codes</td></tr><tr><th>/req/nwsviz-application/msg-bodies</th><td>/req/nwsviz-application/msg-bodies</td><td>_req_nwsviz-application_msg-bodies</td></tr><tr><th>req_nwsviz-application_links</th><td>/req/nwsviz-application/links</td><td>_req_nwsviz-application_links</td></tr><tr><th>ats_class-nwsviz-application</th><td>http://www.example.org/1.0/conf-class-nwsviz-application</td><td>http___www.example.org_1.0_conf-class-nwsviz-application</td></tr><tr><th>ats_nwsviz-application_edr-conformant</th><td>/conf/nwsviz-application/edr-conformant</td><td>_conf_nwsviz-application_edr-conformant</td></tr><tr><th>ats_nwsviz-application_root</th><td>/conf/nwsviz-application/root</td><td>_conf_nwsviz-application_root</td></tr><tr><th>ats_nwsviz-application_MRMS-parameter-names</th><td>/conf/nwsviz-application/MRMS-parameter-names</td><td>_conf_nwsviz-application_MRMS-parameter-names</td></tr><tr><th>ats_nwsviz-application_NBM-parameter-names</th><td>/conf/nwsviz-application/NBM-parameter-names</td><td>_conf_nwsviz-application_NBM-parameter-names</td></tr><tr><th>ats_nwsviz-application_collectionid</th><td>/conf/nwsviz-application/collectionid</td><td>_conf_nwsviz-application_collectionid</td></tr><tr><th>ats_nwsviz-application_extent</th><td>/conf/nwsviz-application/extent</td><td>_conf_nwsviz-application_extent</td></tr><tr><th>ats_nwsviz-application_output-format</th><td>/conf/nwsviz-application/output-format</td><td>_conf_nwsviz-application_output-format</td></tr><tr><th>ats_nwsviz-application_status-codes</th><td>/conf/nwsviz-application/status-codes</td><td>_conf_nwsviz-application_status-codes</td></tr><tr><th>/conf/nwsviz-application/msg-bodies</th><td>/conf/nwsviz-application/msg-bodies</td><td>_conf_nwsviz-application_msg-bodies</td></tr><tr><th>ats_nwsviz-application_links</th><td>/conf/nwsviz-application/links</td><td>_conf_nwsviz-application_links</td></tr><tr><th>ats_nwsviz-application_data-query</th><td>/conf/nwsviz-application/data-query</td><td>_conf_nwsviz-application_data-query</td></tr><tr><th>ats_nwsviz-application_data-query-instances</th><td>/conf/nwsviz-application/data-query-instances</td><td>_conf_nwsviz-application_data-query-instances</td></tr><tr><th>ats_nwsviz-application_data-query-position</th><td>/conf/nwsviz-application/data-query-position</td><td>_conf_nwsviz-application_data-query-position</td></tr><tr><th>ats_nwsviz-application_data-query-location</th><td>/conf/nwsviz-application/data-query-location</td><td>_conf_nwsviz-application_data-query-location</td></tr><tr><th>ats_nwsviz-application_data-query-locations</th><td>/conf/nwsviz-application/data-query-locations</td><td>_conf_nwsviz-application_data-query-locations</td></tr><tr><th>ats_nwsviz-application_data-query-items</th><td>/conf/nwsviz-application/data-query-items</td><td>_conf_nwsviz-application_data-query-items</td></tr></tbody></table><presentation-metadata><name>TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>HTML TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>DOC TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>PDF TOC Heading Levels</name><value>2</value></presentation-metadata></metanorma-extension>
+<presentation-metadata><name>color-admonition-caution</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-editor</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-important</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-note</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-safety-precaution</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-tip</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-todo</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-admonition-warning</name><value>rgb(79, 129, 189)</value></presentation-metadata><presentation-metadata><name>color-background-definition-description</name><value>rgb(242, 251, 255)</value></presentation-metadata><presentation-metadata><name>color-background-definition-term</name><value>rgb(215, 243, 255)</value></presentation-metadata><presentation-metadata><name>color-background-page</name><value>rgb(33, 55, 92)</value></presentation-metadata><presentation-metadata><name>color-background-table-header</name><value>rgb(33, 55, 92)</value></presentation-metadata><presentation-metadata><name>color-background-table-row-even</name><value>rgb(252, 246, 222)</value></presentation-metadata><presentation-metadata><name>color-background-table-row-odd</name><value>rgb(254, 252, 245)</value></presentation-metadata><presentation-metadata><name>color-background-term-admitted-label</name><value>rgb(223, 236, 249)</value></presentation-metadata><presentation-metadata><name>color-background-term-deprecated-label</name><value>rgb(237, 237, 238)</value></presentation-metadata><presentation-metadata><name>color-background-term-preferred-label</name><value>rgb(249, 235, 187)</value></presentation-metadata><presentation-metadata><name>color-background-text-label-legacy</name><value>rgb(33, 60, 107)</value></presentation-metadata><presentation-metadata><name>color-secondary-shade-1</name><value>rgb(237, 193, 35)</value></presentation-metadata><presentation-metadata><name>color-secondary-shade-2</name><value>rgb(246, 223, 140)</value></presentation-metadata><presentation-metadata><name>color-text</name><value>rgb(88, 89, 91)</value></presentation-metadata><presentation-metadata><name>color-text-title</name><value>rgb(33, 55, 92)</value></presentation-metadata><table anchor="_misccontainer_anchor_aliases" id="_5af6fa5d-51cb-d33c-2117-2d9f0e0166fc"><tbody><tr><th>req_class_nwsviz-application</th><td>http://www.opengis.net/spec/ogcapi-edr-3/1.0/req/nwsviz-application</td><td>http___www.opengis.net_spec_ogcapi-edr-3_1.0_req_nwsviz-application</td></tr><tr><th>req_class_nwsviz-application_edr-conformant</th><td>/req/nwsviz-application/edr-conformant</td><td>_req_nwsviz-application_edr-conformant</td></tr><tr><th>req_nwsviz-application_data_root</th><td>/req/nwsviz-application/root</td><td>_req_nwsviz-application_root</td></tr><tr><th>req_nwsviz-application_collectionid</th><td>/req/nwsviz-application/collectionid</td><td>_req_nwsviz-application_collectionid</td></tr><tr><th>req_nwsviz-application_extent</th><td>/req/nwsviz-application/extent</td><td>_req_nwsviz-application_extent</td></tr><tr><th>req_nwsviz-application_NBM-parameter-names</th><td>/req/nwsviz-application/NBM-parameter-names</td><td>_req_nwsviz-application_NBM-parameter-names</td></tr><tr><th>req_nwsviz-application_MRMS-parameter-names</th><td>/req/nwsviz-application/MRMS-parameter-names</td><td>_req_nwsviz-application_MRMS-parameter-names</td></tr><tr><th>req_nwsviz-application_data-query</th><td>/req/nwsviz-application/data-query</td><td>_req_nwsviz-application_data-query</td></tr><tr><th>req_nwsviz-application_output-format</th><td>/req/nwsviz-application/output-format</td><td>_req_nwsviz-application_output-format</td></tr><tr><th>req_nwsviz-application_data-query-position</th><td>/req/nwsviz-application/data-query-position</td><td>_req_nwsviz-application_data-query-position</td></tr><tr><th>req_nwsviz-application_data-query-items</th><td>/req/nwsviz-application/data-query-items</td><td>_req_nwsviz-application_data-query-items</td></tr><tr><th>req_nwsviz-application_data-query-locations</th><td>/req/nwsviz-application/data-query-locations</td><td>_req_nwsviz-application_data-query-locations</td></tr><tr><th>req_nwsviz-application_data-query-location</th><td>/req/nwsviz-application/data-query-location</td><td>_req_nwsviz-application_data-query-location</td></tr><tr><th>req_nwsviz-application_data-query-instances</th><td>/req/nwsviz-application/data-query-instances</td><td>_req_nwsviz-application_data-query-instances</td></tr><tr><th>req_nwsviz-application_differencing-processes</th><td>/req/nwsviz-application/differencing-processes</td><td>_req_nwsviz-application_differencing-processes</td></tr><tr><th>req_nwsviz-application_status-codes</th><td>/req/nwsviz-application/status-codes</td><td>_req_nwsviz-application_status-codes</td></tr><tr><th>/req/nwsviz-application/msg-bodies</th><td>/req/nwsviz-application/msg-bodies</td><td>_req_nwsviz-application_msg-bodies</td></tr><tr><th>req_nwsviz-application_links</th><td>/req/nwsviz-application/links</td><td>_req_nwsviz-application_links</td></tr><tr><th>ats_class-nwsviz-application</th><td>http://www.opengis.net/spec/ogcapi-edr-3/1.0/conf/nwsviz-application</td><td>http___www.opengis.net_spec_ogcapi-edr-3_1.0_conf_nwsviz-application</td></tr><tr><th>ats_nwsviz-application_edr-conformant</th><td>/conf/nwsviz-application/edr-conformant</td><td>_conf_nwsviz-application_edr-conformant</td></tr><tr><th>ats_nwsviz-application_root</th><td>/conf/nwsviz-application/root</td><td>_conf_nwsviz-application_root</td></tr><tr><th>ats_nwsviz-application_MRMS-parameter-names</th><td>/conf/nwsviz-application/MRMS-parameter-names</td><td>_conf_nwsviz-application_MRMS-parameter-names</td></tr><tr><th>ats_nwsviz-application_NBM-parameter-names</th><td>/conf/nwsviz-application/NBM-parameter-names</td><td>_conf_nwsviz-application_NBM-parameter-names</td></tr><tr><th>ats_nwsviz-application_collectionid</th><td>/conf/nwsviz-application/collectionid</td><td>_conf_nwsviz-application_collectionid</td></tr><tr><th>ats_nwsviz-application_extent</th><td>/conf/nwsviz-application/extent</td><td>_conf_nwsviz-application_extent</td></tr><tr><th>ats_nwsviz-application_output-format</th><td>/conf/nwsviz-application/output-format</td><td>_conf_nwsviz-application_output-format</td></tr><tr><th>ats_nwsviz-application_status-codes</th><td>/conf/nwsviz-application/status-codes</td><td>_conf_nwsviz-application_status-codes</td></tr><tr><th>/conf/nwsviz-application/msg-bodies</th><td>/conf/nwsviz-application/msg-bodies</td><td>_conf_nwsviz-application_msg-bodies</td></tr><tr><th>ats_nwsviz-application_links</th><td>/conf/nwsviz-application/links</td><td>_conf_nwsviz-application_links</td></tr><tr><th>ats_nwsviz-application_data-query</th><td>/conf/nwsviz-application/data-query</td><td>_conf_nwsviz-application_data-query</td></tr><tr><th>ats_nwsviz-application_data-query-instances</th><td>/conf/nwsviz-application/data-query-instances</td><td>_conf_nwsviz-application_data-query-instances</td></tr><tr><th>ats_nwsviz-application_data-query-position</th><td>/conf/nwsviz-application/data-query-position</td><td>_conf_nwsviz-application_data-query-position</td></tr><tr><th>ats_nwsviz-application_data-query-location</th><td>/conf/nwsviz-application/data-query-location</td><td>_conf_nwsviz-application_data-query-location</td></tr><tr><th>ats_nwsviz-application_data-query-locations</th><td>/conf/nwsviz-application/data-query-locations</td><td>_conf_nwsviz-application_data-query-locations</td></tr><tr><th>ats_nwsviz-application_data-query-items</th><td>/conf/nwsviz-application/data-query-items</td><td>_conf_nwsviz-application_data-query-items</td></tr><tr><th>ats_nwsviz-application_differencing-processes</th><td>/conf/nwsviz-application/differencing-processes</td><td>_conf_nwsviz-application_differencing-processes</td></tr></tbody></table><presentation-metadata><name>TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>HTML TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>DOC TOC Heading Levels</name><value>2</value></presentation-metadata><presentation-metadata><name>PDF TOC Heading Levels</name><value>2</value></presentation-metadata></metanorma-extension>
 <boilerplate><copyright-statement>
 
 <clause id="_fd0161fc-f62b-a79d-3423-d7bbbd97e7a6" obligation="normative">
@@ -60,11 +60,13 @@
 </foreword><clause id="_237e0ee4-f3bd-3564-2b74-65463d9baccd" type="security" obligation="informative">
 <title id="_7974edf1-0459-03d8-f74c-5b72ab98795c">Security considerations</title>
 <p id="_272d71d5-4728-02e7-ec62-592f8a81cb5d">No security considerations have been made for this Service Profile.</p>
-</clause><clause id="_5d8e7c73-c1ec-5bfe-8f4f-c3e49549f3a4" type="submitters" obligation="informative">
+</clause><clause id="_df6307a8-24da-61de-f728-016d197dfd87" type="submitters" obligation="informative">
 <title id="_454e8fd9-fbfc-9c82-30fc-9121a2f52315">Submitters</title>
 <p id="_6e1b734b-e32c-864b-59a1-81792b76695c">All questions regarding this submission should be directed to the editor or the submitters:</p>
 
-<table id="_e4223fec-24f8-708a-0dba-13d6d7bab27b" unnumbered="true"><tbody><tr id="_4423d20d-27d8-62a7-dbc6-c15a37b5c1df"><td id="_7fc639f7-3577-c950-f086-b3bfc6a3470c" valign="middle" align="left"><strong>Shane Mill</strong></td>
+<table id="_7d695806-17d1-6107-4054-5e3377e090bb" unnumbered="true">
+<name id="_5cb9fefd-dd45-fa17-92fa-4f20618d519d">Submitters</name>
+<tbody><tr id="_4423d20d-27d8-62a7-dbc6-c15a37b5c1df"><td id="_7fc639f7-3577-c950-f086-b3bfc6a3470c" valign="middle" align="left"><strong>Shane Mill</strong></td>
 <td id="_cf9016d1-97e7-4b17-6e04-c1a7a9eef2b0" valign="middle" align="left"><strong>NOAA</strong></td>
 </tr></tbody>
 </table>
@@ -262,10 +264,10 @@
 </clause>
 </clause>
 
-<clause id="_cdb854fe-8b7f-7c7b-a7ac-a2c3d9696f1c" anchor="core-section" obligation="normative">
+<clause id="_affe5886-bff3-acbb-86f1-46e27fb910f0" anchor="core-section" obligation="normative">
 <title id="_913c130f-4d3b-3583-8581-b05232c1cf6c">Requirements Class Core</title>
-<requirement id="_7a7b0634-2d25-95ce-e19e-7360c7730a1f" anchor="req_class_nwsviz-application" model="ogc" type="class">
-<title>Requirements Class ‘NWSViz Application’</title><identifier>http://www.example.org/1.0/req/req-class-nwsviz-application</identifier><classification><tag>target-type</tag><value>NWSViz Application Profile Standard</value></classification><requirement id="_8abcd1e4-3458-7897-7c4f-a15b96b7247a" model="ogc" type="general"> <identifier>/req/nwsviz-application_data/root</identifier></requirement><requirement id="_6cda3f1a-0b28-9cde-8a1f-32a4d8ee3c92" model="ogc" type="general"> <identifier>/req/nwsviz-application/edr-conformant</identifier></requirement><requirement id="_ce725faa-2855-3007-a161-bce5da6a2baa" model="ogc" type="general"> <identifier>/req/nwsviz-application/parameter-names</identifier></requirement><requirement id="_0eed0958-4132-0061-599f-e2f4ec491f94" model="ogc" type="general"> <identifier>/req/nwsviz-application/NBM-parameter-names</identifier></requirement><requirement id="_4a7c8ac1-ba98-6f26-6e94-d9b7c62f1b0c" model="ogc" type="general"> <identifier>/req/nwsviz-application/MRMS-parameter-names</identifier></requirement><requirement id="_539fb696-422f-1d48-cdc5-3bbeed9f59eb" model="ogc" type="general"> <identifier>/req/nwsviz-application/collectionid</identifier></requirement><requirement id="_b4c83d6b-80c4-9085-a777-47b78d4ec694" model="ogc" type="general"> <identifier>/req/nwsviz-application/extent</identifier></requirement><requirement id="_a9417ecd-c4ab-3e8a-97ef-4495bd29a60b" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query</identifier></requirement><requirement id="_de26d7b8-12d9-295c-d806-e7995c016257" model="ogc" type="general"> <identifier>/req/nwsviz-application/output-format</identifier></requirement><requirement id="_d7a816d2-d78e-7a89-0b2e-70439c131c2b" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-position</identifier></requirement><requirement id="_102f0bb9-f169-189e-a15c-1b039a88fb57" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-instances</identifier></requirement><requirement id="_184b2ddd-f9da-3cf9-6db2-fdd2e376c3d9" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-location</identifier></requirement><requirement id="_15b6a3f3-ce7d-00a7-700d-42376dd7b8c0" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-locations</identifier></requirement><requirement id="_a00bc640-5b4f-b245-a5a9-a5560b7e3589" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-items</identifier></requirement><requirement id="_e0f9cb2b-0058-a2bf-a9c8-d6cf68dece26" model="ogc" type="general"> <identifier>/req/nwsviz-application/status-codes</identifier></requirement><requirement id="_2dae56d2-4559-2352-05e2-bfe4919a858b" model="ogc" type="general"> <identifier>/req/nwsviz-application/msg-bodies</identifier></requirement><requirement id="_33eb8774-e43b-d716-25b3-87794f6e3f22" model="ogc" type="general"> <identifier>/req/nwsviz-application/links</identifier></requirement>
+<requirement id="_0603478e-1f28-aeb7-6697-5d791207fe5e" anchor="req_class_nwsviz-application" model="ogc" type="class">
+<title>Requirements Class ‘NWSViz Application’</title><identifier>http://www.opengis.net/spec/ogcapi-edr-3/1.0/req/nwsviz-application</identifier><classification><tag>target-type</tag><value>NWSViz Application Profile Standard</value></classification><requirement id="_d598b23a-9ea5-84f6-46fc-2a019a82d896" model="ogc" type="general"> <identifier>/req/nwsviz-application/root</identifier></requirement><requirement id="_6cda3f1a-0b28-9cde-8a1f-32a4d8ee3c92" model="ogc" type="general"> <identifier>/req/nwsviz-application/edr-conformant</identifier></requirement><requirement id="_ce725faa-2855-3007-a161-bce5da6a2baa" model="ogc" type="general"> <identifier>/req/nwsviz-application/parameter-names</identifier></requirement><requirement id="_0eed0958-4132-0061-599f-e2f4ec491f94" model="ogc" type="general"> <identifier>/req/nwsviz-application/NBM-parameter-names</identifier></requirement><requirement id="_4a7c8ac1-ba98-6f26-6e94-d9b7c62f1b0c" model="ogc" type="general"> <identifier>/req/nwsviz-application/MRMS-parameter-names</identifier></requirement><requirement id="_539fb696-422f-1d48-cdc5-3bbeed9f59eb" model="ogc" type="general"> <identifier>/req/nwsviz-application/collectionid</identifier></requirement><requirement id="_b4c83d6b-80c4-9085-a777-47b78d4ec694" model="ogc" type="general"> <identifier>/req/nwsviz-application/extent</identifier></requirement><requirement id="_a9417ecd-c4ab-3e8a-97ef-4495bd29a60b" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query</identifier></requirement><requirement id="_de26d7b8-12d9-295c-d806-e7995c016257" model="ogc" type="general"> <identifier>/req/nwsviz-application/output-format</identifier></requirement><requirement id="_d7a816d2-d78e-7a89-0b2e-70439c131c2b" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-position</identifier></requirement><requirement id="_102f0bb9-f169-189e-a15c-1b039a88fb57" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-instances</identifier></requirement><requirement id="_184b2ddd-f9da-3cf9-6db2-fdd2e376c3d9" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-location</identifier></requirement><requirement id="_15b6a3f3-ce7d-00a7-700d-42376dd7b8c0" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-locations</identifier></requirement><requirement id="_a00bc640-5b4f-b245-a5a9-a5560b7e3589" model="ogc" type="general"> <identifier>/req/nwsviz-application/data-query-items</identifier></requirement><requirement id="_e0f9cb2b-0058-a2bf-a9c8-d6cf68dece26" model="ogc" type="general"> <identifier>/req/nwsviz-application/status-codes</identifier></requirement><requirement id="_2dae56d2-4559-2352-05e2-bfe4919a858b" model="ogc" type="general"> <identifier>/req/nwsviz-application/msg-bodies</identifier></requirement><requirement id="_33eb8774-e43b-d716-25b3-87794f6e3f22" model="ogc" type="general"> <identifier>/req/nwsviz-application/links</identifier></requirement><requirement id="_9a750245-dae2-7d1e-edad-c210375a91cf" model="ogc" type="general"> <identifier>/req/nwsviz-application/differencing-processes</identifier></requirement>
 
 </requirement>
 
@@ -278,7 +280,7 @@
 </requirement>
 </clause>
 
-<clause id="_571f5064-e268-be63-a464-049df3e90a93" obligation="normative">
+<clause id="_3f2f4d20-a7b6-f687-3b64-5a4e52bf8fd2" obligation="normative">
 <title id="_f51496fb-8cb4-934e-825c-fa0b5ba8fdce">Platform Resources</title>
 <p id="_e0983fd0-0ac8-3998-e7c8-48ac634c37bf">OGC API — Common defines a set of common capabilities which are applicable to any OGC Web API. Those capabilities provide the platform upon which resource-specific APIs can be built. This section describes those capabilities and any modifications needed to better support spatio-temporal data resources.</p>
 
@@ -303,7 +305,7 @@
 
 <p id="_48ee1ffa-6087-e312-18a1-9c764b6fa44f">Where: {root} = Base URI for the API server</p>
 
-<clause id="_b1acbaec-e477-fe1f-2ca0-0a8014a285a8" obligation="normative">
+<clause id="_6b63806f-df1c-ad10-42dd-3ea3e1e16eec" obligation="normative">
 <title id="_ff9f09bd-d354-64cb-c8a7-c13c87c57623">API Landing Page</title>
 <p id="_696b329a-c5b8-7781-3391-06dc9b2d29a1">Path = {root}/</p>
 
@@ -323,7 +325,7 @@
 
 <p id="_70d03295-5f62-5a87-1a11-0db7c7412c0f">Profiles of the <eref type="inline" bibitemid="ogc-edr" citeas="OGC 19-086r4"><display-text>OGC API-Environmental Data Retrieval Standard</display-text></eref> are expected to provide a richer description of the API. The additional content that Profiles should mandate is defined in the following requirements.</p>
 
-<requirement id="_eef53ea5-9ba0-9b68-b3e1-14fb958f881d" anchor="req_nwsviz-application_data_root" model="ogc"> <identifier>/req/nwsviz-application_data/root</identifier><description id="_6af565b2-2821-3533-2626-ed89f531d227"><p id="_96a0874b-1506-852b-955b-b819391c5f3b">The landing page <em>SHALL</em> have the following infomation</p>
+<requirement id="_b3787904-521a-590a-186c-31dfaf9615c8" anchor="req_nwsviz-application_data_root" model="ogc"> <identifier>/req/nwsviz-application/root</identifier><description id="_6af565b2-2821-3533-2626-ed89f531d227"><p id="_96a0874b-1506-852b-955b-b819391c5f3b">The landing page <em>SHALL</em> have the following infomation</p>
 </description><component id="_e0992939-5eec-5ef6-2ff2-4e42778022a3" class="part"><p id="_e49f0de7-f93e-6113-462c-92aa0687511d">The <strong>Title</strong> property value <em>SHALL</em> be “OGC API — Environmental Data Retrieval for Dynamic Ensemble Scenarios for IDSS”</p>
 </component><component id="_7702fe1a-0032-7244-ea22-63c7716a961b" class="part"><p id="_c168ff87-0194-e3b5-f39f-023cc49ee42f">The <strong>Description</strong> property value <em>SHALL</em> be “Implementation of Pygeoapi for OGC API — EDR to support DESI”</p>
 </component><component id="_7851aa0e-ea8a-eef8-4788-abe96cf0de4c" class="part"><p id="_2722b993-f7fa-8807-f138-8760cc45c25f">The <strong>Links</strong> property <em>SHALL</em> define the links that SHALL be included in the Root response and <em>SHALL</em> be populated with href and rel properties.</p>
@@ -388,7 +390,7 @@
 </clause>
 </clause>
 
-<clause id="_b0a86038-a77b-b914-3f90-03e1c559f28c" obligation="normative">
+<clause id="_c7bfcc10-0bd3-37d3-6431-75f70c951fe7" obligation="normative">
 <title id="_ebb3dcbb-cd8d-a9bf-2370-7e723c2dee13">Spatio-temporal and Information Resources</title>
 <table id="_e6916c61-5575-4800-a2db-bacb785d34a8" width="100%">
 <name id="_496ec83c-3283-f626-7344-fa97099343ba">Spatial-temporal and Information Resource Paths</name>
@@ -431,7 +433,7 @@
 <p id="_879eb55a-8474-76d9-961b-491ef1b47bea">The Collections resource is initially defined in the <tt>Collections</tt> conformance class of the <eref type="inline" bibitemid="OGC20-024" citeas="OGC 20-024"><display-text>OGC API — Common — Part 2</display-text></eref> Standard. The <eref type="inline" bibitemid="ogc-edr" citeas="OGC 19-086r4"><display-text>OGC API-Environmental Data Retrieval Standard</display-text></eref> Standard does not make any changes to this definition.</p>
 </clause>
 
-<clause id="_96e1c075-dd1e-c53d-3c12-ee7394967d86" obligation="normative">
+<clause id="_1c08283f-7703-6ef2-469e-2c88c285e94a" obligation="normative">
 <title id="_04dbb074-2e65-4af9-a0f7-4e5120ac7981">Collection Description</title>
 <p id="_c373ad6f-1ebf-178d-dbe4-e6cd314eace0">Each resource Collection is described by a set of metadata. That metadata can be accessed directly using the /collections/{collectionId} path and as an entry in the Collections property of the /collections response.</p>
 
@@ -451,13 +453,15 @@
 </li>
 </ul>
 
-<clause id="_66465b27-0aa9-1c99-be45-e5caf38cc616" obligation="normative">
+<clause id="_c9af86d9-5962-72f1-3ad3-c0dc8a4c54fa" obligation="normative">
 <title id="_f6cd106a-23a9-b9aa-7beb-318ccb815dff">Collection ID restictions</title>
-<requirement id="_91c8f494-b6e8-134b-7d22-00b2b0aadcac" anchor="req_nwsviz-application_collectionid" model="ogc"> <identifier>/req/nwsviz-application/collectionid</identifier><description id="_afb59575-b26f-bcc6-26fc-710d4abb7cf5"><p id="_063d9ebc-0319-7db5-be87-a23db34244a4">A Collection id should identify the source and type of NWP model</p>
+<requirement id="_accc709d-0a8d-6dcc-b2ba-2260d2015753" anchor="req_nwsviz-application_collectionid" model="ogc"> <identifier>/req/nwsviz-application/collectionid</identifier><description id="_afb59575-b26f-bcc6-26fc-710d4abb7cf5"><p id="_063d9ebc-0319-7db5-be87-a23db34244a4">A Collection id should identify the source and type of NWP model</p>
 </description><component id="_1b4db0b3-8b4d-afbe-e5ae-4d9ea4174db3" class="part"><p id="_aff73a00-d784-f9dd-3d63-77be4e325dbe">The Collection Ids <em>SHALL</em> contain the following attributes</p>
 </component>
 
-<description><table id="_4766f422-eaf1-2f79-86a2-d9d671429518"><tbody><tr id="_d1c37042-64d1-1207-dc60-c21f62234107"><td id="_892c0a0a-31c4-8dc6-dcb3-89db2a432696" valign="middle" align="left"><strong>id</strong></td>
+<description><table id="_2e4b8892-964b-eac4-9ffe-0119411ff76c">
+<name id="_5742095f-a779-629d-f234-eb5d54ea58ca">Collection IDs</name>
+<tbody><tr id="_d1c37042-64d1-1207-dc60-c21f62234107"><td id="_892c0a0a-31c4-8dc6-dcb3-89db2a432696" valign="middle" align="left"><strong>id</strong></td>
 <td id="_18ad602d-74d7-fc76-981f-49a3d6fc1949" valign="middle" align="left"><strong>description</strong></td>
 </tr><tr id="_c4004fcd-e420-eef8-e945-a738b3eb79ba"><td id="_4e2dcd50-6ca9-6e16-d019-dcb13fc71945" valign="middle" align="left">NBM_icechunk</td>
 <td id="_db9ea8e1-84c3-dad6-7f52-87642ba947d9" valign="middle" align="left">National Blend of Models</td>
@@ -825,7 +829,7 @@
 </clause>
 </clause>
 
-<clause id="_9cff6eac-e2a3-0ddd-ad2f-fa2bd9f66e96" obligation="normative">
+<clause id="_2c99937c-2f19-e607-0578-376307a91a07" obligation="normative">
 <title id="_e75553c7-22a5-2375-8f20-78128e10fc85">Query Resources</title>
 <table id="_125bc828-d4ce-c001-062b-af353ad24f87" width="100%">
 <name id="_4b2bd7f0-1150-c42c-c7e0-b7e89535e585">Query Resource Paths</name>
@@ -923,7 +927,7 @@
 </requirement>
 </clause>
 
-<clause id="_687abe1c-7d10-14ae-7a85-8cb0944cd08d" obligation="normative">
+<clause id="_e79ad835-4faf-aadf-f925-a57eeb2335ed" obligation="normative">
 <title id="_df19cae4-2ffa-5f02-21cf-183bbb30c3b9">Items Query</title>
 <p id="_d4571298-fa62-41e2-356f-3ea90b3758a7">The Items query allows a user to query a resource based on a unique identifier.</p>
 
@@ -931,13 +935,13 @@
 
 <p id="_f1904012-d1d5-da08-aa46-62e67b32ffbf">Dependencies: <eref type="inline" bibitemid="ogc-edr" citeas="OGC 19-086r4"><display-text>OGC API-Environmental Data Retrieval Standard</display-text></eref></p>
 
-<requirement id="_2fcb8175-767d-b586-71be-e06775957abe" anchor="req_nwsviz-application_data-query-items" model="ogc"> <identifier>/req/nwsviz-application/data-query-items</identifier><description id="_e6031e41-58fe-3aed-7184-48e9bdfec50e"><p id="_5c4e39ab-c5a8-57e5-da4d-47789f42d135">All Collections in the Service <em>SHALL</em> provide support for <strong>Items</strong> queries</p>
+<requirement id="_8c14b880-eee3-87fa-96d9-91255cb2736c" anchor="req_nwsviz-application_data-query-items" model="ogc"> <identifier>/req/nwsviz-application/data-query-items</identifier><description id="_e6031e41-58fe-3aed-7184-48e9bdfec50e"><p id="_5c4e39ab-c5a8-57e5-da4d-47789f42d135">All Collections in the Service <em>SHALL</em> provide support for <strong>Items</strong> queries</p>
 </description><component id="_97756c61-18f3-f7cc-e8c9-590ce5731bea" class="part"><p id="_46cd7828-6916-21e3-e76a-4d502584312f">The <strong>Items</strong> query <em>SHALL</em> return a connection to a Virtual Zarr Store that can be accessed via Xarray. For example:</p>
 </component>
 
-<description><sourcecode id="_e93a800a-1b77-26bf-3396-9c443a74fdaf"><body>import xarray as xr
+<description><sourcecode id="_b1a15ac6-133e-e9e5-1f63-042845c47af2" lang="python"><body>import xarray as xr
 
-ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS_icechunk/instances/2025-10-01T18:00:00/items/zarr/EchoTop_30/0++[]')
+ds=xr.open_zarr('https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS_icechunk/instances/2025-10-01T18:00:00/items/zarr/EchoTop_30/0')
 # Where EchoTop_30 is the element name and 0 is the zoom level</body></sourcecode><dl id="_d64c3c6e-b83c-343f-dcef-7e44cc5991cc"><dt>part</dt>
 <dd id="_76aa3dbc-3e87-6b4a-d5d8-ea9f15c997df"><p id="_6f84d2a0-8591-ebac-82f9-9a12a9f3c6a1">The <strong>Items</strong> query <em>SHALL</em> support the following HTTP methods:</p>
 <ul id="_c2188e21-50e7-82e8-5a90-3543b4d8eba0"><li><p id="_76cb883b-7bf9-dd23-5253-0265d2622b6b">GET</p>
@@ -1224,6 +1228,23 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 </component>
 </requirement>
 </clause>
+
+<clause id="_ff2c3484-78f6-d440-8f94-e4c6f442a1d3" obligation="normative">
+<title id="_6b360c10-d095-d396-d076-adf7f1eaf834">Differencing Processes</title>
+<p id="_c1244f4b-f979-c4d7-be39-bef08b2ce4fd">The API supports OGC API Processes for performing differencing operations between collections and instances.</p>
+
+<p id="_7e26036b-79f3-e827-0341-4d2a18c74932">Path = /processes/edr-zarr-difference-streaming/execution</p>
+
+<p id="_21306f12-a457-3239-b0fa-53e2c1652d86">Dependencies: <eref type="inline" bibitemid="ogc-processes" citeas="OGC 18-062r2"><display-text>OGC API — Processes</display-text></eref></p>
+
+<requirement id="_7a50ab28-1515-f906-7054-a4d40a549cc8" anchor="req_nwsviz-application_differencing-processes" model="ogc"> <identifier>/req/nwsviz-application/differencing-processes</identifier><description id="_c9b23f6b-c099-3434-c350-ee70b835da2c"><p id="_3911c2a1-036d-4d57-9525-a3c69f854ddb">The API <em>SHALL</em> support OGC API Processes for data differencing operations.</p>
+</description><component id="_9081944d-ce07-d948-40fe-9df2bb975190" class="part"><p id="_01fe0aea-8f4f-7f6a-98d5-b153e14bbf54">The API <em>SHALL</em> provide a process endpoint that accepts differencing requests with collection_a, instance_a, collection_b, instance_b, parameter_name, zoom_level, epsg, units, and datetime parameters.</p>
+</component><component id="_e642e341-94da-ed51-2923-7700e248f066" class="part"><p id="_611f3ffb-26e7-bc5a-5f25-cf09574eadc4">The API <em>SHALL</em> return a response containing job_id, zarr_endpoint, metadata_url, status, and description fields for differencing operations.</p>
+</component><component id="_718ef9e0-8c22-8091-9236-9ac5598f331e" class="part"><p id="_9f46bb08-c037-09bb-ad01-50591d9c26b5">The zarr_endpoint <em>SHALL</em> provide access to the computed difference data in Zarr format.</p>
+</component><component id="_d7444ebc-367c-a7e1-6515-532ac50a1de0" class="part"><p id="_614da388-2a3b-cc69-a90f-c70c3d1aea52">The metadata_url <em>SHALL</em> provide access to Zarr metadata for the difference result.</p>
+</component>
+</requirement>
+</clause>
 </clause>
 
 <clause id="_279a8062-f1ca-b04d-c6d8-18edb0b9cdef" obligation="normative">
@@ -1343,12 +1364,12 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 
 
 
-</sections><annex id="_a7446c2f-18eb-a869-7d43-9f26a51bb2a0" anchor="annex-A" obligation="informative">
+</sections><annex id="_1e628ccf-b794-a298-ea01-33a902e40b66" anchor="annex-A" obligation="informative">
 <title id="_0ae400d0-fc5b-94a1-586c-a20b12ca10c6">Conformance Class Abstract Test Suite (Normative)</title>
-<clause id="_a539339a-b769-8734-60dc-498a64d4f4bd" obligation="informative">
+<clause id="_5222a953-005a-2f85-6bd3-3f2a738b0780" obligation="informative">
 <title id="_6fd6e9aa-9dfc-193e-16b7-8d2e3ec60610">Conformance Class Core</title>
-<requirement id="_2dd4cf8c-3981-d114-5feb-dae318b9593d" anchor="ats_class-nwsviz-application" model="ogc" type="conformanceclass">
-<title>Conformance Class ‘Core’</title><identifier>http://www.example.org/1.0/conf-class-nwsviz-application</identifier><classification><tag>target</tag><value>http://www.example.org/1.0/req/req-class-nwsviz-application</value></classification><requirement id="_a4d87686-e922-0362-d9a0-c3b83497f747" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/root</identifier></requirement><requirement id="_2dbb7ee1-59de-3f7f-baf7-f11e88c66964" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/edr-conformant</identifier></requirement><requirement id="_39f923a3-9d03-20ea-0f64-99f5192dc2c7" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/MRMS-parameter-names</identifier></requirement><requirement id="_e6b13d3d-f278-e542-8f62-94e0e50accb9" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/NBM-parameter-names</identifier></requirement><requirement id="_80e21a15-9a26-4cf5-85fe-0a74e0c3f4b7" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/collectionid</identifier></requirement><requirement id="_b372c8bc-080b-eecb-6876-954f6bba2dd6" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/extent</identifier></requirement><requirement id="_97c01640-7655-59e5-b564-712ca3f51622" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/output-format</identifier></requirement><requirement id="_eacf7863-9b5c-0db9-4efd-f9a4a5b8d054" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/status-codes</identifier></requirement><requirement id="_6a92128a-4c30-46a5-a01d-3cc0963efe0f" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/msg-bodies</identifier></requirement><requirement id="_bb823bd1-9fdd-cf06-738e-d5ab26c6c3f6" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/links</identifier></requirement><requirement id="_b5c57df0-2c95-0560-4263-518506df1ab9" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query</identifier></requirement><requirement id="_a8d97b62-77f7-96d9-59e1-9ce88f652fb7" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-instances</identifier></requirement><requirement id="_f7dad1f4-ebfc-1262-87e3-027b2cea6f94" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-position</identifier></requirement><requirement id="_769f9c7d-e030-eec1-e343-3359d96d1ce7" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-items</identifier></requirement><requirement id="_e9d977d8-eefd-fc89-b5d4-fdc652f4352f" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-location</identifier></requirement><requirement id="_982e2b42-f45c-8de9-c08f-660ae64e8af8" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-locations</identifier></requirement>
+<requirement id="_d0c4ae20-e63c-43a2-16f9-3a6260d8f228" anchor="ats_class-nwsviz-application" model="ogc" type="conformanceclass">
+<title>Conformance Class ‘Core’</title><identifier>http://www.opengis.net/spec/ogcapi-edr-3/1.0/conf/nwsviz-application</identifier><classification><tag>target</tag><value>http://www.opengis.net/spec/ogcapi-edr-3/1.0/req/nwsviz-application</value></classification><requirement id="_a4d87686-e922-0362-d9a0-c3b83497f747" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/root</identifier></requirement><requirement id="_2dbb7ee1-59de-3f7f-baf7-f11e88c66964" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/edr-conformant</identifier></requirement><requirement id="_39f923a3-9d03-20ea-0f64-99f5192dc2c7" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/MRMS-parameter-names</identifier></requirement><requirement id="_e6b13d3d-f278-e542-8f62-94e0e50accb9" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/NBM-parameter-names</identifier></requirement><requirement id="_80e21a15-9a26-4cf5-85fe-0a74e0c3f4b7" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/collectionid</identifier></requirement><requirement id="_b372c8bc-080b-eecb-6876-954f6bba2dd6" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/extent</identifier></requirement><requirement id="_97c01640-7655-59e5-b564-712ca3f51622" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/output-format</identifier></requirement><requirement id="_eacf7863-9b5c-0db9-4efd-f9a4a5b8d054" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/status-codes</identifier></requirement><requirement id="_6a92128a-4c30-46a5-a01d-3cc0963efe0f" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/msg-bodies</identifier></requirement><requirement id="_bb823bd1-9fdd-cf06-738e-d5ab26c6c3f6" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/links</identifier></requirement><requirement id="_b5c57df0-2c95-0560-4263-518506df1ab9" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query</identifier></requirement><requirement id="_a8d97b62-77f7-96d9-59e1-9ce88f652fb7" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-instances</identifier></requirement><requirement id="_f7dad1f4-ebfc-1262-87e3-027b2cea6f94" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-position</identifier></requirement><requirement id="_769f9c7d-e030-eec1-e343-3359d96d1ce7" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-items</identifier></requirement><requirement id="_e9d977d8-eefd-fc89-b5d4-fdc652f4352f" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-location</identifier></requirement><requirement id="_982e2b42-f45c-8de9-c08f-660ae64e8af8" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/data-query-locations</identifier></requirement><requirement id="_1bfea92c-f3d1-7e8b-62d4-70182b6f1eab" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/differencing-processes</identifier></requirement>
 
 </requirement>
 
@@ -1357,7 +1378,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 </component>
 </requirement>
 
-<requirement id="_2bce860e-b205-6044-0afa-aac7985740b4" anchor="ats_nwsviz-application_root" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/root</identifier><classification><tag>target</tag><value>/req/nwsviz-application_data/root</value></classification><component id="_8876ffe2-5df6-b9fc-188b-522f2066170e" class="test-purpose"><p id="_c717bead-39f3-f78a-caf7-7f77669a8230">Validate that the profile defines the service landing page</p>
+<requirement id="_b3463e23-e51d-af00-6354-7f6f78f80974" anchor="ats_nwsviz-application_root" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/root</identifier><classification><tag>target</tag><value>/req/nwsviz-application/root</value></classification><component id="_8876ffe2-5df6-b9fc-188b-522f2066170e" class="test-purpose"><p id="_c717bead-39f3-f78a-caf7-7f77669a8230">Validate that the profile defines the service landing page</p>
 </component><component class="test-method"/><component id="_a62ff2a8-4a27-c28e-6248-e2378b30dc52" class="step"><p id="_69757432-08ad-a377-98ce-75d522e7c565">Verify that the profile defines a <strong>Title</strong> for the service and the value is <strong>“NWSViz profile service”</strong></p>
 </component><component id="_0eaf6ffc-e719-cc14-8f90-df64928a1cfd" class="step"><p id="_6653d69c-7c1e-e367-b84b-61e89e89d854">Verify that each link defined for the service has a <strong>href</strong> and <strong>rel</strong> attribute.</p>
 </component><component id="_958b3333-d187-5f67-33bc-92b74ca90154" class="step"><p id="_581ac73b-7381-9cdb-ac4b-44192420ed96">Verify that the  <strong>Keywords</strong> attribute has the following values:</p>
@@ -1724,11 +1745,13 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 
 </requirement>
 
-<requirement id="_e7ac1f44-cf70-3e57-574f-a74282c4460e" anchor="ats_nwsviz-application_collectionid" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/collectionid</identifier><classification><tag>target</tag><value>/req/nwsviz-application/collectionid</value></classification><component id="_8bafe00c-2a21-1140-de47-8b2c53cf2146" class="test-purpose"><p id="_d06f433d-7a67-60fc-9ef2-7c5681b1bfec">Validate that a collectionid requirement is correctly defined.</p>
+<requirement id="_4d410a58-e66c-4c88-2cef-7cd46e9ff99b" anchor="ats_nwsviz-application_collectionid" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/collectionid</identifier><classification><tag>target</tag><value>/req/nwsviz-application/collectionid</value></classification><component id="_8bafe00c-2a21-1140-de47-8b2c53cf2146" class="test-purpose"><p id="_d06f433d-7a67-60fc-9ef2-7c5681b1bfec">Validate that a collectionid requirement is correctly defined.</p>
 </component><component class="test-method"/><component id="_7dd60d84-66e3-27a0-c243-f18a3f8df50e" class="step"><p id="_8111c8a3-a1c6-67e3-f133-f3674c2afb7b">Verify that collectionids match the following:</p>
 </component>
 
-<description><table id="_047c086c-7264-571f-edef-85b3e3986a92"><tbody><tr id="_69c0c09d-2651-9844-5c98-a7326e3454cb"><td id="_daefd466-6227-3283-0b61-e2e4dfb8ce49" valign="middle" align="left"><strong>id</strong></td>
+<description><table id="_3215aa4b-9394-d210-a5bd-27a7a7365584">
+<name id="_ad6280ec-a582-ad97-8eca-e043ec300657">Collection IDs</name>
+<tbody><tr id="_69c0c09d-2651-9844-5c98-a7326e3454cb"><td id="_daefd466-6227-3283-0b61-e2e4dfb8ce49" valign="middle" align="left"><strong>id</strong></td>
 <td id="_6483764f-0d74-b90c-adf5-f171908cb319" valign="middle" align="left"><strong>description</strong></td>
 </tr><tr id="_15d94e37-0080-b14f-99b4-b68542625fca"><td id="_2841ea56-5a25-085b-a327-5e70ac270d5a" valign="middle" align="left">NBM_icechunk</td>
 <td id="_b892b788-9529-dbf1-c1c4-f8e19569ba65" valign="middle" align="left">National Blend of Models</td>
@@ -2133,10 +2156,21 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 </dd>
 </dl></description>
 </requirement>
+
+<requirement id="_8f2d614c-551c-e0f1-688f-4dcdcc060cb3" anchor="ats_nwsviz-application_differencing-processes" model="ogc" type="abstracttest"> <identifier>/conf/nwsviz-application/differencing-processes</identifier><classification><tag>target</tag><value>/req/nwsviz-application/differencing-processes</value></classification><component id="_42a5459d-fff1-6c85-8f52-0e0a228b7ffc" class="test-purpose"><p id="_17dd4dff-ecbd-6068-0b23-db6380e9b4be">Verify that the API supports OGC API Processes for data differencing operations.</p>
+</component><component class="test-method"/><component id="_c4c82bdd-8c53-60ae-d9ea-58a0be1c2ed3" class="step"><p id="_79702729-5f30-bdcf-a632-c446b23572a4">Send a POST request to /processes/edr-zarr-difference-streaming/execution with required input parameters (collection_a, instance_a, collection_b, instance_b, parameter_name, zoom_level, epsg, units, datetime).</p>
+</component><component id="_5da5e6de-df3a-c728-120f-a838d8476c6a" class="step"><p id="_2458e3ac-8050-4b77-953b-ca662d8eff3b">Verify the response contains job_id, zarr_endpoint, metadata_url, status, and description fields.</p>
+</component><component id="_297d323f-a64e-d3b3-0226-67c75dc1f502" class="step"><p id="_5046db45-89b9-9263-2773-80427afc587d">Verify the zarr_endpoint provides valid Zarr format data access.</p>
+</component><component id="_c84273bf-c2f3-548f-9a04-9163a6d0f248" class="step"><p id="_d609e5b5-03c1-75e4-4168-d6b0fab4b039">Verify the metadata_url provides valid Zarr metadata (.zmetadata) access.</p>
+</component><component id="_1daebe78-72e5-b244-b4db-4e629492b58f" class="step"><p id="_0794f12d-a4d2-4416-c1d0-583f9ad147f9">Verify the status field indicates processing state (e.g., “ready”).</p>
+</component>
+</requirement>
 </clause>
-</annex><annex id="_467c569a-9b6e-3054-6f88-1956d5cc37c6" obligation="informative">
+</annex><annex id="_9ab155b5-3456-cc09-5784-84982a0eaf15" obligation="informative">
 <title id="_7ad1f784-2d0c-3e42-710d-6841d8df0a23">Revision History</title>
-<table id="_ccff72af-99b0-6973-b086-3540920ac25d" width="90%"><thead><tr id="_2c642e4b-3600-2c71-77f2-b629552d5e78"><th id="_dffc1185-42fd-b5c9-610a-4d6a0171cc84" valign="middle" align="left">Date</th>
+<table id="_6442fd57-35c0-f9a3-985c-82c93fb7ae5e" width="90%">
+<name id="_f2cd931b-c38e-4cbd-cf18-ef8dccf4a92b">Revision History</name>
+<thead><tr id="_2c642e4b-3600-2c71-77f2-b629552d5e78"><th id="_dffc1185-42fd-b5c9-610a-4d6a0171cc84" valign="middle" align="left">Date</th>
 <th id="_5a6073c0-e16b-dcbf-4c04-846bf8c69f64" valign="middle" align="left">Release</th>
 <th id="_4f1a7a91-ecdc-ec78-08ad-cb62edd128a6" valign="middle" align="left">Editor</th>
 <th id="_e8dbb575-283a-ca60-e7bc-3c6460a45a23" valign="middle" align="left">Primary clauses modified</th>
@@ -2149,13 +2183,13 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
 <td id="_32218f9d-e211-7c49-b36b-a1cda6ba1357" valign="middle" align="left">initial version</td>
 </tr></tbody>
 </table>
-</annex><bibliography><references id="_def30cd6-2793-9d37-ffb8-5997345448c0" normative="true" obligation="informative">
+</annex><bibliography><references id="_994afd98-68a7-a8f1-7b40-152f071f92a0" normative="true" obligation="informative">
 <title id="_270c5ee6-077e-f285-ff95-287984a30140">Normative references</title><p id="_49996d2b-65c1-916b-9bbf-42b933aa0025">The following documents are referred to in the text in such a way that some or all of their content constitutes requirements of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.</p>
 
 
 
-<bibitem id="_010b15c2-b1c2-210d-2185-abcef102c580" type="standard" schema-version="v1.2.9" anchor="iso19106">
-  <fetched>2025-09-17</fetched>
+<bibitem id="_cc35a458-6eb1-91c7-2185-d3c4e5cd592b" type="standard" schema-version="v1.2.9" anchor="iso19106">
+  <fetched>2025-11-25</fetched>
   
 <title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
 
@@ -2202,7 +2236,7 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
   </copyright>
   <relation type="instanceOf">
     <bibitem type="standard">
-      <fetched>2025-09-17</fetched>
+      <fetched>2025-11-25</fetched>
       
 <title type="title-intro" format="text/plain" language="en" script="Latn">Geographic information</title>
 
@@ -2257,8 +2291,8 @@ ds=xr.open_zarr('link:++https://edr-api-desi-c.mdl.nws.noaa.gov/collections/MRMS
   </relation>
   <place>Geneva</place>
 </bibitem>
-<bibitem id="_d4580108-04f2-54db-0a6d-c0e6edcef958" type="standard" schema-version="v1.2.9" anchor="ogc-edr">
-  <fetched>2025-09-17</fetched>
+<bibitem id="_e64faa07-0a0b-68c5-aaec-1980ac485755" type="standard" schema-version="v1.2.9" anchor="ogc-edr">
+  <fetched>2025-11-25</fetched>
   
 <title type="title-intro" format="text/plain" language="en" script="Latn">OGC API</title>
 
@@ -2326,11 +2360,11 @@ The EDR API query patterns, such as Position, Area, Cube, Trajectory or Corridor
 With the OGC API family of standards, the OGC community has extended its suite of standards to include Resource Oriented Architectures and Web Application Programming Interfaces (APIs). These standards are based on a shared foundation, specified in OGC API-Common, which defines the resources and access paths that are supported by all OGC APIs. The resources are listed in Table 1. This document extends that foundation to define the Environmental Data Retrieval API.</abstract>
   
 </bibitem>
-<bibitem anchor="OGC17-069" id="_eb009324-0ad7-5325-120b-d1ea319266f8"><formattedref format="application/x-isodoc+xml"><link target="https://docs.ogc.org/is/17-069r4/17-069r4.html"/>, OGC APIFeatures — Part 1: Core, Open Geospatial Consortium (2022).</formattedref><docidentifier type="OGC">OGC 17-069</docidentifier><docnumber>17-069</docnumber></bibitem>
-<bibitem anchor="OGC19-072" id="_d5bd5c2e-bb0d-53ed-801e-2bbec9d90ea6"><formattedref format="application/x-isodoc+xml"><link target="https://docs.ogc.org/is/19-072/19-072.html"/>, OGC API — Common — Part 1: Core, Open Geospatial Consortium (2023).</formattedref><docidentifier type="OGC">OGC 19-072</docidentifier><docnumber>19-072</docnumber></bibitem>
-<bibitem anchor="OGC20-024" id="_8bd1fc65-c0a8-94d6-2d1d-907a05906690"><formattedref format="application/x-isodoc+xml"><link target="http://docs.ogc.org/DRAFTS/20-024.html"/>, OGC API — Common — Part 2: Geospatial Data (Draft), Open Geospatial Consortium</formattedref><docidentifier type="OGC">OGC 20-024</docidentifier><docnumber>20-024</docnumber></bibitem>
-<bibitem id="_8f5dba8e-70e5-952e-86fc-61b38cf4234e" type="standard" schema-version="v1.2.9" anchor="ogc-modspec">
-  <fetched>2025-09-17</fetched>
+<bibitem anchor="OGC17-069" id="_315d1f09-9d40-2f38-b85b-5ef5b9639e2f"><formattedref format="application/x-isodoc+xml"><link target="https://docs.ogc.org/is/17-069r4/17-069r4.html"/>, OGC APIFeatures — Part 1: Core, Open Geospatial Consortium (2022).</formattedref><docidentifier type="OGC">OGC 17-069</docidentifier><docnumber>17-069</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem anchor="OGC19-072" id="_9735fe13-b155-e891-6c64-7128ae061f44"><formattedref format="application/x-isodoc+xml"><link target="https://docs.ogc.org/is/19-072/19-072.html"/>, OGC API — Common — Part 1: Core, Open Geospatial Consortium (2023).</formattedref><docidentifier type="OGC">OGC 19-072</docidentifier><docnumber>19-072</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem anchor="OGC20-024" id="_e8fb3817-c110-1012-67e8-1e9a844cb831"><formattedref format="application/x-isodoc+xml"><link target="http://docs.ogc.org/DRAFTS/20-024.html"/>, OGC API — Common — Part 2: Geospatial Data (Draft), Open Geospatial Consortium</formattedref><docidentifier type="OGC">OGC 20-024</docidentifier><docnumber>20-024</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem id="_f6a0f3c2-d623-25c5-cc29-75545745f89f" type="standard" schema-version="v1.2.9" anchor="ogc-modspec">
+  <fetched>2025-11-25</fetched>
   
 <title type="title-intro" format="text/plain" language="en" script="Latn">The Specification Model</title>
 
@@ -2368,9 +2402,65 @@ With the OGC API family of standards, the OGC community has extended its suite o
 eventual purpose is the specification of requirements for software, services or data structures.</abstract>
   
 </bibitem>
-<bibitem anchor="OpenAPI30" id="_02cb25d0-8f8d-fe6e-39bb-174db34a10d5"><formattedref format="application/x-isodoc+xml">OpenAPI Initiative (OAI). <strong>OpenAPI Specification 3.0</strong> [online]. 2024 [viewed 2025-01-03]. The latest patch version at the time of publication of this standard was 3.0.4, available at <link target="https://spec.openapis.org/oas/v3.0.4"/></formattedref><docidentifier>OpenAPI30</docidentifier><docnumber>30</docnumber></bibitem>
-<bibitem anchor="OpenAPI31" id="_d7072931-4323-2d06-ba34-7e9b05698421"><formattedref format="application/x-isodoc+xml">OpenAPI Initiative (OAI). <strong>OpenAPI Specification 3.1</strong> [online]. 2024 [viewed 2025-01-03]. The latest patch version at the time of publication of this standard was 3.1.1, available at <link target="https://spec.openapis.org/oas/v3.1.1"/></formattedref><docidentifier>OpenAPI31</docidentifier><docnumber>31</docnumber></bibitem>
-</references><references id="_58ed15ef-eff4-d70d-5d64-637a28df90a9" normative="false" obligation="informative">
+<bibitem anchor="OpenAPI30" id="_00c9e112-bdff-b688-938b-71a1d113968f"><formattedref format="application/x-isodoc+xml">OpenAPI Initiative (OAI). <strong>OpenAPI Specification 3.0</strong> [online]. 2024 [viewed 2025-01-03]. The latest patch version at the time of publication of this standard was 3.0.4, available at <link target="https://spec.openapis.org/oas/v3.0.4"/></formattedref><docidentifier>OpenAPI30</docidentifier><docnumber>30</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem anchor="OpenAPI31" id="_b504de3e-81cd-eb97-d550-ce4bde7eeb49"><formattedref format="application/x-isodoc+xml">OpenAPI Initiative (OAI). <strong>OpenAPI Specification 3.1</strong> [online]. 2024 [viewed 2025-01-03]. The latest patch version at the time of publication of this standard was 3.1.1, available at <link target="https://spec.openapis.org/oas/v3.1.1"/></formattedref><docidentifier>OpenAPI31</docidentifier><docnumber>31</docnumber><language>en</language><script>Latn</script></bibitem>
+<bibitem id="_d0fee218-6dc0-4fb1-426a-cc7f87adb8fa" type="standard" schema-version="v1.2.9" anchor="ogc-processes">
+  <fetched>2025-11-25</fetched>
+  
+<title type="title-intro" format="text/plain" language="en" script="Latn">OGC API</title>
+
+  
+<title type="title-main" format="text/plain" language="en" script="Latn">Processes</title>
+
+  
+<title type="title-part" format="text/plain" language="en" script="Latn">Part 1: Core</title>
+
+  
+<title type="main" format="text/plain" language="en" script="Latn">OGC API — Processes — Part 1: Core</title>
+
+  <uri type="src">http://www.opengis.net/doc/IS/ogcapi-processes-1/1.0.0</uri>
+  <uri type="html">https://docs.ogc.org/is/18-062r2/18-062r2.html</uri>
+  <docidentifier type="OGC" primary="true">18-062r2</docidentifier>
+  <date type="published">
+    <on>2021-12-20</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Benjamin Pross</completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <person>
+      
+<name>          <completename>Panagiotis (Peter) A. Vretanos</completename>       </name>
+
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      
+<name>Open Geospatial Consortium</name>
+
+    </organization>
+  </contributor>
+  <edition>2</edition>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract format="text/plain" language="en" script="Latn">The OGC API — Processes — Part 1: Core Standard supports the wrapping of computational tasks into executable processes that can be offered by a server through a Web API and be invoked by a client application. The standard specifies a processing interface to communicate over a RESTful protocol using JavaScript Object Notation (JSON) encodings. The standard leverages concepts from the OGC Web Processing Service (WPS) 2.0 Interface Standard but does not require implementation of a WPS.
+
+By way of background and context, in many cases geospatial or location data, including data from sensors, must be processed before the information can be effectively used. The WPS Standard provides a standard interface that simplifies the task of making simple or complex computational geospatial processing services accessible via web services. Such services include well-known processes found in Geographic Information Systems (GIS) as well as specialized processes for spatiotemporal modeling and simulation. While the WPS standard was designed with spatial processing in mind, the standard could also be used to readily insert non-spatial processing tasks into a web services environment.
+
+The OGC API — Processes Standard is a newer and more modern way of programming and interacting with resources over the web while allowing better integration into existing software packages. The OGC API — Processes Standard addresses all of the use cases that were addressed by the WPS Standard, while also leveraging the OpenAPI specification and a resource-oriented approach.
+
+The resources that are provided by a server implementing the OGC API — Processes Standard are listed in Table 1 below and include information about the server, the list of available processes (Process list and Process description), jobs (running processes) and results of process executions.</abstract>
+  
+</bibitem>
+</references><references id="_b9e8d5ad-3ca7-660c-9a21-3cdfce6fe785" normative="false" obligation="informative">
 <title id="_50ceb1e1-516f-2673-d73d-4f0c58b4d023">Bibliography</title>
 <note id="_d67ece88-3110-6016-9817-ba412b8379cd"><p id="_44ee4f84-42f1-dc11-f1be-ccc215fcfcb4">The TC has approved Springer LNCS as the official document citation type.</p>
 
@@ -2382,10 +2472,12 @@ eventual purpose is the specification of requirements for software, services or 
 <p id="_b05a8017-4ca6-79cd-d2da-2a4d3d6e1aec">[n] Journal: Author Surname, A.: Title. Publication Title. Volume number, Issue number, Pages Used (Year Published)</p>
 
 <p id="_5fd323f7-487c-138a-a2bb-aa62f3805051">[n] Web: Author Surname, A.: Title, <link target="http://Website-Url"/></p>
-</note><bibitem anchor="OGC2015" id="_3bf92b3e-31f1-3985-c620-43c976de851e">
+</note><bibitem anchor="OGC2015" id="_eb7a82b2-3893-2d14-1533-4ff3583ee587">
   <formattedref format="application/x-isodoc+xml"><em>OGC: OGC Testbed 12 Annex B: Architecture</em> (2015).</formattedref>
   <docidentifier>OGCTB12</docidentifier>
   <docnumber>12</docnumber>
+  <language>en</language>
+  <script>Latn</script>
 </bibitem>
 
 

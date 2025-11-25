@@ -1,0 +1,14 @@
+[[ats_nwsviz-application_differencing-processes]]
+[abstract_test]
+====
+[%metadata]
+identifier:: /conf/nwsviz-application/differencing-processes
+target:: /req/nwsviz-application/differencing-processes
+test-purpose:: Verify that the API supports OGC API Processes for data differencing operations.
+test-method:: 
+step:: Send a POST request to /processes/edr-zarr-difference-streaming/execution with required input parameters (collection_a, instance_a, collection_b, instance_b, parameter_name, zoom_level, epsg, units, datetime).
+step:: Verify the response contains job_id, zarr_endpoint, metadata_url, status, and description fields.
+step:: Verify the zarr_endpoint provides valid Zarr format data access.
+step:: Verify the metadata_url provides valid Zarr metadata (.zmetadata) access.
+step:: Verify the status field indicates processing state (e.g., "ready").
+====
